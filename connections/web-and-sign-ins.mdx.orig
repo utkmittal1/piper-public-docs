@@ -1,0 +1,99 @@
+---
+title: "Web and sign-ins"
+description: "How Piper opens real web pages in its own browser, how the sign-in card saves a login once per site, and how to let Piper work in the Chrome you are already signed in to."
+---
+
+Piper opens real web pages to do real work: reading a competitor's pricing page, pulling a report out of a dashboard, filling a form. When a page asks for a login, Piper stops and asks you to sign in once. It saves that sign-in and never asks you for that site again.
+
+## Piper's own browser
+
+Piper ships with its own browser, a copy of Chromium downloaded into Piper's data folder on your Mac. It runs out of sight, so no window pops up while Piper works. Every conversation shares the same browser and gets its own pages inside it, which is how two tasks can browse at the same time.
+
+That browser keeps a profile that survives the task. A site you sign into once stays signed in for this task and every later one.
+
+Browsing is on by default. To turn it off, go to **Settings** > **Tools** and switch off **Browse websites** under **Core Tools**.
+
+## When Piper asks before it acts on a page
+
+On an ordinary page Piper works on its own: it navigates, reads, clicks, and fills in what it needs. On a page it holds your sign-in for, it asks you first, because that page is your account. Saying yes covers the rest of that one request on that site, and the next thing you ask starts the question over.
+
+<Note>
+  Piper's own browser starts with nothing loaded and knows nothing about the browsers you use yourself. It reaches an account only where you signed in through the sign-in card.
+</Note>
+
+## The sign-in card
+
+When Piper hits a login wall, a **Sign in needed** card appears in the conversation, naming the site.
+
+<Steps>
+  <Step title="Open the window">
+    Select **Open sign-in window**. A visible browser window opens on that site, and the hidden browser keeps running behind it.
+  </Step>
+  <Step title="Sign in as you normally would">
+    Type your credentials into the site itself. Piper does not read what you type, and it never asks you for a password.
+  </Step>
+  <Step title="Tell Piper you are done">
+    Select **I've signed in**. Piper saves the sign-in and picks the task back up on its own.
+  </Step>
+</Steps>
+
+Closing the window yourself works too. Select **Continue** on the card afterwards, and Piper carries on. The sign-in is saved either way, for this task and every later one.
+
+A sign-in window closes itself after five minutes. Open it again from the card if you need longer.
+
+<Note>
+  Dismiss the card and you lose the button that opens the window. Piper is still waiting, so either ask it in the message box to try the page again, which brings the card back, or tell it to carry on without that site.
+</Note>
+
+<Warning>
+  A saved sign-in stays saved. Piper does not currently offer a way inside the app to remove one site's saved sign-in.
+</Warning>
+
+## Using the Chrome you already use
+
+Piper can work in your own Chrome instead, on sites you are already logged into there, so you skip signing in again. This is off until you turn it on, and it needs one piece of setup.
+
+<Steps>
+  <Step title="Open the setting">
+    In **Settings**, select **Tools**. Under **Core Tools**, find **Use my Chrome for sites I'm signed in to**.
+  </Step>
+  <Step title="Install the extension">
+    Select **Set up**, then install the Playwright extension, published by Microsoft, from the Chrome Web Store.
+  </Step>
+  <Step title="Return to Piper">
+    The setting turns on once the extension is installed.
+  </Step>
+</Steps>
+
+You can also turn it on from a card above the message box, which comes up right after you sign into a site through the sign-in card. Select **Not now** to leave it for a later sign-in, or **Don't ask again** to stop the suggestion for good.
+
+<Warning>
+  Piper asks you before it works in your Chrome, and that permission never becomes standing. There is no **Always allow** button for your own browser, and even Autopilot mode still stops to ask. Your yes covers the request you are answering and nothing after it.
+</Warning>
+
+## Which browser Piper uses
+
+| | Piper's own browser | Your Chrome |
+|---|---|---|
+| Where it runs | A separate Chromium in Piper's data folder | The Chrome you use yourself |
+| Visible | No, except the sign-in window | Yes, it is your browser |
+| Signed in to | Only sites you signed into through the sign-in card | Everything you are signed into |
+| Asks first | On a site it holds your sign-in for | Every request, and never remembered |
+| On by default | Yes | No |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+  <Card title="Integrations" icon="link" href="/connections/integrations">
+    Connect Gmail, Slack, Notion, and more, and see what Piper may do in each.
+  </Card>
+  <Card title="Tools" icon="wrench" href="/working/tools">
+    Choose which capabilities Piper may use, browsing included.
+  </Card>
+  <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
+    Where your sessions, files, memory, and credentials are kept.
+  </Card>
+</CardGroup>

@@ -1,60 +1,25 @@
 ---
 title: "Chief of Stuff"
-description: "What Chief of Stuff is, what a watched source is, the cards it puts up for you to send, open, or dismiss, the three checks that decide when it runs, and the settings behind all of it."
+description: "What Chief of Stuff is and why it is worth turning on, what a watched source is, the finished work it puts on cards for you to send, open, or dismiss, how it decides what to take on, and the settings behind all of it."
 ---
 
-Chief of Stuff is Piper working on its own, on a screen of its own in the sidebar. It checks the integrations you switch on as watched sources, does the work it judges worth doing, and puts each finished result on a card for you to review. Nothing it drafts goes out until you select **Send**.
+Chief of Stuff is Piper working without being asked. Everywhere else in Piper you open a session, explain what you need, and Piper does it. Chief of Stuff decides for itself. It watches the places your work actually arrives, your Gmail, your Slack, your Google Calendar, your Google Drive, works out what is worth doing, does it, and hands you each finished result on a card. You choose what it watches, and you approve what it sends.
 
-A watched source is one of your integrations, switched on for Chief of Stuff to check. An integration is the connection Piper holds to an app you already use, such as Gmail, Slack, or Google Calendar. See [Integrations](/connections/integrations) for connecting one.
+Those places are called watched sources. A watched source is an app you have switched on for Chief of Stuff to check, and any app Piper connects to can be one. Piper has to be connected to the app first. See [Integrations](/connections/integrations).
 
-## The Chief of Stuff screen
+## Why Chief of Stuff is worth turning on
 
-Select **Chief of Stuff** in the sidebar. Three tabs divide it. **Ready** holds the cards waiting on you, **History** holds the record of every run, and **Settings** holds the watched sources, how eagerly Piper works, the notification hours, and your rules.
+The reason work sits on your list is rarely that you have nobody to do it. Asking is itself work. You have to open a session, give the context, and say what you want, so the reply you owe Priya waits, and the brief for tomorrow's meeting waits, because starting them costs the time you did not have.
 
-A run is one pass Chief of Stuff makes on its own. Piper opens a session, reads what changed in your watched sources, does the work, and declares what it produced. Each declared result becomes one card under **Ready**. You never schedule a run, and Chief of Stuff never appears in the **Autonomous tasks** list.
+Chief of Stuff takes the asking out. It flags the reply you still owe, preps the meeting before it lands, and starts the document somebody asked you for. It reads the week ahead in your calendar, so a Thursday deadline arrives with the work already prepared.
 
-Work reaches Chief of Stuff two ways: from the sources you switch on, and from anything you hand it yourself.
+It is picky about what it takes on, which is what keeps it useful. Piper does the work that needs research, gathering material, or focused writing. It leaves alone anything you would answer in seconds, because a draft there is only noise.
 
-<Frame>
-  <img src="/images/diagrams/chief-of-stuff-flow.svg" alt="The sources you switch on feed Chief of Stuff, which does the work and stacks finished results for you to review, send, or dismiss." />
-</Frame>
+So what you come back to is the work itself. A reply written with the numbers already pulled from the thread it answers. A one-page brief for your next meeting, naming who is coming and what each of them last asked you for. A first draft of the document somebody asked you to produce, with the gaps marked inline where only you can fill them.
 
-<Note>
-  One run takes on at most three pieces of work. Anything else Piper judged worth doing carries forward to the next run. The cap limits what one run does, not what it shows you: everything it finishes appears.
-</Note>
+None of it can leave on its own. Piper refuses every write tool inside a Chief of Stuff run, in code rather than by instruction, so a message it drafts sits on its card until you read it and select **Send**.
 
-## How Ready groups the cards
-
-**Ready** groups cards by how soon they matter.
-
-| Group | What sits there |
-|---|---|
-| **Before your next meeting** | Work tied to a meeting a few hours away or less |
-| **Ready for you** | Everything else that is waiting |
-| `3 more, mostly low-signal` | The rest, collapsed and closed until you open it |
-
-The number in that last heading is how many cards sit inside it.
-
-Each card carries the work itself, one line saying why Piper did it, and its buttons. There are four kinds.
-
-- A message card carries the reply exactly as it will go out, with a line at the top naming who it would go to. Select **Send** to send that text, **Edit** to change it first, or **Copy** to put it on your clipboard. Editing turns the body into a box you type in, and **Send** becomes **Send edited**. The card reads **Waiting** until the message goes.
-- A document card is a brief or a draft, already written into the `final-output/` folder of the session that produced it, and badged **Meeting prep** or **Draft**. Select **View** to open the whole thing. There is nothing to accept, because the file exists before the card appears.
-- An answer card is the result itself, in full on the card, badged **Answer**. There is nothing to send or file.
-- An offer is work Piper proposes rather than work it has done, badged **Not started**. Select **Go ahead** to start it.
-
-**Refine** and **Dismiss** sit on every card. **Open session** sits beside them whenever Piper still has the session that did the work, which is the session **Refine** sends your feedback to.
-
-<Note>
-  A formatted email is the exception on a message card. **Send** becomes **Review**, **Edit** disappears, and selecting **Review** opens a **Review email** window with **To**, **Cc**, and **Subject** at the top and **Send** and **Cancel** in its footer. Only email and Slack messages can be sent from this screen at all. For anything else, use **Copy** and paste it where it belongs.
-</Note>
-
-Select **Refine** to give one line of feedback in answer to "What should Piper change?". On a message, document, or answer your line goes to the session that did the work, and that session opens so you can watch the rework. On an offer Piper rebuilds the proposal in place, without moving you anywhere.
-
-**Dismiss** is permanent, and it means two different things. Dismissing a message or an offer teaches Piper that you did not want it, and later runs steer away from work like it. Dismissing a document or an answer clears the card from the list, and Piper reads nothing into it.
-
-<Note>
-  Every reaction teaches Chief of Stuff something. Sending a message, sending it after editing, copying it, asking for a rework, and dismissing a card each add one line to its lessons, which later runs read. Nothing else writes to them: Chief of Stuff records what you did, never its own opinion of the work.
-</Note>
+That work happens while you are away from it, with one honest limit. Chief of Stuff runs while Piper is open and your Mac is on and awake. A machine that is off, closed, or asleep runs no checks.
 
 ## Set up watching
 
@@ -63,7 +28,7 @@ Select **Refine** to give one line of feedback in answer to "What should Piper c
     Select **Chief of Stuff** in the sidebar, then the **Settings** tab.
   </Step>
   <Step title="Switch on a source">
-    Under **Watched sources**, flip the switch beside an integration. Gmail, Slack, and Google Calendar are listed here from the start, whether or not you have connected them, and a row for an integration you have not connected says so and keeps its switch greyed out. Select **Add another source** to open **Watch another source**, then **Watch** on the integration you want.
+    Under **Watched sources**, flip the switch beside the app you want watched. Gmail, Slack, and Google Calendar are listed here from the start, whether or not you have set them up, and a row for an app you have not set up says so and keeps its switch greyed out. To watch anything else you have connected, such as Google Drive or Notion, select **Add another source** to open **Watch another source**, then **Watch** on the one you want.
   </Step>
   <Step title="Wait for the source to be ready">
     A source you have just switched on reads **Piper is studying this source** for a while. Piper is building that source a fast check: a single read-only call it can replay later to tell whether anything has changed. It works one out in a session of its own and proves it against your live account. For an email or messaging source it also writes a voice guide, a note on how you write that it reads later when it drafts a reply. Wait for the row to settle at **Watching**.
@@ -79,73 +44,76 @@ Select **Refine** to give one line of feedback in answer to "What should Piper c
 Watching is on exactly while at least one source is switched on. There is no master switch. Turn every source off and the watching stops, though Chief of Stuff still works on anything you hand it yourself.
 
 <Note>
-  Some integrations offer no call Piper can build a fast check out of. A source in that position settles at **Checked hourly. This source has no fast check.** It still works. Piper looks at it on the hour rather than every fifteen minutes.
+  Some apps offer no call Piper can build a fast check out of. A source in that position settles at **Checked hourly. This source has no fast check.** It still works. Piper looks at it on the hour rather than every fifteen minutes.
+</Note>
+
+## The Chief of Stuff screen
+
+Select **Chief of Stuff** in the sidebar. Three tabs divide it. **Ready** holds the work waiting on you, **History** holds the record of every run, and **Settings** holds the watched sources, how eagerly Piper works, the notification hours, and your rules.
+
+A run is one pass Chief of Stuff makes on its own: Piper opens a session, reads what changed in your watched sources, and does the work. You never schedule a run, and Chief of Stuff never appears in the **Autonomous tasks** list.
+
+Work reaches Chief of Stuff two ways: from the sources you switch on, and from anything you hand it yourself.
+
+<Frame>
+  <img src="/images/diagrams/chief-of-stuff-flow.svg" alt="The sources you switch on, such as Gmail, Slack, Google Calendar, Google Drive, Notion, and any other app you connect, feed Chief of Stuff, which does the work and stacks finished results for you to review, send, or dismiss." />
+</Frame>
+
+## What Chief of Stuff brings back
+
+Everything Chief of Stuff finishes waits for you under **Ready**. What it hands over depends on the work.
+
+- A reply you owe, drafted as an email or a Slack message and ready to send. Piper writes it in full, names who it goes to, and leaves a bracketed gap where a fact is one only you know.
+- Prep for a meeting on your calendar. A page at most: who is coming, what the record already settled, what you will probably be asked to decide, and what to have open.
+- A document, such as a first draft of something you were asked to produce or the research you needed for it. Piper marks each blocked decision inline as `[Open: ...]`, so you resolve them while you edit.
+- An answer to a question you handed off, where the answer itself is the whole result and there is no file to keep.
+- A proposal for work Piper has not started. It leads with the one angle Piper recommends and says what approving it buys you: a reply, a brief, a document.
+
+A meeting brief and a document exist as files before you ever see them, in the `final-output/` folder of the session that produced them, so there is nothing to accept on either one.
+
+<Note>
+  Only email and Slack messages can be sent from Chief of Stuff. Piper drafts a reply for anything else too, but you have to **Copy** it and paste it where it belongs. A formatted email opens in a **Review email** window first, so you can check **To**, **Cc**, and **Subject** before it goes.
+</Note>
+
+Select **Refine** to give one line of feedback in answer to "What should Piper change?". On a reply, a document, or an answer your line goes to the session that did the work, and that session opens so you can watch the rework. On a proposal Piper rebuilds it in place, without moving you anywhere.
+
+**Dismiss** is permanent, and it means two different things. Dismissing a reply or a proposal teaches Piper that you did not want it, and later runs steer away from work like it. Dismissing a document or an answer clears it from the list, and Piper reads nothing into it.
+
+<Note>
+  Every reaction teaches Chief of Stuff something. What you send, edit, copy, ask to be reworked, and dismiss all steer later runs, and Chief of Stuff records only what you did, never its own opinion of the work.
 </Note>
 
 ## Hand off work
 
-You do not need a watched source to use Chief of Stuff. A paper-plane button sits at the bottom right of every screen, and `⌘⇧H` opens the same menu from anywhere. It offers **Quick question** and **Hand off work**. Select **Hand off work** to open the drawer titled **Hand off to Chief of Stuff**, type or dictate whatever is on your plate, and select **Hand off**. Piper works out the ask, does the work, and puts the result under **Ready**.
+You do not need a watched source to use Chief of Stuff. Select **Hand off work**, or press `⌘⇧H` from anywhere in Piper, and type or dictate whatever is on your plate. Piper works out the ask, does the work, and puts the result under **Ready**.
 
-Each handed-off entry keeps its own status: `waiting`, then `working`, then `done`. A finished entry offers **Open session** for the session that did the work, and clears itself from the drawer a day later. Until then, select the pencil icon, labelled **Reword this ask**, or the cross beside it, labelled **Remove this ask**. Rewording keeps the same ask and sends Piper back to it. Removing stops unfinished work on it and leaves anything already delivered alone.
+Reach for this when something is on your mind and you have no time to work out how to ask for it. One line is enough, and Piper picks it up within fifteen minutes.
 
-An ask you hand off outranks everything Chief of Stuff found in your sources, and it is the one thing a run never stays quiet about. A run that turned up nothing in your sources shows you nothing at all, but a finished ask always leaves a card: a draft, a file, a proposal, or an answer.
+An ask you hand off clears itself a day after Piper finishes it. Until then you can reword it, which keeps the same ask and sends Piper back to it, or remove it, which stops unfinished work and leaves anything already delivered alone.
 
-## How eagerly Piper works
-
-Small, clear work is always finished either way. The setting decides what happens with big work, such as a full first draft of a document or deep prep for a major meeting.
-
-| Setting | What Piper does with big work |
-|---|---|
-| **Conservative** | Asks first. You get an offer card, and Piper builds the work once you select **Go ahead**. |
-| **Proactive** | Does the work and tells you, so you walk in prepared. |
-
-Work where the approach is genuinely unclear comes back as an offer whatever the setting, because Piper does not guess at a call only you can make.
+Anything you hand off comes first, ahead of whatever Chief of Stuff found on its own. It is also the one thing a run never stays quiet about: a run that turned up nothing in your sources shows you nothing at all, while a finished ask always comes back with something.
 
 ## The three checks and when they run
 
-Chief of Stuff runs on three checks, each on its own clock. **History** names them: on each run's title, and on the wake-check rows, where they read hyphenated as `source-scan`, `time-lookahead`, and `daily-sweep`.
+Chief of Stuff runs on three checks, each on its own clock.
 
 | Check | How often | What it does |
 |---|---|---|
-| **Source scan** | Every 15 minutes | Replays each watched source's fast check, and opens a run only where something has changed |
-| **Time look-ahead** | Every hour | Reads the week ahead in a watched calendar, and covers any source with no fast check or still being set up |
-| **Daily sweep** | Once a day at 8:00 in your local time | Picks up slower-burning work and anything the quick scans deferred |
+| **Source scan** | Every 15 minutes | Looks for what has changed in your watched sources |
+| **Time look-ahead** | Every hour | Reads the week ahead in a watched calendar, so work that needs lead time starts early |
+| **Daily sweep** | Once a day at 8:00 in your local time | Picks up slower-burning work |
 
-Only the source scan can decide to do nothing. It replays each fast check and stays asleep unless the answer changed, so a quarter hour with nothing new opens no session at all. The other two do not work that way. The look-ahead and the sweep open a session whenever anything is in their scope, which means a watched calendar gets an hourly run whether or not it has moved.
-
-Select **Check now** at the top of the page to run a source scan immediately, skipping both the clock and the fast checks. It reads **Checking…** while it runs.
-
-## The History tab
-
-**History** lists the runs Chief of Stuff has made, each named by what it actually did, with its summary, its results, and **Open transcript** to read the session behind it. It opens on **Runs that did work**, so a quiet check that found nothing stays hidden. Switch to **All runs** to see every one, search the history by what happened, and select **Show more** for older entries.
-
-At the bottom sits a collapsed **Wake checks** group, carrying its own count, which records why Chief of Stuff ran or stayed asleep. Each row reads `woke` or `skipped`, then names the check and the reason.
+Select **Check now** to run a source scan immediately, without waiting for the clock.
 
 ## When Piper pings you
 
-Under **Notification hours** you set the window in which Piper may ping you, with **From** and **Until**. It runs from 8:00 AM to 10:00 PM until you change it. Piper keeps working outside that window and holds the ping until the window opens. Work tied to a meeting a few hours away still pings.
+Piper pings you when something it finished is waiting for you. Work tied to a meeting a few hours away reaches you whatever the hour.
 
-A ping arrives titled **Ready for you**, carrying the reason line off the newest waiting card, and opens the Chief of Stuff screen. Turn it off under **Settings** > **Notifications**, where it and **Draft awaiting your approval** are listed separately. See [Notifications](/working/notifications).
-
-<Note>
-  Chief of Stuff works while Piper is open and your Mac is on and awake. A machine that is off, closed, or asleep runs no checks.
-</Note>
-
-<Warning>
-  Piper watches only the sources you switch on, and only integrations you have already connected under **Settings** > **Integrations**. Chief of Stuff sends nothing itself: Piper refuses every write tool in these runs, in code rather than by instruction, so a message it writes cannot go anywhere until you select **Send**. If you ask it for a recurring result delivered to your inbox, that delivery runs as a [scheduled task](/autonomous/autonomous-tasks) on the schedule you agreed, not as a card.
-</Warning>
-
-<Note>
-  Chief of Stuff also gets no memory. Piper leaves the facts it keeps about you out of these runs, so anything it should always do belongs under **Your rules**.
-</Note>
-
-<Note>
-  Chief of Stuff pauses whenever Piper is signed out of your default AI provider. The screen reads "Chief of Stuff is paused. Piper is signed out.", **Check now** is greyed out, and no check runs. A banner at the top of the window carries **Sign in**. Piper picks the watching back up by itself within about five minutes of your signing in again. See [AI providers](/concepts/ai-providers) for the sign-in itself.
-</Note>
+Set the hours you are willing to be pinged under **Notification hours**, which runs from 8:00 AM to 10:00 PM until you change it. Piper keeps working outside that window either way, and holds the ping until the window opens. To stop the pings altogether, use **Settings** > **Notifications**. See [Notifications](/working/notifications).
 
 ## Start over
 
-Under **Settings**, in **Start over**, select **Forget everything** and confirm with **Forget**. Piper deletes the watcher and everything Chief of Stuff learned: its checks, its voice guides, its lessons, and every card. Your **How eagerly Piper works** and **Notification hours** choices survive. Watching stays off until you switch a source back on.
+Under **Settings**, in **Start over**, select **Forget everything**. Piper deletes the watcher and everything Chief of Stuff learned: its checks, its voice guides, its lessons, and every result waiting on you. Your **How eagerly Piper works** and **Notification hours** choices survive. Watching stays off until you switch a source back on.
 
 ## Next steps
 
@@ -154,7 +122,7 @@ Under **Settings**, in **Start over**, select **Forget everything** and confirm 
     Recurring work Piper runs on a schedule you set.
   </Card>
   <Card title="Integrations" icon="link" href="/connections/integrations">
-    Connect the integrations Chief of Stuff can watch.
+    Set up the integrations Chief of Stuff can watch.
   </Card>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
     What Piper asks before it acts, and the two approval modes.

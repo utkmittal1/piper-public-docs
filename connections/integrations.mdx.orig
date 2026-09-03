@@ -1,0 +1,101 @@
+---
+title: "Integrations"
+description: "How to connect apps like Gmail, Slack, and Notion to Piper, the four ways a connection signs in, what Piper may do in a connected app, and how to add a connection of your own."
+---
+
+Connect Gmail and Piper can search your mail while it drafts a reply. With Slack connected, it reads the channel before it writes your update, and a connected Notion means it pulls the page it needs rather than asking you for it. Piper reaches an app only after you connect it. Every tool that changes something in that app arrives set to ask you first.
+
+## What an integration is
+
+An **integration** is a link between Piper and one of your apps. Piper ships a catalog of 26 apps you can connect, including Gmail, Google Drive, Google Calendar, Slack, Notion, Linear, Asana, GitHub, Figma, Canva, Airtable, Stripe, Todoist, and Miro. Every app in the catalog and what each one can do is listed on the [Integrations catalog](/reference/integrations-catalog) page.
+
+In **Settings**, select **Integrations**. Apps you have already connected sit under **Connected**. The rest sit under **Available**. The search box at the top filters both lists by name.
+
+## The four ways an app connects
+
+Each app in the catalog signs in one way. Select its card to see which.
+
+- **Sign in once, in your browser.** Select **Connect**, then approve the sign-in page that opens in your browser. Notion, Linear, Asana, Todoist, Miro, Canva, Stripe, Calendly, Airtable, Monday, Jotform, SurveyMonkey, PayPal, Otter.ai, Fireflies, Wix, and Atlassian work this way. Seventeen of the 26 apps do.
+- **Sign in after you register Piper with the provider.** Gmail, Google Drive, Google Calendar, and Slack need you to create an app in that provider's own console first. Work through the numbered steps on the card, copying the redirect address into the provider's console. Then paste the **Client id** and **Client secret**, select **Connect**, and approve the sign-in in your browser.
+- **Paste a key.** Figma, Excalidraw, Firecrawl, and GitHub take a key you generate in that service. Paste it into the **API key** box and select **Connect**.
+- **Nothing to sign in to.** AWS Documentation reads public documentation and runs on your Mac, so it needs no account and no key.
+
+<Note>
+  Atlassian, GitHub, Gmail, Google Drive, Google Calendar, and Slack each need a one-time setup before they can sign in. Follow the steps on the app's own card, since they differ from app to app.
+</Note>
+
+## Connect an app
+
+<Steps>
+  <Step title="Open Integrations">
+    In **Settings**, select **Integrations**.
+  </Step>
+  <Step title="Pick the app">
+    Find it under **Available**, or type its name in the search box, then select its card.
+  </Step>
+  <Step title="Follow the setup steps, if there are any">
+    Some apps show numbered steps and a link to the provider's developer portal. Work through them before you connect.
+  </Step>
+  <Step title="Leave Add to Piper on connect ticked">
+    It is ticked by default, and it gives Piper the app's tools. Untick it and Piper stores the sign-in without handing Piper anything to use.
+  </Step>
+  <Step title="Connect">
+    Select **Connect**. For a sign-in app, approve the page that opens in your browser. For a key, paste the key first.
+  </Step>
+</Steps>
+
+The app then moves to the **Connected** list.
+
+## What Piper may do in a connected app
+
+Open a connected app's card to see its **Available tools**, split into two groups.
+
+- **Read** tools look things up: search your mail, list your issues, fetch a page. Piper runs most of these on its own while it works, and a few ask first.
+- **Write** tools change something: send a message, create a task, update a record. Every one of them ships set to ask you before it runs.
+
+You can turn individual tools on and off, and change which ones ask, in **Settings** > **Tools**. That page governs the built-in Piper agent. Some tools ship switched off and stay off until you turn them on there.
+
+<Warning>
+  Piper reaches only the apps you connect. It cannot see an app you have not connected, and disconnecting one removes its tools from every agent and deletes its stored sign-in.
+</Warning>
+
+## Add a connection of your own
+
+If a service you use publishes its own connection address, you can point Piper at it. Select **+ Add Custom** at the top of the **Integrations** page and give the connection a name. Choose **Remote**, paste the address into **Server URL**, then pick how it signs in: **None**, **API key**, or **OAuth**. Piper connects, discovers the tools the service offers, and sorts them into read and write for you.
+
+<Tip>
+  Adding a custom connection needs details the service publishes: an address, and sometimes a key or a client id. If you do not have those to hand, get them from the service first.
+</Tip>
+
+<Note>
+  The other transport, **Local**, is for a server that runs on your own Mac. It asks for the launch details in JSON, so it suits someone who already has that configuration from the service.
+</Note>
+
+## When a connection stops working
+
+A sign-in can expire. The app's tools stay paused until you sign in again, so open its card in **Settings** > **Integrations** and select **Reconnect**. Everything else about the connection stays as it was.
+
+## Where your credentials live
+
+Piper stores each connection's sign-in or key in your Mac's keychain, one item per app. It never shows a stored value back to you, and nothing in Piper's own interface can read one out.
+
+<Note>
+  Connecting an app lets Piper reach that app's own service over the internet. Piper keeps your sessions, files, and credentials on your Mac, and a connected app's data travels the same way it does when you use that app yourself.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Integrations catalog" icon="table-list" href="/reference/integrations-catalog">
+    Every app Piper connects to and what each one can do.
+  </Card>
+  <Card title="Secrets" icon="key" href="/connections/secrets">
+    Store a password or an API key once and let every task use it.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+  <Card title="Tools" icon="wrench" href="/working/tools">
+    Choose which capabilities Piper may use, tool by tool.
+  </Card>
+</CardGroup>

@@ -9,17 +9,15 @@ Piper reaches the apps and services you use in three ways, and each one works di
 
 | What you want Piper to reach | What to use | What you do once |
 |---|---|---|
-| Gmail, Slack, Notion, GitHub, or any of the 26 apps Piper ships an integration for | An integration | Connect it in **Settings** > **Integrations** |
+| Gmail, Slack, Notion, GitHub, or any of the 26 apps Piper ships an integration for | An integration | Set it up in **Settings** > **Integrations** |
 | Your own database, an internal service, a tool that asks for a token | A secret | Store the credential in **Settings** > **Secrets** |
 | A page on the web, whether or not it requires a sign-in | Piper's own browser | Nothing, until a page asks you to sign in |
 
-Where an app offers both, connect the integration rather than leaving Piper to click around the app's website. An integration gives Piper named tools you can switch on and off one by one, and every tool that changes something starts set to ask you first. That setting holds in a session on **Manual**. A new session starts on **Autopilot**, where Piper answers those requests itself, so see [Approvals and permissions](/control/approvals-and-permissions) before you rely on it. A web page gives Piper a mouse and a keyboard.
-
 ## Integrations
 
-An integration is a connection between Piper and an app you already use. Piper ships 26 of them, each one an MCP server, which is how a service publishes its tools for an assistant like Piper to call. Connecting an integration signs Piper in and hands Piper its tools, split into the ones that look things up and the ones that change something.
+An integration is a connection between Piper and an app you already use. Piper ships 26 of them, each one an MCP server, which is how a service publishes its tools for an assistant like Piper to call. Setting one up signs Piper in and hands Piper its tools, split into the ones that look things up and the ones that change something.
 
-See [Integrations](/connections/integrations) for how to connect an integration, what each way of signing in asks for, what Piper may do once one is connected, and how to point Piper at an MCP server of your own.
+See [Integrations](/connections/integrations) for how to set up an integration, what each way of signing in asks for, what Piper may do once one is in place, and how to point Piper at an MCP server of your own.
 
 ## Secrets
 
@@ -45,7 +43,7 @@ The three keep their credentials in two different places, and none of them shows
 
 <CardGroup cols={2}>
   <Card title="Integrations" icon="link" href="/connections/integrations">
-    Connect Gmail, Slack, Notion, and more, and see what Piper may do in each.
+    Set up Gmail, Slack, Notion, and more, and see what Piper may do in each.
   </Card>
   <Card title="Secrets" icon="key" href="/connections/secrets">
     Store a password or an API key once and let every task use it.

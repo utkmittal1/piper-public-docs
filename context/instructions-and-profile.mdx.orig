@@ -1,0 +1,86 @@
+---
+title: "Instructions and profile"
+description: "The standing instructions Piper follows in every session and the profile that says who you are, where both live, and how they differ from memory."
+---
+
+Write your instructions and a short note about yourself once, and Piper starts every task already knowing how you want it to work. No preamble at the top of each request, no reintroducing your job every Monday.
+
+Instructions and the profile are the two standing inputs you write by hand. Piper reads both before the first word of any task.
+
+## Standing instructions
+
+**Standing instructions are the rules you want followed on every job.** Piper reads them at the start of each session, alongside everything else it knows about you.
+
+In **Settings**, select **Instructions**, then type your rules into **Custom Instructions** in plain sentences. Piper follows them in every session.
+
+Your edits save on their own, shortly after you stop typing and again when you click away. There is no save button to hunt for.
+
+Good instructions are the things you would otherwise say twice a week:
+
+- "Always end with the next step."
+- "I work in US spelling."
+- "Never send anything outbound without showing me the draft first."
+- "When you cite a number, say where it came from."
+
+<Tip>
+  A custom agent carries its own instructions, separate from these. Build one in **Settings**, then **Custom Agents**, when a kind of work needs standing rules that would be wrong everywhere else. The page on [Custom agents](/autonomous/custom-agents) covers when that is worth it.
+</Tip>
+
+## Your profile
+
+**The profile is who Piper is working for: your name, your email, and a short "about me" note.** Piper carries it into every session, so you never introduce yourself twice.
+
+Open it in **Settings**, then **Profile**, under the **About you** heading. The same fields also open as a dialog: select your name at the bottom of the sidebar, then the profile row at the top of the menu. That route is quicker for a one-line fix.
+
+<Steps>
+  <Step title="Enter your name">
+    Type the name Piper should call you into **Name**. It holds up to 100 characters.
+  </Step>
+  <Step title="Enter your email">
+    Type your address into **Email**. It has to look like a real address, and it runs up to 200 characters.
+  </Step>
+  <Step title="Write a short about-me note">
+    In **About me**, write a few sentences on your role and how you like to receive work: what you do, what you are working towards, and the shape you want answers in. It holds up to 2,000 characters.
+  </Step>
+</Steps>
+
+Each field saves roughly as soon as you stop typing, and immediately when you leave it.
+
+<Note>
+  What you enter here also appears on the **Memory** page as facts. Those rows carry no edit or remove controls there. Change a field on the **Profile** page and the memory record follows.
+</Note>
+
+## How these differ from memory
+
+You write instructions and the profile. Piper learns memory, and you prune it.
+
+| | Where it comes from | Where you change it |
+|---|---|---|
+| **Standing instructions** | You type them | **Settings > Instructions** |
+| **Profile** | You type it | **Settings > Profile** |
+| **[Memory](/context/memory)** | Piper picks facts up as you work, and you can add your own | **Settings > Memory** |
+
+Instructions tell Piper how to behave. The profile tells Piper who it is working for. Memory is the running record of facts Piper has picked up along the way.
+
+All three reach every session the default Piper runs, so a rule you write in instructions never needs repeating as a memory fact. A session you hand to a [custom agent](/autonomous/custom-agents) follows that agent's instructions instead.
+
+<Warning>
+  Piper never keeps a secret value in your profile or your memory. Text that looks like a credential, an API key, a token, or a private key is refused on save, in the profile fields and in memory alike. Put credentials in [Secrets](/connections/secrets), where they sit in your Mac's keychain.
+</Warning>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Memory" icon="brain" href="/context/memory">
+    The facts Piper learns as you work, and how to review or remove them.
+  </Card>
+  <Card title="Response style" icon="sliders" href="/context/response-style">
+    Tone, length, formatting, and emoji, set once and applied everywhere.
+  </Card>
+  <Card title="First run" icon="rocket" href="/getting-started/first-run">
+    The four setup questions, including the first "about you".
+  </Card>
+  <Card title="Custom agents" icon="robot" href="/autonomous/custom-agents">
+    Purpose-built agents with their own instructions, tools, and skills.
+  </Card>
+</CardGroup>

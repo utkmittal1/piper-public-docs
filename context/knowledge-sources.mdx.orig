@@ -1,0 +1,94 @@
+---
+title: "Knowledge Sources"
+description: "How to point Piper at folders of your own documents, which file types get indexed, what the status and counts mean, and how to re-index or remove a folder."
+---
+
+Point Piper at a folder of your documents and it can search them when a task calls for it. Ask about last quarter's pricing decision and Piper finds the passage in your own deck, instead of asking you to paste it in. The indexing and the searching both happen on your Mac.
+
+**A knowledge source is a folder you have added for Piper to search.** Piper reads the supported documents in that folder, breaks their text into passages, and builds a local search index. Nothing about the folder changes. Your files stay exactly where they are.
+
+## Add a folder
+
+<Steps>
+  <Step title="Open Knowledge Sources">
+    In **Settings**, select **Knowledge Sources**.
+  </Step>
+  <Step title="Choose Add a folder">
+    Select **Add a folder** and pick the folder you want in the picker. Piper names the source after the folder.
+  </Step>
+  <Step title="Wait for indexing to finish">
+    Indexing starts on its own. Watch the card's status, which reaches **Up to date** once the folder is searchable.
+  </Step>
+</Steps>
+
+Piper walks the whole tree, subfolders included.
+
+## Which files get indexed
+
+Piper indexes eight file types and skips everything else:
+
+| Type | Extensions |
+|---|---|
+| Documents | `.docx`, `.pdf` |
+| Spreadsheets | `.xlsx`, `.csv` |
+| Slides | `.pptx` |
+| Text | `.md`, `.txt`, `.xml` |
+
+Everything else in the folder is left alone, including `.json` and `.html`, which are usually machine output rather than something you wrote. Piper also skips hidden files and folders, Office lock files, and symbolic links, so the index stays clean.
+
+<Note>
+  Piper sets no cap on how many files a folder holds or how large any one file is. A large folder simply takes longer on its first pass.
+</Note>
+
+## Reading a source card
+
+Each folder gets a card showing its name, its location, a status, and its counts.
+
+| Status | What it means |
+|---|---|
+| **Queued** | Waiting its turn to be indexed |
+| **Indexing…** | Being read now, with a count of files done out of the total |
+| **Up to date** | Indexed and searchable |
+| **Needs attention** | The folder went missing, or Piper's on-device search model is not ready yet, with the detail behind the info icon |
+| **Couldn't index** | The folder could not be read, with the reason behind the info icon |
+
+The counts read as **files** and **passages**. A passage is a chunk of about 1,000 characters of text, with a little overlap so a sentence spanning a boundary is not lost. One long PDF becomes many passages, which is why the passage count runs far ahead of the file count. A card that is up to date also shows when it was last updated.
+
+## Staying current
+
+Piper keeps each folder in step with what is on your Mac. It watches the folder and picks up an edit a few seconds after you stop typing, and it sweeps every folder every half hour as a backstop. When you open the app, it indexes whatever changed while Piper was closed.
+
+You can also force a pass. Select **Re-index** on a card and Piper checks the folder again straight away. It only reads what actually changed, so a re-index of a settled folder is quick.
+
+## Removing a folder
+
+Select **Remove source** on the card and confirm. That drops the folder from the search index and leaves your documents exactly where they were.
+
+## What to know
+
+**Piper searches by meaning, not by keyword.** Ask for "the argument against raising prices" and Piper finds passages that make that argument, whether or not they use those words. Each result comes back with the file it came from and a relevance score.
+
+Two things have to be true before Piper reaches for your knowledge. The agent running the task needs knowledge search turned on, which it is out of the box. Check it in **Settings**, then **Tools**, on the **Search knowledge** row. At least one of your folders also has to hold indexed passages. Add a folder, let it finish, and both are met.
+
+<Warning>
+  Indexing and search run on your Mac, and no file content leaves your device to build the index. Passages Piper actually uses to answer you go to the engine along with the rest of the conversation, the same as anything else you type. The page on [Your data stays local](/control/your-data-stays-local) draws that line in full.
+</Warning>
+
+Knowledge Sources hold your own documents, which Piper reads, indexes, and searches. It never writes to them. [Memory](/context/memory) is a different thing: short facts about you rather than files. [Integrations](/connections/integrations) are different again: live connections to apps like Gmail and Notion.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="link" href="/connections/integrations">
+    Connect live apps like Gmail, Slack, and Notion.
+  </Card>
+  <Card title="Memory" icon="brain" href="/context/memory">
+    The short facts Piper carries from one task to the next.
+  </Card>
+  <Card title="Tools" icon="wrench" href="/working/tools">
+    Choose which capabilities the default Piper may use, knowledge search included.
+  </Card>
+  <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
+    Where your files, memory, and credentials live.
+  </Card>
+</CardGroup>

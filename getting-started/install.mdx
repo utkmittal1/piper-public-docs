@@ -1,102 +1,43 @@
 ---
 title: "Set up Piper"
-description: "The four answers Piper asks for the first time you open it, the AI provider you have to set up before anything runs, what each provider asks you for, and how to change any of it later."
+description: "The onboarding Piper runs the first time you open it, what it collects and why each piece matters, and the three AI providers to choose between."
 ---
 
-Setting Piper up is four questions, asked once, the first time you open Piper. Three of them are about you: your name, your email address, and a note on what you do. The fourth is which AI provider does Piper's thinking, and Piper cannot run a task until that one is answered and ready.
+The first time you open Piper, it walks you through a short onboarding. Piper introduces itself, asks who you are and what you work on, and connects you to an AI provider. It takes a couple of minutes, and Piper is ready to run its first task at the end of it.
 
-## Before you start
+Two things come out of that. Piper learns who it is working for, and Piper gets something to think with.
 
-**A Mac.** Piper runs on macOS, on your own machine, and your work stays there.
+## Tell Piper who it is working for
 
-**An AI provider.** An AI provider is the service that does Piper's thinking. Piper is the assistant you talk to, and the provider is what Piper sends each turn of the conversation to. There are three, of two kinds: two coding agents you sign in to with an account you already have, and one that calls a model provider's own API with a key you paste in.
+Piper asks for your name, your email address, and a few sentences about your work.
 
-| AI provider | What it is | What it asks you for |
-|---|---|---|
-| **Claude Code** | Anthropic's Claude Code agent runs your tasks. | A Claude account. Select **Sign in**, then **Open the sign-in page**. Approve Piper on the Claude sign-in page that opens in your browser, then paste the code it gives you into the dialog and select **Submit code**. |
-| **Codex** | OpenAI's Codex agent runs your tasks. | A ChatGPT account. Select **Sign in**. Piper opens a browser window, you finish there, and there is no code to paste. |
-| **Bring your own model** | Connect any model provider with your own API key. | An API key you generate at Anthropic, OpenAI, or DeepSeek. There is no sign-in and no account for Piper itself. You paste the key into **Settings** once setup is over. |
+Your name and address are the small ones. Piper calls you by your name and uses your address to recognize what is yours, such as messages addressed to you.
 
-Pick whichever you already have. You can set the others up later, and switch between them whenever you like.
-
-<Note>
-  Piper stores an API key in your Mac's keychain. The credentials from a Claude Code or Codex sign-in go to a file inside Piper's own data folder instead, which keeps them separate from the ones your Mac already holds for those tools, so signing in to Piper does not sign you out anywhere else. [Your data stays local](/control/your-data-stays-local) covers both.
-</Note>
-
-## Set Piper up
-
-<Steps>
-  <Step title="Open Piper">
-    Piper asks these four questions once, on a fresh install. Select **Let's flock together** to reach the first one.
-
-    A counter above each question reads **1 of 4**. From the second question on, **Back** appears beside **Continue**, so you can change an answer you have already given.
-  </Step>
-  <Step title="Your name">
-    **What should I call you?** A first name is enough. Piper uses it in every session and keeps it as a fact about you, so give the name you want to hear.
-
-    Select **Continue** to move on. It is the same button for the first three questions, and selecting it with the box empty leaves you where you are, with a line under the box saying what Piper needs.
-  </Step>
-  <Step title="Your email address">
-    **Where can I reach you?** Piper uses your address to spot what is yours, such as messages addressed to you. The answer has to look like an email address, so a nickname will not pass.
-  </Step>
-  <Step title="About you">
-    **Tell me about yourself.** Write about your work, your goals, and how you like to communicate. Piper keeps the answer word for word and reads it at the start of every session, so it shapes how every later reply sounds. A few real sentences beat a job title.
-
-    This answer becomes your **About me**, which you can edit later in **Settings**. Enter starts a new line in this box rather than moving on, so select **Continue** when you are done.
-  </Step>
-  <Step title="Your AI provider">
-    The last question is which provider runs your tasks. Select the card for **Claude Code**, **Codex**, or **Bring your own model**.
-
-    Each card shows whether that provider is ready. A card reading **Signed in** needs nothing more. On one reading **Not signed in**, a **Sign in** button sits under the status, and finishing the sign-in there keeps you in setup, so Piper can work the moment it ends. If a sign-in you started earlier was abandoned, Piper says that sign-in expired and asks you to start again.
-
-    **Bring your own model** works differently. Its card reads **No model provider added yet** and carries no button, because you add an API key from a Settings page and Settings opens only once setup is done. Pick it anyway if that is what you have, finish setup, then add your key.
-  </Step>
-  <Step title="Finish">
-    Select **All set**. The button reads **Building the nest…** while Piper saves your four answers, and neither button responds until it is done. Then the home screen appears.
-  </Step>
-</Steps>
-
-<Note>
-No question can be skipped. Piper puts your profile into every session and cannot run a task without an AI provider, so a half-finished setup would leave you with an assistant that does not know you and cannot work. You do have to pick a provider card, but it does not have to be ready yet.
-</Note>
-
-<Warning>
-Piper saves nothing until you select **All set**. Close Piper part way through and it keeps none of your answers, so Piper asks all four again next time you open it. If the save itself fails, Piper says why and the button reads **Try again**.
-</Warning>
-
-## If you chose Bring your own model
-
-**Bring your own model** is ready only once you add a provider's API key, so Piper still has nothing to run on when setup ends. The home screen shows a notice saying so, with a button that opens the page you need.
-
-<Steps>
-  <Step title="Open the page">
-    In **Settings**, select **AI providers**.
-  </Step>
-  <Step title="Pick your provider">
-    Under **Model APIs**, select **Anthropic**, **OpenAI**, or **DeepSeek**. If you have no key yet, **Where do I get a key?** opens that provider's own key page.
-  </Step>
-  <Step title="Paste the key">
-    Paste it into **API key** and select **Save key**. Piper checks the key against the provider before it stores anything, so a key the provider rejects is never saved, and Piper shows what the provider said.
-  </Step>
-</Steps>
-
-The card then reads **API key saved**, and the panel lists the **Available models** that key can reach. [AI providers](/concepts/ai-providers) covers that page in full.
-
-## Changing your four answers later
-
-None of it is locked in. Your name, your email, and your **About me** note live in **Settings**, under **Profile**, where Piper saves each field as you finish typing it. Your providers live under **AI providers**, where you can sign another one in, add a second API key, or change which one runs new tasks.
-
-## Why the About me answer matters
-
-Of the four answers, **About me** changes the most about how Piper works for you. It tells Piper what you do, what you care about, and how you want things written. Piper reads it at the start of every session, alongside your **Instructions**.
-
-Piper also keeps your three profile answers as facts it cannot edit or drop on its own. Everything else it remembers about you, it can tidy up over time. These three change only when you change them.
-
-A short, concrete answer beats a long vague one. Two or three sentences are plenty: what you do and where, what you spend your week on, and who you work with.
+The note about your work matters most. Piper reads it at the start of every session, so it shapes every reply you get. Write what you do, what you spend your week on, and how you want work handed back. Two or three real sentences beat a job title.
 
 <Tip>
-Write it the way you would brief a new colleague on their first day. "I run product for the payments team at a mid-size fintech. Most of my week goes to specs, competitor research, and keeping engineering and design pointed at the same thing. I report to a VP who wants the recommendation first." That tells Piper far more than a job title does.
+Write it the way you would brief a new colleague on their first day. "I run product for the payments team at a mid-size fintech. Most of my week goes to specs, competitor research, and keeping engineering and design pointed at the same thing. I report to a VP who wants the recommendation first." That tells Piper far more than "product manager" does.
 </Tip>
+
+Piper keeps these three as facts about you that it cannot edit or drop on its own. Everything else it learns, it can tidy up over time. These change only when you change them, under **Profile** in **Settings**.
+
+## Choose an AI provider
+
+An AI provider is the service that does Piper's thinking. Piper is the assistant you talk to, and the provider is what Piper sends each turn of the conversation to. Until one is set up and ready, Piper cannot run a task at all.
+
+There are three:
+
+- **Claude Code** runs your tasks on Anthropic's Claude Code agent. Sign in with a Claude account.
+- **Codex** runs them on OpenAI's Codex agent. Sign in with a ChatGPT account.
+- **Bring your own model** calls a model provider's own API with a key you generate at Anthropic, OpenAI, or DeepSeek. There is no sign-in.
+
+Pick whichever you already have. You can set the others up later and switch between them whenever you like. [AI providers](/concepts/ai-providers) covers each one in full, including what the sign-in asks for and where an API key goes.
+
+Onboarding shows the three as cards, and each card says whether that provider is ready. You can sign an agent in from its card without leaving onboarding, so Piper can work the moment it ends. **Bring your own model** is the exception: its card carries no button, because a key is added from a Settings page and Settings opens only once onboarding is done. Pick it anyway, then open **Settings**, select **AI providers**, and add your key. Piper cannot run anything until you do, and the home screen says so.
+
+<Warning>
+Piper saves nothing until you reach the end and select **All set**. Close Piper before that and it keeps none of what you typed, so onboarding starts over next time you open it. Nothing in it can be skipped either, because Piper cannot work without your profile or a provider.
+</Warning>
 
 ## Next steps
 

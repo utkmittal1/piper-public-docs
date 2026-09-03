@@ -1,38 +1,38 @@
 ---
 title: "Integrations"
-description: "How to connect integrations like Gmail, Slack, and Notion, the four ways an integration connects, what Piper may do once one is connected, and how to add an MCP server of your own."
+description: "How to set up integrations like Gmail, Slack, and Notion, the four ways to set up an integration, what Piper may do once one is in place, and how to add an MCP server of your own."
 ---
 
-An integration is a connection between Piper and an app you already use, such as Gmail, Slack, or Notion. Piper ships 26 of them. Each integration brings its own tools, some that look things up and some that change something, and Piper reaches an app only through an integration you have connected.
+An integration is a connection between Piper and an app you already use, such as Gmail, Slack, or Notion. Piper ships 26 of them. Each integration brings its own tools, some that look things up and some that change something, and Piper reaches an app only through an integration you have set up.
 
 Every integration is an MCP server. MCP is the Model Context Protocol, the standard a service uses to publish its tools so an assistant like Piper can call them. The 26 that ship with Piper are MCP servers it already knows how to reach and sign in to, and you can point Piper at any other service that publishes one.
 
-## When to connect an integration
+## When to set up an integration
 
-Connect an integration when the work you want Piper to do lives in that app. With Gmail connected, Piper can search your mail while it drafts a reply. With Notion connected, it can read the page a task refers to.
+Set up an integration when the work you want Piper to do lives in that app. With Gmail set up, Piper can search your mail while it drafts a reply. With Notion set up, it can read the page a task refers to.
 
-You connect one integration at a time, and you can disconnect any of them later. Every tool that changes something in the app ships set to ask you before it runs, so a fresh connection cannot send, post, or delete anything on its own.
+You set up one integration at a time, and you can disconnect any of them later. Every tool that changes something in the app ships set to ask you before it runs, so a new integration cannot send, post, or delete anything on its own.
 
 ## The Integrations page
 
-In **Settings**, select **Integrations**. Integrations you have connected sit under **Connected**, the rest sit under **Available**, and the search box at the top filters both lists by name. Select any card to open that integration's panel.
+In **Settings**, select **Integrations**. Integrations you have set up sit under **Connected**, the rest sit under **Available**, and the search box at the top filters both lists by name. Select any card to open that integration's panel.
 
 [Integrations catalog](/reference/integrations-catalog) lists all 26 and what each one can do.
 
-## The four ways an integration connects
+## The four ways to set up an integration
 
-Each integration connects one way, and its panel shows which.
+Each integration uses one of these four, and its panel shows which.
 
 - Sign in once, in your browser. Select **Connect**, then approve the sign-in page that opens in your browser. Seventeen of the 26 work this way: Notion, Linear, Asana, Todoist, Miro, Canva, Stripe, Calendly, Airtable, Monday, Jotform, SurveyMonkey, PayPal, Otter.ai, Fireflies, Wix, and Atlassian.
 - Register Piper with the provider first. Gmail, Google Drive, Google Calendar, and Slack need you to create an OAuth app in that provider's own console. Work through the numbered steps under **Setup** in the panel, and copy the redirect URI shown there into the provider's console. Then paste the **Client id** and **Client secret**, select **Connect**, and approve the sign-in page in your browser.
 - Paste a key. Figma, Excalidraw, Firecrawl, and GitHub take an API key or access token you generate in that service. GitHub wants a fine-grained personal access token. Paste it into the **API key** box and select **Connect**.
-- One integration needs no sign-in at all. AWS Documentation reads public documentation and runs on your Mac, so it needs no account and no key. Its MCP server starts through a command called `uvx`, which has to be on your Mac already. Piper checks for it when you select **Connect**, and if it is missing Piper names it and the connection does not go through.
+- One integration needs no sign-in at all. AWS Documentation reads public documentation and runs on your Mac, so it needs no account and no key. Its MCP server starts through a command called `uvx`, which has to be on your Mac already. Piper checks for it when you select **Connect**, and if it is missing Piper names it and stops there.
 
 <Note>
-  Six integrations open with numbered setup steps to work through before they can connect: Gmail, Google Drive, Google Calendar, Slack, Atlassian, and GitHub. The steps differ from one to the next, and most also link to the provider's own developer portal.
+  Six integrations open with numbered setup steps you work through before Piper can reach them: Gmail, Google Drive, Google Calendar, Slack, Atlassian, and GitHub. The steps differ from one to the next, and most also link to the provider's own developer portal.
 </Note>
 
-## Connect an integration
+## Set up an integration
 
 <Steps>
   <Step title="Open Integrations">
@@ -42,7 +42,7 @@ Each integration connects one way, and its panel shows which.
     Find it under **Available**, or type its name in the search box, then select its card.
   </Step>
   <Step title="Work through the setup steps, if the panel shows any">
-    Six integrations need a one-time registration with the provider. Finish those numbered steps before you connect.
+    Six integrations need a one-time registration with the provider. Finish those numbered steps before you select **Connect**.
   </Step>
   <Step title="Leave Add to Piper on connect ticked">
     It is ticked by default, and it is what gives Piper the integration's tools.
@@ -55,29 +55,29 @@ Each integration connects one way, and its panel shows which.
 The integration then moves to the **Connected** list.
 
 <Note>
-  Connecting an integration and giving Piper its tools are two separate things, which is why the tick box exists. Untick **Add to Piper on connect** and Piper keeps the credentials without handing any agent the integration's tools. To add them later, open **Settings** > **Tools**, find the **Integrations** section, and select **+ Add Integration**.
+  Setting up an integration and giving Piper its tools are two separate things, which is why the tick box exists. Untick **Add to Piper on connect** and Piper keeps the credentials without handing any agent the integration's tools. To add them later, open **Settings** > **Tools**, find the **Integrations** section, and select **+ Add Integration**.
 </Note>
 
-## What Piper may do once an integration is connected
+## What Piper may do once an integration is set up
 
-Open a connected integration's panel to see its **Available tools**, split into two groups.
+Open the panel of an integration under **Connected** to see its **Available tools**, split into two groups.
 
 - **Read** tools look things up: search your mail, list your issues, fetch a page. Piper runs almost all of these on its own while it works, and a handful ask first.
 - **Write** tools change something: send a message, create a task, update a record. Every one of them ships set to ask you before it runs.
 
 Turn a tool on or off, and change whether it asks, in **Settings** > **Tools**, which governs the built-in Piper agent. Some tools ship switched off and stay off until you turn them on there. See [Tools](/working/tools) for how that page works.
 
-Piper puts each connection's credentials in your Mac's keychain, one item per integration, and never shows them back to you.
+Piper puts each integration's credentials in your Mac's keychain, one item per integration, and never shows them back to you.
 
 <Note>
-  Connecting an integration lets Piper reach that app's own service over the internet. Piper keeps your sessions, files, and credentials on your Mac, and the app's data travels the same way it does when you use it yourself. See [Your data stays local](/control/your-data-stays-local).
+  Setting up an integration lets Piper reach that app's own service over the internet. Piper keeps your sessions, files, and credentials on your Mac, and the app's data travels the same way it does when you use it yourself. See [Your data stays local](/control/your-data-stays-local).
 </Note>
 
 <Warning>
-  Piper reaches an app only through an integration you connected. Select **Disconnect** on a connected integration's panel to end that: Piper removes its tools from every agent and deletes the credentials it stored. You can connect it again at any time.
+  Piper reaches an app only through an integration you set up. Select **Disconnect** in that integration's panel to end it: Piper removes its tools from every agent and deletes the credentials it stored. You can set the integration up again at any time.
 </Warning>
 
-## When a connection expires
+## When an integration's credentials expire
 
 The credentials an integration holds do not last forever. When they expire, its tools stay paused until you sign in again, and Piper shows a banner across the top of the window naming what needs attention. Select **Open Integrations** in the banner to go straight there.
 

@@ -1,0 +1,83 @@
+---
+title: "Response style"
+description: "The four controls that set the length, tone, formatting, and emoji of Piper's replies, where they live in Settings, and what each option changes."
+---
+
+Set the length, tone, and format you prefer once, and every reply comes back that way. If you want short answers written as flowing paragraphs, say so here instead of asking for it again on every task.
+
+**Response style is four settings that shape how Piper writes to you.** Each one holds a small number of choices.
+
+## Where the controls live
+
+In **Settings**, select **Instructions**. The four controls sit at the top of that page, under **Communication Style**.
+
+Each custom agent has the same four controls of its own. Open **Settings**, select **Custom Agents**, pick the agent, then open its **Instructions** tab. Setting a style on one agent leaves every other agent alone.
+
+<Note>
+  Changing a pill saves right away. There is no save button.
+</Note>
+
+## The four controls
+
+| Control | Options | Starts on |
+|---|---|---|
+| **Response Length** | Concise, Balanced, Detailed | Balanced |
+| **Tone** | Formal, Neutral, Casual | Neutral |
+| **Formatting** | Structured, Balanced, Prose | Balanced |
+| **Emoji** | None, Occasional | Occasional |
+
+### Response Length
+
+- **Concise.** Piper leads with the answer or the action taken and cuts the preamble. One sentence stays one sentence.
+- **Balanced.** The length matches the question. A simple question earns a few sentences, a complex one earns a few paragraphs.
+- **Detailed.** Piper gives context before specifics, walks through processes step by step, and answers the obvious follow-up before you ask it.
+
+### Tone
+
+- **Formal.** Complete sentences, no contractions, no slang, the register of business correspondence.
+- **Neutral.** Direct and professional, with contractions where they sound natural. Neither stiff nor chatty.
+- **Casual.** Relaxed and conversational, the way a sharp colleague talks. Light humor is fine, forced enthusiasm is not.
+
+### Formatting
+
+- **Structured.** Headings, bullets, numbered steps, tables, and bold key terms, so you can get the gist from the headings and the bold text alone.
+- **Balanced.** The content picks the form. Three items live in a sentence, five options belong in a table, a concept belongs in a paragraph.
+- **Prose.** Flowing paragraphs with headings and bullets kept to a minimum, closer to a well-written memo.
+
+### Emoji
+
+- **None.** No emoji anywhere in Piper's own replies, status updates, or summaries.
+- **Occasional.** Emoji used rarely and with purpose: a status marker, a section cue, a touch of warmth.
+
+## What the controls reach
+
+**These four controls shape how Piper talks to you in the conversation.** The work itself follows its own rules. Ask for an email, a document, or a report, and that artifact keeps the conventions of its format and whatever you asked for. Setting **Response Length** to **Concise** will not shorten a report you asked to be thorough. Setting **Tone** to **Formal** will not stiffen a casual post you asked Piper to draft.
+
+Emoji works the same way, with one exception in your favor. Even on **None**, a requested artifact whose format conventionally uses emoji, like a social post, can carry them. Your intent for that artifact wins.
+
+<Tip>
+  If a reply reads the way you want but the deliverable does not, change the request. The page on [Describing what you need](/working/describing-what-you-need) covers how to ask for a particular shape of artifact.
+</Tip>
+
+## How this relates to instructions
+
+Style controls and [standing instructions](/context/instructions-and-profile) sit on the same page and both reach every session the default Piper runs. The controls cover the four choices Piper hands you a button for. Instructions cover everything else, in your own words. A rule like "always end with the next step" belongs in **Custom Instructions**.
+
+A session you hand to a custom agent reads that agent's style and instructions instead of these.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Instructions and profile" icon="pencil" href="/context/instructions-and-profile">
+    The standing rules and the "about me" note Piper reads every session.
+  </Card>
+  <Card title="Memory" icon="brain" href="/context/memory">
+    The facts Piper learns as you work and carries between tasks.
+  </Card>
+  <Card title="Custom agents" icon="robot" href="/autonomous/custom-agents">
+    Agents with their own instructions, style, tools, and skills.
+  </Card>
+  <Card title="Reviewing results" icon="table" href="/working/reviewing-results">
+    The charts, tables, files, and drafts Piper answers with.
+  </Card>
+</CardGroup>

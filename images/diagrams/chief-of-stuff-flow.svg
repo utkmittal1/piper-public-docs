@@ -1,11 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" role="img" aria-labelledby="ttl desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" role="img" aria-labelledby="ttl desc">
   <title id="ttl">How Chief of Stuff works</title>
-  <desc id="desc">The sources you switch on, such as Gmail, Slack, and Google Calendar, feed Chief of Stuff. It checks them, does the work itself, and stacks finished cards under Ready, grouped as Before your next meeting and Ready for you. You send, open, or dismiss each card, and nothing goes out until you click.</desc>
+  <desc id="desc">The sources you switch on, such as Gmail, Slack, Google Calendar, Google Drive, Notion, and any other app you connect, feed Chief of Stuff. It checks them, does the work itself, and stacks finished cards under Ready, grouped as Before your next meeting and Ready for you. You send, open, or dismiss each card, and nothing goes out until you click.</desc>
   <style>
     svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
     @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
     text { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill:var(--ink); }
     .box { fill:var(--fill); stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .more { fill:none; stroke:var(--ink); stroke-opacity:.35; stroke-width:1.5; stroke-dasharray:5 4; }
     .acc-box { fill:var(--fill); stroke:var(--accent); stroke-width:2; }
     .t { font-size:16px; font-weight:600; }
     .c { font-size:14px; font-weight:600; }
@@ -18,22 +19,34 @@
     </marker>
   </defs>
 
-  <text class="t" x="30" y="44">Watched sources</text>
+  <text class="t" x="30" y="32">Watched sources</text>
 
-  <rect class="box" x="30" y="62" width="190" height="44" rx="8"/>
-  <text class="c" x="125" y="90" text-anchor="middle">Gmail</text>
+  <rect class="box" x="30" y="48" width="190" height="40" rx="8"/>
+  <text class="c" x="125" y="73" text-anchor="middle">Gmail</text>
 
-  <rect class="box" x="30" y="114" width="190" height="44" rx="8"/>
-  <text class="c" x="125" y="142" text-anchor="middle">Slack</text>
+  <rect class="box" x="30" y="96" width="190" height="40" rx="8"/>
+  <text class="c" x="125" y="121" text-anchor="middle">Slack</text>
 
-  <rect class="box" x="30" y="166" width="190" height="44" rx="8"/>
-  <text class="c" x="125" y="194" text-anchor="middle">Google Calendar</text>
+  <rect class="box" x="30" y="144" width="190" height="40" rx="8"/>
+  <text class="c" x="125" y="169" text-anchor="middle">Google Calendar</text>
 
-  <text class="s" x="30" y="236">only the ones you switch on</text>
+  <rect class="box" x="30" y="192" width="190" height="40" rx="8"/>
+  <text class="c" x="125" y="217" text-anchor="middle">Google Drive</text>
 
-  <path class="ln" d="M224 84 C 270 84 274 158 316 158"/>
-  <path class="ln" d="M224 136 C 270 136 274 170 316 170"/>
-  <path class="ln" d="M224 188 C 270 188 274 182 316 182"/>
+  <rect class="box" x="30" y="240" width="190" height="40" rx="8"/>
+  <text class="c" x="125" y="265" text-anchor="middle">Notion</text>
+
+  <rect class="more" x="30" y="288" width="190" height="40" rx="8"/>
+  <text class="s" x="125" y="313" text-anchor="middle">any other app you connect</text>
+
+  <text class="s" x="30" y="350">only the ones you switch on</text>
+
+  <path class="ln" d="M224 68 C 272 68 276 140 316 140"/>
+  <path class="ln" d="M224 116 C 272 116 276 155 316 155"/>
+  <path class="ln" d="M224 164 C 272 164 276 170 316 170"/>
+  <path class="ln" d="M224 212 C 272 212 276 185 316 185"/>
+  <path class="ln" d="M224 260 C 272 260 276 200 316 200"/>
+  <path class="ln" d="M224 308 C 272 308 276 212 316 212"/>
 
   <rect class="acc-box" x="320" y="108" width="200" height="124" rx="10"/>
   <text class="t" x="420" y="152" text-anchor="middle">Chief of Stuff</text>
