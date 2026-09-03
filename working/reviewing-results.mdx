@@ -1,0 +1,102 @@
+---
+title: "Reviewing results"
+description: "The ten kinds of card Piper answers with, what you can do with each one, how Piper shows work still in progress, and how to send a comment on a document back into the conversation."
+---
+
+A card is a block inside a reply that holds a chart, a table, a question, or a finished file. You sort a table, copy a chart, or open a file where the card appears. Piper draws ten kinds.
+
+## The ten kinds of card
+
+| Card | What it is | What you do with it |
+| --- | --- | --- |
+| Chart | A drawn chart, styled to whichever Piper theme you are using | Hover a point for its values, then **Copy image**, **Save PNG**, **Save SVG**, **Copy data as CSV**, or **Copy chart spec** |
+| Table | Structured rows | Sort by any column, filter, page through, **Copy table**, **Save as CSV**, or **Copy as markdown** |
+| Diagram | A drawing in SVG, the vector format that stays sharp at any size | **Copy image**, **Save PNG**, **Save SVG**, or **Copy markup** |
+| Web page | A small self-contained HTML page, such as a dashboard | Use it in place, **Save HTML**, or **Copy HTML** |
+| Image | A picture, with an optional caption | **Copy image** or **Save image** |
+| Plan | A numbered card headed **Execution plan** | Read the steps Piper set itself |
+| Question | A short form when Piper needs a decision from you | Answer with a tap |
+| File | A finished deliverable | **Open in default app**, **Show in Folder**, **Copy Path**, or **Copy Contents** |
+| Suggestions | Two to four tappable follow-ups, written as you would say them | Tap one to send it as your next message |
+| Theme picker | The slide themes that ship with Piper, shown as cards | Tap the one you want and Piper builds the deck in it |
+
+Hover a chart, diagram, image, or web page to reveal a small row of actions in its corner. A table's actions sit in a bar above the rows, beside the filter box, and stay visible.
+
+<Note>
+  A chart shows values on hover when its spec turns them on, and Piper does that on every chart it draws. The spec is the chart's own description of itself, written in Vega-Lite, the grammar Piper draws charts with. **Copy chart spec** puts it on your clipboard.
+</Note>
+
+## Working through a reply
+
+<Steps>
+  <Step title="Read the plan">
+    On a job with several steps, Piper opens with a plan card listing the steps it set itself. While the work runs the card holds the plan as Piper made it, and the strip above the message box shows which step is running. Piper settles the card to the plan's final state once the turn ends.
+  </Step>
+  <Step title="Answer a question card">
+    Answer as soon as the card appears, even while the reply is still being written. Piper draws it only once the whole card has arrived, so it is never live before it works. Pick an option, type into **Something else**, or select **Skip**. Answering ends the turn in progress so your answer is used, and Piper picks the work back up from there.
+  </Step>
+  <Step title="Step through a card that asks more than one thing">
+    A card with several questions shows a `1 of 3` counter and an arrow either side. Picking an option moves you to the next question rather than sending, and Piper sends every answer at once when you answer the last one. Where a question takes more than one answer, tick what applies and select **Confirm**, which stays greyed out until you tick something. Number keys pick an option, the arrow keys move between questions, and Escape puts the card away.
+  </Step>
+  <Step title="Act on the cards">
+    Sort the table. Copy the chart. Open the file. A file card's **File actions** menu holds **Open in default app**, **Show in Folder**, **Copy Path**, and **Copy Contents**.
+  </Step>
+  <Step title="Follow up">
+    Tap a suggestion under the reply, or type your own message. Either way the conversation carries on with everything above it still in view.
+  </Step>
+</Steps>
+
+## Watching work in progress
+
+While a task with a plan is running, a strip sits above the message box with a circle for each step. It shows the name of the step running now, a **Step 2 of 5** count, and the time the job has taken so far, as **4m 12s**. Select the strip to open the full list, headed **Execution plan** with a line reading **3 of 5 done**. The circle for the running step spins rather than filling, because Piper does not estimate how far through a step it has got.
+
+Piper draws tables, diagrams, and suggestion chips as they arrive, so a long table fills in row by row. Its filter box, sort buttons, and pager appear only once the whole table has arrived. Everything else arrives whole: charts, web blocks, images, plans, questions, file cards, and the theme picker. A chart or a web block still on its way reads **Preparing a visual…** in the meantime.
+
+Piper can also replace a card. When it revises a chart, a table, or a file, the new version takes the old card's place rather than stacking a second copy underneath. A plan works differently: Piper keeps the first plan card where it is and updates that one, so the conversation holds a single record of the plan.
+
+A question card and a theme picker both shrink once you have answered. Piper leaves a one-line record of what it asked, because your answer is the message directly below it.
+
+<Note>
+  A table shows the row count above the rows, as **47 rows**, and reads **12 of 47 rows** while a filter is on. It draws at most 1,000 rows. Past that it says **Showing first 1000 of 4312 rows**, and you can ask Piper for the whole result as a file.
+</Note>
+
+<Warning>
+  If a card arrives damaged, or a reply ends early and cuts one off, ask Piper to draw it again.
+</Warning>
+
+## Commenting on a document
+
+A comment is a note you attach to one passage of a document Piper wrote, and Piper reads the passage and the note together. Open the document from the file card or the **Artifacts** rail, select the passage you disagree with, and a comment button appears next to it. Write your note and select **Add to chat**.
+
+Your comment then sits above the message box as a chip showing the file name and what you wrote, with an × to drop it. Piper reads it with your next message. A comment also counts as a message on its own, so you can select **Send** with nothing typed and the notes are the message.
+
+Where you can leave a comment depends on the file. Selecting a passage works in a Word file and in a Markdown file shown as **Preview**. Commenting on a particular line works in Markdown shown as **Source**, in an HTML page, in a spreadsheet or `.csv`, and in plain text and code files. PDFs, presentations, and images take no comments at all.
+
+## Drafts Chief of Stuff prepares for you
+
+[Chief of Stuff](/autonomous/chief-of-stuff) never sends anything from the work it starts on its own. Piper refuses every integration's write tools inside that work, so a message written there comes back to you as a draft. The draft card shows where it is headed, why it was written, and the exact body that would go out, marked **Waiting**.
+
+A plain-text draft shows **Send**, **Edit**, **Copy**, **Refine**, and **Dismiss** on the card itself, plus **Open session** to see the work behind it. For a formatted email, select **Review** to open the **Review email** window, with the recipients above the body and **Send** in the footer.
+
+Reading a draft is not approving it. Nothing goes out until you select **Send** yourself, on the card or in the review window.
+
+<Warning>
+  A task you started yourself works the other way. A session on **Autopilot**, which is where a new session starts, can send through a connected integration such as Gmail or Slack without showing you the message first. Switch the session to **Manual** when you want to see an outbound action before it happens. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
+</Warning>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Files and deliverables" icon="folder-open" href="/working/files-and-deliverables">
+    Where a finished deck, spreadsheet, or document lands and how to open it.
+  </Card>
+  <Card title="Chief of Stuff" icon="inbox" href="/autonomous/chief-of-stuff">
+    The finished work Piper prepares for you to review, drafts included.
+  </Card>
+  <Card title="Describing what you need" icon="pen-to-square" href="/working/describing-what-you-need">
+    Writing a request Piper can act on, and steering a job while it runs.
+  </Card>
+  <Card title="Appearance" icon="palette" href="/working/appearance">
+    Light, dark, and the themes charts and diagrams follow.
+  </Card>
+</CardGroup>

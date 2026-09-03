@@ -1,0 +1,93 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Piper",
+  "description": "Piper is a personal AI assistant for work that runs as an app on your Mac. Describe what you need, and Piper plans the steps, does the work, and hands back the finished file.",
+  "colors": {
+    "primary": "#a03a22",
+    "light": "#b4552e",
+    "dark": "#a03a22"
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting started",
+        "pages": [
+          "getting-started/overview",
+          "getting-started/install",
+          "getting-started/first-task"
+        ]
+      },
+      {
+        "group": "Core concepts",
+        "pages": [
+          "concepts/how-piper-works",
+          "concepts/sessions-and-workspace",
+          "concepts/projects",
+          "concepts/ai-providers"
+        ]
+      },
+      {
+        "group": "What Piper knows about you",
+        "pages": [
+          "context/memory",
+          "context/instructions-and-profile",
+          "context/response-style",
+          "context/knowledge-sources"
+        ]
+      },
+      {
+        "group": "Connecting your tools",
+        "pages": [
+          "connections/overview",
+          "connections/integrations",
+          "connections/secrets",
+          "connections/web-and-sign-ins"
+        ]
+      },
+      {
+        "group": "Working with Piper",
+        "pages": [
+          "working/describing-what-you-need",
+          "working/reviewing-results",
+          "working/files-and-deliverables",
+          "working/skills",
+          "working/tools",
+          "working/notifications",
+          "working/appearance"
+        ]
+      },
+      {
+        "group": "Piper on its own",
+        "pages": [
+          "autonomous/chief-of-stuff",
+          "autonomous/autonomous-tasks",
+          "autonomous/long-running-tasks",
+          "autonomous/custom-agents"
+        ]
+      },
+      {
+        "group": "Staying in control",
+        "pages": [
+          "control/your-data-stays-local",
+          "control/approvals-and-permissions",
+          "control/sandbox"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "reference/integrations-catalog",
+          "reference/keyboard-shortcuts",
+          "reference/troubleshooting"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {}
+  }
+}

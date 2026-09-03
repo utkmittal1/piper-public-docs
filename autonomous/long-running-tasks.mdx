@@ -1,0 +1,132 @@
+---
+title: "Long-running tasks"
+description: "What a long-running task is, how the Orchestrator plans the work and hands it out in rounds of steps, what each step is given, where the task's files live, and how a job finishes or gives up."
+---
+
+A long-running task is a job too big for one session: researching a hundred accounts, auditing every page of a site, working through a folder of contracts. Piper writes a plan, breaks the job into steps, runs them in rounds, and keeps going until the job is done.
+
+## The Orchestrator and its steps
+
+A session is one task and the conversation around it, described on [Sessions and the workspace](/concepts/sessions-and-workspace). A long-running task is bigger than that. It gets one conversation of its own that plans the work, plus a separate session for every step it hands out.
+
+Piper calls that planning conversation the **Orchestrator**, and it plans rather than works. It decides what finished looks like, writes the plan down, hands each piece out as a step, checks what comes back against its own bar, and says when the job is done.
+
+A step is a real piece of work one session can finish on its own, start to finish, whatever the other steps in its round do. Every step writes its result into the task's own folder, which outlives every session in the task.
+
+The plan itself lives in a file called `plan.md`, in the Orchestrator's own workspace folder. Piper writes it before handing anything out and updates it every time work comes back, so the plan survives a conversation that gets cleared or restarted. Open the Orchestrator to read it.
+
+## What a step is given
+
+Every step gets three things beyond what an ordinary session gets.
+
+The first is its own assignment, which the Orchestrator writes and Piper hands over as the first message in that step's session. Open the step to read it. The second is the task's **Instructions**, the rules every step follows, which you can read and edit yourself in the rail on the task page. The third is a short snapshot of each of the ten most recent step sessions, with the path to that session's full work log, so a step can pick up what came before it.
+
+Piper keeps the plan out of the instructions on purpose, so no step starts doing work that belongs to another one, and it never gives a step the Orchestrator's conversation at all.
+
+Steps in the same round start together, so none of them can see what the others are doing while they work. That is why every assignment has to say where the step's result goes. Left to themselves, five steps would each invent a different place.
+
+<Note>
+  A step already running never picks up a change you or the Orchestrator makes to the instructions afterwards. Only steps created after the change follow it.
+</Note>
+
+## Rounds of steps
+
+Piper hands work out in rounds. A round holds at most five steps, and every step in a round runs at the same time. Nothing else starts while a step in the round is still going.
+
+When the last step of a round settles, Piper tells the Orchestrator how each one went: what the step was asked to do, what it reported, and whether it delivered, failed, stopped needing something, or was cut off part-way. The Orchestrator then updates the plan and either opens the next round or says the job is finished. A step that stopped part-way can be carried on rather than replaced, so it picks back up in its own session and its own folder with everything it already did.
+
+That cycle repeats. Plan, open a round, read the reports, open the next. A job of thirty steps runs as six rounds or more.
+
+<Note>
+  Five is the cap because Piper runs a limited number of sessions at once, and because a wider round does more work blind: steps running together cannot see what the others decided.
+</Note>
+
+<Note>
+  Two words for the same thing. The **Activity** tab calls each one a round, and the card Piper leaves in the Orchestrator's conversation calls it `Batch 3`, with a badge saying how many steps it holds.
+</Note>
+
+<Note>
+  Only a step that failed, that reported **Needs you**, or that was cut off can be carried on. A step that finished has nothing left to do, and a step whose session has been cleared away has nothing left to pick up from. Either way the Orchestrator writes a fresh assignment instead.
+</Note>
+
+## Start a long-running task
+
+<Steps>
+  <Step title="Do the thinking in an ordinary session">
+    Start a normal task and work out what you want. Gather the sources, settle the rules, make any files the job will need. Everything you agree here goes across.
+  </Step>
+  <Step title="Select Run autonomously">
+    The button sits in the session header, and its tooltip reads "Hand this work to a task that keeps at it until it is done". It is greyed out while the session is still answering you, so wait for the reply to finish.
+  </Step>
+  <Step title="Answer anything Piper still needs">
+    Piper writes the handoff from inside the session, so what it already knows goes across without you retyping it. Fill in whatever is missing before the task starts.
+  </Step>
+  <Step title="Open the task">
+    Select **Open task** on the card Piper leaves in the conversation, badged **New task**. The task also appears under **Autonomous tasks** in the sidebar, with `Long-running` in the **Type** column.
+  </Step>
+</Steps>
+
+<Note>
+  Piper decides nothing about whether the work is big enough. You said it was when you selected **Run autonomously**.
+</Note>
+
+## The task page
+
+<Frame>
+  <img src="/images/diagrams/long-running-task.svg" alt="One large job at the top. Piper's planning conversation splits it into a round of steps that run side by side, each in its own session. The steps report back, and the results rejoin the plan, which hands out the next round." />
+</Frame>
+
+Everything about the job sits on the task's page. Read the **Orchestrator** panel at the top for what it is doing: `Working` while it is thinking, `Waiting on 3 steps` while a round runs, or `Idle` with how long it has been. Under that sits the opening line of whatever it last said. Select the panel to open the conversation and read the reasoning yourself.
+
+Below that, the **Steps** tab carries the count in its own name, so it reads `Steps · 12`, and lists every step on its own card. Each card carries its own status: `Queued`, `Working`, `Done`, `Needs you`, `Failed`, or `Trying again`, and a step on its second or third try adds `Attempt 2 of 3` while it runs. Expand a card to read what the step reported, see anything it was blocked on, and open the files it produced. **Open session** on the card opens the step itself.
+
+The **Activity** tab is the plain running log, in sentences like `Opened round 3 with 5 steps`, `Round 3 came back`, `Gave up on a step after three tries`, and `A step was cut off when the app closed`.
+
+The badge beside the task's name reads **Working** whenever the job is live, and the line under it shows how far it has got: `3 steps going` while a round runs, `12 steps done` between rounds, or `not started yet` before the first one. There is no percentage. Piper counts the steps it has actually opened and finished, and the plan keeps changing as the work teaches the Orchestrator something, so there is no fixed total to count toward.
+
+Select **Pause** in the header to stop the task. Piper stops each step running at that moment and marks it "Stopped when the task was paused." Select **Resume** to start it again, and Piper picks those steps back up before it asks the Orchestrator for anything new.
+
+<Tip>
+  The rail on the right of the task page holds three panels. **Instructions** are the rules every step follows. **Artifacts** is the task's own folder, which holds everything the job delivers and anything it keeps from one step to the next, and it lives under `PiperData` in your home folder. **Memory** holds the facts Piper keeps for this task alone. See [Memory](/context/memory).
+</Tip>
+
+## How a job finishes
+
+Piper refuses to call a job finished while a step is still running, or while the task's folder is empty. It says so in the Orchestrator's conversation and asks for the steps that would actually finish the job. The **Activity** tab records the refusal with its reason. Beyond those two checks, "done" is the Orchestrator's own judgment about the work, not a guarantee it is good. Read what it produced.
+
+## When a job gives up
+
+A job can stop itself two ways. The Orchestrator can say outright that it cannot go on and name what it needs from you, and Piper takes that at its word. Or it can go quiet, and Piper pauses the task after waking it three times without it opening a step or declaring anything, then tells you "It stopped saying what to do next, so nothing more is running. Resume it to carry on."
+
+Steps have their own give-up rules, and Piper applies all three. It starts a step at most three times, counting the first, and the **Activity** tab records `Gave up on a step after three tries`. It gives up on a step still unfinished a day after that step first started, because finishing yesterday's work today is worse than not finishing it. And it cancels a step that writes nothing, says nothing, and calls no tool for twenty minutes, so the round that step belongs to can settle rather than waiting on it forever. In every case the round moves on.
+
+Piper notifies you when the whole job delivers and when it stops itself. Both notifications open with the task's own name, then "is done" or "stopped itself". Turn either off under **Settings** > **Notifications**, where they are listed as **Job finished** and **Task stopped itself**. See [Notifications](/working/notifications).
+
+<Warning>
+  A long-running task only moves while Piper is open and your Mac is on and awake. Quitting Piper does not pause the task. Piper marks any step that was running as cut off, and picks it back up in the folder it was using next time you open Piper. The **Activity** tab records that as `A step was cut off when the app closed`.
+</Warning>
+
+<Note>
+  Every restart of a step counts as one of its three attempts, whether Piper closed under it or you paused the task. Piper gives up on a step cut off three times. Select **Pause** before a long shutdown, and **Resume** when you are back.
+</Note>
+
+<Note>
+  Steps run with nobody watching, so they start on **Autopilot** and act without stopping to ask. A step that cannot get past something reports **Needs you** and names what it needs, rather than guessing. [Approvals and permissions](/control/approvals-and-permissions) covers what Autopilot allows and the two questions Piper always asks whatever the mode.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Autonomous tasks" icon="calendar" href="/autonomous/autonomous-tasks">
+    Recurring work Piper runs on a schedule, rather than one big job it drives to the end.
+  </Card>
+  <Card title="Sessions and the workspace" icon="folder" href="/concepts/sessions-and-workspace">
+    The unit of work behind every step, and the private folder each one gets.
+  </Card>
+  <Card title="Reviewing results" icon="eye" href="/working/reviewing-results">
+    How to read what Piper hands back and push it further.
+  </Card>
+  <Card title="Notifications" icon="bell" href="/working/notifications">
+    Which events reach you, and how to turn each one off.
+  </Card>
+</CardGroup>

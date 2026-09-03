@@ -1,0 +1,96 @@
+---
+title: "Projects"
+description: "How a project groups related sessions and gives them shared instructions, memory, reference files, and a deliverables folder, plus the progress summary each session writes."
+---
+
+A project groups related sessions and gives them shared context. It holds a name, a description of the work, standing instructions every session follows, the facts Piper remembers for that work, reference files, and a shared folder for deliverables.
+
+## When to make one
+
+Make a project when one piece of work runs across several sessions: a launch, a client, a report you keep coming back to. A one-off task needs nothing more than a session. Piper reads the project's description, instructions, and memory at the start of every session in it.
+
+You cannot change the name or the description after you select **Create**. You can change the instructions, the memory, and the sources whenever you like, so the description is the one answer worth writing carefully.
+
+## Create one and start working
+
+<Steps>
+  <Step title="Open Projects">
+    Select **Projects** in the sidebar, then **+ New Project**.
+  </Step>
+  <Step title="Say what the work is">
+    Fill in **What are you working on?** and **What are you trying to get done?**. The second answer is the description Piper reads at the start of every session in the project, so write it as orientation for a capable colleague.
+  </Step>
+  <Step title="Choose where it lives">
+    Under **Where should it live?**, pick **New folder** to let Piper manage the project folder, or **Existing folder** to point the project at a folder of your own. Then select **Create**.
+  </Step>
+  <Step title="Start a task in it">
+    On the project page, type into the message box under **Start a task in this project** and select **Send**. The new session opens inside the project.
+  </Step>
+</Steps>
+
+<Note>
+  You can also move an existing session in later. Open the session, select **Session actions**, then **Add to project**. For a session already in a project, that item reads **Move to project**, and **Remove from project** underneath it takes the session back out. Neither one works while the session is running.
+</Note>
+
+## The context every session shares
+
+A project page has a rail on the right with four panels. Everything in them is available to every session in the project.
+
+**Artifacts.** The project's shared deliverables folder. Any session in the project can write to it, and the files stay available to all the others. The rest of the project folder sits below it under **Other files**.
+
+**Instructions.** Standing guidance that every session follows: tone, format, constraints, anything you would otherwise repeat at the top of each task. Piper saves the text as you type, and a line under the box says when it saved. Project instructions take priority over Piper's own defaults.
+
+**Memory.** Facts that hold true inside this project and nowhere else: a decision made, a constraint agreed, a choice that shapes the work. Piper adds them as it learns them, and you can write one yourself with **Add a fact**. A project aims for 30 facts, and as the list fills Piper suggests what to fold or drop. See [Memory](/context/memory) for what Piper keeps at each of the three levels and how a cleanup suggestion works.
+
+**Sources.** Files you add as context for the whole project: a brief, a contract, a spreadsheet of last year's numbers. Piper gives every session in the project the list of its sources, each with a short summary, and reads the whole file when the task needs it. Piper does not copy the file into the project folder. It reads the file where you keep it, and marks it **Missing** if you move it.
+
+<Note>
+  A project takes up to 50 sources, in these formats: PDF, DOCX, XLSX, XLS, CSV, MD, TXT, JSON, and HTML. Add them with **Add sources** in the **Sources** panel.
+</Note>
+
+<Tip>
+  Knowledge Sources are separate. Those are folders of documents Piper indexes for the whole app, set up in **Settings**, and they are not attached to a project. See [Knowledge Sources](/context/knowledge-sources).
+</Tip>
+
+## The project folder
+
+Every project has one folder on disk, and the project header shows its path. Select the path to open the folder in Finder.
+
+Three things sit inside it. `artifacts/` holds the shared deliverables, `sessions/` holds one workspace folder per session, and `session-logs/` holds each session's work log. For a project Piper manages, all three sit at the top of the project folder, which lives under `PiperData` in your home folder. For a project pointed at a folder of your own, Piper puts all three in one subfolder it creates inside yours, and sessions can still read and edit the rest of your folder.
+
+## The running progress summary
+
+Every session writes its own progress as it goes, and inside a project that record is shared.
+
+A short **snapshot** appears as the caption under each session in the project's **Sessions** list, so you can read down the page and see where each thread stands. Each session also keeps a dated work log. Piper gives every session in the project the other sessions' snapshots, and reads a full log when it needs the detail behind one. That is how a project carries what it learned in one task into the next.
+
+## Pinning and deleting a project
+
+Pin the projects you work in most, so they stay easy to find once the list runs long. Select **Pin project** on a project page, or the pin icon on a project card. To see only pinned projects, select **Pinned** above the list on the **Projects** page. Pinning does not reorder the list; projects are ordered by most recent activity.
+
+Select **Delete project** to remove the project and its conversations. Files you added as sources stay where they are. To take the folder off disk as well, tick the option in the confirmation: **Also delete the project folder from disk** for a project Piper manages, or **Also remove Piper's subfolder from your folder** for one that lives in a folder of your own.
+
+<Warning>
+  Deleting a project permanently removes its conversations. Its sessions go with it.
+</Warning>
+
+<Note>
+  When a project lives in a folder of your own rather than one Piper manages, its sessions start in **Manual** approval mode. Switch a session to **Autopilot** from the controls under the message box.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Sessions and the workspace" icon="folder" href="/concepts/sessions-and-workspace">
+    The unit of work and the private space each task gets.
+  </Card>
+  <Card title="Memory" icon="brain" href="/context/memory">
+    The three levels of facts Piper carries, including the project level.
+  </Card>
+  <Card title="Instructions and profile" icon="pen-ruler" href="/context/instructions-and-profile">
+    The standing instructions Piper reads at the start of every session.
+  </Card>
+  <Card title="Files and deliverables" icon="file" href="/working/files-and-deliverables">
+    Where finished work lands and how to open it.
+  </Card>
+</CardGroup>

@@ -1,0 +1,79 @@
+---
+title: "Overview"
+description: "What Piper is, what you can ask it to do today, who it is for, where your work and your credentials live, and the limits worth knowing before you start."
+---
+
+Piper is a personal AI assistant for work that runs as an app on your Mac. You describe what you need in plain words, and Piper plans the steps, does the work, and hands back the finished file.
+
+## What Piper is
+
+Piper takes on work that ends in a real artifact: a spreadsheet you can open, a brief you can send, a report with the charts already in it. It builds the file rather than describing one you could build yourself.
+
+Each job runs in a session, which is one task and the conversation around it. Every session gets its own folder on your Mac, and Piper writes that task's files there and nowhere else, so the rest of your files stay as they are. A project widens that boundary. Sessions in a project write across the project's whole folder, and if you point the project at a folder of your own, they write to your files there.
+
+Piper cannot run a task until you set up an [AI provider](/concepts/ai-providers), the service that does its thinking. That is one of the four questions it asks the first time you open it. Two of the three providers sign in with an account you already have, and the third runs on an API key you paste in.
+
+## What you can ask Piper to do today
+
+### Work in the apps you already use
+
+An integration is Piper's connection to an app you already use, such as Gmail, Slack, or Notion. Piper ships 26 of them, and it reaches an app only through an integration you connected. Each one brings its own tools: some that look things up, some that change something. Every tool that changes something is set to ask before it runs, and the session's approval mode decides whether that question reaches you. See [Integrations](/connections/integrations).
+
+Piper also searches and fetches from the web on its own, and searches folders of your own documents that you added as [Knowledge Sources](/context/knowledge-sources).
+
+### Work that repeats, and work you have not asked for yet
+
+Switch on the sources you want watched, and [Chief of Stuff](/autonomous/chief-of-stuff) does the work it finds in them and stacks each result as a card for you to review. It never sends anything itself: a draft waits in a card marked **Waiting** until you select **Send**. For a result you want on a clock, set up a [scheduled task](/autonomous/autonomous-tasks) and Piper runs it on your schedule.
+
+### Long jobs, run to the end
+
+Piper breaks a large job into steps and works through them rather than stopping at the first check-in. For a job too big for one session, hand it to a [long-running task](/autonomous/long-running-tasks) and Piper keeps at it across many sessions until it is done.
+
+### Work shaped the way you like it
+
+Piper keeps facts about you at three levels: what is true everywhere, what is true inside one project, and what matters for a single task. Your standing **Instructions** and your **About me** note reach every session, so you explain yourself once. To read or delete the facts that apply everywhere, open **Settings** and select **Memory**. See [Memory](/context/memory).
+
+## The approval mode a session starts in
+
+Every session runs in one of two approval modes. In **Manual**, Piper shows you each action it cannot vouch for and waits for your answer. In **Autopilot**, it answers those requests itself and acts without showing you.
+
+**A new session starts on Autopilot.** That includes writing through an integration, so Piper can send an email or post a message without showing you the text first. Switch the session to **Manual** from the row under the message box whenever an outbound action would matter. One kind of session starts the other way round: a session in a project you pointed at a folder of your own begins on **Manual**, because its writes land in your own files.
+
+Neither mode covers everything. Some actions never ask in either one, and two always do: reading a file that holds credentials, and working in the Chrome you are signed in to yourself. [Approvals and permissions](/control/approvals-and-permissions) has both lists and says how to change what asks.
+
+## Who Piper is for
+
+Piper is for people whose work spans documents, messages, meetings, data, and decisions. Product managers, salespeople, marketers, analysts, and founders all fit. You never write code or open a setting meant for engineers.
+
+## Where your work lives
+
+Your sessions, the files each task makes, your memory, and your settings sit in Piper's own store on your Mac, in a folder called `PiperData` that you can open in Finder. Tasks run there too.
+
+Your credentials sit apart from all of that. Piper keeps every password, API key, and access token in your Mac's keychain, apart from the Claude Code and Codex sign-ins, whose tokens land in a file inside `PiperData`. Piper's own database holds no credential value at all. See [Your data stays local](/control/your-data-stays-local) for why, and for what does leave your Mac.
+
+<Note>
+Piper's thinking runs on an AI provider you choose, and reaching it means sending your request out. Everything Piper keeps is local. Not every request is.
+</Note>
+
+## The limits worth knowing
+
+**Piper works while it is open.** You can walk away and Piper keeps going, as long as Piper is running and your Mac is on and awake. Quit Piper or let the machine sleep and the work stops until you are back. A scheduled run that came due in the meantime runs once when you reopen Piper.
+
+**Piper can be wrong.** It names its sources where it can, and it still gets things wrong. Read the result before you send it anywhere.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Set up Piper" icon="download" href="/getting-started/install">
+    The four setup answers, and the AI provider you need before anything runs.
+  </Card>
+  <Card title="Your first task" icon="play" href="/getting-started/first-task">
+    A first job end to end, from the message box to the finished file.
+  </Card>
+  <Card title="How Piper works" icon="arrows-rotate" href="/concepts/how-piper-works">
+    The loop every task follows, and the words the rest of this site uses.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+</CardGroup>

@@ -1,0 +1,151 @@
+---
+title: "Integrations catalog"
+description: "The 26 integrations Piper ships, grouped by category, with what each one can do, how many tools it brings, and what it asks you for when you connect it."
+---
+
+The integrations catalog is the set of connections Piper ships ready to make, one for each app it already knows how to reach. It holds 26 integrations across 11 categories, and each one brings a fixed set of tools: 496 in all, 284 that read and 212 that write. Piper reaches an app only through an integration you connected. [Integrations](/connections/integrations) covers how to connect one and what happens when its credentials expire.
+
+## How to read the tables
+
+Open **Settings**, then **Integrations**, to find any entry below. Each one lists three things.
+
+**What Piper can do** is the same line the integration's card shows on the Integrations page.
+
+**Tools** is how many actions that integration gives Piper, split into reads and writes. Open a connected integration's panel and Piper shows the same split, under **Read** and **Write**. Select the tool count beside either one to list the tools themselves. Not all of them arrive switched on. 98 of the 496 ship off, so the count is what the integration offers, not what a new connection starts with.
+
+**What it asks you for** is what you have to supply. There are four routes, and eight of the 26 make you paste a credential yourself.
+
+| Route | What you supply | How many |
+|---|---|---|
+| Browser sign-in | Nothing. Piper registers itself with the service, so approving the sign-in page is the whole job. | 17 |
+| Your own OAuth app | The **Client id** and **Client secret** of an OAuth app you create in the provider's own console, which is the registration it signs Piper in through. | 4 |
+| API key | A key or token you generate in that service. | 4 |
+| A command on your Mac | Nothing, apart from having `uvx` installed. | 1 |
+
+## Communication
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Gmail** | Search emails, read threads, create drafts, and send mail. | 6 read, 5 write | Your own OAuth app |
+| **Slack** | Search channels and threads, read messages, and send messages. | 7 read, 3 write | Your own OAuth app |
+
+## Design
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Canva** | Search and read designs and folders, and create or edit designs. | 13 read, 13 write | Browser sign-in |
+| **Excalidraw** | Read and search scenes and collections, and create or edit scenes. | 13 read, 11 write | API key |
+| **Figma** | Read files, components, styles, and comments, and post comments. | 11 read, 2 write | API key |
+| **Miro** | Read boards and items, and create or edit boards, diagrams, docs, and tables. | 26 read, 36 write | Browser sign-in |
+
+## Development
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **GitHub** | Read repositories, issues, and pull requests; write branches, files, issues, and PRs. | 16 read, 9 write | A fine-grained personal access token, pasted into the **API key** box |
+
+## Documentation
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **AWS Documentation** | Search and read official AWS documentation pages. | 3 read | Nothing, once `uvx` is installed |
+
+<Note>
+  AWS Documentation is the one integration that asks for no account and no key. It runs on your own Mac, and it starts through `uvx`, a command that runs a Python program without installing it first. Piper checks for that command when you select **Connect**, and if it is missing the connection fails with a message naming it. Piper has no screen that installs it for you, so this is the one entry in the catalog you may not be able to finish inside Piper.
+</Note>
+
+## Forms
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Jotform** | Read forms and submissions, and create, edit, or assign forms. | 4 read, 3 write | Browser sign-in |
+| **SurveyMonkey** | Read surveys and responses, and create or edit surveys, questions, and collectors. | 11 read, 9 write | Browser sign-in |
+
+## Meetings
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Fireflies** | Read meeting transcripts and summaries, and share or organize meetings. | 14 read, 6 write | Browser sign-in |
+| **Otter.ai** | Search and read meeting transcripts, summaries, and account info. | 3 read, 3 write | Browser sign-in |
+
+## Payments
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **PayPal** | Read transactions, invoices, and disputes, and create invoices. | 3 read, 1 write | Browser sign-in |
+| **Stripe** | Search Stripe documentation, read account and API data, and create refunds and other objects. | 7 read, 4 write | Browser sign-in |
+
+## Productivity
+
+Nine integrations, the largest group in the catalog.
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Airtable** | List bases and records, and create, update, or delete records. | 8 read, 7 write | Browser sign-in |
+| **Asana** | Read projects, tasks, and goals, and create or update them. | 23 read, 13 write | Browser sign-in |
+| **Atlassian** | Access Jira issues and Confluence pages, and create or update them. | 7 read, 5 write | Browser sign-in, after a one-time admin step |
+| **Google Calendar** | List calendars and events, and create or update events. | 4 read, 4 write | Your own OAuth app |
+| **Google Drive** | Search files, read documents, and create files in Drive. | 8 read, 12 write | Your own OAuth app |
+| **Linear** | Search issues, projects, and cycles, and create or update issues. | 5 read, 3 write | Browser sign-in |
+| **Monday** | Read boards, items, and docs, and create or update them. | 12 read, 14 write | Browser sign-in |
+| **Notion** | Search, read, and write pages, databases, and comments. | 9 read, 9 write | Browser sign-in |
+| **Todoist** | Read tasks and projects, and create, update, complete, or reschedule them. | 23 read, 24 write | Browser sign-in |
+
+## Scheduling
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Calendly** | Read availability, event types, and scheduled meetings, and create or update event types. | 26 read, 10 write | Browser sign-in |
+
+## Web Research
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Firecrawl** | Search the web, scrape pages, and extract structured content. | 5 read | API key |
+
+## Website
+
+| Integration | What Piper can do | Tools | What it asks you for |
+|---|---|---|---|
+| **Wix** | Search Wix documentation, read site data, and build or update sites. | 17 read, 9 write | Browser sign-in |
+
+## Which integrations make you paste something
+
+Eighteen ask nothing of you beyond approving a sign-in page or, for AWS Documentation, having `uvx` installed. The other eight take a credential you create yourself:
+
+- Gmail, Google Drive, Google Calendar, and Slack need an OAuth app you register in Google Cloud Console or at api.slack.com, and you paste its **Client id** and **Client secret** into Piper.
+- Excalidraw, Figma, and Firecrawl take an API key you generate in that service.
+- GitHub takes a fine-grained personal access token, a GitHub token you scope to chosen repositories and permissions.
+
+An expired connection sends you back to the same box, since Piper keeps no copy it can paste in for you.
+
+One integration asks something of you without asking for a credential. Atlassian needs an admin of your Atlassian organization to add Piper's redirect URI, the address the sign-in comes back to, as a domain for the Rovo MCP server before the browser sign-in will go through.
+
+## What a tool does when it runs
+
+A read tool looks something up and runs on its own. A write tool changes something in the connected app, and every one of them is set to ask you first. Six read tools are set to ask as well: four in Canva and two in Firecrawl. A session running on **Autopilot** answers those questions itself, which is what [Approvals and permissions](/control/approvals-and-permissions) covers.
+
+Piper leaves 98 of the 496 tools switched off when it adds an integration's tools, so a new connection starts with the common actions and not every one on offer. Turn any of them on, or change whether one asks, in **Settings** > **Tools**. [Tools](/working/tools) explains that screen.
+
+These counts only reach Piper once the integration's tools are added to it, which the connect panel does for you unless you untick **Add to Piper on connect**. See [Integrations](/connections/integrations).
+
+## An app that is not in the catalog
+
+Select **+ Add Custom** on the **Integrations** page. You can point Piper at any service that publishes an MCP server, the standard a service uses to offer its tools to an assistant like Piper, or at a program that runs on your Mac. [Integrations](/connections/integrations) covers that path.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="plug" href="/connections/integrations">
+    How to connect an integration, and what happens when its credentials expire.
+  </Card>
+  <Card title="Tools" icon="wrench" href="/working/tools">
+    Choose which tools Piper may use, and which ones ask first.
+  </Card>
+  <Card title="Secrets" icon="key" href="/connections/secrets">
+    Store a password or an API key once and let every task use it.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+</CardGroup>

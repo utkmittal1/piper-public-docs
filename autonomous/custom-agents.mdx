@@ -1,0 +1,107 @@
+---
+title: "Custom agents"
+description: "The saved setups under Settings > Custom Agents, what each of their four tabs controls, what a new agent starts with, and the limit on where a custom agent runs today."
+---
+
+A custom agent is a saved setup for one kind of work. It holds a name and description, standing instructions, a communication style, a set of tools and integrations, and a set of skills. A skill is a packaged set of instructions for a particular kind of job, covered on [Skills](/working/skills).
+
+<Warning>
+  Piper has no control for choosing a custom agent for a task. Every session runs the built-in agent, named **Piper**, and the picker under the message box chooses an [AI provider](/concepts/ai-providers) and model rather than an agent. An agent you build here is saved and stays editable, and no session runs on it. Read the rest of this page as what the screen configures, not as what a task will follow.
+</Warning>
+
+## Where they live
+
+Open **Settings**, then **Custom Agents**. The page shows one card per agent, each with its name and description, and **+ New Agent** to build another.
+
+You edit the built-in Piper agent through the neighbouring Settings items rather than from a card here: **Instructions** for its rules and style, **Tools** for what it may do, and **Skills** for what it knows. See [Instructions and profile](/context/instructions-and-profile) and [Response style](/context/response-style) for those.
+
+## Build one
+
+<Steps>
+  <Step title="Create it">
+    Select **+ New Agent**. Enter a short name and a one-line description of what the agent is for. The description sits on the agent's card, so write the line that tells it apart from the others.
+  </Step>
+  <Step title="Check the General tab">
+    **General** opens first and holds **Name** and **Description**. Both stay editable, and Piper saves each change as you make it.
+  </Step>
+  <Step title="Write its instructions">
+    Open the **Instructions** tab. **Communication Style** sits at the top, with the same four controls as everywhere else: **Response Length**, **Tone**, **Formatting**, and **Emoji**. **Custom Instructions** sits under it, and it is the box for rules this agent would follow in every session: how you want the work done, what to always include, what to never do.
+  </Step>
+  <Step title="Trim its tools">
+    Open the **Tools** tab. **Core Tools** holds seven rows, all switched on to begin with. Switch off what this agent has no business doing.
+  </Step>
+  <Step title="Add its integrations">
+    Still on the **Tools** tab, select **+ Add Integration** and pick from the apps you have already connected. Each one opens into a **Read** group and a **Write** group, so an agent can read from an app without being able to change anything in it.
+  </Step>
+  <Step title="Choose its skills">
+    Open the **Skills** tab and switch on the ones this job needs. Selection is per agent, so a research agent and a slides agent carry different sets.
+  </Step>
+</Steps>
+
+## The four style controls
+
+| Control | Options |
+|---|---|
+| **Response Length** | Concise, Balanced, Detailed |
+| **Tone** | Formal, Neutral, Casual |
+| **Formatting** | Structured, Balanced, Prose |
+| **Emoji** | None, Occasional |
+
+[Response style](/context/response-style) covers what each option changes.
+
+## The seven core tools
+
+| Row | What it covers | Approval |
+|---|---|---|
+| **Read files** | Reading files and documents on this Mac | **Always auto** |
+| **Search files** | Finding files by name and searching inside them | **Always auto** |
+| **Web search & fetch** | Searching the web and reading the pages found | **Always auto** |
+| **Edit & write files** | Creating and editing files in the session workspace | **Auto** or **Ask** |
+| **Run commands** | Running shell commands on this Mac | **Always asks** |
+| **Search knowledge** | Searching the folders you indexed under Context → Knowledge Sources | **Always runs** |
+| **Browse websites** | Opening, clicking, and filling pages in Piper's own browser | **Always runs** |
+
+Only **Edit & write files** offers a choice between **Auto** and **Ask**. The other six are fixed, and Piper refuses a change to them. Switching a row off is always allowed, and an agent with a row switched off never receives that tool at all.
+
+An eighth row appears under **Browse websites** while browsing is on: **Use my Chrome for sites I'm signed in to**. Piper asks you each time before it works in your own Chrome, whatever else is set. [Approvals and permissions](/control/approvals-and-permissions) covers that and the other question no setting silences, which is reading a file that holds your credentials.
+
+Integration tools work differently. Each one offers **Auto** or **Ask**, so you can let an agent read Gmail quietly and stop it before every write. The **Read** and **Write** groups start collapsed, and **Remove from agent** takes the whole integration off.
+
+<Note>
+  Connecting an app under **Settings > Integrations** stores its credentials. The **Tools** tab is where an agent is actually granted them. See [Integrations](/connections/integrations).
+</Note>
+
+## What a new agent starts with
+
+A new custom agent starts with blank instructions, no skills, and no integrations. Every core tool starts switched on, at Piper's own default approval for each one rather than whatever you set on the built-in agent. The communication style is copied once from the built-in agent, and no link remains, so a later change there does not follow.
+
+<Warning>
+  A custom agent does not inherit what you wrote in **Settings > Instructions**. Those are the built-in agent's own instructions, and Piper composes only one agent's instructions for a session. Anything a custom agent must follow, write again in that agent's **Custom Instructions**.
+</Warning>
+
+Memory is different. What Piper remembers about you reaches every session, so a preference that should hold everywhere belongs there rather than in an agent's instructions. See [Memory](/context/memory).
+
+## Deleting an agent
+
+Select an agent, then **Delete agent** in its header, and confirm. Piper deletes its instructions, style, tools, integrations, and skill selections with it. No session runs on a custom agent, so deleting one leaves your sessions as they are. The built-in agent itself cannot be deleted, and it has no **Delete agent** button.
+
+<Tip>
+  Keep the description sharp. It is the only thing besides the name on the card, so it is what tells you which agent you are looking at once you have five of them.
+</Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Skills" icon="graduation-cap" href="/working/skills">
+    What a skill is, and which ones ship with Piper.
+  </Card>
+  <Card title="Tools" icon="wrench" href="/working/tools">
+    The core tools, what each one does, and how approval works.
+  </Card>
+  <Card title="Response style" icon="sliders" href="/context/response-style">
+    The four style controls, and what each setting changes.
+  </Card>
+  <Card title="Integrations" icon="link" href="/connections/integrations">
+    Connecting the apps an agent can then be granted.
+  </Card>
+</CardGroup>

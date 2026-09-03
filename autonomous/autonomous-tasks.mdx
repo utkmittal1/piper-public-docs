@@ -1,0 +1,148 @@
+---
+title: "Autonomous tasks"
+description: "What a scheduled task is, how you set one up by asking in a conversation, what each run is given, where its results land, and what happens when a run fails."
+---
+
+An autonomous task is work Piper runs without you sitting in front of it, and it comes in two kinds: a scheduled task and a [long-running task](/autonomous/long-running-tasks). This page covers the scheduled kind.
+
+A scheduled task is work Piper repeats on a schedule. It holds three things: instructions saying what each run should produce, a schedule saying when, and a folder the task keeps from one run to the next. Piper opens a fresh session for each run and gives it the instructions as its message.
+
+## When to make one
+
+Make a scheduled task when you want the same result delivered again and again: a brief every weekday morning, a summary of last week every Monday, a check on your numbers at the start of each month. A result you want once is an ordinary task and needs nothing more.
+
+The instructions are what every run works from, so they read as an assignment to a capable colleague rather than a reminder to yourself. Piper writes them for you when you set the task up.
+
+## What a run is given
+
+A run is given four things.
+
+- The instructions, as the message that starts the run.
+- The task's folder, which holds what the task keeps and what earlier runs delivered.
+- What recent runs did. Piper gives each run the summaries of the last ten runs of the same task, each with the path to that run's full work log.
+- What Piper remembers about you: the facts held for every one of your sessions, the facts held for this task, and the facts held for that run alone. See [Memory](/context/memory).
+
+A run never sees the conversation the task was set up in. Piper leaves that conversation out on purpose, because you may ask it anything and none of that should reach the work. It also leaves out the task's own conversation, which is the standing thread behind **Ask Piper** on the task page.
+
+## Set one up
+
+You set a task up by asking for it in an ordinary conversation. Piper builds the result once with you, live, and writes the task down only once you are happy with what it produced.
+
+<Steps>
+  <Step title="Ask for the recurring result">
+    Type what you want and how often. Something like "Every weekday morning, give me a brief on what moved in my sector overnight."
+  </Step>
+  <Step title="Watch Piper build it once">
+    Piper produces the real thing now, this once, using the same integrations, skills, and web access an ordinary request would get. This is where you find out whether the result is any good.
+  </Step>
+  <Step title="Say what to change">
+    Tell Piper what to add, cut, or reshape, until the output is what you would want to read.
+  </Step>
+  <Step title="Agree the time and zone">
+    Confirm the time and timezone Piper proposes, or name a different one. Your own zone is the default.
+  </Step>
+  <Step title="Check the task once it is saved">
+    Piper writes the instructions and saves the task. Check that what it will do, when the first run lands, and where the result goes all match what you asked for.
+  </Step>
+</Steps>
+
+<Note>
+  The first run is the next genuine slot, not the moment you saved the task. A task you create at 9:00 AM for weekday mornings at 7:00 AM first runs tomorrow.
+</Note>
+
+<Tip>
+  You can edit a live task's **Instructions** on its page, and Piper saves the text as you type. For anything else, including the schedule and the task's files, select **Ask Piper** and say what should be different. Answering a question in that conversation changes nothing on its own; only a change to the instructions, the schedule, or the files does.
+</Tip>
+
+## Where your tasks live
+
+Select **Autonomous tasks** in the sidebar. The list holds both scheduled tasks and long-running ones, and each row carries the same columns: **Task**, **Type**, **Status**, **What it does**, **Last run**, and **Next**.
+
+**Type** reads `Scheduled` or `Long-running`. **Status** reads `Active`, `Running`, `Paused`, `Failed`, or `Done`, with a second `Needs you` badge when a run stopped waiting on you. For a scheduled task, **What it does** is the schedule written as a sentence. For a long-running one it is the task's description, because a long-running task has no clock. See [Long-running tasks](/autonomous/long-running-tasks) for that kind.
+
+Search the list with **Search autonomous tasks**, and narrow it with **All** or **Pinned** above it.
+
+<Note>
+  [Chief of Stuff](/autonomous/chief-of-stuff) never appears in this list. It runs on its own rhythms and has its own screen.
+</Note>
+
+## The schedule, in plain English
+
+Piper writes the schedule as a sentence, so you never write one yourself. Piper works that sentence out from the schedule each time rather than keeping a separate copy, so the words and the timing cannot disagree.
+
+| The schedule you asked for | How Piper writes it |
+|---|---|
+| Weekday mornings | `Every weekday at 7:00 AM Pacific` |
+| Every evening | `Every day at 6:30 PM Pacific` |
+| Once a week | `Mondays at 9:00 AM Pacific` |
+| Twice a day | `Every day at 7:00 AM and 5:00 PM Pacific` |
+| Start of the month | `The 1st of each month at 7:00 AM Pacific` |
+| Through the working day | `Every hour from 7:00 AM to 6:00 PM Pacific` |
+| Frequently | `Every 5 minutes on weekdays` |
+
+Piper names the timezone the way people say it, so `America/Los_Angeles` reads as `Pacific`, `America/New_York` as `Eastern`, and `Asia/Tokyo` as `Japan`. The schedule holds to that zone across daylight saving, so a 7:00 AM task stays at 7:00 AM.
+
+You see that sentence in two places: under **Schedule** in the rail on the task's page, and in the **What it does** column of the list. Search matches on it too, so type "weekday" into the search box to find every task that runs on weekdays.
+
+<Note>
+  An unusual pattern with no natural wording is the one exception. Rather than guess at a sentence, Piper names the schedule as it stands and adds the zone, like `On the schedule "0 7 L * *" (Pacific)`.
+</Note>
+
+## The task's folder
+
+Each task keeps a folder that outlives any single run. Open the task and select **Artifacts** in the rail to see it. Two kinds of thing sit there.
+
+The first is what the task reuses. If the work involves the same data pull or the same chart every time, Piper writes a script once and stores it there, so later runs use it instead of rebuilding it. Work that needs judgment is never scripted: which items matter, what the numbers mean, what to say about them. Judgment made once and replayed forever stops being true.
+
+The second is what earlier runs delivered. Each run puts its result in the folder as well as sending it wherever the instructions say.
+
+You can open and edit anything in that folder yourself, and the next run picks up the change. The folder sits under `PiperData` in your home folder, alongside your projects.
+
+The rail holds two more panels beside it. **Instructions** is what every run is given, and **Memory** holds the facts Piper keeps for this task alone. See [Memory](/context/memory).
+
+<Note>
+  Piper keeps the last 50 runs of a task. Past that, Piper deletes the oldest run's session and workspace, including that run's scratch files. What a run delivered into the task's folder stays, so results outlive the runs that wrote them.
+</Note>
+
+## Running, pausing, and watching
+
+The task's page lists its runs under **Runs**, with the count beside it. Expand a run to read its summary and open the files it produced, or select **Open session** to go into the run itself and see how it got there.
+
+Use the buttons at the top for the rest. Select **Run now** to start a run without waiting for the next slot. Select **Pause** to stop the schedule, and **Resume** to start it again. **Ask Piper** opens the task's standing conversation, where you change what the task does. Open the **Activity** tab to read the task's scheduled events as plain sentences, like `Started a run`, `Caught up after the app was closed`, and `Skipped a slot: the previous run was still going`.
+
+Each run card carries its own status: `Queued`, `Working`, `Done`, `Needs you`, `Failed`, or `Trying again`. A run marked **Needs you** stopped because it wanted something only you can give, and the card names what. Piper never retries such a run, since only you can answer it.
+
+<Note>
+  A run that dies part-way gets up to three attempts, ten minutes apart, and the card counts them as `Attempt 2 of 3`. A run that writes nothing for twenty minutes counts as stopped, and Piper cancels it so the task is not blocked forever. A run held up by your provider's usage limit is not counted as a failure.
+</Note>
+
+If four runs fail in a row, the task stops itself and its status turns to `Failed`. Piper sends you a notification and the task page reads "This task stopped itself after several runs failed in a row. Resume it once the cause is sorted." Select **Resume** once you have.
+
+<Warning>
+  Scheduled runs happen while Piper is open and your Mac is on and awake. A slot that passes while the Mac is asleep or the app is closed is not lost: that slot fires once as soon as Piper is running again, and the task then rejoins its normal rhythm. Several slots missed over a long gap produce one catch-up run, not a backlog.
+</Warning>
+
+<Note>
+  Nobody is watching a scheduled run, so a run does not stop for an ordinary approval. It runs on **Autopilot**, decides from the instructions and what recent runs did, and records what it decided in its summary. That matters when you write the instructions: say what a run should do when something is ambiguous. [Approvals and permissions](/control/approvals-and-permissions) covers what Autopilot allows and the two questions it never answers for you.
+</Note>
+
+## Renaming and deleting a task
+
+Select **Task actions** in the header, then **Rename** or **Delete**. Deleting a task removes the task, its schedule, its runs, and its folder, so copy anything you want to keep first.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Chief of Stuff" icon="briefcase" href="/autonomous/chief-of-stuff">
+    Work Piper finds on its own from the sources you watch.
+  </Card>
+  <Card title="Long-running tasks" icon="list-check" href="/autonomous/long-running-tasks">
+    Big jobs Piper drives to the end across many sessions.
+  </Card>
+  <Card title="Describing what you need" icon="pencil" href="/working/describing-what-you-need">
+    Getting a good result out of the first ask.
+  </Card>
+  <Card title="Integrations" icon="link" href="/connections/integrations">
+    The apps a run can read from and deliver to.
+  </Card>
+</CardGroup>

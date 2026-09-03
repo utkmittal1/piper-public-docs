@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">A long-running task works in rounds</title>
+  <desc id="desc">One big job you hand over splits into steps that run at the same time. The steps rejoin at the end of a round, Piper plans the next round from what they found, and the rounds repeat until the job is done. A round opens up to five steps at once.</desc>
+  <style>
+    svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
+    @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
+    text { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill:var(--ink); }
+    .box { fill:var(--fill); stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .acc-box { fill:var(--fill); stroke:var(--accent); stroke-width:2; }
+    .t { font-size:15px; font-weight:600; }
+    .c { font-size:14px; font-weight:600; }
+    .s { font-size:13.5px; fill-opacity:.72; }
+    .xs { font-size:12px; fill-opacity:.72; }
+    .ln { fill:none; stroke:var(--ink); stroke-opacity:.55; stroke-width:1.5; marker-end:url(#ar); }
+    .dash { fill:none; stroke:var(--ink); stroke-opacity:.55; stroke-width:1.5; stroke-dasharray:6 5; marker-end:url(#ar); }
+    .join { fill:none; stroke:var(--ink); stroke-opacity:.55; stroke-width:1.5; }
+    .dot { fill:var(--ink); fill-opacity:.55; }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 1 L9 5 L0 9 Z" fill="var(--ink)" fill-opacity=".55"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="20" y="132" width="140" height="76" rx="10"/>
+  <text class="t" x="90" y="164" text-anchor="middle">One big job</text>
+  <text class="s" x="90" y="186" text-anchor="middle">you hand over</text>
+
+  <text class="s" x="285" y="52" text-anchor="middle">Round 1</text>
+  <rect class="box" x="210" y="70" width="150" height="48" rx="8"/>
+  <text class="c" x="285" y="100" text-anchor="middle">Step 1</text>
+  <rect class="box" x="210" y="146" width="150" height="48" rx="8"/>
+  <text class="c" x="285" y="176" text-anchor="middle">Step 2</text>
+  <rect class="box" x="210" y="222" width="150" height="48" rx="8"/>
+  <text class="c" x="285" y="252" text-anchor="middle">Step 3</text>
+
+  <path class="ln" d="M164 170 C 186 170 184 94 206 94"/>
+  <path class="ln" d="M164 170 H206"/>
+  <path class="ln" d="M164 170 C 186 170 184 246 206 246"/>
+
+  <path class="join" d="M360 94 C 382 94 380 170 405 170"/>
+  <path class="join" d="M360 170 H405"/>
+  <path class="join" d="M360 246 C 382 246 380 170 405 170"/>
+  <circle class="dot" cx="405" cy="170" r="4"/>
+
+  <text class="s" x="525" y="52" text-anchor="middle">Round 2</text>
+  <rect class="box" x="450" y="108" width="150" height="48" rx="8"/>
+  <text class="c" x="525" y="138" text-anchor="middle">Step 4</text>
+  <rect class="box" x="450" y="184" width="150" height="48" rx="8"/>
+  <text class="c" x="525" y="214" text-anchor="middle">Step 5</text>
+
+  <path class="ln" d="M409 170 C 428 170 426 132 446 132"/>
+  <path class="ln" d="M409 170 C 428 170 426 208 446 208"/>
+
+  <path class="join" d="M600 132 C 622 132 620 170 645 170"/>
+  <path class="join" d="M600 208 C 622 208 620 170 645 170"/>
+  <circle class="dot" cx="645" cy="170" r="4"/>
+
+  <text class="xs" x="697" y="134" text-anchor="middle">more rounds</text>
+  <text class="xs" x="697" y="152" text-anchor="middle">if needed</text>
+  <path class="dash" d="M649 170 H744"/>
+
+  <rect class="acc-box" x="750" y="140" width="110" height="60" rx="10"/>
+  <text class="t" x="805" y="166" text-anchor="middle">Done</text>
+  <text class="s" x="805" y="186" text-anchor="middle">ready to review</text>
+
+  <text class="s" x="20" y="306">A round opens up to five steps at once. They run, they rejoin, and Piper plans the next round from what they found.</text>
+</svg>

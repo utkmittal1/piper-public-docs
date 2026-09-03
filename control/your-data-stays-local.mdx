@@ -1,0 +1,80 @@
+---
+title: "Your data stays local"
+description: "What Piper keeps on your Mac, the three routes that carry data off it, and how to remove what Piper holds."
+---
+
+Piper keeps your sessions, files, memory, and credentials on your Mac, in a folder you can open, back up, and delete. Requests to the AI provider still travel over the network, and they carry your conversation and any file content a task read on the way. This page says which is which.
+
+## Where Piper keeps your data
+
+Everything sits in one folder called `PiperData`, inside your home folder. It is an ordinary folder you can open in Finder.
+
+Session workspaces sit in `PiperData/sessions`, and a session that belongs to a project lives under that project's folder instead. See [Sessions and the workspace](/concepts/sessions-and-workspace) for what a session folder holds, and [Projects](/concepts/projects) for the project layout.
+
+Logs land in `PiperData/logs`, and Piper keeps 14 days of them. Each line names one thing Piper did and the few details around it, never your prompts, Piper's replies, or the contents of your files. Open them from **Settings**, under **Logs**.
+
+A database file named `piper.db` holds your sessions and their transcripts, your memory facts, your settings, which integrations you have connected, your custom agents, and the indexed text of your Knowledge Sources. It holds no credential value. Every password, API key, and access token sits in your Mac's own keychain instead, and the value reaches only the one command that needs it. See [Secrets](/connections/secrets).
+
+Knowledge Sources are worth naming here because they never leave. Piper reads your documents, splits them into passages, and builds the search index on this machine, using a model it downloads once and runs here. Searching your own documents sends nothing out. See [Knowledge Sources](/context/knowledge-sources).
+
+<Note>
+  Signing in to Claude Code or Codex is the one credential that does not go to the keychain. Each one's sign-in tool writes its token to a file in its own configuration folder under `PiperData`, because Piper runs the sign-in inside the sandbox and macOS blocks keychain writes from in there. A task that tries to read one of those files stops and asks you.
+</Note>
+
+## What leaves your Mac, and why
+
+Three routes carry your data off this machine. Each one sends something different, and it is worth knowing which.
+
+**To the AI provider.** This is the one that matters most. The provider you pick in **Settings** under **AI providers** runs on its own machines, and every turn sends it your prompt, the conversation so far, and the text of any file a task read on the way. Whatever a task reads enters the conversation, and the conversation leaves this machine.
+
+**To an integration's own service.** Piper sends the service what the action needs and nothing more. Reading a Slack channel sends Slack the channel it should read. Sending an email through Gmail sends Gmail the recipients, the subject, and the body. Each integration reaches only its own service, and an agent can use only the integrations you attached to it.
+
+**To the sites Piper opens.** Opening a page sends that site the address Piper asked for and the network address it came from, the same as your own browser does. Piper's browser can click and fill pages in as well, so anything it types into a form goes to that site. A web search sends your search terms out too, and on a model API provider they go to the search service whose key you added under **Secrets**.
+
+A command can open a fourth route that Piper does not choose. The sandbox confines what a task writes and leaves the network open, so a command that runs can upload a file of yours anywhere on the internet. Piper controls that by asking before every command it cannot vouch for, which is why **Run commands** always asks and why you cannot set it to run on its own. On **Autopilot**, Piper answers that question for you. See [Approvals and permissions](/control/approvals-and-permissions).
+
+<Warning>
+  "Local" describes where Piper keeps your data at rest, not where every request travels. Choosing a different AI provider changes which company receives the request; it does not keep the request on your Mac. If a document is sensitive enough that its text must never reach an AI provider, keep it out of the task.
+</Warning>
+
+## Removing what Piper keeps
+
+Because everything sits in one folder, clearing it out is straightforward.
+
+<Steps>
+  <Step title="Remove a single memory fact">
+    In **Settings**, select **Memory**, find the fact, and select **Remove fact** on its row. It stops applying to future tasks.
+  </Step>
+  <Step title="Delete a session">
+    Delete the session from the sidebar. Tick **Also delete the folder from disk** to remove its files as well, or leave it unticked and the folder stays where it is.
+  </Step>
+  <Step title="Remove a credential">
+    In **Settings**, select **Secrets**, then **Delete secret** on the entry and confirm with **Delete**. Piper removes the value from your keychain.
+  </Step>
+  <Step title="Open the folder yourself">
+    A session's right-hand rail has **Reveal in Finder** on each file row, and **Open session folder in Finder** on the **Other files** header. From there you can browse, copy, or move whatever you like.
+  </Step>
+</Steps>
+
+Deleting a session removes it from Piper's database. It does not reach back through an integration, so a message Piper already sent through Gmail or Slack stays sent, and a file it wrote outside its own folder stays where it landed.
+
+<Tip>
+  `PiperData` is an ordinary folder in your home directory, so whatever you already use to back up your home folder covers it.
+</Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+  <Card title="The sandbox" icon="box" href="/control/sandbox">
+    What a task can write, what it can read, and where the line sits.
+  </Card>
+  <Card title="Secrets" icon="key" href="/connections/secrets">
+    Storing a password or key so Piper can use it without seeing it.
+  </Card>
+  <Card title="AI providers" icon="cpu" href="/concepts/ai-providers">
+    Setting up the AI provider behind Piper, including one you bring your own key for.
+  </Card>
+</CardGroup>

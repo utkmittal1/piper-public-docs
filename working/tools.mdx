@@ -1,0 +1,99 @@
+---
+title: "Tools"
+description: "The capabilities Piper is allowed to use, from reading files to browsing the web and acting in your connected apps, how a connected app's tools reach Piper, and how to switch any of them off."
+---
+
+A tool is a capability Piper can use while it works, such as reading a file, searching the web, running a command, browsing a site, or sending mail in Gmail. You control each one with a checkbox. Clearing a checkbox removes that capability from Piper entirely.
+
+Piper carries a handful of tools at all times and looks the rest up as it goes. The core capabilities below, and knowledge search, are in front of it from the first turn. A connected app's tools are not: Piper searches for the ones a task needs and loads them then, so a task that never touches Gmail never loads Gmail's tools. You see this in the conversation as a line reading **Looking up Gmail's tools**.
+
+## Tools, Skills, and Integrations
+
+These three settings sit next to each other and get mixed up constantly. Each does one job.
+
+- **Tools** are the capabilities Piper may use. Whether it can read a file at all, browse a page at all, act in a connected app at all.
+- **Skills** are the written instructions that teach Piper how to produce a particular kind of work, such as a slide deck or a dashboard. Covered on [Skills](/working/skills).
+- **Integrations** are the apps you connect and sign in to, such as Gmail or Notion. Covered on [Integrations](/connections/integrations).
+
+The order runs from one to the next. You connect Gmail under **Integrations**, you grant its tools under **Tools**, and a skill decides how the resulting work is shaped.
+
+## What the Tools setting holds
+
+In **Settings**, select **Tools**. The page edits the built-in Piper, the one behind an ordinary task, and it has two sections.
+
+**Core Tools** are the seven capabilities Piper carries without any app connected.
+
+| Capability | Nature | What it does | Approval |
+|---|---|---|---|
+| Read files | read | Reads files and documents on this machine. | Always auto |
+| Search files | read | Finds files by name and searches what's inside them. | Always auto |
+| Web search & fetch | read | Searches the web and reads the pages it finds. | Always auto |
+| Edit & write files | write | Creates and edits files in the session workspace. | Auto or Ask, your choice |
+| Run commands | write | Runs shell commands on this machine. | Always asks |
+| Search knowledge | read | Searches the folders you indexed under Context → Knowledge Sources. | Always runs |
+| Browse websites | write | Opens pages in Piper's own browser, and can click and fill them in. When a site needs you signed in, it opens a window so you can. | Always runs |
+
+Use the checkbox on a row to turn that capability on or off. Only one approval setting is yours to change: **Edit & write files** offers **Auto** and **Ask**. The other six are fixed, as the right of each row shows.
+
+**Integrations** is the second section, and it starts empty. Connecting Gmail under **Settings** > **Integrations** stores your sign-in. It does not hand Piper the tools. You do that here, one app at a time, and you can then switch individual tools on or off inside it. Each app's tools sit in a **Read** group and a **Write** group, both closed until you open them, and each tool gets its own **Auto** or **Ask** setting.
+
+## Turning a capability on or off
+
+<Steps>
+  <Step title="Open the page">
+    In **Settings**, select **Tools**, then open the **Core Tools** card.
+  </Step>
+  <Step title="Switch a core capability">
+    Clear the checkbox next to a row to take that capability away. Tick it to give it back.
+  </Step>
+  <Step title="Set how the write capability is approved">
+    On **Edit & write files**, choose **Auto** to let Piper write without asking, or **Ask** to be prompted each time.
+  </Step>
+  <Step title="Grant an app's tools">
+    In the **Integrations** section, select **+ Add Integration** and pick a connected app. Open its **Read** or **Write** group to switch individual tools on or off, and to set each one to **Auto** or **Ask**. The button stays inactive until you have connected at least one app.
+  </Step>
+  <Step title="Take an app back">
+    Select **Remove from agent** at the bottom of an app's card, then confirm. Piper loses that app's tools and keeps the sign-in, so you can add it again later.
+  </Step>
+</Steps>
+
+Every switch saves as you set it. Removing an integration is the one step that asks you to confirm.
+
+## What to know
+
+<Note>
+Off means off. A capability you switch off is removed from Piper's toolset when a task starts. Switch one off while a task is already running and the task is refused the moment it tries. **Search knowledge** is the exception: a conversation that already has it keeps it until it reconnects. Autopilot does not override any of this. [Approvals and permissions](/control/approvals-and-permissions) covers the two modes.
+</Note>
+
+<Tip>
+**Run commands** always asks, with one carve-out. Piper runs a command on its own when every part of it is a read-only program such as `ls` or `git status`, a folder created inside the workspace, a `cd` into a folder inside it, or one of Piper's own skill scripts. Anything else reaches you as a question, and a command that names a file holding sign-in credentials reaches you whatever else it does. The carve-out follows your switches too: turning **Read files** off closes the route that would have read a file through a command instead, and turning **Edit & write files** off does the same for the silent folder creation.
+</Tip>
+
+<Warning>
+Switch **Browse websites** on to reach the nested **Use my Chrome for sites I’m signed in to**, which takes a one-time setup before you can turn it on. Piper asks you before it works in your Chrome on a site, one approval covers the rest of that request on that site, and nothing carries past the request. Neither **Always allow** nor Autopilot can silence it. [Web and sign-ins](/connections/web-and-sign-ins) explains both browsers.
+</Warning>
+
+<Note>
+**Browse websites** reads **Always runs**, which holds for an ordinary page. A site Piper holds a saved sign-in for asks you first, whatever the row says.
+</Note>
+
+<Note>
+These settings belong to one agent. A custom agent you build gets the same two sections and its own answers, so one agent's **Tools** tab can allow web access where another's does not. Piper has no control for choosing a custom agent for a task, so what you set there does not reach your work. See [Custom agents](/autonomous/custom-agents).
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Skills" icon="graduation-cap" href="/working/skills">
+    The instruction packs that let Piper build a deck, a spreadsheet, or a dashboard.
+  </Card>
+  <Card title="Integrations" icon="link" href="/connections/integrations">
+    Connect the apps Piper works from.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and how the two modes differ.
+  </Card>
+  <Card title="Custom agents" icon="robot" href="/autonomous/custom-agents">
+    Build an agent with its own instructions, tools, and skills.
+  </Card>
+</CardGroup>

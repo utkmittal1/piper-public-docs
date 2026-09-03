@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">How Chief of Stuff works</title>
+  <desc id="desc">The sources you switch on, such as Gmail, Slack, and Google Calendar, feed Chief of Stuff. It checks them, does the work itself, and stacks finished cards under Ready, grouped as Before your next meeting and Ready for you. You send, open, or dismiss each card, and nothing goes out until you click.</desc>
+  <style>
+    svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
+    @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
+    text { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill:var(--ink); }
+    .box { fill:var(--fill); stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .acc-box { fill:var(--fill); stroke:var(--accent); stroke-width:2; }
+    .t { font-size:16px; font-weight:600; }
+    .c { font-size:14px; font-weight:600; }
+    .s { font-size:13.5px; fill-opacity:.72; }
+    .ln { fill:none; stroke:var(--ink); stroke-opacity:.55; stroke-width:1.5; marker-end:url(#ar); }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 1 L9 5 L0 9 Z" fill="var(--ink)" fill-opacity=".55"/>
+    </marker>
+  </defs>
+
+  <text class="t" x="30" y="44">Watched sources</text>
+
+  <rect class="box" x="30" y="62" width="190" height="44" rx="8"/>
+  <text class="c" x="125" y="90" text-anchor="middle">Gmail</text>
+
+  <rect class="box" x="30" y="114" width="190" height="44" rx="8"/>
+  <text class="c" x="125" y="142" text-anchor="middle">Slack</text>
+
+  <rect class="box" x="30" y="166" width="190" height="44" rx="8"/>
+  <text class="c" x="125" y="194" text-anchor="middle">Google Calendar</text>
+
+  <text class="s" x="30" y="236">only the ones you switch on</text>
+
+  <path class="ln" d="M224 84 C 270 84 274 158 316 158"/>
+  <path class="ln" d="M224 136 C 270 136 274 170 316 170"/>
+  <path class="ln" d="M224 188 C 270 188 274 182 316 182"/>
+
+  <rect class="acc-box" x="320" y="108" width="200" height="124" rx="10"/>
+  <text class="t" x="420" y="152" text-anchor="middle">Chief of Stuff</text>
+  <text class="s" x="420" y="176" text-anchor="middle">checks, then does</text>
+  <text class="s" x="420" y="196" text-anchor="middle">the work itself</text>
+
+  <path class="ln" d="M524 170 H592"/>
+
+  <text class="t" x="600" y="44">Ready</text>
+
+  <text class="s" x="600" y="78">Before your next meeting</text>
+  <rect class="box" x="600" y="90" width="250" height="62" rx="10"/>
+  <text class="c" x="618" y="127">Meeting brief, written</text>
+
+  <text class="s" x="600" y="190">Ready for you</text>
+  <rect class="box" x="600" y="202" width="250" height="62" rx="10"/>
+  <text class="c" x="618" y="239">Draft reply, ready to send</text>
+
+  <text class="s" x="600" y="296">Send, open, or dismiss.</text>
+  <text class="s" x="600" y="316">Nothing goes out until you click.</text>
+</svg>

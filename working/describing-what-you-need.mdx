@@ -1,0 +1,105 @@
+---
+title: "Describing what you need"
+description: "How to write a request Piper can act on, what Piper does with it before starting work, attaching files, dictating, queueing a follow-up, and setting a session's approval mode."
+---
+
+The message box is the field you type a request into. It sits in the middle of the home screen, with a row of openings underneath, and at the bottom of every session. Use it to start a task, add to one already running, or answer a question Piper asks.
+
+## What a good request looks like
+
+Name the outcome, the input, and the form, all three in one sentence:
+
+- "Summarize the attached board deck into a one-page brief with the three decisions we need."
+- "Analyze the attached sales export and produce a report with charts and the top five drivers."
+- "Turn these three call transcripts into an account summary with the objections listed at the end."
+
+Each one says what to make. Compare any of them to "look at these calls", which names none of the three.
+
+Three openings sit under the box on the home screen, beside the words **Or begin with**: analyze a dataset, summarize documents, and draft a message. Select one and Piper puts its wording in the box with the cursor at the end, so you can add your own detail. Nothing sends until you select **Send**.
+
+## What Piper does before it starts
+
+Piper answers a quick request straight away: a question, a lookup, a short draft, a small edit, anything done in a step or two.
+
+For work that runs longer, Piper asks before it starts. A question card appears with up to four questions about the goal, the inputs, the audience, the format, and the depth, and Piper waits rather than guessing. Answer with a tap, type into **Something else**, or select **Skip**. While a question is waiting, the message box reads **Or reply directly…**, so you can write an answer in your own words instead.
+
+Once you answer, Piper builds a list of three to seven tasks and works them in order. You see that list as **Execution plan**, both as a card in the conversation and as a strip above the message box naming the step running now. [Reviewing results](/working/reviewing-results) covers what the plan shows and how to follow it.
+
+<Tip>
+  The vaguer the request, the more Piper asks. Name the outcome, the input, and the form in your first message and there is less left to ask about.
+</Tip>
+
+## Writing and sending
+
+<Steps>
+  <Step title="Describe the outcome">
+    Type your request. Piper formats markdown as you write, so `**bold**` renders bold, and it receives the markdown itself rather than a styled document.
+  </Step>
+  <Step title="Attach anything Piper should work from">
+    Select **Attach files**, the `+` button, and pick files from your Mac. You can also drag files onto the box or paste an image straight in. Select the `×` on an attachment to remove it.
+  </Step>
+  <Step title="Dictate instead of typing">
+    Select **Voice input**, the microphone button, and speak. Your words land in the box as you go. Select **Stop recording** to finish.
+  </Step>
+  <Step title="Send">
+    Select **Send**, or press Enter. Shift and Enter together start a new line instead.
+  </Step>
+</Steps>
+
+<Note>
+  Dictation runs on your Mac. Piper transcribes your speech with a speech model it downloads once and keeps on the machine, so the audio never leaves it. **Voice input** stays inactive while that download runs, and its tooltip reads **Voice input is still being set up**. If the download finishes with a session already open, move to another screen and back to use it.
+</Note>
+
+<Tip>
+  Type while dictating and the microphone stays open. Piper keeps what you already said and picks recognition back up half a second after you stop typing. Words spoken while you type are dropped rather than saved, so finish the sentence out loud or type it, not both. Select **Send** mid-sentence and Piper waits for your last words to land before the message goes.
+</Tip>
+
+<Warning>
+  The first time you dictate, your Mac asks for microphone permission. Decline it and Piper cannot record. Allow microphone access for Piper on your Mac, then try **Voice input** again.
+</Warning>
+
+## Adding a message while Piper works
+
+You do not have to wait for a turn to end before saying something else. Type while Piper is working and press Enter. Piper parks your message above the box as a card headed **Waiting to send**, and the heading counts them once you queue a second, as **2 waiting to send**. Select **Stop** to halt the current turn instead.
+
+A waiting card carries two controls. Select **Send now** to hand that message over immediately, steering the work in progress. Select **Remove** to withdraw it. Leave the card alone and it goes on its own when the current turn finishes.
+
+Once Piper has taken the message and the current step is still running, the card shows **Delivering when the current step finishes** in place of the two buttons. There is nothing to do at that point but wait.
+
+The queue is how you correct course. Piper starts down the wrong path, you queue "use the Q3 numbers, not Q2" and select **Send now**, and the work turns without starting over.
+
+## Setting how much room the session has
+
+A session's approval mode is how much room Piper has to act in it without asking you. Set the mode from the dropdown in the row under the message box, whose tooltip reads **Session approval mode**. There are exactly two modes:
+
+- **Manual** stops for your approval whenever the sandbox cannot vouch for an action on its own: running a command, reaching the network, or a read or write it cannot tie to a named file. Reads and writes inside the session's own workspace go ahead without a prompt.
+- **Autopilot** stops asking. Every command and file edit for the rest of that session runs on its own, and you do not get to catch a bad action first.
+
+A new session starts on **Autopilot**. The exception is a session inside a project you pointed at one of your own folders, which starts on **Manual**, because its work lands outside Piper's own store.
+
+Confirm at **Turn on Autopilot for this session?** to switch on, then select **Turn on Autopilot**. Switching back to Manual takes effect straight away, with nothing to confirm. The mode belongs to that one session alone.
+
+<Warning>
+  Autopilot does not switch the sandbox off. Anything the sandbox refuses stays refused in either mode, and two actions ask you every time however the session is set: reading a file that holds sign-in credentials, and working in your own signed-in Chrome.
+</Warning>
+
+<Note>
+  The approval dropdown appears in a session, not on the home screen. Send your first message, then set the mode.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Reviewing results" icon="chart-simple" href="/working/reviewing-results">
+    The charts, tables, files, and questions Piper answers with, and how to act on each.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and what each approval mode changes.
+  </Card>
+  <Card title="Files and deliverables" icon="folder-open" href="/working/files-and-deliverables">
+    Where a finished deck, spreadsheet, or document lands and how to open it.
+  </Card>
+  <Card title="Skills" icon="wand-magic-sparkles" href="/working/skills">
+    The instruction packs that let Piper build a real artifact rather than describe one.
+  </Card>
+</CardGroup>

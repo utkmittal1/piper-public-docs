@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">Your context sits outside the AI provider</title>
+  <desc id="desc">On the left, your context: memory, Knowledge Sources, files and projects, instructions and settings. It stays in Piper's store on your Mac. On the right, the AI provider, which you can change whenever you like and pick from Claude Code, Codex, and bring your own model. None of your context lives inside the provider.</desc>
+  <style>
+    svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
+    @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
+    text { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill:var(--ink); }
+    .box { fill:var(--fill); stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .shell { fill:none; stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .slot { fill:none; stroke:var(--accent); stroke-width:2; stroke-dasharray:7 5; }
+    .t { font-size:16px; font-weight:600; }
+    .c { font-size:14px; font-weight:600; }
+    .s { font-size:13.5px; fill-opacity:.72; }
+    .acc-t { font-size:14px; font-weight:600; fill:var(--accent); }
+  </style>
+
+  <rect class="shell" x="30" y="30" width="420" height="290" rx="12"/>
+  <text class="t" x="54" y="62">Your context</text>
+  <text class="s" x="54" y="84">stays in Piper's store on your Mac</text>
+
+  <rect class="box" x="54" y="110" width="178" height="68" rx="10"/>
+  <text class="c" x="143" y="149" text-anchor="middle">Memory</text>
+
+  <rect class="box" x="248" y="110" width="178" height="68" rx="10"/>
+  <text class="c" x="337" y="149" text-anchor="middle">Knowledge Sources</text>
+
+  <rect class="box" x="54" y="196" width="178" height="68" rx="10"/>
+  <text class="c" x="143" y="235" text-anchor="middle">Files and projects</text>
+
+  <rect class="box" x="248" y="196" width="178" height="68" rx="10"/>
+  <text class="c" x="337" y="227" text-anchor="middle">Instructions</text>
+  <text class="c" x="337" y="247" text-anchor="middle">and settings</text>
+
+  <text class="s" x="54" y="300">None of it lives inside the AI provider.</text>
+
+  <rect class="shell" x="500" y="30" width="350" height="290" rx="12"/>
+  <text class="t" x="526" y="62">The AI provider</text>
+  <text class="s" x="526" y="84">change it whenever you like</text>
+
+  <rect class="slot" x="524" y="100" width="302" height="60" rx="10"/>
+  <text class="acc-t" x="675" y="136" text-anchor="middle">One runs each task</text>
+
+  <text class="s" x="524" y="186">Set up any of these</text>
+
+  <rect class="box" x="524" y="196" width="302" height="34" rx="8"/>
+  <text class="c" x="675" y="218" text-anchor="middle">Claude Code</text>
+
+  <rect class="box" x="524" y="236" width="302" height="34" rx="8"/>
+  <text class="c" x="675" y="258" text-anchor="middle">Codex</text>
+
+  <rect class="box" x="524" y="276" width="302" height="34" rx="8"/>
+  <text class="c" x="675" y="298" text-anchor="middle">Bring your own model</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 336" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">A session and its workspace</title>
+  <desc id="desc">One session opens its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and scratch material sits in a separate intermediate-files area. Piper writes only inside the workspace, and can read files elsewhere on your Mac.</desc>
+  <style>
+    svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
+    @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
+    text { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill:var(--ink); }
+    .box { fill:var(--fill); stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .shell { fill:none; stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .acc-box { fill:var(--fill); stroke:var(--accent); stroke-width:2; }
+    .t { font-size:16px; font-weight:600; }
+    .s { font-size:13.5px; fill-opacity:.72; }
+    .m { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:14px; font-weight:600; }
+    .ln { fill:none; stroke:var(--ink); stroke-opacity:.55; stroke-width:1.5; marker-end:url(#ar); }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 1 L9 5 L0 9 Z" fill="var(--ink)" fill-opacity=".55"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="30" y="95" width="185" height="110" rx="10"/>
+  <text class="t" x="122" y="143" text-anchor="middle">One session</text>
+  <text class="s" x="122" y="165" text-anchor="middle">one task and its chat</text>
+
+  <path class="ln" d="M223 150 H264"/>
+
+  <rect class="shell" x="272" y="40" width="578" height="250" rx="12"/>
+  <text class="t" x="296" y="74">Workspace</text>
+  <text class="s" x="296" y="96">the folder this session writes to</text>
+
+  <rect class="acc-box" x="296" y="116" width="254" height="150" rx="10"/>
+  <text class="m" x="312" y="152">final-output/</text>
+  <text class="s" x="312" y="182">finished deliverables</text>
+  <text class="s" x="312" y="204">the thing you asked for</text>
+
+  <rect class="box" x="572" y="116" width="254" height="150" rx="10"/>
+  <text class="m" x="588" y="152">intermediate-files/</text>
+  <text class="s" x="588" y="182">scratch and working files</text>
+  <text class="s" x="588" y="204">notes, downloads, drafts</text>
+
+  <text class="s" x="30" y="318">Piper writes only inside the workspace. It can still read files elsewhere on your Mac.</text>
+</svg>

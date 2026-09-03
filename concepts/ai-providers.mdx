@@ -1,0 +1,76 @@
+---
+title: "AI providers"
+description: "The services that do Piper's thinking, how to set them up, and how the default affects new and running tasks."
+---
+
+An AI provider is the service that does Piper's thinking. Piper can run through Claude Code or Codex after you sign in, or it can call Anthropic, OpenAI, or DeepSeek models with an API key you add.
+
+## When to add one
+
+Piper needs at least one provider before it can run a task. Add the provider account or API key you already use. You can set up several providers and choose one for a task from the controls under the message box.
+
+Piper does not offer a provider that works without either an account sign-in or an API key.
+
+## The two sections in Settings
+
+Open **Settings**, then **AI providers**. The page separates providers by how you connect them.
+
+**Agents** contains Claude Code and Codex. Select a card to see its **Sign-in** status, sign in, or make that agent the default.
+
+**Model APIs** contains Anthropic, OpenAI, and DeepSeek. Select a card to add, update, or remove its API key and see its **Available models**. Piper offers that provider's models after it accepts the key.
+
+## Set up an agent
+
+<Steps>
+  <Step title="Open the agent">
+    Under **Agents**, select **Claude Code** or **Codex**.
+  </Step>
+  <Step title="Sign in">
+    Select **Sign in** and finish the account sign-in that Piper opens.
+  </Step>
+  <Step title="Choose the default if you want">
+    Turn on **Use as default** if you want this agent to run new tasks and work Piper starts on its own.
+  </Step>
+</Steps>
+
+## Add a model API
+
+<Steps>
+  <Step title="Open the provider">
+    Under **Model APIs**, select **Anthropic**, **OpenAI**, or **DeepSeek**.
+  </Step>
+  <Step title="Add the key">
+    Paste the key into **API key**, then select **Save key**. Select **Where do I get a key?** to open the provider's signup page.
+  </Step>
+  <Step title="Check the models">
+    After Piper accepts the key, the card reads **API key saved** and the panel lists the **Available models** for that provider.
+  </Step>
+  <Step title="Choose the default if you want">
+    Turn on **Use as default** if you want this provider to run new tasks and work Piper starts on its own.
+  </Step>
+</Steps>
+
+Piper keeps the API key in your Mac's system keychain. Select **Update key** to replace it or **Remove key** to delete it. Removing a key also removes that provider's models from Piper.
+
+## What the default controls
+
+The provider marked **Default** runs new tasks and work Piper starts on its own. A task can use another provider when you choose one from the controls under its message box.
+
+If any task is running when you change the default, Piper opens **Change the default while a task is running?**. The dialog warns that switching stops the tasks running now. Select **Change it anyway** to switch, or close the dialog to leave the default unchanged. You can start the stopped tasks again on the new default.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Set up Piper" icon="rocket" href="/getting-started/install">
+    Choose your first AI provider during setup.
+  </Card>
+  <Card title="Your first task" icon="play" href="/getting-started/first-task">
+    Start a task and choose its AI provider and model.
+  </Card>
+  <Card title="Secrets" icon="key" href="/connections/secrets">
+    How Piper stores credentials in your Mac's system keychain.
+  </Card>
+  <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
+    What stays on your Mac and what a provider receives.
+  </Card>
+</CardGroup>

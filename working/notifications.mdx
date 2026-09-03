@@ -1,0 +1,91 @@
+---
+title: "Notifications"
+description: "The nine notifications Piper raises when a task finishes or needs a decision, the four places they show up, and the switches that control each kind."
+---
+
+A notification marks a task that has finished or needs your approval before it continues. Piper raises nine kinds, each with its own switch, and every one is on until you turn it off.
+
+## The nine notifications
+
+| Notification | When it fires |
+|---|---|
+| Agent responded | When a task finishes responding in a session you're not watching. |
+| Approval needed | When Piper needs your go-ahead to run a tool. |
+| Connector broken | When a connected tool stops working. |
+| Run could not finish | When a run of a scheduled task stops before it delivers. |
+| Task stopped itself | When a task stops on its own, after runs fail or a job goes quiet. |
+| Job finished | When a long running job finishes everything it was set. |
+| Draft awaiting your approval | When Chief of Stuff holds a message that only sends on your click. |
+| Ready for you | When Chief of Stuff has finished work waiting for review. |
+| Memory cleanup suggested | When memory is getting long and Piper has cleanup suggestions to review. |
+
+## Where notifications show up
+
+The bell sits at the bottom of the sidebar, with a badge counting the items that arrived since you last opened it. The badge counts up to 9 and then reads `9+`. Open the panel to clear the count. Each row shows a title, a line of detail, and how long ago it happened. Select a row to go to the task behind it.
+
+Two of the nine belong to a single conversation: **Agent responded** and **Approval needed**. Piper marks that session with a dot in the sidebar, and the dot clears the moment you open the session. Neither one reaches the bell. The other seven collect there and stay until you dismiss them.
+
+A popup card appears in the top right corner as any of the nine arrives, then goes six seconds later. Hover it and it stays, going three seconds after you move the pointer away. At most three show at once, and a card with somewhere to send you shows **View**.
+
+A macOS banner is the only kind that reaches you outside Piper's window, and it is off until you switch it on. Piper posts a banner only while no Piper window has focus.
+
+A short chime plays when a notification arrives, unless you switch **Sound** off.
+
+## Changing which notifications reach you
+
+<Steps>
+  <Step title="Open the settings">
+    In **Settings**, select **Notifications**. The **Events** section lists all nine kinds with a switch each. The **Delivery** section below it holds three rows: **In-app**, **Sound**, and **macOS banners**.
+  </Step>
+  <Step title="Turn a kind off">
+    Switch off any row in **Events**. That kind stops everywhere, the bell included.
+  </Step>
+  <Step title="Turn on macOS banners">
+    Switch on **macOS banners**. Piper sends a test banner at once and then tells you in a popup whether it went, so the setting never turns on silently.
+  </Step>
+  <Step title="Fix a banner that never came">
+    If the test banner did not appear, select **Open settings**, either in that popup or in the **Not showing?** row, which sits under the switch and shows only while banners are on. In the macOS notification settings that opens, allow notifications for Piper and set its style to Banners or Alerts.
+  </Step>
+  <Step title="Clear the bell">
+    Open the bell and select the X on a row to dismiss it, or **Clear all** to empty the list.
+  </Step>
+</Steps>
+
+## Limits on what reaches you
+
+<Note>
+A session you are watching raises no notification at all. Finish a task with its conversation open in front of you and Piper raises nothing, not even a bell item. Switch to another app and notifications come through as normal. This covers a session only. A scheduled task finishing still notifies you while its own page is on screen.
+</Note>
+
+<Tip>
+Piper keeps two weeks of notifications, up to 200 across all nine kinds, and clears out anything past either limit whenever a new one arrives.
+</Tip>
+
+<Warning>
+**In-app** delivery has no switch. Its row in **Delivery** reads **Always on**, because the bell, the popups, and the session dots cannot be turned off. What you can switch off is the kind of event, one row at a time, and that stops it everywhere.
+</Warning>
+
+<Note>
+macOS has the last word on banners. Piper can post one and open the right settings pane, and nothing more. If macOS is set to hold notifications for Piper, no banner appears.
+</Note>
+
+<Note>
+Approvals are answered in the session that raised them, not in the bell. A notification takes you there. [Approvals and permissions](/control/approvals-and-permissions) covers what Piper asks and how to answer it. Finished work waiting for your review collects on the [Chief of Stuff](/autonomous/chief-of-stuff) screen, which also has its own **Notification hours** setting for the times of day it may notify you.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and how to answer.
+  </Card>
+  <Card title="Chief of Stuff" icon="inbox" href="/autonomous/chief-of-stuff">
+    The finished work Piper prepares and holds for your review.
+  </Card>
+  <Card title="Autonomous tasks" icon="clock" href="/autonomous/autonomous-tasks">
+    Recurring work Piper runs on a schedule.
+  </Card>
+  <Card title="Long-running tasks" icon="bolt" href="/autonomous/long-running-tasks">
+    Big jobs Piper drives to completion over hours.
+  </Card>
+</CardGroup>

@@ -1,0 +1,84 @@
+---
+title: "Instructions and profile"
+description: "The standing instructions Piper follows in every session and the profile that says who you are, where each one lives, and how both differ from memory."
+---
+
+Standing instructions and your profile are two things you write once and Piper carries into every session. Instructions say how you want work done. The profile says who Piper is working for: your name, your email address, and a short note about you.
+
+## Standing instructions
+
+Standing instructions are rules Piper follows in every session.
+
+In **Settings**, select **Instructions**, then type your rules into **Custom Instructions** in plain sentences. Piper saves as you type and shows when it last saved. There is no save button.
+
+Write the things you would otherwise say twice a week:
+
+- "Always end with the next step."
+- "I work in US spelling."
+- "Never send anything outbound without showing me the draft first."
+- "When you cite a number, say where it came from."
+
+An edit reaches sessions that are already open. Piper picks it up on your next message in that session.
+
+<Tip>
+  Piper has no control for choosing a custom agent for a task. Every session runs the built-in agent, named **Piper**, so what you write here reaches all of your work. A custom agent you build in **Settings**, then **Custom Agents**, keeps its own instructions and its own response style, and no session runs on them. The page on [Custom agents](/autonomous/custom-agents) covers what that screen sets up.
+</Tip>
+
+## Your profile
+
+Your profile tells Piper who it is working for. Piper reads it at the start of every session, alongside your instructions.
+
+Open **Settings**, select **Profile**, then fill in the fields under **About you**. There is a second way in: select your name at the bottom of the sidebar, then the row with your name at the top of the menu. It reads **Set up profile** until you have entered one.
+
+<Steps>
+  <Step title="Enter your name">
+    Type the name Piper should call you into **Name**. It holds up to 100 characters.
+  </Step>
+  <Step title="Enter your email">
+    Type your address into **Email**. It has to look like a real address, and it holds up to 200 characters.
+  </Step>
+  <Step title="Write a short about-me note">
+    In **About me**, write a few sentences on your role and how you like to receive work: what you do, what you are working towards, and the shape you want answers in. It holds up to 2,000 characters.
+  </Step>
+</Steps>
+
+Piper saves each field as you type, and again when you leave it. A field that is too long is refused with the reason rather than shortened to fit.
+
+<Note>
+  What you enter here also lands on the **Memory** page, under **Personal info**, as your name, your email, and your about-me note. Those rows carry no edit or remove controls there. Change the field on the **Profile** page and the memory record follows.
+</Note>
+
+## How instructions and the profile differ from memory
+
+Instructions, the profile, and memory come from different places.
+
+| | Where it comes from | Where you change it |
+|---|---|---|
+| **Standing instructions** | You type them | **Settings > Instructions** |
+| **Profile** | You type it | **Settings > Profile** |
+| **[Memory](/context/memory)** | Piper picks facts up as you work, and you can add your own | **Settings > Memory** |
+
+Instructions tell Piper how to behave. The profile tells Piper who it is working for. Memory is the running record of facts Piper has picked up along the way.
+
+All three reach every session. Inside a project, the project's own instructions come after these and take priority where the two disagree. Piper has no control for choosing a [custom agent](/autonomous/custom-agents) for a task, so every session runs the built-in agent, named **Piper**, and no agent's own instructions or response style stand in for these.
+
+<Warning>
+  Piper never keeps a secret value in your profile or your memory. Text that looks like a credential, an API key, a token, or a private key is refused on save, in the profile fields and in memory alike. Put credentials in [Secrets](/connections/secrets), where they sit in your Mac's keychain.
+</Warning>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Memory" icon="brain" href="/context/memory">
+    The facts Piper learns as you work, and how to review or remove them.
+  </Card>
+  <Card title="Response style" icon="sliders" href="/context/response-style">
+    Tone, length, formatting, and emoji, set once and applied everywhere.
+  </Card>
+  <Card title="Set up Piper" icon="rocket" href="/getting-started/install">
+    The four setup answers, including the first "about you".
+  </Card>
+  <Card title="Custom agents" icon="robot" href="/autonomous/custom-agents">
+    Purpose-built agents with their own instructions, tools, and skills.
+  </Card>
+</CardGroup>

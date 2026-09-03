@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 372" role="img" aria-labelledby="ttl desc">
+  <title id="ttl">The three levels of memory</title>
+  <desc id="desc">Three nested rings. The outer ring is global memory, read by every task you start. Inside it sits project memory, read only by tasks in that project. Inside that sits session memory, read only by the one task it belongs to. A fact lives at the narrowest level that is true.</desc>
+  <style>
+    svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
+    @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
+    text { font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill:var(--ink); }
+    .ring { fill:var(--fill); stroke:var(--ink); stroke-opacity:.45; stroke-width:1.5; }
+    .acc-ring { fill:var(--fill); stroke:var(--accent); stroke-width:2; }
+    .t { font-size:16px; font-weight:600; }
+    .lbl { font-size:15px; font-weight:600; }
+    .s { font-size:13.5px; fill-opacity:.72; }
+  </style>
+
+  <circle class="acc-ring" cx="240" cy="180" r="150" fill-opacity=".5"/>
+  <circle class="ring" cx="240" cy="180" r="104" fill-opacity=".8"/>
+  <circle class="ring" cx="240" cy="180" r="58"/>
+
+  <text class="lbl" x="240" y="60" text-anchor="middle">Global</text>
+  <text class="lbl" x="240" y="106" text-anchor="middle">Project</text>
+  <text class="lbl" x="240" y="186" text-anchor="middle">Session</text>
+
+  <circle cx="478" cy="96" r="9" fill="var(--fill)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="t" x="502" y="92">Global</text>
+  <text class="s" x="502" y="114">Read by every task you start</text>
+
+  <circle cx="478" cy="180" r="9" fill="var(--fill)" stroke="var(--ink)" stroke-opacity=".45" stroke-width="1.5"/>
+  <text class="t" x="502" y="176">Project</text>
+  <text class="s" x="502" y="198">Read only by tasks in that project</text>
+
+  <circle cx="478" cy="264" r="9" fill="var(--fill)" stroke="var(--ink)" stroke-opacity=".45" stroke-width="1.5"/>
+  <text class="t" x="502" y="260">Session</text>
+  <text class="s" x="502" y="282">Read only by the one task it belongs to</text>
+
+  <text class="s" x="30" y="358">A fact lives at the narrowest level that is actually true.</text>
+</svg>

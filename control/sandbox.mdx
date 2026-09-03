@@ -1,0 +1,87 @@
+---
+title: "The sandbox"
+description: "The boundary macOS holds around every task Piper runs: writes confined to the task's own area, reads open across your Mac apart from the folders where credentials live."
+---
+
+The sandbox is a boundary macOS holds around every task Piper runs. It confines what a task can write to one folder, leaves reading open across the rest of your Mac apart from the places credentials live, and leaves the network open. macOS enforces the boundary for every program the task starts, not only for Piper's own tools.
+
+## How macOS enforces it
+
+Piper hands macOS the list of what this task may write, and macOS holds every program the task starts to that list. A file tool, a command, a script Piper writes and runs, a helper program that script launches: all of them meet the same boundary.
+
+macOS enforcing the rule is why you can trust it. A rule a program checks on itself only holds while that program behaves. This one holds for every program the task starts, whatever that program does.
+
+<Note>
+  Piper will not start a task it cannot wall off. If macOS cannot apply the sandbox, Piper refuses to start the task rather than running it unprotected.
+</Note>
+
+## What a task can write
+
+A task writes inside one area and nowhere else. For an ordinary session that area is the session's own workspace folder. For a session in a project it is the project's whole folder, because sessions in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder.
+
+A few places outside that area stay writable, and each has a reason. The Mac's temporary folder and its per-user cache area are scratch space every program uses. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Piper's browser keeps the logins for sites you have signed in to, so you sign in once and stay signed in on later tasks.
+
+Three things stay unwritable everywhere, including inside the task's own area: Piper's database, and the two files Claude Code reads when it starts, its settings file and its standing-instructions file. A task that could rewrite either of those two could hand itself permissions or standing instructions on its next run, so nothing may write them, wherever a copy of one sits.
+
+## What a task can read
+
+A task can read files across your Mac. Reads run without asking, and you cannot switch reading to ask.
+
+It cannot read the folders and files where credentials conventionally live, and neither can any program it starts. That blocked list covers folders in your home folder including `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.docker`, `.gradle`, `.m2`, and `.config/gcloud` and `.config/gh`, the settings folders for the `gcloud` and `gh` command-line tools. It covers single files too: `.netrc`, `.npmrc`, `.pypirc`, `.git-credentials`, and your shell startup files such as `.zshrc`, which routinely hold an API key. Piper's own database is on the list as well.
+
+A credential file outside those places works differently. An `.env` file or a `.pem` key in a folder of your own stays readable, and Piper stops and asks you every time a task reaches for one. [Approvals and permissions](/control/approvals-and-permissions) covers that question.
+
+<Note>
+  The block binds every process the task starts, not only Piper's own tools. A task cannot get around it by asking a command-line tool to print a key.
+</Note>
+
+<Warning>
+  The blocked list names the places credentials usually sit. It is a list, so it cannot be complete: a secret can live in a file with any name, in any folder. It stops the accident of a task reading a token while looking around. Treat it as that rather than as a guarantee.
+</Warning>
+
+<Frame>
+  <img src="/images/diagrams/sandbox.svg" alt="A task sits inside a box. Writes stay inside the box. Reads reach out across the Mac, except to credential stores, which are blocked." />
+</Frame>
+
+## Why reads are open
+
+Piper draws the boundary here on purpose.
+
+A task has to read your own material to do your work. A document you attach to a message, a spreadsheet in your Downloads folder, output another session produced last week: none of it sits inside the task's workspace. Confining reads to the workspace would leave Piper able to write files and unable to read the ones you asked it about.
+
+So the boundary is drawn where the risk is. Writing is where a task can destroy something, so writing is confined to one folder. Reading is where a task can leak something, so the credential folders are shut and a credential file anywhere else holds the task until you answer.
+
+<Warning>
+  A task can read another task's files. Sessions live under `PiperData` in your home folder, and reads reach across your Mac, so treat anything a session produced as visible to a later one. Sessions in the same project can also write to each other's files, since they share the project folder by design. An ordinary session outside a project cannot.
+</Warning>
+
+## What the sandbox leaves open
+
+The sandbox answers one question: where a task may write, and which folders it may never read. Two things sit outside that answer.
+
+**The network is open.** A command a task runs can reach the internet, and the sandbox lets it. The approval question in front of every command is the control there, which is why **Run commands** always asks and cannot be set to run on its own. On **Autopilot**, Piper answers that question itself.
+
+**A refused write fails.** macOS refuses a write outside the boundary and hands the task an error. There is no prompt, so there is nothing you might approve by mistake, and the task has to report the failure or work around it.
+
+A stored credential is a third thing the sandbox has no part in. Piper keeps the value out of the conversation by other means, which [Secrets](/connections/secrets) covers in full.
+
+<Note>
+  Skills, the packaged instructions Piper follows for particular kinds of work, are readable from anywhere and unwritable by any task. A task can follow a skill and can never rewrite one.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+  <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
+    Where Piper keeps your data, and what leaves your Mac.
+  </Card>
+  <Card title="Sessions and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
+    The private folder every task works in.
+  </Card>
+  <Card title="Projects" icon="folder" href="/concepts/projects">
+    Grouping sessions that share files and context.
+  </Card>
+</CardGroup>

@@ -1,0 +1,100 @@
+---
+title: "Files and deliverables"
+description: "Where Piper puts the files it makes, the split between finished work and scratch work, which formats open inside Piper, and how to open, find, or share a finished file."
+---
+
+A deliverable is a real file Piper writes into your task's own folder: a `.pptx` deck you can edit in PowerPoint, a spreadsheet with working formulas, a document. Piper shows each one as a file card in the reply, and you select the card to open it.
+
+## Where finished work lands
+
+Every task gets its own folder, and that folder has two halves. `final-output/` holds the deliverables. `intermediate-files/` holds the drafts, the notes, and the data pulls Piper made along the way. Piper creates both when the task starts and decides which one a file belongs in. The page on [sessions and the workspace](/concepts/sessions-and-workspace) covers what else the folder holds.
+
+A task that belongs to a project has a third place to write. The project's `artifacts/` folder holds work meant for the whole project rather than one task, and every session in that project can read and write it. [Projects](/concepts/projects) covers the shared folder in full.
+
+You reach both halves from one place while you work. On the right edge of a task, select **Artifacts** to open the file list.
+
+- **Artifacts** lists what Piper has finished. These are the files from `final-output/`, in whatever folders Piper arranged them in. If the task belongs to a project, the files in the project's shared folder appear here too, marked `project`.
+- **Other files** lists the working material, browsed as the folders it actually sits in.
+
+The **Artifacts** list fills while the work runs. Piper adds each file as it writes it, so you can open a deliverable before the task has finished the rest. In a project, a file another session wrote to the shared folder appears here too. Until anything arrives, the panel reads **Deliverables Piper creates in this session show up here.**
+
+Each row shows the file name, its size, and a **Reveal in Finder** button. Hover a row to see its path inside the task folder. Select **Open session folder in Finder**, on the **Other files** heading, to open the whole task folder on disk.
+
+## The viewer inside Piper
+
+Select any file and Piper opens it beside the conversation, in a panel you can drag wider or narrower. The panel header shows the file name and its format on a badge, such as `PPTX`. You read the result without leaving Piper.
+
+The viewer renders these formats:
+
+| What you get | Formats |
+|---|---|
+| Documents | `.docx`, `.pdf`, `.md`, `.markdown` |
+| Spreadsheets | `.xlsx`, `.xls`, `.csv` |
+| Presentations | `.pptx`, `.ppt` |
+| Images | `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.svg`, `.bmp`, `.avif` |
+| Web pages | `.html`, `.htm` |
+| Plain text and code | `.txt`, `.text`, `.log`, and code files such as `.json`, `.yaml`, `.py`, `.sql`, `.tsv` |
+
+Spreadsheets open as a read-only grid. In a workbook with several sheets, select a sheet tab along the bottom of the grid to switch sheets. Piper draws a presentation slide by slide, keeping the deck's own colours whichever Piper theme you use. PDFs open in the same reader your browser uses. A `.tsv` file opens as text rather than a grid.
+
+Anything outside that list opens in whichever Mac app normally handles it.
+
+<Note>
+The viewer is read-only. To change a deck or a spreadsheet yourself, open it in the Mac app you usually use, or ask Piper for the change and let it rewrite the file.
+</Note>
+
+## Working with a file
+
+<Steps>
+  <Step title="Open it from the reply">
+    Select the file card in the conversation. Each card shows the file name and a one-line type descriptor, such as `Document · PDF`.
+  </Step>
+  <Step title="Or open it from the file list">
+    Select **Artifacts** on the right edge of the task, then select any row under **Artifacts** or **Other files**.
+  </Step>
+  <Step title="Read it side by side, or fill the window">
+    The panel opens next to the conversation. Select **Expand viewer** to give the file the whole area, and **Restore split view** to bring the conversation back. **Close viewer** puts it away.
+  </Step>
+  <Step title="Check the raw text when you want it">
+    For a Markdown file, an HTML page, or a `.csv`, the panel offers **Preview** and **Source**. **Preview** shows the formatted result. **Source** shows the underlying text. An Excel workbook has no such toggle.
+  </Step>
+  <Step title="Take it elsewhere">
+    Open the **File actions** menu, in the panel header or on the file card, for **Open in default app**, **Show in Folder**, and **Copy Path**. The card in the conversation adds **Copy Contents**, which puts the file's text on your clipboard.
+  </Step>
+  <Step title="Reload after a change">
+    If Piper rewrites a file you already have open, select **Reload** in the panel header to see the new version.
+  </Step>
+</Steps>
+
+<Tip>
+Files stay on your Mac as ordinary files in ordinary folders. Attach a deliverable to an email, drop it in a shared drive, or edit it long after the task that made it has ended.
+</Tip>
+
+<Warning>
+A card marked **No longer available** points at a file that has been moved or deleted since Piper wrote it. Look where you moved it, or ask Piper to write it again.
+</Warning>
+
+## Write boundaries, paths, and size limits
+
+Each task writes inside its own folder, so a task working on its own cannot overwrite another task's files. Tasks that belong to the same project share a wider write boundary, the project's whole folder, which is how they hand work to each other. [The sandbox](/control/sandbox) explains the boundary in full.
+
+**Copy Path** and the path on a hovered row both give you the path inside the task folder rather than the full path on disk. Use **Show in Folder** when you need the file itself.
+
+Two size limits sit on the viewer. Above 50 MB, Piper will not open a file in the panel and tells you to open it in its usual Mac app instead. **Copy Contents** stops at 5 MB, since the clipboard is the wrong place for anything longer.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Sessions and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
+    What a task's folder holds and where it lives on your Mac.
+  </Card>
+  <Card title="Reviewing results" icon="eye" href="/working/reviewing-results">
+    The charts, tables, and questions Piper shows alongside the files.
+  </Card>
+  <Card title="Skills" icon="wand-magic-sparkles" href="/working/skills">
+    What lets Piper build a deck or a spreadsheet in the first place.
+  </Card>
+  <Card title="The sandbox" icon="shield-check" href="/control/sandbox">
+    Where Piper may write, and what it may read.
+  </Card>
+</CardGroup>

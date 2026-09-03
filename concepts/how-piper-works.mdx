@@ -1,0 +1,110 @@
+---
+title: "How Piper works"
+description: "The loop every task follows, the words the rest of this site uses, what the AI provider does, and how much Piper takes on without asking."
+---
+
+Every task follows the same loop. You describe an outcome, Piper plans the steps, Piper does the work, and you review the result. The loop runs inside a session, which is one task and the conversation around it.
+
+## The four stages of the loop
+
+**You describe.** Type what you want into the message box, in plain words. Name the outcome rather than the first step: "pull the Q3 numbers into a one-page summary for Thursday" gets further than "open the spreadsheet."
+
+**Piper plans.** Piper answers a quick request straight away. For work that runs longer, it asks up to four questions first about the goal, the inputs, the audience, the format, and the depth, then builds a list of three to seven tasks and posts it in the conversation as a card headed **Execution plan**.
+
+**Piper works.** Piper runs the tasks in order. It reads files, searches, uses the tools you have switched on, and writes the output. A strip above the message box names the step running now, reads **Step 2 of 5**, and counts the time the job has taken.
+
+**You review.** Piper answers with charts you can hover over, tables you can sort, files you can open, and questions you can answer with a tap. Finished deliverables collect under **Artifacts**, in the rail on the right of the session.
+
+<Frame>
+  <img src="/images/diagrams/core-loop.svg" alt="Four stages in a loop. You describe what you need. Piper plans the steps. Piper works step by step. You review the result and steer the next round." />
+</Frame>
+
+## Run a task through the loop
+
+<Steps>
+  <Step title="Describe what you need">
+    Type the outcome into the message box and select **Send**. A new session opens for that task.
+  </Step>
+  <Step title="Answer the scoping questions">
+    Answer with a tap, type into **Something else**, or select **Skip**. While a question waits, the message box reads **Or reply directly…**, so you can write an answer in your own words instead. Piper waits for your answers rather than guessing.
+  </Step>
+  <Step title="Follow the plan">
+    Read the **Execution plan** card, then watch the strip above the message box for the step running now. Select **Stop** at any point to halt the turn.
+  </Step>
+  <Step title="Review the result">
+    Open the file from its card in the conversation or from the **Artifacts** rail. Reply in the message box to correct the work, redirect it, or ask for the next round.
+  </Step>
+</Steps>
+
+## The words the rest of this site uses
+
+Nine terms come up on nearly every page. Each one has a page that defines it in full.
+
+- A **session** is one task and the conversation around it. See [Sessions and the workspace](/concepts/sessions-and-workspace).
+- A **workspace** is the folder a session writes its files to, covered on that same page.
+- A **project** groups related sessions and gives them shared instructions, memory, reference files, and a deliverables folder. See [Projects](/concepts/projects).
+- An **AI provider** is the service that does Piper's thinking. See [AI providers](/concepts/ai-providers).
+- A **tool** is a capability Piper uses while it works, such as reading a file, searching the web, or sending mail in Gmail. See [Tools](/working/tools).
+- A **skill** is a set of written instructions that teaches Piper how one kind of work is done, such as building a slide deck. See [Skills](/working/skills).
+- An **integration** is Piper's connection to an app you already use, such as Gmail, Slack, or Notion. See [Integrations](/connections/integrations).
+- An **approval mode** decides how much a session does without asking you. See [Approvals and permissions](/control/approvals-and-permissions).
+- **Memory** is the set of facts Piper keeps about you between tasks, at three levels: everywhere, inside one project, or inside one session. See [Memory](/context/memory).
+
+## What the AI provider does
+
+Piper cannot run a task until you set up an AI provider. Piper is what you talk to, and the provider is where each turn of the conversation goes: the Claude Code agent, the Codex agent, or a model provider's own API called with a key you paste in, from Anthropic, OpenAI, or DeepSeek.
+
+Your own material stays on this Mac. Your memory, your Knowledge Sources, your files and projects, and your instructions all sit in Piper's own store, and none of it moves into the provider. The turn itself does leave, though, carrying the conversation and whatever a task read along the way. See [Your data stays local](/control/your-data-stays-local).
+
+<Frame>
+  <img src="/images/diagrams/ai-provider-context.svg" alt="On the left, your context: memory, Knowledge Sources, files and projects, instructions and settings. It stays in Piper's store on your Mac. On the right, the AI provider, which you can change whenever you like and pick from Claude Code, Codex, and bring your own model. None of your context lives inside the provider." />
+</Frame>
+
+## Piper hands back the artifact
+
+Piper builds the real file. Ask for a deck and you get a `.pptx` you can open, rather than an outline of a deck you could build yourself. Finished deliverables land in the session's `final-output/` folder and appear in the **Artifacts** rail, and working material stays in `intermediate-files/`.
+
+## The two approval modes
+
+A session's approval mode sets how much Piper does without asking. Switch between the two from the row under the message box. In **Manual**, Piper shows you each action it cannot vouch for and waits. In **Autopilot**, Piper answers those requests itself for the rest of the session, which is why switching it on asks you to confirm once.
+
+A new session starts on **Autopilot**. One case starts on **Manual**: a session in a project you pointed at a folder of your own.
+
+<Warning>
+  On **Autopilot**, Piper can send an email, post a message, or change a record in a connected app without showing it to you first. Switch the session to **Manual** for any work where an outbound action would matter.
+</Warning>
+
+An approval request appears in the conversation under **Approval needed**. Select **Allow** to run that one action, **Always allow for this session** to answer the same question for the rest of the session, or **Deny**.
+
+<Warning>
+  Two actions ask every time, on **Autopilot** exactly as on **Manual**: reading a file that holds credentials, and working in the Chrome you are signed in to yourself.
+</Warning>
+
+<Note>
+  Piper denies a request you leave unanswered for ten minutes, and the task carries on as though you had selected **Deny**. Ask again if you still want the action.
+</Note>
+
+## Handing a job to a long-running task
+
+A session carries a multi-step job from start to finish while you do something else. For a job too big for one session, select **Run autonomously** in the session header. Piper moves the work to a long-running task, which plans the job, hands the pieces out to their own sessions, and keeps going until the job is done. See [Long-running tasks](/autonomous/long-running-tasks).
+
+<Note>
+  Piper works while it is open and your Mac is on and awake. A machine that is off or asleep runs nothing. If a scheduled run comes due in that time, Piper runs it once when you open Piper again.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Sessions and the workspace" icon="folder" href="/concepts/sessions-and-workspace">
+    The unit of work and the private folder each task gets.
+  </Card>
+  <Card title="Describing what you need" icon="pen" href="/working/describing-what-you-need">
+    Write a request that gets the result you want the first time.
+  </Card>
+  <Card title="Reviewing results" icon="table" href="/working/reviewing-results">
+    The charts, tables, files, and questions Piper answers with.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+</CardGroup>

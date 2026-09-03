@@ -1,0 +1,97 @@
+---
+title: "Sessions and the workspace"
+description: "What a session is, the workspace folder each one writes to, the standing instructions and approval mode that belong to one session, and how to rename, pin, move, or delete one."
+---
+
+A session is one task and the conversation around it. Each session gets a workspace, a folder holding that task's finished files and its working material, and Piper creates it the moment the session starts.
+
+## What a session is
+
+Start a session by describing what you need and selecting **Send**, either from the home screen or from **New task** in the sidebar. Everything that follows belongs to that session: the plan, the tools Piper uses, the files it writes, and the approvals it asks for.
+
+Piper names the session for you. Your first message stands in as the title straight away, cut to 60 characters, and a moment later Piper replaces it with a short one it writes from that message. Rename a session yourself and your title stays, because Piper only replaces a title it wrote itself. If the naming fails, your first message stays as the title.
+
+## The workspace
+
+Each session opens a workspace, a folder that only that session writes to. It has two parts:
+
+- **`final-output/`** holds the finished deliverables: the document, the deck, the spreadsheet, the analysis.
+- **`intermediate-files/`** holds scratch and working material: notes, downloads, half-built drafts.
+
+Piper writes only inside the area the session can write to, so a task cannot scatter files across your drive. For an ordinary session that area is the workspace, and no other session's work can be changed from it. For a session in a project it is the whole project folder, including your own folder where you pointed the project at one. Reading is wider. A task can read files across your Mac, though the folders where credentials usually live are closed to it, and Piper stops and asks you every time a task reaches for a file that looks like a credential. [The sandbox](/control/sandbox) covers that boundary in full.
+
+Session folders sit in `PiperData/sessions`, inside your home folder. A session that belongs to a project lives under that project's folder instead, and writes across the whole of it.
+
+<Frame>
+  <img src="/images/diagrams/session-workspace.svg" alt="A session with its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and working files sit in a separate intermediate-files area." />
+</Frame>
+
+## Where you see the files
+
+The rail on the right of a session shows what it has produced. Select **Artifacts** to open it. **Artifacts** lists the finished deliverables, and **Other files** lists the working material, browsed as the folders it sits in. Select **Open session folder in Finder**, on the **Other files** heading, to open the whole folder on your Mac.
+
+<Tip>
+  Hover a file row to see its path inside the session folder. For the file itself, use **Show in Folder** in the file viewer's **File actions** menu.
+</Tip>
+
+## What else belongs to one session
+
+Two things belong to one session alone, and the next session you start carries neither of them.
+
+**Instructions.** Open **Instructions** in the session's right-hand rail and write standing guidance for this task, such as "answer in French" or "keep every figure to two decimal places." Piper saves the text as you type and follows it from your next message. Rules you want everywhere belong in **Settings**, under **Instructions**. See [Instructions and profile](/context/instructions-and-profile).
+
+**Approval mode.** Each session runs in **Manual** or **Autopilot**, set from the row under the message box. A new session starts on **Autopilot**, where Piper acts without showing you first, including sending through a connected app. A session in a project you pointed at a folder of your own starts on **Manual**. See [Approvals and permissions](/control/approvals-and-permissions).
+
+## Manage your sessions
+
+The sidebar lists your recent sessions under **Sessions**, as many as fit its height. Select **View all** beneath them for the full list, where you can search with **Search sessions…** and narrow the list with **All** or **Pinned**.
+
+<Steps>
+  <Step title="Rename a session">
+    Open the session, select **Session actions** in the header, then **Rename**. Type the new name and select **Save**.
+  </Step>
+  <Step title="Pin a session">
+    Pin the sessions you keep returning to, so they stay easy to find once the list runs to dozens. A long-running piece of work, a session holding reference material, anything you reopen weekly.
+
+    Select **Pin session** from the same menu, or **Pin** on the row in the sessions list. To see only your pinned sessions, select **Pinned** above the list.
+  </Step>
+  <Step title="Move a session into a project">
+    Select **Add to project** from the menu, then pick a project or select **Start a new project**. For a session already in a project, select **Move to project** to change it, or **Remove from project** to take it back out.
+  </Step>
+  <Step title="Delete a session">
+    Select **Delete**. The dialog headed **Delete session?** warns that this removes the session from the list, and confirming with **Delete** leaves the workspace folder on disk. To take the folder too, tick **Also delete the folder from disk** first.
+  </Step>
+</Steps>
+
+<Tip>
+  To clear out several at once, tick the rows in the full list and select **Delete** in the bar above them.
+</Tip>
+
+<Warning>
+  Deleting a session removes it from the list and takes its conversation with it. Its workspace folder stays on your Mac unless you tick **Also delete the folder from disk**.
+</Warning>
+
+<Note>
+  A session that is still running cannot be deleted or moved into a project. Stop the task first, or wait for it to finish.
+</Note>
+
+## Sessions inside a project
+
+A session that belongs to a project sits inside the project's folder and can read and write across all of it, so sessions in the same project build on each other's files. The session's own finished work still belongs in its `final-output/`. Work meant for the whole project goes to the project's **Artifacts** folder, which every session in the project can reach. [Projects](/concepts/projects) covers the shared context in full.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Projects" icon="folder-tree" href="/concepts/projects">
+    Group related sessions and share context across them.
+  </Card>
+  <Card title="Files and deliverables" icon="file" href="/working/files-and-deliverables">
+    Where finished work lands and how to open it.
+  </Card>
+  <Card title="The sandbox" icon="box" href="/control/sandbox">
+    What a task may write, what it may read, and what stays off limits.
+  </Card>
+  <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
+    Where sessions, files, memory, and credentials live.
+  </Card>
+</CardGroup>

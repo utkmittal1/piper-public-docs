@@ -1,0 +1,135 @@
+---
+title: "Troubleshooting and FAQ"
+description: "The messages Piper shows when something is wrong, what each one means, and the fix you can make yourself inside the app."
+---
+
+This page lists the states Piper can end up in and the fix for each one. Find the wording on your screen in a heading below, then follow the steps under it. Every fix here happens inside Piper.
+
+## When Piper will not start work
+
+<AccordionGroup>
+  <Accordion title="A banner says to set up an AI provider">
+    You have not signed in to an AI provider or saved a model API key, so Piper has nothing to run a task on. The banner sits above the message box on the home screen, with a button that opens the right Settings page. Open **Settings**, then **AI providers**, and sign in to Claude Code or Codex, or paste an API key for Anthropic, OpenAI, or DeepSeek. [AI providers](/concepts/ai-providers) covers what each option needs.
+  </Accordion>
+
+  <Accordion title="A red banner says your default provider is signed out">
+    The banner sits across the top of the main area, beside the sidebar. It reads one of two ways. If a sign-in that was working has stopped, it says the sign-in stopped working and that new tasks, along with the work Piper starts on its own, will fail until you sign in again. If you have not signed that provider in yet, it says to sign in once, or set up another provider, before starting a task. Sign in from the button on the banner. You can also sign in from **Settings**, then **AI providers**, which is where you choose which provider to use and where your API keys live.
+  </Accordion>
+
+  <Accordion title="Could not start, or Could not send">
+    **Could not start** appears under the home screen message box when a new task fails to open. **Could not send** appears at the bottom of a session when a message fails. Both print the reason underneath, and that line usually names the cause. If it points at your sign-in, select **Sign in** on the red banner, then send again.
+  </Accordion>
+
+  <Accordion title="A session says your provider is signed out or has no API key">
+    A warning banner appears above the message box, titled with what went missing: the provider is signed out, it has no API key any more, or the model this task was using is not offered on it any more. Under the title it tells you to pick something for this task so it can carry on. The task itself is intact. Use the provider and model picker in the row under the message box to choose a pair that works, then send again.
+  </Accordion>
+
+  <Accordion title="Chief of Stuff is paused. Piper is signed out.">
+    This line sits at the top of the **Chief of Stuff** page. While Piper is signed out, Chief of Stuff stops watching your sources, **Check now** is greyed out, and no work of its own starts. Nothing is cancelled. Sign in from the red banner, and Chief of Stuff carries on by itself. It rechecks your sign-in every five minutes, so give it that long rather than looking for a resume button.
+  </Accordion>
+</AccordionGroup>
+
+## When a connection breaks
+
+<AccordionGroup>
+  <Accordion title="Gmail needs to reconnect.">
+    A banner in this shape, naming one app or counting several, means a sign-in expired. Under the name it reads `Their sign-in expired; their tools are paused until you reconnect.` Select **Open Integrations**. That app's card carries a **Reconnect** badge, and opening it shows **Needs reconnect** with the reason. Every other integration keeps working meanwhile. You can dismiss the banner, and Piper brings it back if the same app is still broken later.
+  </Accordion>
+
+  <Accordion title="A website needs you to sign in">
+    A card appears in the conversation with the eyebrow **Sign in needed**. Select **Open sign-in window**, sign in as you normally would, then select **I've signed in**. Closing the window yourself works too. Leave the window unused for five minutes and Piper closes it, and the card reads **Window closed** with **Open sign-in window** offered again. If the save fails, the card reads **Sign-in not saved** with the reason, and **Try again** restarts it.
+  </Accordion>
+
+  <Accordion title="You want to remove a saved website sign-in">
+    You cannot, from inside Piper. A saved sign-in is kept for that site for every later task, and the app has no screen for reviewing or deleting one. That is a real gap rather than a setting you have missed. [Web and sign-ins](/connections/web-and-sign-ins) says the same.
+  </Accordion>
+
+  <Accordion title="Piper cannot use your own Chrome">
+    Piper works in your Chrome through an extension. Find the row **Use my Chrome for sites I'm signed in to** in **Settings** > **Tools**, under **Browse websites**. If the extension is missing, the row shows **Set up**. Select it, and Piper offers **Install extension**. Install it and come back, and Piper turns the setting on for you. If the extension is installed but switched off, a warning on the row says so. Turn it back on in Chrome.
+  </Accordion>
+
+  <Accordion title="Connecting AWS Documentation fails">
+    AWS Documentation runs a helper program called `uvx` on your Mac, and Piper checks for it before connecting. If it is missing, the connect attempt fails with a message naming the program. Piper has no screen that installs it, so this is one problem you cannot finish inside the app. Every other app in the catalog needs only a sign-in or a key.
+  </Accordion>
+</AccordionGroup>
+
+## When a tool will not run
+
+<AccordionGroup>
+  <Accordion title="An action was Auto-denied">
+    An approval card that nobody answers expires after 10 minutes. The card drops its buttons, shows the eyebrow **Auto-denied**, and says the action was denied and to ask again if you still want it. Piper did nothing. Ask for the same thing again and answer the new card. [Approvals and permissions](/control/approvals-and-permissions) explains the two modes.
+  </Accordion>
+
+  <Accordion title="Piper says a tool is turned off">
+    Piper reports that the tool is turned off rather than doing the work. Open **Settings** > **Tools**, find the tool, and switch it on. This is also what you see when you connect an app and then ask for something the connection does not start with, since Piper leaves some of an app's tools off at first. [Tools](/working/tools) covers that screen.
+  </Accordion>
+</AccordionGroup>
+
+## When your documents are not searchable
+
+<AccordionGroup>
+  <Accordion title="A source shows Couldn't index or Needs attention">
+    Both badges sit in **Settings** > **Knowledge Sources**. Select the information icon beside either one to see the reason. Red **Couldn't index** means the whole pass failed: fix what the reason names, then select **Re-index** on the row. Amber **Needs attention** has three causes. `Preparing the on-device search model…` means Piper is downloading the search model, so wait rather than re-index. A message that the model is not available yet means that download failed. `This folder could not be found at` a path means the folder moved or its drive is unplugged.
+  </Accordion>
+
+  <Accordion title="A source sits on Indexing… or Queued">
+    Both badges are normal. **Queued** means the folder is waiting its turn. **Indexing…** means Piper is reading it, and a progress bar under the row counts files done against files total. The badge turns to **Up to date** when it finishes. Piper indexes on your machine, so a large folder takes time and sends nothing out.
+  </Accordion>
+</AccordionGroup>
+
+## When background work stalls
+
+<AccordionGroup>
+  <Accordion title="An autonomous task shows Failed or Needs you">
+    **Failed** in red means the task stopped itself after several runs failed in a row, and the page says to resume it once the cause is sorted. The run that broke carries its own **Failed** badge below. If it opened a session, select **Open session** on that run to see what went wrong. Sort the cause, then select **Resume**. **Needs you** in amber means a run is waiting on you; expand it to see what for. A run badged **Trying again** is neither: Piper will make another attempt on its own.
+  </Accordion>
+
+  <Accordion title="Chief of Stuff is empty">
+    Neither empty state is a fault. **Nothing needs you** means Chief of Stuff is watching and has found nothing worth your time. **Chief of Stuff is ready** means you have not set up watching yet. Select **Set up watching** to open the tab where you switch a source on.
+  </Accordion>
+
+  <Accordion title="macOS banners never appear">
+    Turn on **macOS banners** in **Settings** > **Notifications** and Piper sends a test banner. If none arrived, a **Not showing?** row appears under the setting; select **Open settings** on it, then allow notifications for Piper on that macOS screen and set its style to Banners or Alerts. A toast titled **Test banner didn't send** means the banner never left Piper, and the reason sits underneath it.
+  </Accordion>
+</AccordionGroup>
+
+## Questions people ask
+
+<AccordionGroup>
+  <Accordion title="Where do I see what Piper has been doing?">
+    Open **Settings** > **Logs**. It streams every event Piper records, newest at the bottom, with one filter for the area (`session`, `trust`, `connection`, `background`, `notify`) and one for the level (`info`, `warn`, `error`). The button on the right reads **Live** while the stream is tailing and **Paused** once you stop it. Select a row to expand its detail. **No events yet** means nothing has happened, or your filters are too tight.
+  </Accordion>
+
+  <Accordion title="Can I review a fact Piper saved just for one task?">
+    No. **Settings** > **Memory** lists your global facts, and a project's facts sit on the project's own page. A fact that mirrors your profile appears there with no edit or remove control, because the **Profile** screen owns it. Session facts have no screen at all. They apply to the one task that saved them and are listed nowhere you can open.
+  </Accordion>
+
+  <Accordion title="A file will not open in Piper">
+    `No preview available for this file type.` means Piper has no viewer for it, and the file itself is fine. **Could not open this file** is a real failure, with the reason underneath: anything over 50 MB is too large to view in the app, and a file that moved or was deleted cannot be read at all. Either way, use **Open in default app** in the viewer's **File actions** menu, or **Reveal in Finder** on the file's row in the right-hand rail.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Piper works only from the sources and tools you connect. If an answer looks thin, check that what it needed is connected before treating it as a bug.
+</Note>
+
+<Warning>
+  Logs record what Piper did, not what it read. They never carry the contents of your files or messages, or a credential.
+</Warning>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="link" href="/connections/integrations">
+    Connecting apps and reconnecting one that expired.
+  </Card>
+  <Card title="Knowledge Sources" icon="folder" href="/context/knowledge-sources">
+    Adding folders and re-indexing them.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    Manual and Autopilot, and what each one asks you.
+  </Card>
+  <Card title="Keyboard shortcuts" icon="keyboard" href="/reference/keyboard-shortcuts">
+    The keys Piper responds to.
+  </Card>
+</CardGroup>

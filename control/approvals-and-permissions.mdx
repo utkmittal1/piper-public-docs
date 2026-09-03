@@ -1,0 +1,126 @@
+---
+title: "Approvals and permissions"
+description: "The two approval modes a session runs in, what Piper does without asking, what an approval request looks like, the two questions no setting silences, and the per-agent tool settings behind all of it."
+---
+
+Approvals and permissions decide which actions Piper takes on its own and which it holds until you answer. Two settings control that. Each session runs in one of two modes, **Manual** or **Autopilot**, which you pick from the row under the message box. Each agent carries a list of tools, meaning the separate things Piper can do such as reading a file, running a command, or sending through Gmail, and **Settings** is where you say whether each tool asks first.
+
+## The two modes
+
+In **Manual**, Piper shows you a request and waits for your answer before it acts. In **Autopilot**, Piper answers those requests itself and acts without showing you anything.
+
+A new session starts on **Autopilot**. One case starts on **Manual**: a session in a project you pointed at a folder of your own, because its work lands in your own files. A mode belongs to one session and does not carry to the next.
+
+<Warning>
+  On **Autopilot**, Piper can send an email through Gmail, post to a Slack channel, or change a record in any other app you have connected, without showing you the message first. Use **Manual** for any session where a message going out would matter.
+</Warning>
+
+## What Piper does without asking
+
+Six actions run without asking, in both modes. Piper reads a file, searches your files, searches the web, fetches a page, searches your Knowledge Sources, and writes a file inside the folder the session can write to. None of them leaves a mark outside the task, and stopping for each one would turn the questions into noise you learn to click through.
+
+Piper also runs a short list of read-only commands. `ls`, `cat`, `head`, `tail`, `grep`, `wc`, `stat`, `du`, `df`, `git status`, `git log`, and `git diff` are on it, along with about a dozen others that only report what is already there. Piper can create a folder inside the one it writes to without asking as well.
+
+That list stays narrow on purpose. Piper asks about any command that redirects output, chains a second command onto the end, or refers to a shell variable. Each of those stops the text from saying what the command will really touch, whatever program it names.
+
+Piper reads through an integration without asking as well. An integration is the connection Piper holds to an app such as Gmail, Slack, or Linear, and it brings a set of tools with it. Piper starts an integration's reading tools set to run on their own, and its writing tools set to ask.
+
+## File writes run without asking in both modes
+
+Writing a file sits on that list, and neither mode takes it off. A mode decides which requests Piper answers for you, and a write inside the folder never becomes a request, so **Manual** leaves file writes exactly where **Autopilot** does.
+
+Which folder that is decides how much this matters. For an ordinary session it is the session's own workspace, so nothing else of yours changes. For a session in a project you pointed at a folder of your own, it is that whole folder: Piper creates files in it, and writes over files you already had, with no prompt.
+
+Two things narrow that. Set **Edit & write files** to **Ask** for the agent running the session and Piper stops before each write. A command that deletes files stops and asks in **Manual** on its own, because **Run commands** always asks. Beyond those, keep such a project on a folder you are happy for Piper to change.
+
+## What Piper asks about
+
+Piper asks before every other command, and shows you the exact command in the request. It asks again for anything an integration writes: a Gmail message, a Slack post, a new or changed Linear issue. One case is easy to miss. When Piper opens a page in its own browser and the site is one you have signed in to through Piper, it asks first, because that page is your account.
+
+## What an approval request looks like
+
+The request appears in the conversation under **Approval needed**, with one line naming the action. Select **Details** to see the exact command or file path behind it.
+
+Three buttons sit underneath. **Allow** runs that one action. **Always allow for this session** answers the same question for the rest of the session. **Deny** blocks the action.
+
+When the action has a scope, the middle button names it: approve a `pip install` and the button reads `Always allow "pip install" this session`. That scope is the program rather than the exact command line, so the same approval covers installing a different package. For `git`, `npm`, `pnpm`, `yarn`, `pip`, `uv`, `brew`, `docker`, `cargo`, and `go`, it covers the program plus that one subcommand. Approving `pip install` therefore does nothing for `git push`.
+
+Once you have used that button at least once, the session's right-hand rail lists everything you have allowed under **Allowed tools**. Each is a chip. Remove one and that action asks again. What you allow holds for that one session, including after you close Piper and come back to it, and it never reaches another session.
+
+<Warning>
+  Piper denies a request you leave unanswered for ten minutes. The card then reads **Auto-denied** and the task carries on as though you had selected **Deny**. Nothing holds the question for later, so a task you walk away from mid-approval comes back with that action refused.
+</Warning>
+
+## The two questions no setting silences
+
+**Reading a file that holds credentials.** Piper asks before a task reads an `.env` file, a `.pem` key, an `id_rsa` file, or anything else whose name marks it as a stored secret. Whatever a task reads enters the conversation, and the conversation goes to the AI provider, so this stays your call.
+
+**Working in the Chrome you are signed in to.** Piper browses ordinary pages in a browser of its own. When it needs the browser you use yourself, it asks before it acts on each site, and that approval covers that one site for the rest of the turn.
+
+Neither request offers **Always allow for this session**, and **Autopilot** does not answer either one.
+
+## Switching the mode
+
+<Steps>
+  <Step title="Find the control">
+    Look in the row under the message box, alongside the AI provider and model picker. The control shows the session's current mode, tinted as a warning on **Autopilot**, so you can spot a session that has stopped asking.
+  </Step>
+  <Step title="Switch to Manual">
+    Select **Manual**. The switch applies straight away, with no confirmation, including to a task already running.
+  </Step>
+  <Step title="Switch to Autopilot">
+    Select **Autopilot**, then confirm with **Turn on Autopilot** in the dialog headed **Turn on Autopilot for this session?**. The dialog warns that Piper will stop asking and run every command and file edit on its own for the rest of the session. Select **Cancel** to back out.
+  </Step>
+  <Step title="Review what you have allowed">
+    Once you have used **Always allow for this session** at least once, open **Allowed tools** in the session's right-hand rail. Remove any of them there.
+  </Step>
+</Steps>
+
+Piper reads the mode fresh for each request, so a switch takes effect on the very next action of a running task.
+
+## What Autopilot does not change
+
+Autopilot answers the ordinary questions. It gives a task nothing it could not already do, and three limits hold in both modes.
+
+**It never widens the sandbox.** macOS refuses a write outside the folder the session can write to. No question reaches you, so Autopilot has nothing to say yes to. [The sandbox](/control/sandbox) covers that boundary.
+
+**It never switches a tool back on.** Clear the checkbox beside **Run commands** for an agent, and Piper builds that agent's next session without it. Autopilot gets no question to answer, because the session has no such tool to use. In one that was already running when you cleared the box, Piper refuses the tool the next time the session reaches for it.
+
+**It never answers the two questions above.** Piper still asks before it reads a credential file, and before it works in the Chrome you are signed in to.
+
+## Setting the tools for an agent
+
+The session mode moves every question at once. You can also set permissions one tool at a time, and those settings hold across sessions rather than resetting with each one.
+
+In **Settings**, select **Tools** to set this for the built-in Piper, or **Custom Agents** to set it for an agent you built. Both open the same two sections. A session runs the built-in Piper unless you pick another agent for it from the row under the message box, and whichever agent runs the session, that agent's settings are the ones in force. See [Custom agents](/autonomous/custom-agents).
+
+**Core Tools** lists what Piper can do on this machine. Three rows read **Always auto**, and you cannot make them ask: **Read files**, **Search files**, and **Web search & fetch**. **Run commands** reads **Always asks**, and you cannot make it run without asking. Reading and the network are both open, so the question in front of a command is what stands between a task and sending your data somewhere. **Search knowledge** and **Browse websites** each read **Always runs**.
+
+**Edit & write files** is the one row with a choice, an **Auto** and **Ask** pair. Set it to **Ask** and, in **Manual**, Piper stops before each file it writes. Every row also carries a checkbox. Clear one and the agent's sessions never receive that tool at all.
+
+**Integrations** lists the integrations this agent may use, each with its tools split into a **Read** group and a **Write** group. Every tool has its own checkbox and its own **Auto** or **Ask** setting, so one agent can read Gmail and never send from it.
+
+<Tip>
+  Start a sensitive session on **Manual**, watch the first few actions, then switch to **Autopilot** once you can see what Piper is doing. Switching back to **Manual** applies at once and needs no confirmation.
+</Tip>
+
+<Note>
+  [Chief of Stuff](/autonomous/chief-of-stuff) follows a rule of its own. Piper refuses it every integration tool that writes, in code, whatever the session mode says, so it never sends on its own. A reply it prepares comes back to you as a draft, and the message goes only when you select **Send**.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="The sandbox" icon="box" href="/control/sandbox">
+    The boundary no approval mode can widen.
+  </Card>
+  <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
+    Where Piper keeps your data, and what leaves your Mac.
+  </Card>
+  <Card title="Custom agents" icon="users" href="/autonomous/custom-agents">
+    Setting tools and approvals per agent.
+  </Card>
+  <Card title="Reviewing results" icon="eye" href="/working/reviewing-results">
+    Checking what Piper produced before you use it.
+  </Card>
+</CardGroup>

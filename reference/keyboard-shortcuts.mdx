@@ -1,0 +1,124 @@
+---
+title: "Keyboard shortcuts"
+description: "Every key combination Piper binds, where each one works, and the parts of Piper that have no shortcut at all."
+---
+
+Piper binds one shortcut that works anywhere in its window. Every other key listed here works only in the panel, card, or field you are already in. Where a screen has no entry below, it has no shortcut.
+
+## Anywhere in Piper
+
+| Keys | What happens |
+|---|---|
+| `⌘⇧H` | Opens a small menu with two choices, **Quick question** and **Hand off work**. Press it again to close the menu. |
+
+Select **Quick question** and Piper opens a drawer for one question, answered over whatever you are doing. Select **Hand off work** and Piper opens a drawer titled **Hand off to Chief of Stuff**, where you type an ask, select **Hand off**, and the result lands under [Chief of Stuff](/autonomous/chief-of-stuff). Select the paper-plane button in the bottom corner of the window to open the same menu.
+
+## The message box
+
+The message box is where you describe what you need, on the home screen and inside a session.
+
+| Keys | What happens |
+|---|---|
+| `Enter` | Sends the message. |
+| `⇧Enter` | Starts a new block instead of sending. Inside a list, that is the next list item. |
+
+## Cards that need an answer
+
+When a choice would change the result, Piper puts a card in the reply with numbered options. Piper gives the card keyboard focus as soon as it can be answered, so these keys work without you clicking it first. The message box stays live either way, so you can also type an answer there in your own words.
+
+| Keys | What happens |
+|---|---|
+| A number key | Picks the option with that number, or ticks and unticks it on a card that lets you choose several. Every option prints its number on the left, so a card with three options answers to `1`, `2`, and `3`. |
+| `←` and `→` | Moves between questions when the card holds more than one. |
+| `Enter` | Confirms your picks on a card that lets you choose several, the same as selecting **Confirm**. On a card that takes one answer, `Enter` does nothing. |
+| `Esc` | Dismisses the card, or closes the free-text box if you opened it. |
+
+**Something else** carries no number. Select it, and `Enter` submits what you typed. **Skip** has no key of its own.
+
+The picker for choosing a look for a deck takes the same number keys, and `Esc` dismisses it. Every design prints its number under the preview. Arrow keys and `Enter` do nothing there.
+
+## Choosing the AI provider and model
+
+The control under the message box names the AI provider and model this task runs on. Open it and the menu has two levels: the providers, and one provider's models.
+
+| Keys | What happens |
+|---|---|
+| `↑` and `↓` | Moves between the entries in whichever list is open, providers or models. |
+| `→`, `Enter`, or `Space` | Opens that provider's list of models. |
+| `←` | Goes back from a model list to the provider list. |
+| `Esc` | Closes the menu and puts focus back on the control. |
+
+This is the only menu in Piper where the arrow keys move a selection. Every other dropdown, including the one that switches a session between **Manual** and **Autopilot**, takes `Esc` and clicks only.
+
+## Panels, dialogs, and menus
+
+| Keys | What happens |
+|---|---|
+| `Esc` | Closes the open dialog, side panel, dropdown, or menu. |
+| `Esc` in **Settings** | Returns you to the screen you came from. |
+
+<Note>
+  `Esc` in **Settings** only takes you back when nothing sits on top of it. A dialog or a side panel opened from inside Settings closes first, so you may need `Esc` twice.
+</Note>
+
+## Rows, cards, and text fields
+
+Piper binds `Enter` and `Space` on the things you can put keyboard focus on.
+
+| Keys | What happens |
+|---|---|
+| `Enter` | Opens the focused row: a session in the sessions list, a task in the **Autonomous tasks** list, or a file in the right-hand rail. |
+| `Enter` or `Space` | Opens a focused project card, expands a focused skill pack or a grouped card in **Memory**, **Tools**, or **Chief of Stuff**, or picks a focused option card such as an AI provider. |
+| `Enter` in a text field | Commits it. This renames a session or an autonomous task, saves a memory fact, adds a knowledge folder or a project source by path, or saves a model provider's API key. |
+| `Esc` in a memory field | Cancels the edit and leaves the fact as it was. |
+| `Enter` in a comment box | Sends the comment. `⇧Enter` starts a new line, and `Esc` cancels it. |
+
+<Note>
+  The **API key** box on an integration's connect panel is the exception: it takes no `Enter`, so select **Connect** to finish there.
+</Note>
+
+## While you set Piper up
+
+| Keys | What happens |
+|---|---|
+| `Enter` | Moves to the next question on the **What should I call you?** and **Where can I reach you?** steps. |
+| `⌘Enter` | Moves on from the **Tell me about yourself.** step, where plain `Enter` starts a new line. |
+
+The fourth question, where you pick an AI provider, binds nothing. Select a card, then select **All set**.
+
+## Where there are no shortcuts
+
+Piper leaves these without a shortcut, so you do not go looking for keys that are not there.
+
+- No shortcut starts a new task. Select **New task** in the sidebar, or type in the message box on the home screen.
+- No shortcut opens **Settings**, **Projects**, **Autonomous tasks**, or **Chief of Stuff**. Those are sidebar clicks.
+- No shortcut moves between sessions, searches, stops a running task, or answers a pending approval.
+- No shortcut starts voice input. Select the microphone button under the message box, labelled **Voice input**.
+- Piper binds nothing to `Tab`. Focus moves the way it does in any Mac window, and Piper adds no order of its own.
+
+Piper adds nothing to the macOS menu bar either. What you see there is the standard set of macOS items.
+
+<Tip>
+  To start work by keyboard alone, `⌘⇧H` gets you closest. It opens the menu from anywhere, and both choices behind it put you straight into a box you can type in.
+</Tip>
+
+<Warning>
+  Shortcuts change as Piper changes. Treat this page as the list confirmed in Piper today, not a promise about later versions.
+</Warning>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Describing what you need" icon="pencil" href="/working/describing-what-you-need">
+    How to write an ask that Piper can act on.
+  </Card>
+  <Card title="Chief of Stuff" icon="inbox" href="/autonomous/chief-of-stuff">
+    Where handed-off work lands and how you review it.
+  </Card>
+  <Card title="Reviewing results" icon="check" href="/working/reviewing-results">
+    Reading the cards Piper puts in a reply.
+  </Card>
+  <Card title="Troubleshooting and FAQ" icon="circle-question" href="/reference/troubleshooting">
+    Common snags and what to do about them.
+  </Card>
+</CardGroup>

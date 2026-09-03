@@ -1,0 +1,59 @@
+---
+title: "Connecting your tools"
+description: "The three ways Piper reaches anything outside itself: integrations for apps you have an account with, secrets for credentials nothing else covers, and its own browser for pages on the web."
+---
+
+Piper reaches the apps and services you use in three ways, and each one works differently: an integration for an app you have an account with, a secret for a credential nothing else covers, and Piper's own browser for pages on the web. This section covers all three. Web search, page fetch, and the conversation each turn sends to your AI provider sit outside these three, and [Your data stays local](/control/your-data-stays-local) covers those.
+
+## Integrations, secrets, or the browser
+
+| What you want Piper to reach | What to use | What you do once |
+|---|---|---|
+| Gmail, Slack, Notion, GitHub, or any of the 26 apps Piper ships an integration for | An integration | Connect it in **Settings** > **Integrations** |
+| Your own database, an internal service, a tool that asks for a token | A secret | Store the credential in **Settings** > **Secrets** |
+| A page on the web, whether or not it requires a sign-in | Piper's own browser | Nothing, until a page asks you to sign in |
+
+Where an app offers both, connect the integration rather than leaving Piper to click around the app's website. An integration gives Piper named tools you can switch on and off one by one, and every tool that changes something starts set to ask you first. That setting holds in a session on **Manual**. A new session starts on **Autopilot**, where Piper answers those requests itself, so see [Approvals and permissions](/control/approvals-and-permissions) before you rely on it. A web page gives Piper a mouse and a keyboard.
+
+## Integrations
+
+An integration is a connection between Piper and an app you already use. Piper ships 26 of them, each one an MCP server, which is how a service publishes its tools for an assistant like Piper to call. Connecting an integration signs Piper in and hands Piper its tools, split into the ones that look things up and the ones that change something.
+
+See [Integrations](/connections/integrations) for how to connect an integration, what each way of signing in asks for, what Piper may do once one is connected, and how to point Piper at an MCP server of your own.
+
+## Secrets
+
+A secret is a named credential you save in Piper: a password, an API key, a database login. Piper puts the value in your Mac's keychain and supplies it to the one command that needs it, so the value never enters the conversation or a file Piper writes.
+
+Reach for a secret when the thing you need is not one of the 26 integrations. See [Secrets](/connections/secrets) for how to store a secret and how Piper chooses between them.
+
+## Web and sign-ins
+
+Piper browses in a browser of its own, a copy of Chromium in its data folder, and it starts out signed in to nothing. When a page requires a sign-in, Piper stops and puts a **Sign in needed** card in the conversation. You sign in yourself in a real window, and Piper stays signed in to that site for every later task. Piper has no screen for reviewing or removing a saved website sign-in. On sites you are already logged into in your own Chrome, Piper can work there instead, once you turn that on.
+
+The browser is not an integration and it does not appear on the **Integrations** page. Nobody connects it or signs into it as a service. See [Web and sign-ins](/connections/web-and-sign-ins).
+
+## Where each credential ends up
+
+The three keep their credentials in two different places, and none of them shows a stored value back to you.
+
+- An integration's credentials, the access token or key it connects with, go into your Mac's keychain, one item per integration.
+- A secret's values go into your Mac's keychain too, one item per field.
+- What keeps Piper signed in to a website, the cookies the site handed its browser, goes into a file in Piper's own data folder rather than the keychain. That file is what carries a login into later tasks.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="link" href="/connections/integrations">
+    Connect Gmail, Slack, Notion, and more, and see what Piper may do in each.
+  </Card>
+  <Card title="Secrets" icon="key" href="/connections/secrets">
+    Store a password or an API key once and let every task use it.
+  </Card>
+  <Card title="Web and sign-ins" icon="globe" href="/connections/web-and-sign-ins">
+    Piper's own browser, the sign-in card, and using the Chrome you already use.
+  </Card>
+  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
+    What Piper asks before it acts, and the two approval modes.
+  </Card>
+</CardGroup>
