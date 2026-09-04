@@ -82,8 +82,7 @@ cut anything you cannot point at.
 
 **"AI provider" is the name for the service that does Piper's thinking.** The
 pages never call it an engine, a runtime, an LLM provider, or bare AI. The app's
-own Settings item still reads **Agent Runtime**, so the docs and the interface
-disagree on this one label. That is deliberate and recorded in the audit log.
+own Settings item reads **AI Providers**, and the pages quote it that way.
 
 **Five labels the pages quote in sentence case render uppercase in the app**,
 because `globals.css` applies `text-transform: uppercase`: **Execution plan**,
