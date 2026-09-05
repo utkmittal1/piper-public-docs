@@ -44,9 +44,6 @@ Each integration uses one of these four, and its panel shows which.
   <Step title="Work through the setup steps, if the panel shows any">
     Six integrations need a one-time registration with the provider. Finish those numbered steps before you select **Connect**.
   </Step>
-  <Step title="Leave Add to Piper on connect ticked">
-    It is ticked by default, and it is what gives Piper the integration's tools.
-  </Step>
   <Step title="Connect">
     Select **Connect**. For an integration you sign in to, approve the page that opens in your browser. For an integration that takes a key, paste the key first.
   </Step>
@@ -55,7 +52,7 @@ Each integration uses one of these four, and its panel shows which.
 The integration then moves to the **Connected** list.
 
 <Note>
-  Setting up an integration and giving Piper its tools are two separate things, which is why the tick box exists. Untick **Add to Piper on connect** and Piper keeps the credentials without handing any agent the integration's tools. To add them later, open **Settings** > **Tools**, find the **Integrations** section, and select **+ Add Integration**.
+  Connect an app and Piper signs in and switches on that app's tools in the same step, at that app's usual settings. Piper leaves the panel open on them, so you can see which tools you now have and change any of them straight away.
 </Note>
 
 ## What Piper may do once an integration is set up
@@ -65,16 +62,16 @@ Open the panel of an integration under **Connected** to see its **Available tool
 - **Read** tools look things up: search your mail, list your issues, fetch a page. Piper runs almost all of these on its own while it works, and a handful ask first.
 - **Write** tools change something: send a message, create a task, update a record. Every one of them ships set to ask you before it runs.
 
-Turn a tool on or off, and change whether it asks, in **Settings** > **Tools**, which governs the built-in Piper agent. Some tools ship switched off and stay off until you turn them on there. See [Tools](/working/tools) for how that page works.
+Turn a tool on or off, and change whether it asks, on this panel. Each group holds one row per tool, with its checkbox and an **Auto** or **Ask** control. Some tools ship switched off and stay off until you turn them on here.
 
 Piper puts each integration's credentials in your Mac's keychain, one item per integration, and never shows them back to you.
 
 <Note>
-  Setting up an integration lets Piper reach that app's own service over the internet. Piper keeps your sessions, files, and credentials on your Mac, and the app's data travels the same way it does when you use it yourself. See [Your data stays local](/control/your-data-stays-local).
+  Setting up an integration lets Piper reach that app's own service over the internet. Piper keeps your tasks, files, and credentials on your Mac, and the app's data travels the same way it does when you use it yourself. See [Your data stays local](/control/your-data-stays-local).
 </Note>
 
 <Warning>
-  Piper reaches an app only through an integration you set up. Select **Disconnect** in that integration's panel to end it: Piper removes its tools from every agent and deletes the credentials it stored. You can set the integration up again at any time.
+  Piper reaches an app only through an integration you set up. Select **Disconnect** in that integration's panel to end it: Piper removes its tools and deletes the credentials it stored. You can set the integration up again at any time.
 </Warning>
 
 ## When an integration's credentials expire
@@ -109,7 +106,7 @@ Select **+ Add Custom** at the top of the **Integrations** page, which opens **A
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
     What Piper asks before it acts, and the two approval modes.
   </Card>
-  <Card title="Tools" icon="wrench" href="/working/tools">
-    Choose which capabilities Piper may use, tool by tool.
+  <Card title="Core Tools" icon="wrench" href="/working/tools">
+    The capabilities Piper carries without any app connected.
   </Card>
 </CardGroup>

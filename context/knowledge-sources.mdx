@@ -5,7 +5,7 @@ description: "How to point Piper at folders of your own documents, which file ty
 
 A knowledge source is a folder of documents you add for Piper to search. Piper reads the supported files in that folder, splits their text into passages (called chunks), and builds a search index on your Mac. Your documents stay where they are, and Piper never writes to them.
 
-Add a folder when its documents hold background Piper may need across different tasks: past decks, research, notes, contracts. A [project source](/concepts/projects) is the better place for a file only sessions in one project need.
+Add a folder when its documents hold background Piper may need across different tasks: past decks, research, notes, contracts. A [project source](/concepts/projects) is the better place for a file only tasks in one project need.
 
 ## Setting up knowledge search
 
@@ -13,7 +13,7 @@ Two things have to be true before Piper can search your documents. Piper needs t
 
 <Steps>
   <Step title="Check the tool is switched on">
-    In **Settings**, select **Tools**, and look for the **Search knowledge** row. It is on to begin with. The row is marked read and **Always runs**, so Piper searches without stopping to ask you. Clear the checkbox to stop Piper searching your folders at all.
+    In **Settings**, select **Core Tools**, and look for the **Search knowledge** row. It is on to begin with. The row is marked read and **Always runs**, so Piper searches without stopping to ask you. Clear the checkbox to stop Piper searching your folders at all.
   </Step>
   <Step title="Add a folder">
     In **Settings**, select **Knowledge Sources**, then **Add a folder**, and pick the folder you want. Piper names the source after the folder.
@@ -24,10 +24,6 @@ Two things have to be true before Piper can search your documents. Piper needs t
 </Steps>
 
 Piper walks the whole tree, subfolders included. It refuses a folder that is already a source, so the same folder cannot be indexed twice.
-
-<Note>
-  Every agent has its own copy of this switch. **Settings**, then **Tools**, sets it for the built-in agent, named **Piper**, and Piper has no control for handing a task to any other agent. A [custom agent](/autonomous/custom-agents) keeps its own switch on its own **Tools** tab, and no session runs on it.
-</Note>
 
 ## Which files get indexed
 
@@ -91,7 +87,7 @@ Three neighbouring features are easy to confuse with a knowledge source. [Memory
   <Card title="Memory" icon="brain" href="/context/memory">
     The short facts Piper carries from one task to the next.
   </Card>
-  <Card title="Tools" icon="wrench" href="/working/tools">
+  <Card title="Core Tools" icon="wrench" href="/working/tools">
     Choose which capabilities Piper may use, knowledge search included.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">

@@ -1,9 +1,9 @@
 ---
 title: "The message box"
-description: "Dictating a request instead of typing, queueing a message while Piper is still working, and the approval mode that decides how much a session may do without asking."
+description: "Dictating a request instead of typing, queueing a message while Piper is still working, and the approval mode that decides how much a task may do without asking."
 ---
 
-The message box is where you type a request. It sits in the middle of the home screen and at the bottom of every session, and it does three jobs: starting a task, adding to one already running, and answering a question Piper asks.
+The message box is where you type a request. It sits in the middle of the home screen and at the bottom of every task, and it does three jobs: starting a task, adding to one already running, and answering a question Piper asks.
 
 Piper formats markdown as you type, so `**bold**` renders bold. Piper receives the markdown itself rather than a styled document.
 
@@ -14,7 +14,7 @@ Select **Voice input**, the microphone button under the box, and speak. Your wor
 Dictation runs on your Mac. Piper transcribes your speech with a speech model it downloads once and keeps on the machine, so the audio never leaves it.
 
 <Note>
-  **Voice input** stays inactive while that download runs, and its tooltip reads **Voice input is still being set up**. If the download finishes with a session already open, move to another screen and back to use it.
+  **Voice input** stays inactive while that download runs, and its tooltip reads **Voice input is still being set up**. If the download finishes with a task already open, move to another screen and back to use it.
 </Note>
 
 <Warning>
@@ -33,18 +33,18 @@ The queue is how you correct course. Piper starts down the wrong path, you queue
   Select **Stop** to halt the current turn outright, rather than queueing a correction behind it.
 </Tip>
 
-## How much room the session has
+## How much room the task has
 
-A session's approval mode decides how much Piper may do in it without asking you. Set it from the dropdown in the row under the message box, whose tooltip reads **Session approval mode**. **Manual** stops for your approval whenever the sandbox cannot vouch for an action on its own. **Autopilot** stops asking, so every command and file edit for the rest of that session runs without a prompt, sending included.
+A conversation's approval mode decides how much Piper may do in it without asking you. Set it from the dropdown in the row under the message box, whose tooltip reads **Approval mode**. **Manual** stops for your approval whenever the sandbox cannot vouch for an action on its own. **Autopilot** stops asking, so every command and file edit for the rest of that conversation runs without a prompt, sending included.
 
-A new session starts on **Autopilot**. The exception is a session inside a project you pointed at one of your own folders, which starts on **Manual**, because its work lands outside Piper's own store. [Approvals and permissions](/control/approvals-and-permissions) covers what each mode allows.
+A new task starts in **Manual**. To start every new task on **Autopilot** instead, open **Settings**, select **Core Tools**, and change **New tasks start in**. A task inside a project you pointed at one of your own folders starts in **Manual** either way, because Piper writes that work outside its own store. [Approvals and permissions](/control/approvals-and-permissions) covers what each mode allows.
 
 <Warning>
-  Autopilot does not switch the sandbox off. Anything the sandbox refuses stays refused in either mode, and two actions ask you every time however the session is set: reading a file that holds sign-in credentials, and working in your own signed-in Chrome.
+  Autopilot does not switch the sandbox off. Anything the sandbox refuses stays refused in either mode, and two actions ask you every time however the task is set: reading a file that holds sign-in credentials, and working in your own signed-in Chrome. A scheduled or long-running task has nobody to ask, so Piper never uses your own Chrome there, and refuses a credential file at once.
 </Warning>
 
 <Note>
-  The approval dropdown appears in a session, not on the home screen. Send your first message, then set the mode.
+  The approval dropdown appears in a task, not on the home screen. Send your first message, then set the mode.
 </Note>
 
 ## Next steps

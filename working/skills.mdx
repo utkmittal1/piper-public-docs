@@ -55,10 +55,10 @@ Piper builds a skill with you, or takes one somebody sends you. Both live in **S
 
 <Steps>
   <Step title="Build one with Piper">
-    Select **Create skill**. Answer **What should this skill do?** and **When should it load?**, then select **Start building**. Both answers are needed, and Piper says so rather than starting on one. Piper then opens a session and works through the skill with you, so you need an AI provider set up before this goes anywhere.
+    Select **Create skill**. Answer **What should this skill do?** and **When should it load?**, then select **Start building**. Both answers are needed, and Piper says so rather than starting on one. Piper then opens a task and works through the skill with you, so you need an AI provider set up before this goes anywhere.
   </Step>
   <Step title="Add the result to your library">
-    When the session finishes, a card reads **Skill ready. Add it to your library?**. Select **Add to library**, because nothing joins your skills until you do.
+    When the task finishes, a card reads **Skill ready. Add it to your library?**. Select **Add to library**, because nothing joins your skills until you do.
   </Step>
   <Step title="Or upload a package">
     Select **Upload skill**, read the warning, then **Choose file…** and pick the `.zip`. A skill package is a `.zip` of the skill's folder, with a `SKILL.md` file inside it. Picking the file is how you accept the warning.
@@ -68,21 +68,21 @@ Piper builds a skill with you, or takes one somebody sends you. Both live in **S
   </Step>
 </Steps>
 
-A skill you add is on for the default Piper straight away. No custom agent carries it until you switch it on there yourself.
+A skill you add is on straight away.
 
 <Warning>
 A skill's instructions and any scripts bundled with it run with the same access Piper has. Only add skills from people and sources you trust.
 </Warning>
 
 <Note>
-Deleting a custom skill removes it from Piper and from every custom agent that carried it, and it cannot be undone. Piper refuses the deletion while another skill depends on it. Built-in skills have no delete button.
+Deleting a custom skill removes it from Piper and cannot be undone. Piper refuses the deletion while another skill depends on it. Built-in skills have no delete button.
 </Note>
 
 ## What switching a skill on does
 
 Switching a skill on makes it available. Piper then loads it when the work matches what the skill is for, so asking plainly for the artifact you want, a deck or a dashboard or a spreadsheet, is the surest way to reach the right one. The page on [the message box](/working/describing-what-you-need) covers steering a job while it runs.
 
-The checkboxes in **Settings** decide what the default Piper carries. A [custom agent](/autonomous/custom-agents) picks from the same list on its own page, and a chip on the skill row names each agent currently carrying it.
+The checkboxes in **Settings** decide which skills Piper has.
 
 ## Next steps
 
@@ -90,13 +90,13 @@ The checkboxes in **Settings** decide what the default Piper carries. A [custom 
   <Card title="What Piper hands back" icon="folder-open" href="/working/files-and-deliverables">
     Where the deck or spreadsheet a skill produces lands, and how to open it.
   </Card>
-  <Card title="Tools" icon="wrench" href="/working/tools">
-    The capabilities Piper may reach for, which you control separately.
+  <Card title="Core Tools" icon="wrench" href="/working/tools">
+    The capabilities Piper may use, which you control separately.
   </Card>
   <Card title="Integrations" icon="plug" href="/connections/integrations">
     Connecting the apps a pack works best with.
   </Card>
-  <Card title="Custom agents" icon="user-gear" href="/autonomous/custom-agents">
-    Giving a named agent its own set of skills.
+  <Card title="Instructions and profile" icon="user-pen" href="/context/instructions-and-profile">
+    The standing rules Piper follows alongside every skill.
   </Card>
 </CardGroup>

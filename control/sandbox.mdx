@@ -17,7 +17,7 @@ macOS enforcing the rule is why you can trust it. A rule a program checks on its
 
 ## What a task can write
 
-A task writes inside one area and nowhere else. For an ordinary session that area is the session's own workspace folder. For a session in a project it is the project's whole folder, because sessions in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder.
+A task writes inside one area and nowhere else. For a task on its own that area is that task's workspace folder. For a task in a project it is the project's whole folder, because tasks in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder. A long-running task is the exception: its work stays inside the folder Piper keeps in that project, and never reaches your own files around it.
 
 A few places outside that area stay writable, and each has a reason. The Mac's temporary folder and its per-user cache area are scratch space every program uses. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Piper's browser keeps the logins for sites you have signed in to, so you sign in once and stay signed in on later tasks.
 
@@ -47,12 +47,12 @@ A credential file outside those places works differently. An `.env` file or a `.
 
 Piper draws the boundary here on purpose.
 
-A task has to read your own material to do your work. A document you attach to a message, a spreadsheet in your Downloads folder, output another session produced last week: none of it sits inside the task's workspace. Confining reads to the workspace would leave Piper able to write files and unable to read the ones you asked it about.
+A task has to read your own material to do your work. A document you attach to a message, a spreadsheet in your Downloads folder, output another task produced last week: none of it sits inside the task's workspace. Confining reads to the workspace would leave Piper able to write files and unable to read the ones you asked it about.
 
 So the boundary is drawn where the risk is. Writing is where a task can destroy something, so writing is confined to one folder. Reading is where a task can leak something, so the credential folders are shut and a credential file anywhere else holds the task until you answer.
 
 <Warning>
-  A task can read another task's files. Sessions live under `PiperData` in your home folder, and reads reach across your Mac, so treat anything a session produced as visible to a later one. Sessions in the same project can also write to each other's files, since they share the project folder by design. An ordinary session outside a project cannot.
+  A task can read another task's files. Task folders live under `PiperData` in your home folder, and reads reach across your Mac, so treat anything a task produced as visible to a later one. Tasks in the same project can also write to each other's files, since they share the project folder by design. A task outside a project cannot.
 </Warning>
 
 ## What the sandbox leaves open
@@ -78,10 +78,10 @@ A stored credential is a third thing the sandbox has no part in. Piper keeps the
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
     Where Piper keeps your data, and what leaves your Mac.
   </Card>
-  <Card title="Sessions and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
+  <Card title="Tasks and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
     The private folder every task works in.
   </Card>
   <Card title="Projects" icon="folder" href="/concepts/projects">
-    Grouping sessions that share files and context.
+    Grouping tasks that share files and context.
   </Card>
 </CardGroup>

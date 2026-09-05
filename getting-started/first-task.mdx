@@ -23,13 +23,15 @@ A task starts with a request in plain words and ends with a file you can open. T
     The same row shows the AI provider, the service that does Piper's thinking, and the model this task will run on, reading something like `Claude Code · Opus 5`. Leave it alone and Piper uses whatever you started your last task on. Select it to pick a different provider or model. See [AI providers](/concepts/ai-providers).
   </Step>
   <Step title="Send it">
-    Press Enter, or select **Send**. Shift and Enter together give you a new line instead. Piper opens a session for the job and starts work.
+    Press Enter, or select **Send**. Shift and Enter together give you a new line instead. Piper opens a task for the job and starts work.
   </Step>
   <Step title="Answer the questions">
     For anything beyond a quick request, Piper asks first. A card appears with up to four questions about the goal, the inputs, the audience, the format, and the depth, and Piper waits rather than guessing. Tap an answer, type into **Something else**, or select **Skip**.
   </Step>
   <Step title="Follow the plan">
     Piper posts the steps it committed to as a card headed **Execution plan**. Above the message box, a strip names the step running now, reads **Step 2 of 5**, and counts the time the job has taken. Read along, or leave and come back.
+
+    To see the plan before Piper acts on it, switch **Planning mode** on in the header. Piper then stops at the list and waits, and the card shows **Go ahead**. Select it to start, or say what to change and Piper revises the list and waits again.
   </Step>
   <Step title="Open the finished file">
     Select the file card in the conversation, or **Open** on it, and the file opens in a viewer beside the chat. The card's **File actions** menu holds **Open in default app**, **Show in Folder**, **Copy Path**, and **Copy Contents**.
@@ -40,22 +42,22 @@ A task starts with a request in plain words and ends with a file you can open. T
 
 Piper sorts its own output into two folders.
 
-- **Finished work goes to the session's `final-output/` folder.** Find those files under **Artifacts**, in the rail on the right of the session, along with anything the session wrote into a project's shared folder.
+- **Finished work goes to the task's `final-output/` folder.** Find those files under **Artifacts**, in the rail on the right of the task, along with anything the task wrote into a project's shared folder.
 - **Working material goes to `intermediate-files/`.** Notes, drafts, and data pulls sit under **Other files** in the same panel, in the folders Piper wrote them to.
 
-To open the whole session folder on your Mac, select **Open session folder in Finder** on the **Other files** heading. Everything Piper makes is an ordinary file you can move, share, or edit elsewhere.
+To open the whole task folder on your Mac, select **Open folder in Finder** on the **Other files** heading. Everything Piper makes is an ordinary file you can move, share, or edit elsewhere.
 
 <Tip>
 The clearer the outcome you describe, the less Piper has to ask and the closer the first result lands. "A one-page brief for our VP, with a recommendation up top" gets you further than "summarize this".
 </Tip>
 
 <Note>
-A session is one task and the conversation around it. Ask for changes in the same conversation and Piper still has the documents, the plan, and everything it learned along the way. Start a new task when the work is genuinely different, since a new session starts from nothing.
+A task is one piece of work and the conversation around it. Ask for changes in the same conversation and Piper still has the documents, the plan, and everything it learned along the way. Start a new task when the work is genuinely different, since a new one starts from nothing.
 </Note>
 
-<Warning>
-A new session starts on **Autopilot**, so Piper runs commands and acts in your connected apps without stopping to ask, sending included. Switch it to **Manual** in the row under the message box when you want to approve each step. [Approvals and permissions](/control/approvals-and-permissions) covers what each mode allows.
-</Warning>
+<Note>
+A new task starts in **Manual**, so Piper stops and asks before it runs a command or sends anything out. Switch it to **Autopilot** in the row under the message box to let it run without asking, or change **New tasks start in** under **Settings**, then **Core Tools**, to make that the start every time. [Approvals and permissions](/control/approvals-and-permissions) covers what each mode allows.
+</Note>
 
 ## Next steps
 

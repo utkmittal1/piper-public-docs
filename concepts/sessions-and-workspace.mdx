@@ -1,89 +1,103 @@
 ---
-title: "Sessions and the workspace"
-description: "What a session is, the workspace folder each one writes to, the standing instructions and approval mode that belong to one session, and how to rename, pin, move, or delete one."
+title: "Tasks and the workspace"
+description: "What a task is, the three kinds Piper runs, the workspace folder each one writes to, the standing instructions and approval mode that belong to one task, and how to rename, pin, move, or delete one."
 ---
 
-A session is one task and the conversation around it. Each session gets a workspace, a folder holding that task's finished files and its working material, and Piper creates it the moment the session starts.
+A task is a piece of work you asked Piper for. Most are one conversation: you say what you need, Piper does it, and you go back and forth in the same thread. Two other kinds carry on without you, and all three share one list.
 
-## What a session is
+## What a task is
 
-Start a session by describing what you need and selecting **Send**, either from the home screen or from **New task** in the sidebar. Everything that follows belongs to that session: the plan, the tools Piper uses, the files it writes, and the approvals it asks for.
+Start a task by describing what you need and selecting **Send**, either from the home screen or from **New task** in the sidebar. Everything that follows belongs to that task: the plan, the tools Piper uses, the files it writes, and the approvals it asks for.
 
-Piper names the session for you. Your first message stands in as the title straight away, cut to 60 characters, and a moment later Piper replaces it with a short one it writes from that message. Rename a session yourself and your title stays, because Piper only replaces a title it wrote itself. If the naming fails, your first message stays as the title.
+Piper names the task for you. Your first message stands in as the title straight away, cut to 60 characters, and a moment later Piper replaces it with a short one it writes from that message. Rename a task yourself and your title stays, because Piper only replaces a title it wrote itself. If the naming fails, your first message stays as the title.
+
+## The three kinds
+
+Most tasks are a conversation. You ask, Piper works, you read the result and ask for the next thing. That is what the rest of this page describes.
+
+Two kinds carry on without you. A **long-running task** is for a job too big for one sitting, like working through a folder of contracts. Piper writes a plan, splits the work into steps, and keeps at it until the job is done. A **scheduled task** is for a result you want again and again, like a brief every weekday morning. Piper runs it at the time you agreed and leaves the result waiting for you.
+
+[Long-running tasks](/autonomous/long-running-tasks) and [Scheduled tasks](/autonomous/autonomous-tasks) cover those two in full.
 
 ## The workspace
 
-Each session opens a workspace, a folder that only that session writes to. It has two parts:
+Each conversation opens a workspace, a folder that only it writes to. It has two parts:
 
 - **`final-output/`** holds the finished deliverables: the document, the deck, the spreadsheet, the analysis.
 - **`intermediate-files/`** holds scratch and working material: notes, downloads, half-built drafts.
 
-Piper writes only inside the area the session can write to, so a task cannot scatter files across your drive. For an ordinary session that area is the workspace, and no other session's work can be changed from it. For a session in a project it is the whole project folder, including your own folder where you pointed the project at one. Reading is wider. A task can read files across your Mac, though the folders where credentials usually live are closed to it, and Piper stops and asks you every time a task reaches for a file that looks like a credential. [The sandbox](/control/sandbox) covers that boundary in full.
+Piper writes only inside the area the task can write to, so a task cannot scatter files across your drive. For a task on its own that area is the workspace, and no other task's work can be changed from it. For a task in a project it is the whole project folder, including your own folder where you pointed the project at one. Reading is wider. A task can read files across your Mac, though the folders where credentials usually live are closed to it, and Piper stops and asks you every time a task reaches for a file that looks like a credential. [The sandbox](/control/sandbox) covers that boundary in full.
 
-Session folders sit in `PiperData/sessions`, inside your home folder. A session that belongs to a project lives under that project's folder instead, and writes across the whole of it.
+A long-running task and a scheduled task each keep a folder of their own. Every step and every run gets its own workspace inside that folder.
+
+Conversation folders sit in `PiperData/sessions`, inside your home folder. A task that belongs to a project lives under that project's folder instead, and writes across the whole of it. A step or a conversation inside a long-running task lives under that task's folder, wherever the task sits.
 
 <Frame>
-  <img src="/images/diagrams/session-workspace.svg" alt="A session with its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and working files sit in a separate intermediate-files area." />
+  <img src="/images/diagrams/session-workspace.svg" alt="A task with its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and working files sit in a separate intermediate-files area." />
 </Frame>
 
 ## Where you see the files
 
-The rail on the right of a session shows what it has produced. Select **Artifacts** to open it. **Artifacts** lists the finished deliverables, and **Other files** lists the working material, browsed as the folders it sits in. Select **Open session folder in Finder**, on the **Other files** heading, to open the whole folder on your Mac.
+The rail on the right of a task shows what it has produced. Select **Artifacts** to open it. **Artifacts** lists the finished deliverables, and **Other files** lists the working material, browsed as the folders it sits in. Select **Open folder in Finder**, on the **Other files** heading, to open the whole folder on your Mac.
 
 <Tip>
-  Hover a file row to see its path inside the session folder. For the file itself, use **Show in Folder** in the file viewer's **File actions** menu.
+  Hover a file row to see its path inside the task folder. For the file itself, use **Show in Folder** in the file viewer's **File actions** menu.
 </Tip>
 
-## What else belongs to one session
+## What else belongs to one task
 
-Two things belong to one session alone, and the next session you start carries neither of them.
+Two things belong to one task alone, and the next task you start carries neither of them.
 
-**Instructions.** Open **Instructions** in the session's right-hand rail and write standing guidance for this task, such as "answer in French" or "keep every figure to two decimal places." Piper saves the text as you type and follows it from your next message. Rules you want everywhere belong in **Settings**, under **Instructions**. See [Instructions and profile](/context/instructions-and-profile).
+**Instructions.** Open **Instructions** in the task's right-hand rail and write standing guidance for this task, such as "answer in French" or "keep every figure to two decimal places." Piper saves the text as you type and follows it from your next message. Rules you want everywhere belong in **Settings**, under **Instructions**. See [Instructions and profile](/context/instructions-and-profile).
 
-**Approval mode.** Each session runs in **Manual** or **Autopilot**, set from the row under the message box. A new session starts on **Autopilot**, where Piper acts without showing you first, including sending through a connected app. A session in a project you pointed at a folder of your own starts on **Manual**. See [Approvals and permissions](/control/approvals-and-permissions).
+**Approval mode.** Each conversation runs in **Manual** or **Autopilot**, set from the row under the message box. A new task starts in **Manual**, where Piper checks with you before it runs a command or acts in a connected app. To start every new task on **Autopilot** instead, open **Settings**, select **Core Tools**, and change **New tasks start in**. A task in a project you pointed at a folder of your own starts in **Manual** either way. See [Approvals and permissions](/control/approvals-and-permissions).
 
-## Manage your sessions
+## Manage your tasks
 
-The sidebar lists your recent sessions under **Sessions**, as many as fit its height. Select **View all** beneath them for the full list, where you can search with **Search sessions…** and narrow the list with **All** or **Pinned**.
+The sidebar lists your recent tasks under **Tasks**, as many as fit its height. Select **View all** beneath them for the full list. Search it with **Search tasks…**, narrow it by kind with the menu reading **All tasks**, **Scheduled**, or **Long-running**, and select **Pinned**, beside that menu, to see only what you pinned.
 
 <Steps>
-  <Step title="Rename a session">
-    Open the session, select **Session actions** in the header, then **Rename**. Type the new name and select **Save**.
+  <Step title="Rename a task">
+    Open the task, select **Task actions** in the header, then **Rename**. Type the new name and select **Save**.
   </Step>
-  <Step title="Pin a session">
-    Pin the sessions you keep returning to, so they stay easy to find once the list runs to dozens. A long-running piece of work, a session holding reference material, anything you reopen weekly.
+  <Step title="Pin a task">
+    Pin the work you keep returning to, so it stays easy to find once the list runs to dozens. A long-running piece of work, a task holding reference material, anything you reopen weekly.
 
-    Select **Pin session** from the same menu, or **Pin** on the row in the sessions list. To see only your pinned sessions, select **Pinned** above the list.
+    Select **Pin task** from the same menu, or **Pin** on the row in the list. To see only what you pinned, select **Pinned** above the list.
   </Step>
-  <Step title="Move a session into a project">
-    Select **Add to project** from the menu, then pick a project or select **Start a new project**. For a session already in a project, select **Move to project** to change it, or **Remove from project** to take it back out.
+  <Step title="Move a task into a project">
+    Select **Add to project** from the menu, then pick a project or select **Start a new project**. For a task already in a project, select **Move to project** to change it, or **Remove from project** to take it back out.
   </Step>
-  <Step title="Delete a session">
-    Select **Delete**. The dialog headed **Delete session?** warns that this removes the session from the list, and confirming with **Delete** leaves the workspace folder on disk. To take the folder too, tick **Also delete the folder from disk** first.
+  <Step title="Delete a task">
+    Select **Delete**. The dialog headed **Delete task?** warns that this removes the task from the list, and confirming with **Delete** leaves the workspace folder on disk. To take the folder too, tick **Also delete the folder from disk** first.
   </Step>
 </Steps>
+
+<Note>
+  Deleting a long-running or scheduled task works differently. The dialog reads "This removes the task, its steps and runs, and its folder," and there is no option to keep the folder. Tick a mix of the two kinds and Piper shows the first dialog, with the folder option, for all of them.
+</Note>
 
 <Tip>
   To clear out several at once, tick the rows in the full list and select **Delete** in the bar above them.
 </Tip>
 
 <Warning>
-  Deleting a session removes it from the list and takes its conversation with it. Its workspace folder stays on your Mac unless you tick **Also delete the folder from disk**.
+  Deleting a task removes it from the list and takes its conversation with it. Its workspace folder stays on your Mac unless you tick **Also delete the folder from disk**.
 </Warning>
 
 <Note>
-  A session that is still running cannot be deleted or moved into a project. Stop the task first, or wait for it to finish.
+  A conversation that is still working cannot be deleted or moved into a project. Stop it first, or wait for it to finish.
 </Note>
 
-## Sessions inside a project
+## Tasks inside a project
 
-A session that belongs to a project sits inside the project's folder and can read and write across all of it, so sessions in the same project build on each other's files. The session's own finished work still belongs in its `final-output/`. Work meant for the whole project goes to the project's **Artifacts** folder, which every session in the project can reach. [Projects](/concepts/projects) covers the shared context in full.
+A task that belongs to a project sits inside the project's folder and can read and write across all of it, so tasks in the same project build on each other's files. A task's own finished work still belongs in its `final-output/`. Work meant for the whole project goes to the project's **Artifacts** folder, which every task in the project can reach. [Projects](/concepts/projects) covers the shared context in full.
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Projects" icon="folder-tree" href="/concepts/projects">
-    Group related sessions and share context across them.
+    Group related tasks and share context across them.
   </Card>
   <Card title="What Piper hands back" icon="file" href="/working/files-and-deliverables">
     The cards a reply can hold, the file viewer, and its limits.
@@ -92,6 +106,6 @@ A session that belongs to a project sits inside the project's folder and can rea
     What a task may write, what it may read, and what stays off limits.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
-    Where sessions, files, memory, and credentials live.
+    Where tasks, files, memory, and credentials live.
   </Card>
 </CardGroup>

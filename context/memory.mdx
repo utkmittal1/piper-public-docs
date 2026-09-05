@@ -3,22 +3,22 @@ title: "Memory"
 description: "The facts Piper keeps about you between tasks, the three levels they live at, how a fact reaches the record, and how to review, edit, or remove one."
 ---
 
-Memory is the set of facts Piper keeps about you between tasks. Each fact is one short sentence, such as "Prefers concise answers" or "Anjali leads design." Piper reads the facts in scope at the start of a session, and reads them again on your next message whenever they change.
+Memory is the set of facts Piper keeps about you between tasks. Each fact is one short sentence, such as "Prefers concise answers" or "Anjali leads design." Piper reads the facts in scope at the start of a task, and reads them again on your next message whenever they change.
 
 ## The three levels
 
 A fact belongs at the narrowest level where it stays true.
 
-- **Global.** Facts true everywhere you work: who you are, the people around you, what you prefer, how you like things done. Every session reads these.
-- **Project.** Facts true inside one project: a decision made, a constraint agreed, a choice that shapes that project's work. Only sessions in that project read them.
-- **Session.** Facts true for one task and nothing else, like "use US spelling, just for this."
+- **Global.** Facts true everywhere you work: who you are, the people around you, what you prefer, how you like things done. Every task reads these.
+- **Project.** Facts true inside one project: a decision made, a constraint agreed, a choice that shapes that project's work. Every task in that project reads them, including the conversations and steps of a long-running task that belongs to it.
+- **Conversation.** Facts true for one conversation and nothing else, like "use US spelling, just for this."
 
 <Note>
   Global memory is a profile. It holds what stays true about you, and you edit it when something changes. A fact that reads like this week's news belongs at a narrower level, or nowhere.
 </Note>
 
 <Frame>
-  <img src="/images/diagrams/memory-levels.svg" alt="Three nested rings. The outer ring is global memory, read by every task you start. Inside it sits project memory, read only by tasks in that project. Inside that sits session memory, read only by the one task it belongs to." />
+  <img src="/images/diagrams/memory-levels.svg" alt="Three nested rings. The outer ring is global memory, read by every task you start. Inside it sits project memory, read only by tasks in that project. Inside that sits conversation memory, read only by the conversation it belongs to." />
 </Frame>
 
 ## The four categories
@@ -32,7 +32,7 @@ Every global fact sits in one of four categories, and the **Memory** page groups
 | **Preferences** | What you like: formats, tools, how answers should read |
 | **Work style** | How you work: how you plan, review, and want things run |
 
-Project and session facts carry no category. They are a plain list.
+Project and conversation facts carry no category. They are a plain list.
 
 ## How Piper saves a fact
 
@@ -57,7 +57,7 @@ Open **Settings**, then **Memory**, and every global fact sits on one page, grou
 
 Removing a fact also stops Piper learning it again. Piper remembers the wording you removed and skips a matching fact on a later background save, ignoring capitalization and any full stop at the end. It holds the 50 most recent removals per level, so a fact removed long ago can come back. You can always add one back yourself, since typing a fact in bypasses that check.
 
-A project's own facts sit on that project's page, in the **Memory** panel, with the same add, edit, and remove controls. Session facts have no page. They expire with the task that made them.
+A project's own facts sit on that project's page, in the **Memory** panel, with the same add, edit, and remove controls. Conversation facts have no page of their own. They expire with the conversation that made them.
 
 ## Suggested cleanup
 
@@ -65,7 +65,7 @@ Piper proposes combining, rewording, or removing facts under **Suggested cleanup
 
 Suggestions start once global memory reaches 50 facts or a project reaches 30, and a notification titled **Memory cleanup suggested** points you at the list. Either level takes 10 more facts past that mark while you work through the suggestions. Past those 10 the level is full, and Piper tells you a fact could not be saved until you clear some.
 
-Session memory works differently: no suggestions, no page, a hard limit of 20 facts. Past 20, a fact you ask Piper to remember pushes out the oldest one, and a fact Piper picked up on its own is dropped.
+Conversation memory works differently: no suggestions, no page, a hard limit of 20 facts. Past 20, a fact you ask Piper to remember pushes out the oldest one, and a fact Piper picked up on its own is dropped.
 
 <Warning>
   Piper never stores a secret value in memory. Text that looks like a credential, an API key, a token, or a private key is refused, and the whole fact is rejected rather than trimmed. Put credentials in [Secrets](/connections/secrets) instead.
@@ -73,7 +73,7 @@ Session memory works differently: no suggestions, no page, a hard limit of 20 fa
 
 ## What reads your memory
 
-Memory reaches every session. Piper has no control for choosing a [custom agent](/autonomous/custom-agents) for a task, so every session runs the built-in agent, named **Piper**, and reads your memory alongside your instructions and your response style.
+Memory reaches every task, alongside your instructions and your response style.
 
 [Chief of Stuff](/autonomous/chief-of-stuff) is the exception. Work it runs on its own reads no memory and writes none, so nothing it prepares changes what Piper remembers about you.
 

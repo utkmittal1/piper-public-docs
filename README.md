@@ -45,11 +45,11 @@ appears once and resolves to a real `.mdx`.
 | Section | Folder | Pages |
 |---|---|---|
 | Getting started | `getting-started/` | Overview, Set up Piper, Your first task |
-| Core concepts | `concepts/` | How Piper works, Sessions and the workspace, Projects, AI providers |
+| Core concepts | `concepts/` | How Piper works, Tasks and the workspace, Projects, AI providers |
 | What Piper knows about you | `context/` | Memory, Instructions and profile, Response style, Knowledge Sources |
 | Connecting your tools | `connections/` | Connecting your tools, Integrations, Secrets, Web and sign-ins |
-| Working with Piper | `working/` | Describing what you need, Reviewing results, Files and deliverables, Skills, Tools, Notifications, Appearance |
-| Piper on its own | `autonomous/` | Chief of Stuff, Autonomous tasks, Long-running tasks, Custom agents |
+| Working with Piper | `working/` | The message box, What Piper hands back, Skills, Core Tools, Notifications, Appearance |
+| Piper on its own | `autonomous/` | Chief of Stuff, Scheduled tasks, Long-running tasks |
 | Staying in control | `control/` | Your data stays local, Approvals and permissions, The sandbox |
 | Reference | `reference/` | Integrations catalog, Keyboard shortcuts, Troubleshooting and FAQ |
 

@@ -9,7 +9,7 @@ A notification marks a task that has finished or needs your approval before it c
 
 | Notification | When it fires |
 |---|---|
-| Agent responded | When a task finishes responding in a session you're not watching. |
+| Agent responded | When Piper finishes responding in a task you're not watching. |
 | Approval needed | When Piper needs your go-ahead to run a tool. |
 | Connector broken | When a connected tool stops working. |
 | Run could not finish | When a run of a scheduled task stops before it delivers. |
@@ -23,7 +23,7 @@ A notification marks a task that has finished or needs your approval before it c
 
 The bell sits at the bottom of the sidebar, with a badge counting the items that arrived since you last opened it. The badge counts up to 9 and then reads `9+`. Open the panel to clear the count. Each row shows a title, a line of detail, and how long ago it happened. Select a row to go to the task behind it.
 
-Two of the nine belong to a single conversation: **Agent responded** and **Approval needed**. Piper marks that session with a dot in the sidebar, and the dot clears the moment you open the session. Neither one reaches the bell. The other seven collect there and stay until you dismiss them.
+Two of the nine belong to a single conversation: **Agent responded** and **Approval needed**. Piper marks that task with a dot in the sidebar, and the dot clears the moment you open it. Neither one reaches the bell. The other seven collect there and stay until you dismiss them.
 
 A popup card appears in the top right corner as any of the nine arrives, then goes six seconds later. Hover it and it stays, going three seconds after you move the pointer away. At most three show at once, and a card with somewhere to send you shows **View**.
 
@@ -54,7 +54,7 @@ A short chime plays when a notification arrives, unless you switch **Sound** off
 ## Limits on what reaches you
 
 <Note>
-A session you are watching raises no notification at all. Finish a task with its conversation open in front of you and Piper raises nothing, not even a bell item. Switch to another app and notifications come through as normal. This covers a session only. A scheduled task finishing still notifies you while its own page is on screen.
+A task you are watching raises no notification at all. Finish a task with its conversation open in front of you and Piper raises nothing, not even a bell item. Switch to another app and notifications come through as normal. This covers a task you are working in only. A scheduled task finishing still notifies you while its own page is on screen.
 </Note>
 
 <Tip>
@@ -62,7 +62,7 @@ Piper keeps two weeks of notifications, up to 200 across all nine kinds, and cle
 </Tip>
 
 <Warning>
-**In-app** delivery has no switch. Its row in **Delivery** reads **Always on**, because the bell, the popups, and the session dots cannot be turned off. What you can switch off is the kind of event, one row at a time, and that stops it everywhere.
+**In-app** delivery has no switch. Its row in **Delivery** reads **Always on**, because the bell, the popups, and the dots in the sidebar cannot be turned off. What you can switch off is the kind of event, one row at a time, and that stops it everywhere.
 </Warning>
 
 <Note>
@@ -70,7 +70,7 @@ macOS has the last word on banners. Piper can post one and open the right settin
 </Note>
 
 <Note>
-Approvals are answered in the session that raised them, not in the bell. A notification takes you there. [Approvals and permissions](/control/approvals-and-permissions) covers what Piper asks and how to answer it. Finished work waiting for your review collects on the [Chief of Stuff](/autonomous/chief-of-stuff) screen, which also has its own **Notification hours** setting for the times of day it may notify you.
+Approvals are answered in the task that raised them, not in the bell. A notification takes you there. [Approvals and permissions](/control/approvals-and-permissions) covers what Piper asks and how to answer it. Finished work waiting for your review collects on the [Chief of Stuff](/autonomous/chief-of-stuff) screen, which also has its own **Notification hours** setting for the times of day it may notify you.
 </Note>
 
 ## Next steps
@@ -82,7 +82,7 @@ Approvals are answered in the session that raised them, not in the bell. A notif
   <Card title="Chief of Stuff" icon="inbox" href="/autonomous/chief-of-stuff">
     The finished work Piper prepares and holds for your review.
   </Card>
-  <Card title="Autonomous tasks" icon="clock" href="/autonomous/autonomous-tasks">
+  <Card title="Scheduled tasks" icon="clock" href="/autonomous/autonomous-tasks">
     Recurring work Piper runs on a schedule.
   </Card>
   <Card title="Long-running tasks" icon="bolt" href="/autonomous/long-running-tasks">

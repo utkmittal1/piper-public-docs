@@ -64,8 +64,7 @@
         "pages": [
           "autonomous/chief-of-stuff",
           "autonomous/autonomous-tasks",
-          "autonomous/long-running-tasks",
-          "autonomous/custom-agents"
+          "autonomous/long-running-tasks"
         ]
       },
       {

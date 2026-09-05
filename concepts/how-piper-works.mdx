@@ -3,17 +3,19 @@ title: "How Piper works"
 description: "The loop every task follows, the words the rest of this site uses, what the AI provider does, and how much Piper takes on without asking."
 ---
 
-Every task follows the same loop. You describe an outcome, Piper plans the steps, Piper does the work, and you review the result. The loop runs inside a session, which is one task and the conversation around it.
+Every task follows the same loop. You describe an outcome, Piper plans the steps, Piper does the work, and you review the result. The loop runs inside a task, which is one piece of work and the conversation around it.
 
 ## The four stages of the loop
 
 **You describe.** Say what you want in plain words, and name the outcome rather than the first step. "Pull the Q3 numbers into a one-page summary for Thursday" gets further than "open the spreadsheet." See [The message box](/working/describing-what-you-need).
 
-**Piper plans.** Piper answers a quick request straight away. For work that runs longer, it asks up to four questions first about the goal, the inputs, the audience, the format, and the depth, then builds a list of three to seven tasks and posts it in the conversation as a card headed **Execution plan**.
+**Piper plans.** Piper answers a quick request straight away. For work that runs longer, it asks up to four questions first about the goal, the inputs, the audience, the format, and the depth, then builds a list of three to seven steps and posts it in the conversation as a card headed **Execution plan**.
 
-**Piper works.** Piper runs the tasks in order. It reads files, searches, uses the tools you have switched on, and writes the output. A strip above the message box names the step running now, reads **Step 2 of 5**, and counts the time the job has taken.
+**Planning mode.** Switch **Planning mode** on in the task's header and Piper stops once it has written the list. The plan card then shows **Go ahead**. Select it and Piper starts the work, or type a change and Piper revises the list and waits again. Every task starts with the switch off, and Piper writes the plan and gets on with it.
 
-**You review.** The reply comes back as cards you can work with: charts, sortable tables, files that open beside the conversation, and questions you answer with a tap. Finished deliverables collect under **Artifacts**, in the rail on the right of the session. Reply in the same conversation to correct the work or ask for the next round, and Piper still has everything it learned the first time.
+**Piper works.** Piper works through the steps in order. It reads files, searches, uses the tools you have switched on, and writes the output. A strip above the message box names the step running now, reads **Step 2 of 5**, and counts the time the job has taken.
+
+**You review.** The reply comes back as cards you can work with: charts, sortable tables, files that open beside the conversation, and questions you answer with a tap. Finished deliverables collect under **Artifacts**, in the rail on the right of the task. Reply in the same conversation to correct the work or ask for the next round, and Piper still has everything it learned the first time.
 
 <Frame>
   <img src="/images/diagrams/core-loop.svg" alt="Four stages in a loop. You describe what you need. Piper plans the steps. Piper works step by step. You review the result and steer the next round." />
@@ -23,15 +25,15 @@ Every task follows the same loop. You describe an outcome, Piper plans the steps
 
 Nine terms come up on nearly every page. Each one has a page that defines it in full.
 
-- A **session** is one task and the conversation around it. See [Sessions and the workspace](/concepts/sessions-and-workspace).
-- A **workspace** is the folder a session writes its files to, covered on that same page.
-- A **project** groups related sessions and gives them shared instructions, memory, reference files, and a deliverables folder. See [Projects](/concepts/projects).
+- A **task** is one piece of work and the conversation around it. See [Tasks and the workspace](/concepts/sessions-and-workspace).
+- A **workspace** is the folder a task writes its files to, covered on that same page.
+- A **project** groups related tasks and gives them shared instructions, memory, reference files, and a deliverables folder. See [Projects](/concepts/projects).
 - An **AI provider** is the service that does Piper's thinking. See [AI providers](/concepts/ai-providers).
-- A **tool** is a capability Piper uses while it works, such as reading a file, searching the web, or sending mail in Gmail. See [Tools](/working/tools).
+- A **tool** is a capability Piper uses while it works, such as reading a file, searching the web, or sending mail in Gmail. See [Core Tools](/working/tools).
 - A **skill** is a set of written instructions that teaches Piper how one kind of work is done, such as building a slide deck. See [Skills](/working/skills).
 - An **integration** is Piper's connection to an app you already use, such as Gmail, Slack, or Notion. See [Integrations](/connections/integrations).
-- An **approval mode** decides how much a session does without asking you. See [Approvals and permissions](/control/approvals-and-permissions).
-- **Memory** is the set of facts Piper keeps about you between tasks, at three levels: everywhere, inside one project, or inside one session. See [Memory](/context/memory).
+- An **approval mode** decides how much a task does without asking you. See [Approvals and permissions](/control/approvals-and-permissions).
+- **Memory** is the set of facts Piper keeps about you between tasks, at three levels: everywhere, inside one project, or inside one task. See [Memory](/context/memory).
 
 ## What the AI provider does
 
@@ -45,31 +47,31 @@ Your own material stays on this Mac. Your memory, your Knowledge Sources, your f
 
 ## Piper hands back the artifact
 
-Piper builds the real file. Ask for a deck and you get a `.pptx` you can open, rather than an outline of a deck you could build yourself. Finished deliverables land in the session's `final-output/` folder and appear in the **Artifacts** rail, and working material stays in `intermediate-files/`.
+Piper builds the real file. Ask for a deck and you get a `.pptx` you can open, rather than an outline of a deck you could build yourself. Finished deliverables land in the task's `final-output/` folder and appear in the **Artifacts** rail, and working material stays in `intermediate-files/`.
 
 ## The two approval modes
 
-A session's approval mode sets how much Piper does without asking. Switch between the two from the row under the message box. In **Manual**, Piper shows you each action it cannot vouch for and waits. In **Autopilot**, Piper answers those requests itself for the rest of the session, which is why switching it on asks you to confirm once.
+A task's approval mode sets how much Piper does without asking. Switch between the two from the row under the message box. In **Manual**, Piper shows you each action it cannot vouch for and waits. In **Autopilot**, Piper answers those requests itself for the rest of that conversation, which is why switching it on asks you to confirm once.
 
-A new session starts on **Autopilot**. One case starts on **Manual**: a session in a project you pointed at a folder of your own.
+A new task starts in **Manual**. To start every new task on **Autopilot** instead, open **Settings**, select **Core Tools**, and change **New tasks start in**. A task in a project you pointed at a folder of your own starts in **Manual** either way.
 
 <Warning>
-  On **Autopilot**, Piper can send an email, post a message, or change a record in a connected app without showing it to you first. Switch the session to **Manual** for any work where an outbound action would matter.
+  On **Autopilot**, Piper can send an email, post a message, or change a record in a connected app without showing it to you first. Switch the task to **Manual** for any work where an outbound action would matter.
 </Warning>
 
-An approval request appears in the conversation under **Approval needed**. Select **Allow** to run that one action, **Always allow for this session** to answer the same question for the rest of the session, or **Deny**.
+An approval request appears in the conversation under **Approval needed**. Select **Allow** to run that one action, **Always allow in this conversation** to answer the same question for the rest of it, or **Deny**.
 
 <Warning>
-  Two actions ask every time, on **Autopilot** exactly as on **Manual**: reading a file that holds credentials, and working in the Chrome you are signed in to yourself.
+  Two actions ask every time, on **Autopilot** exactly as on **Manual**: reading a file that holds credentials, and working in the Chrome you are signed in to yourself. A scheduled task's run and a Chief of Stuff run are the exception: nobody is there to answer, so Piper refuses both rather than asking.
 </Warning>
 
 <Note>
-  Piper denies a request you leave unanswered for ten minutes, and the task carries on as though you had selected **Deny**. Ask again if you still want the action.
+  Piper denies a request you leave unanswered for ten minutes, and the task carries on as though you had selected **Deny**. Ask again if you still want the action, and select the × on the denied card to clear it away.
 </Note>
 
 ## Handing a job to a long-running task
 
-A session carries a multi-step job from start to finish while you do something else. For a job too big for one session, select **Run autonomously** in the session header. Piper moves the work to a long-running task, which plans the job, hands the pieces out to their own sessions, and keeps going until the job is done. See [Long-running tasks](/autonomous/long-running-tasks).
+A task carries a multi-step job from start to finish while you do something else. For a job too big for one task, select **Run until done** in the task's header. That conversation becomes the one that plans the job, keeping everything you have said to it. Piper splits the job into steps, runs each in its own conversation, and keeps going until the job is done. See [Long-running tasks](/autonomous/long-running-tasks).
 
 <Note>
   Piper works while it is open and your Mac is on and awake. A machine that is off or asleep runs nothing. If a scheduled run comes due in that time, Piper runs it once when you open Piper again.
@@ -78,7 +80,7 @@ A session carries a multi-step job from start to finish while you do something e
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Sessions and the workspace" icon="folder" href="/concepts/sessions-and-workspace">
+  <Card title="Tasks and the workspace" icon="folder" href="/concepts/sessions-and-workspace">
     The unit of work and the private folder each task gets.
   </Card>
   <Card title="The message box" icon="pen" href="/working/describing-what-you-need">

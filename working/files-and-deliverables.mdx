@@ -15,7 +15,7 @@ Piper answers in cards. A card is a block inside a reply holding one thing you c
 | Web page | A self-contained HTML page, such as a dashboard. Use it in place, **Save HTML**, or **Copy HTML** |
 | Image | **Copy image** or **Save image** |
 | File | A finished deliverable. **Open in default app**, **Show in Folder**, **Copy Path**, or **Copy Contents** |
-| Plan | The steps Piper set itself, headed **Execution plan** |
+| Plan | The steps Piper set itself, headed **Execution plan**. With **Planning mode** on, Piper waits here until you select **Go ahead** |
 | Question | Answer with a tap. A card asking more than one thing shows a `1 of 3` counter, and picking an option moves you to the next question rather than sending. Where a question takes several answers, tick what applies and select **Confirm** |
 | Suggestions | Two to four follow-ups. Tap one to send it as your next message |
 | Theme picker | The slide themes that ship with Piper. Tap one and Piper builds the deck in it |
@@ -69,7 +69,7 @@ Where you can leave a comment depends on the file. Selecting a passage works in 
 
 ## Where the files themselves live
 
-Piper writes finished work to the session's `final-output/` folder and working material to `intermediate-files/`, and both show up in the rail on the right under **Artifacts** and **Other files**. [Sessions and the workspace](/concepts/sessions-and-workspace) covers the folders in full.
+Piper writes finished work to the task's `final-output/` folder and working material to `intermediate-files/`, and both show up in the rail on the right under **Artifacts** and **Other files**. [Tasks and the workspace](/concepts/sessions-and-workspace) covers the folders in full.
 
 Files stay on your Mac as ordinary files in ordinary folders. Attach a deliverable to an email, drop it in a shared drive, or edit it long after the task that made it has ended.
 
@@ -82,13 +82,13 @@ Files stay on your Mac as ordinary files in ordinary folders. Attach a deliverab
 [Chief of Stuff](/autonomous/chief-of-stuff) never sends anything from the work it starts on its own. Piper refuses every integration's write tools inside that work, so a message written there comes back to you as a draft marked **Waiting**, showing where it is headed and the exact body that would go out. Nothing goes out until you select **Send** yourself.
 
 <Warning>
-  A task you started yourself works the other way. A session on **Autopilot**, which is where a new session starts, can send through a connected integration such as Gmail or Slack without showing you the message first. Switch the session to **Manual** when you want to see an outbound action before it happens. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
+  A task you started yourself works the other way. A task on **Autopilot** can send through a connected integration such as Gmail or Slack without showing you the message first. A new task starts in **Manual**, so this applies once you switch it over, or once you have made **Autopilot** the start under **Settings**, then **Core Tools**. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
 </Warning>
 
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Sessions and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
+  <Card title="Tasks and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
     What a task's folder holds and where it lives on your Mac.
   </Card>
   <Card title="The message box" icon="pen-to-square" href="/working/describing-what-you-need">

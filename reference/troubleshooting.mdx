@@ -17,10 +17,10 @@ This page lists the states Piper can end up in and the fix for each one. Find th
   </Accordion>
 
   <Accordion title="Could not start, or Could not send">
-    **Could not start** appears under the home screen message box when a new task fails to open. **Could not send** appears at the bottom of a session when a message fails. Both print the reason underneath, and that line usually names the cause. If it points at your sign-in, select **Sign in** on the red banner, then send again.
+    **Could not start** appears under the home screen message box when a new task fails to open. **Could not send** appears at the bottom of a task when a message fails. Both print the reason underneath, and that line usually names the cause. If it points at your sign-in, select **Sign in** on the red banner, then send again.
   </Accordion>
 
-  <Accordion title="A session says your provider is signed out or has no API key">
+  <Accordion title="A task says your provider is signed out or has no API key">
     A warning banner appears above the message box, titled with what went missing: the provider is signed out, it has no API key any more, or the model this task was using is not offered on it any more. Under the title it tells you to pick something for this task so it can carry on. The task itself is intact. Use the provider and model picker in the row under the message box to choose a pair that works, then send again.
   </Accordion>
 
@@ -45,7 +45,7 @@ This page lists the states Piper can end up in and the fix for each one. Find th
   </Accordion>
 
   <Accordion title="Piper cannot use your own Chrome">
-    Piper works in your Chrome through an extension. Find the row **Use my Chrome for sites I'm signed in to** in **Settings** > **Tools**, under **Browse websites**. If the extension is missing, the row shows **Set up**. Select it, and Piper offers **Install extension**. Install it and come back, and Piper turns the setting on for you. If the extension is installed but switched off, a warning on the row says so. Turn it back on in Chrome.
+    Piper works in your Chrome through an extension. Find the row **Use my Chrome for sites I’m signed in to** in **Settings** > **Core Tools**, under **Browse websites**. If the extension is missing, the row shows **Set up**. Select it, and Piper offers **Install extension**. Install it and come back, and Piper turns the setting on for you. If the extension is installed but switched off, a warning on the row says so. Turn it back on in Chrome.
   </Accordion>
 
   <Accordion title="Connecting AWS Documentation fails">
@@ -57,11 +57,11 @@ This page lists the states Piper can end up in and the fix for each one. Find th
 
 <AccordionGroup>
   <Accordion title="An action was Auto-denied">
-    An approval card that nobody answers expires after 10 minutes. The card drops its buttons, shows the eyebrow **Auto-denied**, and says the action was denied and to ask again if you still want it. Piper did nothing. Ask for the same thing again and answer the new card. [Approvals and permissions](/control/approvals-and-permissions) explains the two modes.
+    An approval card that nobody answers expires after 10 minutes. The card drops its buttons, shows the eyebrow **Auto-denied**, and says the action was denied and to ask again if you still want it. Piper did nothing. Ask for the same thing again and answer the new card, and select the × on the expired one to clear it away. Work that runs with nobody there does not wait the 10 minutes: Piper refuses at once the few questions that could reach it. [Approvals and permissions](/control/approvals-and-permissions) explains the two modes.
   </Accordion>
 
   <Accordion title="Piper says a tool is turned off">
-    Piper reports that the tool is turned off rather than doing the work. Open **Settings** > **Tools**, find the tool, and switch it on. This is also what you see when you connect an app and then ask for something the connection does not start with, since Piper leaves some of an app's tools off at first. [Tools](/working/tools) covers that screen.
+    Piper reports that the tool is turned off rather than doing the work. For one of Piper's own, open **Settings** > **Core Tools**, find the tool, and switch it on. For an app's, open that app under **Settings** > **Integrations** and switch it on in its **Read** or **Write** group, since Piper leaves some of an app's tools off at first. [Core Tools](/working/tools) and [Integrations](/connections/integrations) cover both screens.
   </Accordion>
 </AccordionGroup>
 
@@ -80,8 +80,8 @@ This page lists the states Piper can end up in and the fix for each one. Find th
 ## When background work stalls
 
 <AccordionGroup>
-  <Accordion title="An autonomous task shows Failed or Needs you">
-    **Failed** in red means the task stopped itself after several runs failed in a row, and the page says to resume it once the cause is sorted. The run that broke carries its own **Failed** badge below. If it opened a session, select **Open session** on that run to see what went wrong. Sort the cause, then select **Resume**. **Needs you** in amber means a run is waiting on you; expand it to see what for. A run badged **Trying again** is neither: Piper will make another attempt on its own.
+  <Accordion title="A scheduled task shows Failed or Needs you">
+    **Failed** in red means the task stopped itself after several runs failed in a row, and the page says to resume it once the cause is sorted. The run that broke carries its own **Failed** badge below. If it opened a conversation, select **Open conversation** on that run to see what went wrong. Sort the cause, then select **Resume**. **Needs you** in amber means a run is waiting on you; expand it to see what for. A run badged **Trying again** is neither: Piper will make another attempt on its own.
   </Accordion>
 
   <Accordion title="Chief of Stuff is empty">
@@ -101,7 +101,7 @@ This page lists the states Piper can end up in and the fix for each one. Find th
   </Accordion>
 
   <Accordion title="Can I review a fact Piper saved just for one task?">
-    No. **Settings** > **Memory** lists your global facts, and a project's facts sit on the project's own page. A fact that mirrors your profile appears there with no edit or remove control, because the **Profile** screen owns it. Session facts have no screen at all. They apply to the one task that saved them and are listed nowhere you can open.
+    No. **Settings** > **Memory** lists your global facts, and a project's facts sit on the project's own page. A fact that mirrors your profile appears there with no edit or remove control, because the **Profile** screen owns it. A conversation's own facts have no screen at all. They apply to the one conversation that saved them and are listed nowhere you can open.
   </Accordion>
 
   <Accordion title="A file will not open in Piper">

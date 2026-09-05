@@ -3,17 +3,17 @@ title: "Your data stays local"
 description: "What Piper keeps on your Mac, the three routes that carry data off it, and how to remove what Piper holds."
 ---
 
-Piper keeps your sessions, files, memory, and credentials on your Mac, in a folder you can open, back up, and delete. Requests to the AI provider still travel over the network, and they carry your conversation and any file content a task read on the way. This page says which is which.
+Piper keeps your tasks, files, memory, and credentials on your Mac, in a folder you can open, back up, and delete. Requests to the AI provider still travel over the network, and they carry your conversation and any file content a task read on the way. This page says which is which.
 
 ## Where Piper keeps your data
 
 Everything sits in one folder called `PiperData`, inside your home folder. It is an ordinary folder you can open in Finder.
 
-Session workspaces sit in `PiperData/sessions`, and a session that belongs to a project lives under that project's folder instead. See [Sessions and the workspace](/concepts/sessions-and-workspace) for what a session folder holds, and [Projects](/concepts/projects) for the project layout.
+Task workspaces sit in `PiperData/sessions`, and a task that belongs to a project, or a step inside a long-running task, lives under that folder instead. See [Tasks and the workspace](/concepts/sessions-and-workspace) for what a task folder holds, and [Projects](/concepts/projects) for the project layout.
 
 Logs land in `PiperData/logs`, and Piper keeps 14 days of them. Each line names one thing Piper did and the few details around it, never your prompts, Piper's replies, or the contents of your files. Open them from **Settings**, under **Logs**.
 
-A database file named `piper.db` holds your sessions and their transcripts, your memory facts, your settings, which integrations you have connected, your custom agents, and the indexed text of your Knowledge Sources. It holds no credential value. Every password, API key, and access token sits in your Mac's own keychain instead, and the value reaches only the one command that needs it. See [Secrets](/connections/secrets).
+A database file named `piper.db` holds your tasks and their transcripts, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It holds no credential value. Every password, API key, and access token sits in your Mac's own keychain instead, and the value reaches only the one command that needs it. See [Secrets](/connections/secrets).
 
 Knowledge Sources are worth naming here because they never leave. Piper reads your documents, splits them into passages, and builds the search index on this machine, using a model it downloads once and runs here. Searching your own documents sends nothing out. See [Knowledge Sources](/context/knowledge-sources).
 
@@ -27,7 +27,7 @@ Three routes carry your data off this machine. Each one sends something differen
 
 **To the AI provider.** This is the one that matters most. The provider you pick in **Settings** under **AI Providers** runs on its own machines, and every turn sends it your prompt, the conversation so far, and the text of any file a task read on the way. Whatever a task reads enters the conversation, and the conversation leaves this machine.
 
-**To an integration's own service.** Piper sends the service what the action needs and nothing more. Reading a Slack channel sends Slack the channel it should read. Sending an email through Gmail sends Gmail the recipients, the subject, and the body. Each integration reaches only its own service, and an agent can use only the integrations you attached to it.
+**To an integration's own service.** Piper sends the service what the action needs and nothing more. Reading a Slack channel sends Slack the channel it should read. Sending an email through Gmail sends Gmail the recipients, the subject, and the body. Each integration reaches only its own service, and Piper can use only the integrations you have connected.
 
 **To the sites Piper opens.** Opening a page sends that site the address Piper asked for and the network address it came from, the same as your own browser does. Piper's browser can click and fill pages in as well, so anything it types into a form goes to that site. A web search sends your search terms out too, and on a model API provider they go to the search service whose key you added under **Secrets**.
 
@@ -45,18 +45,18 @@ Because everything sits in one folder, clearing it out is straightforward.
   <Step title="Remove a single memory fact">
     In **Settings**, select **Memory**, find the fact, and select **Remove fact** on its row. It stops applying to future tasks.
   </Step>
-  <Step title="Delete a session">
-    Delete the session from the sidebar. Tick **Also delete the folder from disk** to remove its files as well, or leave it unticked and the folder stays where it is.
+  <Step title="Delete a task">
+    Delete the task from the sidebar. Tick **Also delete the folder from disk** to remove its files as well, or leave it unticked and the folder stays where it is.
   </Step>
   <Step title="Remove a credential">
     In **Settings**, select **Secrets**, then **Delete secret** on the entry and confirm with **Delete**. Piper removes the value from your keychain.
   </Step>
   <Step title="Open the folder yourself">
-    A session's right-hand rail has **Reveal in Finder** on each file row, and **Open session folder in Finder** on the **Other files** header. From there you can browse, copy, or move whatever you like.
+    A task's right-hand rail has **Reveal in Finder** on each file row, and **Open folder in Finder** on the **Other files** header. From there you can browse, copy, or move whatever you like.
   </Step>
 </Steps>
 
-Deleting a session removes it from Piper's database. It does not reach back through an integration, so a message Piper already sent through Gmail or Slack stays sent, and a file it wrote outside its own folder stays where it landed.
+Deleting a task removes it from Piper's database. It does not reach back through an integration, so a message Piper already sent through Gmail or Slack stays sent, and a file it wrote outside its own folder stays where it landed.
 
 <Tip>
   `PiperData` is an ordinary folder in your home directory, so whatever you already use to back up your home folder covers it.
