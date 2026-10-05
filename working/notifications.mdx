@@ -1,76 +1,100 @@
 ---
 title: "Notifications"
-description: "The nine notifications Piper raises when a task finishes or needs a decision, the four places they show up, and the switches that control each kind."
+description: "A notification tells you that work has finished, or that something needs a decision from you. See what each notification means, where it reaches you, and switch off the notifications you don't want."
 ---
 
-A notification marks a task that has finished or needs your approval before it continues. Piper raises nine kinds, each with its own switch, and every one is on until you turn it off.
+A notification tells you that work has finished, that something needs your decision, or that something has broken. Piper raises nine kinds of notification, each with a switch of its own, and every kind is on until you switch it off.
 
-## The nine notifications
+This page covers how to:
+
+- [See what each notification tells you](#see-what-each-notification-tells-you)
+- [Find where a notification reaches you](#find-where-a-notification-reaches-you), from the bell to a macOS banner
+- [Switch a notification off](#switch-a-notification-off), and empty the bell
+- [Turn on macOS banners](#turn-on-macos-banners), and fix a banner that never arrives
+- [Set your notification hours](#set-your-notification-hours)
+- [See when Piper skips a notification](#see-when-piper-skips-a-notification)
+
+## See what each notification tells you
 
 | Notification | When it fires |
 |---|---|
-| Agent responded | When Piper finishes responding in a task you're not watching. |
+| Agent responded | When Piper finishes responding somewhere you're not watching. |
 | Approval needed | When Piper needs your go-ahead to run a tool. |
 | Connector broken | When a connected tool stops working. |
 | Run could not finish | When a run of a scheduled task stops before it delivers. |
 | Task stopped itself | When a task stops on its own, after runs fail or a job goes quiet. |
 | Job finished | When a long running job finishes everything it was set. |
-| Draft awaiting your approval | When Chief of Stuff holds a message that only sends on your click. |
-| Ready for you | When Chief of Stuff has finished work waiting for review. |
+| Ready for you | When a task Piper started is ready to review on the Home page. |
+| Piper needs you | When a task Piper started is waiting on your answer or is stuck. |
 | Memory cleanup suggested | When memory is getting long and Piper has cleanup suggestions to review. |
 
-## Where notifications show up
+A scheduled task raises a notification only when a run can't finish or the task stops itself. A run that delivers raises nothing.
 
-The bell sits at the bottom of the sidebar, with a badge counting the items that arrived since you last opened it. The badge counts up to 9 and then reads `9+`. Open the panel to clear the count. Each row shows a title, a line of detail, and how long ago it happened. Select a row to go to the task behind it.
+When you select a notification, Piper opens what the notification is about:
 
-Two of the nine belong to a single conversation: **Agent responded** and **Approval needed**. Piper marks that task with a dot in the sidebar, and the dot clears the moment you open it. Neither one reaches the bell. The other seven collect there and stay until you dismiss them.
+- **Agent responded** and **Approval needed**: the conversation.
+- **Run could not finish**, **Task stopped itself**, and **Job finished**: the task.
+- **Connector broken**: **Settings** > **Integrations**.
+- **Ready for you** and **Piper needs you**: the Home page, with that task open beside it.
+- **Memory cleanup suggested**: **Settings** > **Memory**, or the project or scheduled task whose memory is filling up.
 
-A popup card appears in the top right corner as any of the nine arrives, then goes six seconds later. Hover it and it stays, going three seconds after you move the pointer away. At most three show at once, and a card with somewhere to send you shows **View**.
+## Find where a notification reaches you
 
-A macOS banner is the only kind that reaches you outside Piper's window, and it is off until you switch it on. Piper posts a banner only while no Piper window has focus.
+### The bell
 
-A short chime plays when a notification arrives, unless you switch **Sound** off.
+The bell sits at the foot of the sidebar, with a badge that counts what arrived since you last opened it, up to `9+`. When you open the bell's **Notifications** panel, Piper clears the count. Piper keeps each notification in the bell until you dismiss it, until it reaches a set age, or until newer notifications push it out.
 
-## Changing which notifications reach you
+### Dots in the sidebar
+
+For **Agent responded** and **Approval needed**, Piper marks the conversation in the sidebar with a dot instead of adding a row to the bell. Piper clears the dot when you open the conversation.
+
+### Popups
+
+Piper shows a popup card in the top right corner as a notification arrives, and closes the card after a few seconds. To keep a card open, hover over it. When a notification has somewhere to send you, its card shows **View**.
+
+### macOS banners
+
+A banner reaches you outside Piper's window. Banners start switched off. Piper posts a banner only while no Piper window has focus.
+
+### Sound
+
+Piper plays a short chime when a notification arrives, while **Sound** is on.
+
+## Switch a notification off
+
+Open **Settings** > **Notifications**. The **Events** section lists all nine kinds, each with a switch. The **Delivery** section holds **In-app**, **Sound**, and **macOS banners**. **Sound** and **macOS banners** have switches, and **In-app** reads **Always on**.
+
+When you switch off a row in **Events**, Piper stops raising that kind everywhere: in the bell, in a popup, in a banner, and in the chime. Notifications of that kind already in the bell stay there.
+
+To empty the bell, open it and select the × on a row, or select **Clear all**. Piper deletes each notification you dismiss.
+
+## Turn on macOS banners
 
 <Steps>
-  <Step title="Open the settings">
-    In **Settings**, select **Notifications**. The **Events** section lists all nine kinds with a switch each. The **Delivery** section below it holds three rows: **In-app**, **Sound**, and **macOS banners**.
-  </Step>
-  <Step title="Turn a kind off">
-    Switch off any row in **Events**. That kind stops everywhere, the bell included.
-  </Step>
-  <Step title="Turn on macOS banners">
-    Switch on **macOS banners**. Piper sends a test banner at once and then tells you in a popup whether it went, so the setting never turns on silently.
+  <Step title="Switch banners on">
+    Open **Settings** > **Notifications** and switch on **macOS banners**. Piper sends a test banner at once, even while Piper has focus, and shows a popup that says whether the test banner went out.
   </Step>
   <Step title="Fix a banner that never came">
-    If the test banner did not appear, select **Open settings**, either in that popup or in the **Not showing?** row, which sits under the switch and shows only while banners are on. In the macOS notification settings that opens, allow notifications for Piper and set its style to Banners or Alerts.
-  </Step>
-  <Step title="Clear the bell">
-    Open the bell and select the X on a row to dismiss it, or **Clear all** to empty the list.
+    If the test banner didn't appear, select **Open settings**, in that popup or in the **Not showing?** row under the switch. In the macOS notification settings, allow notifications for Piper and set its style to Banners or Alerts.
   </Step>
 </Steps>
 
-## Limits on what reaches you
-
 <Note>
-A task you are watching raises no notification at all. Finish a task with its conversation open in front of you and Piper raises nothing, not even a bell item. Switch to another app and notifications come through as normal. This covers a task you are working in only. A scheduled task finishing still notifies you while its own page is on screen.
+  macOS decides whether a banner appears. Piper posts the banner and opens the right macOS settings pane. If macOS holds notifications for Piper, no banner appears.
 </Note>
 
-<Tip>
-Piper keeps two weeks of notifications, up to 200 across all nine kinds, and clears out anything past either limit whenever a new one arrives.
-</Tip>
+## Set your notification hours
 
-<Warning>
-**In-app** delivery has no switch. Its row in **Delivery** reads **Always on**, because the bell, the popups, and the dots in the sidebar cannot be turned off. What you can switch off is the kind of event, one row at a time, and that stops it everywhere.
-</Warning>
+Piper starts with notification hours already set to the day and evening. A notification raised outside your hours waits, then arrives once when the hours open.
 
-<Note>
-macOS has the last word on banners. Piper can post one and open the right settings pane, and nothing more. If macOS is set to hold notifications for Piper, no banner appears.
-</Note>
+To change your hours, open **Settings** > **Notifications** and pick the times under **Notification hours**, in **Between** … **and**. To cover the night, pick an end time earlier than the start time. To receive notifications at any hour, pick the same start and end time. Notification hours apply to every kind of notification.
+
+## See when Piper skips a notification
+
+Piper skips **Agent responded** and **Approval needed** while their conversation is on screen and Piper has focus. Piper skips **Ready for you** and **Piper needs you** while the Home page is on screen and Piper has focus. Piper drops a skipped notification, because you already have the conversation or the Home page in front of you. After you switch to another app, Piper raises these notifications as normal.
 
 <Note>
-Approvals are answered in the task that raised them, not in the bell. A notification takes you there. [Approvals and permissions](/control/approvals-and-permissions) covers what Piper asks and how to answer it. Finished work waiting for your review collects on the [Chief of Stuff](/autonomous/chief-of-stuff) screen, which also has its own **Notification hours** setting for the times of day it may notify you.
+  You answer an approval in the conversation that raised it. The **Approval needed** notification opens that conversation. [Approvals and permissions](/control/approvals-and-permissions) covers what Piper asks and how to answer. Work Piper starts waits on the Home page. See [Work Piper starts before you ask](/working/before-you-ask).
 </Note>
 
 ## Next steps
@@ -79,8 +103,8 @@ Approvals are answered in the task that raised them, not in the bell. A notifica
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
     What Piper asks before it acts, and how to answer.
   </Card>
-  <Card title="Chief of Stuff" icon="inbox" href="/autonomous/chief-of-stuff">
-    The finished work Piper prepares and holds for your review.
+  <Card title="Work Piper starts before you ask" icon="inbox" href="/working/before-you-ask">
+    The work Piper starts from your mail and calendar, and how you review it.
   </Card>
   <Card title="Scheduled tasks" icon="clock" href="/autonomous/autonomous-tasks">
     Recurring work Piper runs on a schedule.
