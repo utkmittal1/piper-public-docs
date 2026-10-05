@@ -20,7 +20,7 @@ This page covers how to:
 
 In **Manual**, Piper asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking.
 
-A new task starts in **Manual**. Switch it to **Autopilot** and only that conversation changes. The next task starts in **Manual** again. To start every new task on **Autopilot** instead, open **Settings**, select **Core Tools**, and change **New tasks start in**. Piper asks you to confirm in a dialog headed **Start every new task on Autopilot?**.
+A new task starts in **Manual**. Switch it to **Autopilot** and only that conversation changes. The next task starts in **Manual** again. To start every new task on **Autopilot** instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. Piper asks you to confirm in a dialog headed **Start every new task on Autopilot?**.
 
 Piper sets the mode itself for two kinds of conversation. A task in a project you pointed at a folder of your own starts in **Manual** whatever you set, because Piper writes that work into your own files. The [**Ask Piper**](/working/describing-what-you-need#ask-piper-a-quick-question) drawer runs on **Autopilot**, because Piper answers there on the spot.
 
@@ -60,7 +60,7 @@ Piper writes a file inside the task's folder without asking, in both modes. The 
 
 The folder sets which of your files a write can change. For a task outside a project, the folder is that task's workspace, so your other files stay as they are. For a task in a project you pointed at a folder of your own, the folder is that whole folder of yours. Piper creates files in it, and writes over files you already had, without asking.
 
-You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Core Tools** page and Piper raises a request before each write. In **Manual**, the task waits until you answer. On **Autopilot**, Piper answers the request itself. Piper also raises a request before a command that deletes files, such as `rm`, because Piper asks before every command outside the read-only list. The command waits for you in **Manual** and runs on **Autopilot**. Otherwise, point a project only at a folder you're happy for Piper to change.
+You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Built-in tools** page and Piper raises a request before each write. In **Manual**, the task waits until you answer. On **Autopilot**, Piper answers the request itself. Piper also raises a request before a command that deletes files, such as `rm`, because Piper asks before every command outside the read-only list. The command waits for you in **Manual** and runs on **Autopilot**. Otherwise, point a project only at a folder you're happy for Piper to change.
 
 ## What Piper asks about
 
@@ -85,7 +85,7 @@ Piper adds whatever a task reads to the conversation and sends the conversation 
 
 Piper asks this question about a credential file in a folder of your own. Piper refuses a file inside one of the folders it keeps shut, such as `~/.ssh` or `~/.aws`, without asking you. For every folder and file Piper keeps shut, see [The sandbox](/control/sandbox).
 
-**Working in the Chrome you are signed in to.** Piper works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Core Tools**, which needs a one-time browser extension. Even then Piper asks before it acts on each site, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Piper does before it comes back to you. Send the next message and Piper asks again.
+**Working in the Chrome you are signed in to.** Piper works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Built-in tools**, which needs a one-time browser extension. Even then Piper asks before it acts on each site, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Piper does before it comes back to you. Send the next message and Piper asks again.
 
 Piper applies the opposite rule to work it runs with nobody watching. In that work, Piper refuses your own Chrome, and refuses a credential file the moment the question comes up, because nobody is there to answer. Piper applies this rule to a run of a scheduled task, a long-running task, the conversation behind **Ask Piper** on a scheduled task's page, and every task Piper starts on its own.
 
@@ -111,11 +111,11 @@ Once you've used that button, Piper lists everything you allowed under **Allowed
 
 The mode covers every question at once. You can also set permissions one tool at a time, and Piper keeps those settings across tasks.
 
-In **Settings**, select **Core Tools**. The page lists what Piper can do on this machine, alongside the mode new tasks start in. Each row shows whether Piper asks before it uses that capability. Clear a row's checkbox and Piper builds your tasks without that capability.
+In **Settings**, select **Built-in tools**. The page lists what Piper can do on this machine, alongside the mode new tasks start in. Each row shows whether Piper asks before it uses that capability. Clear a row's checkbox and Piper builds your tasks without that capability.
 
 You can't set **Run commands** to run on its own. A task can read files and reach the network, so Piper's question before a command is the check that stops a task from sending your data somewhere. **Edit & write files** is the one row whose **Auto** or **Ask** setting you can change.
 
-See [Core Tools](/working/tools) for each capability and its checkbox. See [Integrations](/connections/integrations) for a connected app's own tools, which you set on that app's panel in its **Read** and **Write** groups, each with a checkbox and an **Auto** or **Ask** setting.
+See [Built-in tools](/working/tools) for each capability and its checkbox. See [Integrations](/connections/integrations) for a connected app's own tools, which you set on that app's panel in its **Read** and **Write** groups, each with a checkbox and an **Auto** or **Ask** setting.
 
 ## Limits that hold in both modes
 
