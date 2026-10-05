@@ -1,82 +1,107 @@
 ---
 title: "Core Tools"
-description: "The capabilities Piper is allowed to use, from reading files to browsing the web, how to switch any of them off, and the mode new tasks start in."
+description: "A tool is a capability Piper may use while it works. See the seven capabilities Piper has with no app connected, switch any of them off, and set the mode new tasks start in."
 ---
 
-A tool is a capability Piper can use while it works, such as reading a file, searching the web, running a command, browsing a site, or sending mail in Gmail. You control each one with a checkbox. Clearing a checkbox removes that capability from Piper entirely.
+A tool is a capability Piper can use while it works, such as reading a file, searching the web, running a command, or browsing a site. You control each capability with a checkbox in **Settings**, under **Core Tools**. When you clear a checkbox, Piper can no longer use that capability.
 
-Piper carries a handful of tools at all times and looks the rest up as it goes. The core capabilities below, and knowledge search, are in front of it from the first turn. A connected app's tools are not: Piper searches for the ones a task needs and loads them then, so a task that never touches Gmail never loads Gmail's tools. You see this in the conversation as a line reading **Looking up Gmail's tools**.
+Piper has some tools from the first message and looks up the rest as it works. Five of the seven capabilities are available from the start. Piper adds **Search knowledge** once a knowledge source holds indexed passages. Piper looks up **Browse websites** and a connected app's tools when a task needs them, so Piper loads Gmail's tools only in a task that uses Gmail.
 
-## Tools, Skills, and Integrations
+Piper labels every step in the conversation in plain words, whichever AI provider runs the task. When Piper loads Gmail's tools, for example, the step reads **Looking up Gmail's tools**.
 
-These three settings sit next to each other and get mixed up constantly. Each does one job.
+This page covers how to:
 
-- **Tools** are the capabilities Piper may use. Whether it can read a file at all, browse a page at all, act in a connected app at all.
-- **Skills** are the written instructions that teach Piper how to produce a particular kind of work, such as a slide deck or a dashboard. Covered on [Skills](/working/skills).
-- **Integrations** are the apps you connect and sign in to, such as Gmail or Notion. Covered on [Integrations](/connections/integrations).
+- [Tell tools, skills, and integrations apart](#tell-tools-skills-and-integrations-apart)
+- [See what Piper can do with no app connected](#see-what-piper-can-do-with-no-app-connected)
+- [Switch a capability off](#switch-a-capability-off)
+- [Choose the mode new tasks start in](#choose-the-mode-new-tasks-start-in)
+- [Let Piper work in the Chrome you use](#let-piper-work-in-the-chrome-you-use)
 
-The order runs from one to the next. You connect Gmail under **Integrations**, and Gmail's actions appear on that same panel ready to use. A skill then decides how the work is done.
+## Tell tools, skills, and integrations apart
 
-## What the Core Tools page holds
+These three settings sit next to each other and are easy to mix up.
 
-In **Settings**, select **Core Tools**. The page holds two things: what Piper can do on this machine, and the mode new tasks start in.
+- **Tools** are the capabilities Piper may use, such as reading a file, browsing a page, or acting in a connected app.
+- **Skills** are the written instructions that teach Piper how to produce a particular kind of work, such as a slide deck or a dashboard. [Skills](/working/skills) covers them.
+- **Integrations** are the apps you set up and sign in to, such as Gmail or Notion. [Integrations](/connections/integrations) covers them.
 
-**Core Tools** are the seven capabilities Piper has without any app connected.
+The three build on each other. Piper can't act in Gmail until you set Gmail up as an integration. You then switch each of Gmail's tools on or off on Gmail's panel under **Integrations**. Piper then follows a skill for how to do the work.
+
+## See what Piper can do with no app connected
+
+In **Settings**, select **Core Tools**. The page lists seven capabilities, each with its own checkbox.
 
 | Capability | Nature | What it does | Approval |
 |---|---|---|---|
 | Read files | read | Reads files and documents on this machine. | Always auto |
 | Search files | read | Finds files by name and searches what's inside them. | Always auto |
 | Web search & fetch | read | Searches the web and reads the pages it finds. | Always auto |
-| Edit & write files | write | Creates and edits files in the task's own folder. | Auto or Ask, your choice |
+| Edit & write files | write | Creates and edits files in the folder this work can write to. | Auto or Ask, your choice |
 | Run commands | write | Runs shell commands on this machine. | Always asks |
 | Search knowledge | read | Searches the folders you indexed under Context → Knowledge Sources. | Always runs |
 | Browse websites | write | Opens pages in Piper's own browser, and can click and fill them in. When a site needs you signed in, it opens a window so you can. | Always runs |
 
-Use the checkbox on a row to turn that capability on or off. Only one approval setting is yours to change: **Edit & write files** offers **Auto** and **Ask**. The other six are fixed, as the right of each row shows.
+The approval column shows whether Piper stops to ask you. **Always auto** and **Always runs** both mean Piper goes ahead without asking. **Always asks** means Piper stops every time. The nature column shows whether the capability only looks at things or can change them.
 
-**New tasks start in** is the other setting on the page. A new task starts in **Manual**, where Piper checks with you before it runs a command or acts in a connected app. Set it to **Autopilot** and every new task starts there instead. Piper asks you to confirm first. A project pointed at a folder of your own still starts its tasks in **Manual**.
+You can change only one of those approval settings. On **Edit & write files**, you choose **Auto** or **Ask**. The setting starts on **Auto**, because the sandbox already limits those writes to the folder the task may write in. The approval on the other six rows is fixed.
 
-A connected app's tools sit on that app's own panel. Connect Gmail under **Settings** > **Integrations** and Piper switches its tools on there, which is also where you switch one off or change whether it asks. See [Integrations](/connections/integrations).
+When you switch on **Browse websites**, Piper shows an eighth checkbox beneath it, for working in the Chrome you use yourself. [Let Piper work in the Chrome you use](#let-piper-work-in-the-chrome-you-use) covers it.
 
-## Turning a capability on or off
+A connected app's tools sit on that app's own panel under **Integrations**, where you switch a single tool off or change whether it asks. See [Integrations](/connections/integrations).
+
+## Switch a capability off
 
 <Steps>
   <Step title="Open the page">
     In **Settings**, select **Core Tools**.
   </Step>
-  <Step title="Switch a core capability">
+  <Step title="Switch a capability">
     Clear the checkbox next to a row to take that capability away. Tick it to give it back.
   </Step>
-  <Step title="Set how the write capability is approved">
+  <Step title="Set how writing is approved">
     On **Edit & write files**, choose **Auto** to let Piper write without asking, or **Ask** to be prompted each time.
-  </Step>
-  <Step title="Choose how new tasks start">
-    Set **New tasks start in** to **Manual** or **Autopilot**. Piper asks you to confirm when you choose **Autopilot**.
-  </Step>
-  <Step title="Change an app's tools">
-    Open **Settings** > **Integrations** and select a connected app. Its **Read** and **Write** groups hold a checkbox and an **Auto** or **Ask** setting for every tool.
   </Step>
 </Steps>
 
-Every switch saves as you set it. Piper asks you to confirm only when you choose **Autopilot** as the start mode.
-
-## What to know
+Piper saves each change as you make it.
 
 <Note>
-Off means off. A capability you switch off is removed from Piper's toolset when a task starts. Switch one off while a task is already running and the task is refused the moment it tries. **Search knowledge** is the exception: a conversation that already has it keeps it until it reconnects. Autopilot does not override any of this. [Approvals and permissions](/control/approvals-and-permissions) covers the two modes.
+Piper removes a capability you switched off from its toolset when a task starts. Switch a capability off while a task is already running, and Piper refuses that capability the moment the task tries to use it. **Search knowledge** is the exception. In a conversation already under way, Piper keeps using **Search knowledge** until it opens a new connection for that conversation, when you reopen the task later. These rules apply in **Autopilot** too. [Approvals and permissions](/control/approvals-and-permissions) covers the two approval modes.
 </Note>
 
 <Tip>
-**Run commands** always asks, with one carve-out. Piper runs a command on its own when every part of it is a read-only program such as `ls` or `git status`, a folder created inside the workspace, a `cd` into a folder inside it, or one of Piper's own skill scripts. Anything else reaches you as a question, and a command that names a file holding sign-in credentials reaches you whatever else it does. The carve-out follows your switches too: turning **Read files** off closes the route that would have read a file through a command instead, and turning **Edit & write files** off does the same for the silent folder creation.
+**Run commands** always asks, with one carve-out. Piper runs a command without asking when every part of it is one of these:
+
+- a read-only program, such as `ls` or `git status`
+- `mkdir`, creating a folder inside the area the task can write to
+- `cd`, into a folder inside that same area
+- one of Piper's own skill scripts
+
+Piper asks you about every other command. Piper also asks you about any command that names a file holding credentials, such as an `.env` file or a `.pem` key, whatever else the command does. Piper treats `.env.example`, `.env.sample`, and `.env.template` as ordinary files, because they hold placeholders. [Approvals and permissions](/control/approvals-and-permissions#what-piper-asks-every-time) lists the files Piper treats as credentials.
+
+The carve-out also follows your switches. Switch **Read files** off, and Piper asks you before it runs a read-only command such as `cat`. Switch **Edit & write files** off, and Piper asks before it creates a folder.
 </Tip>
 
-<Warning>
-Switch **Browse websites** on to reach the nested **Use my Chrome for sites I’m signed in to**, which takes a one-time setup before you can turn it on. Piper asks you before it works in your Chrome on a site, one approval covers the rest of that request on that site, and nothing carries past the request. Neither **Always allow** nor Autopilot can silence it. [Web and sign-ins](/connections/web-and-sign-ins) explains both browsers.
-</Warning>
+## Choose the mode new tasks start in
+
+The **Core Tools** page has one more setting, **New tasks start in**. Every task you start from the message box begins in this mode. The **Ask Piper** drawer always runs in **Autopilot**. A new task starts in **Manual** until you change this setting.
+
+In **Manual**, Piper asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking. Piper asks you to confirm when you choose **Autopilot**, and switches back to **Manual** with no confirmation.
+
+A task in a project you pointed at a folder of your own still starts in **Manual**, whatever this setting says.
+
+You can change the mode of a single conversation from the dropdown under its message box, without touching this setting. [The message box](/working/describing-what-you-need) covers that control.
+
+## Let Piper work in the Chrome you use
+
+Piper has a browser of its own, and you switch it on with **Browse websites**. When you switch it on, Piper shows a nested checkbox beneath it, **Use my Chrome for sites I’m signed in to**. Tick it to let Piper work in the Chrome you're signed in to yourself.
+
+Before you can tick that checkbox, you complete a one-time setup. Until then, the caption under the checkbox reads **Needs a one-time setup. Piper still asks you each time.** Select **Set up** on the same row. [Web and sign-ins](/connections/web-and-sign-ins) covers the browser extension that setup installs.
+
+Piper asks you before it works in your Chrome on a site. One approval covers the rest of that request on that site, and the approval ends with the request. Piper asks every time, including in Autopilot, and never offers **Always allow in this conversation** for your Chrome. In tasks Piper runs with nobody watching, Piper refuses to use your Chrome. [Web and sign-ins](/connections/web-and-sign-ins) explains both browsers.
 
 <Note>
-**Browse websites** reads **Always runs**, which holds for an ordinary page. A site Piper holds a saved sign-in for asks you first, whatever the row says.
+The **Browse websites** row reads **Always runs**, and that holds for an ordinary page. On a site where Piper holds a saved sign-in, Piper asks you first, whatever the row says.
 </Note>
 
 ## Next steps
@@ -86,7 +111,7 @@ Switch **Browse websites** on to reach the nested **Use my Chrome for sites I’
     The instruction packs that let Piper build a deck, a spreadsheet, or a dashboard.
   </Card>
   <Card title="Integrations" icon="link" href="/connections/integrations">
-    Connect the apps Piper works from.
+    Set up the apps Piper works from.
   </Card>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
     What Piper asks before it acts, and how the two modes differ.

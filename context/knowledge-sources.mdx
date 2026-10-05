@@ -1,94 +1,134 @@
 ---
 title: "Knowledge Sources"
-description: "How to point Piper at folders of your own documents, which file types get indexed, what a source card's status and counts mean, and how to re-index or remove a folder."
+description: "A knowledge source is a folder of your own documents that Piper indexes and searches on your Mac. Add a folder, read the status on its card, and see which files Piper indexes and which files it skips."
 ---
 
-A knowledge source is a folder of documents you add for Piper to search. Piper reads the supported files in that folder, splits their text into passages (called chunks), and builds a search index on your Mac. Your documents stay where they are, and Piper never writes to them.
+A knowledge source is a folder of documents you add for Piper to search. Piper reads the supported files in that folder, splits their text into short passages, and builds a search index on your Mac. Your documents stay where they are, and Piper never writes to them.
 
-Add a folder when its documents hold background Piper may need across different tasks: past decks, research, notes, contracts. A [project source](/concepts/projects) is the better place for a file only tasks in one project need.
+Add a folder when its documents hold background Piper may need across different tasks, such as past decks, research, notes, or contracts.
 
-## Setting up knowledge search
+This page covers how to:
 
-Two things have to be true before Piper can search your documents. Piper needs the **Search knowledge** tool switched on, and at least one folder has to be indexed. The tool starts on, so adding your first folder is usually the whole setup.
+- [Tell knowledge sources apart from memory, project sources, and integrations](#memory-a-project-source-an-integration-or-a-knowledge-source)
+- [Add a folder](#add-a-folder) and get it searchable
+- [See which files Piper indexes](#which-files-piper-indexes) and which files it skips
+- [Read a source card](#what-a-source-card-tells-you), its status and its two counts
+- [Keep a folder current](#keep-a-folders-index-current), or start a fresh pass yourself
+- [Remove a folder](#remove-a-folder) from the index
+- [Understand how Piper searches](#how-piper-searches-your-documents)
+- [Limitations](#limitations)
+
+## Memory, a project source, an integration, or a knowledge source
+
+Four features hold material of yours. Use the table to pick the right feature.
+
+| | What it holds | Where you set it up |
+|---|---|---|
+| **Knowledge source** | A whole folder of documents, indexed for search | **Settings**, then **Knowledge Sources** |
+| **[Memory](/context/memory)** | Short facts about you and your work, and rules Piper follows on every message | **Settings**, then **Memory**, or the **Memory** tab of the **About you** page in the sidebar |
+| **[Project source](/concepts/projects)** | One file attached to one project | The **Sources** panel on that project's page |
+| **[Integrations](/connections/integrations)** | A live connection to an app such as Gmail or Notion | **Settings**, then **Integrations** |
+
+Add a knowledge source for documents several different tasks may need. Attach a project source for a file only one project needs.
+
+## Add a folder
+
+Piper can search your documents once the **Search knowledge** tool is on and at least one folder holds an indexed passage. Piper switches the tool on when you install Piper, so you usually only need to add your first folder.
 
 <Steps>
-  <Step title="Check the tool is switched on">
-    In **Settings**, select **Core Tools**, and look for the **Search knowledge** row. It is on to begin with. The row is marked read and **Always runs**, so Piper searches without stopping to ask you. Clear the checkbox to stop Piper searching your folders at all.
+  <Step title="Check the tool is on">
+    In **Settings**, select **Core Tools**, and find **Search knowledge**. Piper marks the tool as **read** and shows **Always runs** beside it, so Piper searches without asking you first. When you clear the tool's checkbox, Piper stops searching your folders.
   </Step>
-  <Step title="Add a folder">
+  <Step title="Add the folder">
     In **Settings**, select **Knowledge Sources**, then **Add a folder**, and pick the folder you want. Piper names the source after the folder.
   </Step>
   <Step title="Wait for indexing to finish">
-    Indexing starts on its own. The card's status reads **Up to date** once the folder is searchable. Until one source holds an indexed passage, Piper is not told it has any knowledge, whatever the tool is set to.
+    Piper starts indexing on its own, and the card reads **Up to date** once the folder is searchable. Piper starts searching your knowledge in tasks once at least one folder holds an indexed passage.
   </Step>
 </Steps>
 
-Piper walks the whole tree, subfolders included. It refuses a folder that is already a source, so the same folder cannot be indexed twice.
+Piper indexes the whole folder, subfolders included.
 
-## Which files get indexed
+<Warning>
+  Piper checks only whether you already added the same folder. When you add a subfolder of a source, or a folder that holds a source, Piper indexes both. Piper then indexes the overlapping files twice, and one search can return the same passage twice. You can't exclude a subfolder from a source, so add the narrowest folder that holds what you want searched.
+</Warning>
 
-Piper indexes eight file types and skips everything else:
+## Which files Piper indexes
 
-| Type | Extensions |
+Piper indexes these file types:
+
+| Extension | What it is |
 |---|---|
-| Documents | `.docx`, `.pdf` |
-| Spreadsheets | `.xlsx`, `.csv` |
-| Slides | `.pptx` |
-| Text | `.md`, `.txt`, `.xml` |
+| `.pdf` | A PDF document |
+| `.docx` | A Word document |
+| `.pptx` | A PowerPoint deck |
+| `.xlsx` | An Excel workbook |
+| `.csv` | A comma-separated table |
+| `.md` | A Markdown file |
+| `.txt` | A plain text file |
+| `.xml` | An XML file |
 
-Everything else stays untouched, including `.json` and `.html`, which are usually machine output rather than something you wrote. Piper also skips hidden files and folders, Office lock files, and symbolic links, so the index stays clean. One file it cannot read never stops the pass: Piper skips that file and indexes the rest of the folder.
+Piper skips every other file type, including `.json` and `.html`. Piper also skips hidden files and folders, Office lock files, and symbolic links. When Piper can't read a file, Piper skips that file and indexes the rest of the folder. When Piper can't open a folder or subfolder, Piper treats it as empty.
 
-<Note>
-  Piper sets no limit on how many folders you add, how many files a folder holds, or how large a file is. Large folders and large files take longer to index.
-</Note>
+You can add as many folders as you want, with as many files as you want, of any size. Piper takes longer to index large folders and large files.
 
-## Reading a source card
+## What a source card tells you
 
-Each folder has a card. It shows the folder's name, where it sits on disk, a status, and two counts.
+Piper shows a card for each folder. The card shows the folder's name, where the folder sits on your Mac, a status, and two counts.
 
 | Status | What it means |
 |---|---|
-| **Queued** | Waiting its turn to be indexed |
-| **Indexing…** | Being read now, with a count of files done out of the total |
-| **Up to date** | Indexed and searchable |
-| **Needs attention** | Piper could not find the folder where you added it, or the on-device search model is not ready. That model is what turns text into the numbers Piper compares, and Piper downloads it once and keeps it on your Mac. The reason sits behind the info icon |
-| **Couldn't index** | The folder could not be read, with the reason behind the info icon |
+| **Queued** | Piper hasn't started indexing the folder yet |
+| **Indexing…** | Piper is reading the folder, and shows how many files it has finished out of the total |
+| **Up to date** | Piper has indexed the folder, and you can search it |
+| **Needs attention** | Piper can't find the folder where you added it, or the on-device search model isn't ready yet. The info icon shows the reason |
+| **Couldn’t index** | An unexpected error stopped Piper's pass over the folder. The info icon shows the error |
 
-The two counts are files and passages. A passage is a chunk of about 1,000 characters, and consecutive chunks overlap by about 200 characters so a sentence spanning a boundary survives. One long PDF becomes many passages, which is why the passage count runs far ahead of the file count. A card that is up to date also shows when the folder's contents last changed.
+The two counts are files and passages. A passage is a short stretch of text. Consecutive passages overlap, so text near a boundary appears in both passages. Piper splits one long PDF into many passages, so the passage count runs far ahead of the file count.
 
-## How Piper keeps a folder's index current
+An up-to-date card also shows **Updated** and how long ago, such as `2h ago` or `5d ago`. When Piper checks a folder on its own and finds nothing changed, Piper leaves the time as it was, so the time shows when the folder's contents last changed. When you start a fresh pass yourself, Piper updates the time whether or not anything changed.
 
-Piper watches each folder for changes. It starts an update once the folder has been quiet for five seconds, checks every folder every 30 minutes, and runs a check when Piper starts up. A pass over a folder that has not changed does nothing and leaves the card's date alone, so "Updated 2 hours ago" keeps meaning the last time the contents actually changed.
+<Note>
+  The on-device search model turns your text into the numbers Piper compares. Piper downloads the model once, in the background, and keeps it on your Mac. Piper indexes one folder at a time. Until the download finishes, the folder Piper is about to index shows **Needs attention**, and folders waiting their turn keep their current status.
+</Note>
 
-You can also force a pass. Select **Re-index** on a card and Piper checks the folder straight away. It re-reads only the files that changed, so a re-index of a settled folder is quick.
+## Keep a folder's index current
 
-## Removing a folder
+Piper watches each folder for changes, and updates the index once the folder stops changing for a moment. Piper also checks every folder regularly, and once each time Piper starts.
 
-Select **Remove source** on the card, then **Remove** to confirm. That drops the folder from the search index and leaves your documents exactly where they were.
+You can also start a fresh pass yourself. Select the refresh icon on a card, and Piper checks the folder straight away. Piper re-reads only the files that changed, so a fresh pass over an unchanged folder finishes quickly.
 
-## How Piper searches
+## Remove a folder
 
-Piper compares the meaning of your question with the meaning of each indexed passage, which is called semantic search. It returns the closest passages, up to ten by default, each with the file it came from and a score between 0 and 1. Because it matches on meaning, a search for "pricing objections" can surface a passage about customers pushing back on cost, even where neither of those words appears.
+Select the trash icon on a card, then **Remove** to confirm. Piper drops the folder from the search index and leaves your documents where they are.
 
-Piper looks at your knowledge early in a task, while it is still working out what you are asking for, so a source can shape the answer even when you never mention it. Where nothing relevant comes back, Piper says so rather than implying it found something.
+## How Piper searches your documents
 
-<Warning>
-  Piper builds and searches the index on your Mac. When Piper uses a passage in a task, that passage goes to your AI provider along with the conversation. See [Your data stays local](/control/your-data-stays-local) for where the boundary sits.
-</Warning>
+Piper compares the meaning of your question with the meaning of every indexed passage, which is called semantic search. Piper brings back the closest passages, each with the file it came from. Because Piper matches on meaning, a search for "pricing objections" can find a passage about customers pushing back on cost, even when neither of those words appears.
 
-Three neighbouring features are easy to confuse with a knowledge source. [Memory](/context/memory) holds short facts about you, not documents. [Integrations](/connections/integrations) connect Piper to live apps such as Gmail and Notion. A project source is a single file attached to one project, covered on the [Projects](/concepts/projects) page.
+Piper searches your knowledge at the start of a task, before it asks you scoping questions or starts drafting, so Piper can use a source even when you don't mention it. When the search finds nothing relevant, Piper says so in its reply.
+
+<Note>
+  Piper builds and searches the index on your Mac. When Piper uses a passage in a task, Piper sends that passage to your [AI provider](/concepts/ai-providers) with the rest of the conversation. See [Your data stays local](/control/your-data-stays-local).
+</Note>
+
+## Limitations
+
+- **Piper searches a larger index more slowly.** Piper compares every indexed passage on every search. Accuracy stays the same.
+- **Piper always returns the closest passages it holds.** Piper searches every folder together and returns the closest passages even when none of them matches your question well.
+- **Piper indexes the files in overlapping folders twice.** When one source sits inside another, one search can return the same passage twice.
 
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Integrations" icon="link" href="/connections/integrations">
-    Connect live apps like Gmail, Slack, and Notion.
-  </Card>
   <Card title="Memory" icon="brain" href="/context/memory">
     The short facts Piper carries from one task to the next.
   </Card>
+  <Card title="Projects" icon="folder-tree" href="/concepts/projects">
+    Attach a single file to one body of work instead.
+  </Card>
   <Card title="Core Tools" icon="wrench" href="/working/tools">
-    Choose which capabilities Piper may use, knowledge search included.
+    Every capability Piper may use, knowledge search included.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
     Where your files, memory, and credentials live.

@@ -1,23 +1,27 @@
 ---
 title: "AI providers"
-description: "The services that do Piper's thinking, how to set them up, and how the default affects new and running tasks."
+description: "An AI provider is the service that runs the AI model Piper works with. Sign in to Claude Code or Codex, add an API key for Anthropic, OpenAI, or DeepSeek, and choose which provider a task runs on."
 ---
 
-An AI provider is the service that does Piper's thinking. Piper can run through Claude Code or Codex after you sign in, or it can call Anthropic, OpenAI, or DeepSeek models with an API key you add.
+An AI provider is the service that runs the AI model Piper works with. Piper is the assistant you talk to, and Piper sends each turn of the conversation to the provider. Piper needs at least one provider set up before it can run a task.
 
-## When to add one
+You set up a provider in one of two ways. You sign in to Claude Code or Codex, or you add an API key for Anthropic, OpenAI, or DeepSeek.
 
-Piper needs at least one provider before it can run a task. Sign in to Claude Code or Codex, or add an API key for Anthropic, OpenAI, or DeepSeek. You can set up several providers and choose one for a task from the controls under the message box.
+This page covers how to:
 
-Every provider requires either a sign-in or an API key.
+- [Find the providers in Settings](#find-the-providers-in-settings), split into agents and model APIs
+- [Sign in to Claude Code or Codex](#sign-in-to-claude-code-or-codex)
+- [Add an API key](#add-an-api-key) for Anthropic, OpenAI, or DeepSeek
+- [Choose the provider a task runs on](#choose-the-provider-a-task-runs-on)
+- [Set the default provider](#what-the-default-controls) for the work Piper starts on its own
 
-## The two sections in Settings
+## Find the providers in Settings
 
-Open **Settings**, then **AI Providers**. The page separates providers by how you connect them.
+Open **Settings**, then **AI Providers**. Piper groups the providers by how you connect them.
 
-**Agents** contains Claude Code and Codex. Select a card to see its **Sign-in** status, sign in, or make Claude Code or Codex the default.
+Claude Code and Codex sit under **Agents**. Each card shows a status: **Signed in**, **Not signed in**, or **Can't be used on this computer**. Select a card to open its panel, where you sign in and set the default. To change accounts, sign in again, and Piper replaces the credential it holds.
 
-**Model APIs** contains Anthropic, OpenAI, and DeepSeek. Select a card to add, update, or remove its API key and see its **Available models**. Piper offers that provider's models after it accepts the key.
+Anthropic, OpenAI, and DeepSeek sit under **Model APIs**. Each card shows **API key saved** or **No API key**. Select a card to add, update, or remove its key, and to see its **Available models**. Piper checks a new key with the provider before it saves the key, then offers that provider's models.
 
 ## Sign in to Claude Code or Codex
 
@@ -26,12 +30,14 @@ Open **Settings**, then **AI Providers**. The page separates providers by how yo
     Under **Agents**, select **Claude Code** or **Codex**.
   </Step>
   <Step title="Sign in">
-    Select **Sign in** and finish signing in through the window Piper opens.
+    Select **Sign in**. For Claude Code, select **Open the sign-in page**, approve Piper in your browser, paste the code your browser shows you into **Paste the code here**, and select **Submit code**. For Codex, Piper opens a browser window and waits for you to finish signing in there.
   </Step>
-  <Step title="Choose the default if you want">
-    Turn on **Use as default** if you want Claude Code or Codex to run your new tasks.
+  <Step title="Make it the default if you want">
+    Turn on **Use as default** to run the work Piper starts on its own on this provider. See [What the default controls](#what-the-default-controls).
   </Step>
 </Steps>
+
+If you don't finish signing in within a few minutes, Piper ends the sign-in and shows **This sign-in expired. Start again.** Select **Sign in** to start a new sign-in.
 
 ## Add an API key
 
@@ -40,23 +46,37 @@ Open **Settings**, then **AI Providers**. The page separates providers by how yo
     Under **Model APIs**, select **Anthropic**, **OpenAI**, or **DeepSeek**.
   </Step>
   <Step title="Add the key">
-    Paste the key into **API key**, then select **Save key**. Select **Where do I get a key?** to open the provider's signup page.
+    Paste the key into the field under the **API key** heading, then select **Save key**. Select **Where do I get a key?** to open the provider's signup page.
   </Step>
   <Step title="Check the models">
-    After Piper accepts the key, the card reads **API key saved** and the panel lists the **Available models** for that provider.
+    Once Piper accepts the key, the card reads **API key saved** and the panel lists the **Available models**. Piper offers a model only where Piper supports it and your account can reach it, so you see a shorter list with a key on a lower tier.
   </Step>
-  <Step title="Choose the default if you want">
-    Turn on **Use as default** if you want this provider to run your new tasks.
+  <Step title="Make it the default if you want">
+    Turn on **Use as default** to run the work Piper starts on its own on this provider.
   </Step>
 </Steps>
 
-Piper keeps the API key in your Mac's system keychain. Select **Update key** to replace it or **Remove key** to delete it. Removing a key also removes that provider's models from Piper.
+Piper keeps the API key in your Mac's system keychain. Select **Update key** to replace the key, or **Remove key** to delete it. Piper asks you to confirm, then deletes the key and stops offering that provider's models. You can add the key again at any time.
+
+## Choose the provider a task runs on
+
+Under the message box, Piper shows the provider and the model a task runs on, separated by a dot. When the chat is narrow, Piper shows only the model, and you can hover over the model name to see both. Select the provider or model name to pick a different provider or model, including part way through a conversation.
+
+Many models also have effort levels, which set how much reasoning the model does before it answers. Point at a model in the list to open its levels beside it: **Default**, or a level such as **Low**, **Medium**, or **High**. With **Default**, the provider picks the level. When you select the model itself, Piper picks **Default**, or **Medium** for a model with no **Default**. For a model with only one level, Piper shows no list of levels.
+
+A new task opens on the provider, model, and level you picked last, even when another provider is marked **Default**. If you've never picked a provider, Piper opens a new task on the first provider in the list whose models Piper already knows.
+
+A task keeps the provider it started on, even after you change your default. A scheduled or long-running task runs on the provider and model of the conversation you set it up in.
 
 ## What the default controls
 
-The provider marked **Default** runs your new tasks and Chief of Stuff. A task can use another provider when you choose one from the controls under its message box. A scheduled task keeps the provider and model of the conversation you set it up in, so it goes on running there after you change your default.
+Piper runs the work it starts on its own on the provider marked **Default**. That work includes the tasks on the Home page and Piper's checks of your mail and calendar. See [Work Piper starts before you ask](/working/before-you-ask).
 
-If any task is running when you change the default, Piper opens **Change the default while a task is running?**. The dialog warns that switching stops the tasks running now. Select **Change it anyway** to switch, or close the dialog to leave the default unchanged. You can start the stopped tasks again on the new default.
+[Ask Piper](/working/describing-what-you-need#ask-piper-a-quick-question) also runs on the default provider. Piper picks the provider at the first message of an **Ask Piper** conversation, and keeps that provider until you select **Clear** in the **Ask Piper** panel.
+
+To move the default, turn on **Use as default** for another provider. One provider is always the default.
+
+If a task is running when you change the default, Piper opens **Change the default while a task is running?**. Select **Change it anyway** to switch, or close the dialog to keep the current default. When you switch, Piper stops every task running at that moment. To carry a task on, send another message, and Piper picks the task up on the provider it was already running on.
 
 ## Next steps
 

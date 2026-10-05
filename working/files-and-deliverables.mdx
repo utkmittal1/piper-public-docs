@@ -1,11 +1,23 @@
 ---
 title: "What Piper hands back"
-description: "The ten kinds of card a reply can hold and what you can take away from each, the file viewer and the formats it renders, how to comment on a passage of a document, and the size limits that stop a file opening."
+description: "Piper answers in cards, and most of what a card can do sits behind a hover or a menu. Find the actions on each card, open a file beside the conversation, comment on a passage, and find the files on your Mac."
 ---
 
-Piper answers in cards. A card is a block inside a reply holding one thing you can act on: a chart, a sortable table, a question, or a finished file. Piper draws ten kinds, and the actions on each are the point of this page, because most of them are not visible until you go looking.
+Piper answers in cards. A card is a block inside a reply holding one thing you can act on: a chart, a sortable table, a question, or a finished file.
 
-## The ten kinds of card
+This page covers how to:
+
+- [Use the actions on a card](#use-the-actions-on-a-card), including the actions behind a hover
+- [Open a file beside the conversation](#open-a-file-beside-the-conversation)
+- [Edit a Markdown file](#edit-a-markdown-file) and choose whose version to keep
+- [Comment on a passage](#comment-on-a-passage) and send the note to Piper
+- [Find the files on your Mac](#find-the-files-on-your-mac)
+- [Get a second review of a file](#get-a-second-review-of-a-file)
+- [Review work Piper started on its own](#review-work-piper-started-on-its-own)
+
+## Use the actions on a card
+
+Each kind of card has its own actions.
 
 | Card | What you can do with it |
 | --- | --- |
@@ -15,75 +27,113 @@ Piper answers in cards. A card is a block inside a reply holding one thing you c
 | Web page | A self-contained HTML page, such as a dashboard. Use it in place, **Save HTML**, or **Copy HTML** |
 | Image | **Copy image** or **Save image** |
 | File | A finished deliverable. **Open in default app**, **Show in Folder**, **Copy Path**, or **Copy Contents** |
-| Plan | The steps Piper set itself, headed **Execution plan**. With **Planning mode** on, Piper waits here until you select **Go ahead** |
-| Question | Answer with a tap. A card asking more than one thing shows a `1 of 3` counter, and picking an option moves you to the next question rather than sending. Where a question takes several answers, tick what applies and select **Confirm** |
-| Suggestions | Two to four follow-ups. Tap one to send it as your next message |
-| Theme picker | The slide themes that ship with Piper. Tap one and Piper builds the deck in it |
+| Plan | The steps Piper set itself, headed **Execution plan**. With **Planning mode** on, the card reads **Waiting for your go** until you select **Go ahead** |
+| Question | Select an option, or press its number key. A card asking more than one thing shows a `1 of 3` counter, and Piper moves you to the next question when you pick an option. Piper sends your answers after the last question. Every question also offers a free-text **Something else** and a **Skip**. Piper adds **Confirm** to a question that takes several answers |
+| Suggestions | Two to four follow-ups. Select a suggestion to send it as your next message |
+| Theme picker | The slide themes that ship with Piper. Select a theme and Piper builds the deck in it |
+| What Piper can do | An explanation of one of Piper's own features. When you change a control on this card, such as a skill pack switch, you change the same setting in **Settings** |
+| Link | A shortcut to a screen inside Piper. Piper takes the name on the card from its own list of screens, so the name always matches the screen |
 
-Chart, diagram, image, and web page cards keep their actions hidden until you hover them. A table's sit in a bar above the rows and stay visible.
+Piper keeps the actions on a chart, a diagram, an image, and a web page hidden until you hover the card or reach it with the keyboard. A table's actions sit in a bar above the rows and stay visible. Piper shows no actions while the reply is still arriving.
+
+A card with three actions or fewer shows all of them as buttons. Past three, Piper shows the first two and collects the rest under **More actions**. That's why a table shows all three of its actions and a chart shows two plus the menu.
 
 <Note>
-  **Copy data as CSV** gives you the numbers behind a chart, and **Copy chart spec** gives you the chart's own description of itself, written in Vega-Lite, the grammar Piper draws charts with.
+  Use **Copy data as CSV** to copy the numbers behind a chart. Piper offers it when it built the chart from numbers it wrote into the chart itself, and leaves it out when the chart reads its numbers from somewhere else. Use **Copy chart spec** to copy the chart's own description, written in Vega-Lite, the grammar Piper draws charts with.
 </Note>
 
 <Note>
-  A table draws at most 1,000 rows. Past that it reads **Showing first 1000 of 4312 rows**, so ask Piper for the whole result as a file when you need all of it.
-</Note>
-
-<Warning>
-  If a card arrives damaged, or a reply ends early and cuts one off, ask Piper to draw it again.
-</Warning>
-
-## The file viewer
-
-Select a file card and Piper opens the file beside the conversation, in a panel you can drag wider or narrower. The header shows the file name and its format on a badge, such as `PPTX`.
-
-The viewer renders documents (`.docx`, `.pdf`, `.md`), spreadsheets (`.xlsx`, `.xls`, `.csv`), presentations (`.pptx`, `.ppt`), images, HTML pages, and plain text and code files. Anything else opens in whichever Mac app normally handles it.
-
-A few formats behave in ways worth knowing before you go looking for a control that is not there.
-
-- Spreadsheets open as a read-only grid. In a workbook with several sheets, select a sheet tab along the bottom to switch.
-- Piper draws a presentation slide by slide, keeping the deck's own colours whichever Piper theme you use.
-- A `.tsv` file opens as text rather than a grid.
-- For a Markdown file, an HTML page, or a `.csv`, the panel offers **Preview** and **Source**. No other format has that toggle.
-
-<Note>
-  The viewer is read-only. To change a deck or a spreadsheet yourself, open it in the Mac app you usually use, or ask Piper for the change and let it rewrite the file.
+  Piper draws at most 1,000 rows in a table, counted after your filter and sort. Past that Piper adds a line reading `Showing first 1000 of 4312 rows`, with your real total in place of 4312. Ask Piper for the whole result as a file when you need all of it.
 </Note>
 
 <Warning>
-  Two size limits sit on the viewer. Above 50 MB, Piper will not open a file in the panel and tells you to open it in its usual Mac app instead. **Copy Contents** stops at 5 MB.
+  If a card arrives damaged, or a reply ends early and cuts a card off, ask Piper to draw it again.
 </Warning>
 
-<Note>
-  If Piper rewrites a file you already have open, select **Reload** in the panel header to see the new version. A card marked **No longer available** points at a file that has been moved or deleted since Piper wrote it.
-</Note>
+## Open a file beside the conversation
 
-## Commenting on a passage
+Select a file card and Piper opens the file beside the conversation, in a panel you can drag wider or narrower. Piper opens a file it can't draw in the Mac app that normally handles it. Select **Expand viewer** to give the file the whole window, and **Restore split view** to bring the conversation back.
 
-A comment is a note you attach to one passage of a document Piper wrote, and Piper reads the passage and the note together. Open the document, select the passage you disagree with, and a comment button appears next to it. Write your note and select **Add to chat**.
+Drag the panel wider than the conversation can spare, and Piper folds the sidebar to its icons to make room. Narrow the panel or close it, and Piper opens the sidebar again. Keep dragging past the widest split, and Piper gives the file the whole window.
 
-Your comment then sits above the message box as a chip showing the file name and what you wrote, with an × to drop it. Piper reads it with your next message. A comment also counts as a message on its own, so you can select **Send** with nothing typed and the notes are the message.
+Piper draws documents (`.docx`, `.pdf`, `.md`), spreadsheets (`.xlsx`, `.xls`, `.csv`), presentations (`.pptx`, `.ppt`), images, HTML pages, and plain text and code files.
 
-Where you can leave a comment depends on the file. Selecting a passage works in a Word file and in a Markdown file shown as **Preview**. Commenting on a particular line works in Markdown shown as **Source**, in an HTML page, in a spreadsheet or `.csv`, and in plain text and code files. PDFs, presentations, and images take no comments at all.
+These formats have limits in the panel:
 
-## Where the files themselves live
-
-Piper writes finished work to the task's `final-output/` folder and working material to `intermediate-files/`, and both show up in the rail on the right under **Artifacts** and **Other files**. [Tasks and the workspace](/concepts/sessions-and-workspace) covers the folders in full.
-
-Files stay on your Mac as ordinary files in ordinary folders. Attach a deliverable to an email, drop it in a shared drive, or edit it long after the task that made it has ended.
+- Spreadsheets open as a read-only grid. In a workbook with several sheets, select a sheet tab to switch.
+- Piper draws a presentation slide by slide, and the slides keep the deck's own colors whichever Piper theme you use.
+- A `.tsv` file opens as text in place of a grid.
+- For a Markdown file, an HTML page, or a `.csv`, you can switch between **Preview** and **Source**. Piper shows every other format only as drawn.
 
 <Note>
-  **Copy Path** and the path on a hovered row both give you the path inside the task folder rather than the full path on disk. Use **Show in Folder** when you need the file itself.
+  You can change a Markdown file Piper wrote here. Every other format is read-only. To change a deck or a spreadsheet yourself, open it in the Mac app you usually use, or ask Piper for the change and Piper rewrites the file.
 </Note>
-
-## Drafts Chief of Stuff prepares for you
-
-[Chief of Stuff](/autonomous/chief-of-stuff) never sends anything from the work it starts on its own. Piper refuses every integration's write tools inside that work, so a message written there comes back to you as a draft marked **Waiting**, showing where it is headed and the exact body that would go out. Nothing goes out until you select **Send** yourself.
 
 <Warning>
-  A task you started yourself works the other way. A task on **Autopilot** can send through a connected integration such as Gmail or Slack without showing you the message first. A new task starts in **Manual**, so this applies once you switch it over, or once you have made **Autopilot** the start under **Settings**, then **Core Tools**. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
+  Piper opens a very large file only in its usual Mac app. Piper says the file is too large to view in the app, and you open the file with **Open in default app**. **Copy Contents** also has a size limit.
 </Warning>
+
+<Note>
+  If Piper rewrites a file you already have open, select **Reload** to see the new version. In a Markdown file you're editing, Piper asks you which version to keep. Piper marks a file card **No longer available** when the file was inside the task's folder and has since been moved or deleted. Piper then removes the actions from that card, and you can no longer open the file from the card.
+</Note>
+
+## Edit a Markdown file
+
+Open a Markdown file Piper wrote and type into it. Piper saves the file a moment after you stop typing.
+
+In **Preview** you type straight into the drawn page, the way you would in a word processor. Piper draws tables, code blocks, and diagrams as plain text in the editable page, so you can type into them too. Piper writes back only the parts of the page you changed, and copies every other part of the file exactly as it was.
+
+In **Source** you type into the file's Markdown text.
+
+Select words on the page and Piper offers you a comment on them.
+
+You can change a Markdown file in the task's folder, or in a project's folder. Piper opens a file you attached from somewhere else on your Mac as read-only.
+
+<Note>
+  Piper draws footnotes at the foot of the page, away from where you wrote them. Change a footnote in **Source**.
+</Note>
+
+### If Piper changes the file while you have it open
+
+Piper can be working on the same file you're typing in. When that happens, Piper dims the page and asks you to choose. Select **Keep Piper's version** to load what Piper wrote and drop what you typed. Select **Keep mine** to write your version over Piper's. Piper keeps only the version you choose.
+
+If the file was moved or deleted while you had it open, the page reads **This file is no longer there**. Select **Reload** to clear it.
+
+## Comment on a passage
+
+A comment is a note you attach to one passage of a document Piper wrote, and Piper reads the passage and the note together. Open the document and select the passage you disagree with. Piper shows a comment button beside it. Write your note and select **Add to chat**.
+
+Piper then puts your comment above the message box as a chip carrying the file name, the passage or line you commented on, and what you wrote, with an × to drop it. In a Markdown file you can change, the chip carries the words you commented on in place of a line number, because a line number goes wrong as soon as you type above it. Piper reads the comment with your next message. A comment counts as a message on its own, so you can select **Send** with nothing typed and Piper sends your comments as the message.
+
+Where you can leave a comment depends on the file:
+
+- You can select a passage in a Word file, and in a Markdown file shown as **Preview**.
+- You can comment on a particular line in Markdown, an HTML page, or a `.csv` shown as **Source**, and in plain text and code files.
+- You can't comment in an Excel workbook, a `.csv` shown as **Preview**, an HTML page shown as **Preview**, a PDF, a presentation, or an image.
+
+## Find the files on your Mac
+
+Piper writes finished work to the task's `final-output/` folder and working material to `intermediate-files/`. Both folders sit inside the task's own folder on your Mac. [Tasks and the workspace](/concepts/sessions-and-workspace) covers the folders in full.
+
+Select **Artifacts** in the rail on the right of a task to open two panels. **Artifacts** lists what is in `final-output/`, along with the shared artifacts folder of the project or task this work belongs to. Piper marks a row from that shared folder with the word `project`. **Other files** lists everything else in the task's folder, in the folders Piper wrote it to.
+
+Piper keeps your files on your Mac as ordinary files in ordinary folders. Attach a deliverable to an email, drop it in a shared drive, or edit it long after the task that made it has ended.
+
+<Note>
+  Select **Copy Path**, in the file card's menu or in the viewer's **File actions** menu, to copy the file's full path on your Mac. Hover a file row to see the same path. Use **Show in Folder** when you want the file itself.
+</Note>
+
+## Get a second review of a file
+
+A review is a check of a file Piper made, run as a separate task without your conversation. Ask for a review in the task that made the file, for example "get a review of the proposal". You can also name a part you want looked at closely. Piper first shows you what it will tell the reviewer you want, and waits for you to confirm or correct it. Then Piper starts a task named **Review:** followed by the file's name. In that task, Piper checks the file against what it must agree with, such as the data or the code, against any guide it must follow, such as a brand guide, and against what you asked for. The reviewer also judges whether the file works for the people it's for. Piper fixes what it agrees with and asks again, until the reviewer approves. Piper leaves your decisions as they are and tells you about any point that would change a decision.
+
+Piper allows more rounds for code, a spec, or an analysis than for a proposal, an article, or a deck. If the reviewer still hasn't approved after the last round, Piper lists the open points, with where each point sits in the file, for you to settle.
+
+Piper reviews only files on your Mac.
+
+## Review work Piper started on its own
+
+Work Piper starts on its own lands on the Home page. Piper sends a reply it drafted there only after you select **Send**, and creates an event only after you select **Create event**. [Work Piper starts before you ask](/working/before-you-ask#review-and-respond) covers the task panel and every action on it.
 
 ## Next steps
 
@@ -94,8 +144,8 @@ Files stay on your Mac as ordinary files in ordinary folders. Attach a deliverab
   <Card title="The message box" icon="pen-to-square" href="/working/describing-what-you-need">
     Dictating a request, and steering a job while it runs.
   </Card>
-  <Card title="Chief of Stuff" icon="inbox" href="/autonomous/chief-of-stuff">
-    The finished work Piper prepares for you to review, drafts included.
+  <Card title="Work Piper starts before you ask" icon="inbox" href="/working/before-you-ask">
+    The results Piper prepares on the Home page for you to review, drafts included.
   </Card>
   <Card title="Skills" icon="wand-magic-sparkles" href="/working/skills">
     What lets Piper build a deck or a spreadsheet in the first place.

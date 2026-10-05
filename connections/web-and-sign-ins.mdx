@@ -1,85 +1,106 @@
 ---
 title: "Web and sign-ins"
-description: "How Piper opens real web pages in its own browser, how signing in once through the sign-in card keeps Piper signed in to that site, and how to let Piper work in the Chrome you already use."
+description: "Piper opens web pages in a browser of its own. Sign in to a site once through the sign-in card and Piper stays signed in to it, or let Piper work in the Chrome you already use."
 ---
 
-Piper browses the web in a browser of its own: a copy of Chromium it downloads into its data folder on your Mac. It opens pages there, reads them, clicks, and fills forms. When a page requires a sign-in, Piper stops and asks you to sign in through a card in the conversation. Once you have, Piper stays signed in to that site for later tasks.
+Piper browses the web in a browser of its own, a copy of Chromium it downloads into its data folder on your Mac. It opens pages there, reads them, clicks, and fills forms. When a page needs a sign-in, Piper stops and asks you to sign in through a card in the conversation. After you sign in, Piper stays signed in to that site for later tasks.
+
+Piper can also work in the Chrome you use yourself, on sites you're already signed into there. That access starts switched off.
+
+This page covers how to:
+
+- [Set up Piper's own browser](#pipers-own-browser) and see where it keeps a sign-in
+- [Know when Piper asks](#when-piper-asks-before-it-acts-on-a-page) before it acts on a page, and how far one approval reaches
+- [Sign in to a site](#sign-in-to-a-site) through the sign-in card
+- [Use the Chrome you already use](#use-the-chrome-you-already-use), and see why Piper still asks every time
+- [Compare the two browsers](#which-browser-piper-uses)
 
 ## Piper's own browser
 
-Piper's browser runs out of sight, so no window appears while Piper works. Every conversation connects to the same browser and gets its own pages inside it, which is how two tasks can browse at the same time.
+Piper's browser runs hidden, with no window, while Piper works. Piper runs every conversation in the same browser, with separate pages for each conversation, so two tasks can browse at the same time without interfering. Piper blocks ad networks and trackers on every page it opens. When a conversation has gone quiet for a while, Piper closes that conversation's pages.
 
-That browser starts with nothing loaded and knows nothing about the browsers you use yourself. It reaches an account only where you signed in through the sign-in card, and it keeps the cookies those sites hand it in a file of its own that survives the task.
+That browser starts empty and stays separate from the browsers you use yourself. Once a task is over, Piper keeps only the sign-ins you gave through the sign-in card. Piper collects the cookies and stored site data from the window you signed in through and keeps them in a file in its own data folder. Piper seeds every later conversation's browser from that file.
 
-Browsing is on for a new install. To turn it off, go to **Settings** > **Core Tools** and untick **Browse websites**.
+Piper turns browsing on for a new install. When you switch browsing off, Piper turns it off for every conversation. To turn it off, open **Settings**, then **Core Tools**, and clear the checkbox on **Browse websites**.
 
 <Note>
-  Piper downloads the browser in the background the first time it runs, about 360 MB, once. Until that finishes, Piper cannot open a page or show you a sign-in window.
+  Piper downloads the browser once, in the background, the first time Piper runs. Until the download finishes, Piper can't open a page or show you a sign-in window.
 </Note>
+
+<Warning>
+  Once you sign in to a site, Piper stays signed in to it. Piper has no screen for reviewing, listing, or removing a saved website sign-in, so you can't sign out of a single site from Piper's interface. The only way to clear a saved sign-in is to delete Piper's whole data folder, which takes your tasks, files, and memory with it. See [Your data stays local](/control/your-data-stays-local) for what that folder holds.
+</Warning>
 
 ## When Piper asks before it acts on a page
 
-On an ordinary page Piper works on its own. On a page you are signed in to it asks you first, because that page is your account. Approving covers the rest of that one request on that site, and the next thing you ask starts the question over.
+On an ordinary page, Piper works without asking. Piper asks you first on a page it holds a saved sign-in for, because Piper acts as you on that page.
 
-Browsing has no **Auto** or **Ask** setting of its own, which is why **Settings** > **Core Tools** shows **Always runs** beside it. Piper makes that call page by page instead, on whether you are signed in to the site.
+Each answer covers a different scope.
 
-## The sign-in card
+| Your answer | What it covers |
+|---|---|
+| **Allow** | The rest of that one request on that site. Your next message starts the question over |
+| **Always allow in this conversation** | That kind of action for the rest of the conversation, on any site. Piper saves your answer, and the answer still applies after you quit and reopen the app |
 
-When Piper meets a login wall, it puts a **Sign in needed** card in the conversation, naming the site.
+On **Autopilot**, Piper approves the action itself and stops asking in that conversation.
+
+Piper decides page by page whether to ask, by checking whether it holds a sign-in for that site. For that reason, **Core Tools** in **Settings** shows **Always runs** beside browsing, where other capabilities offer **Auto** and **Ask**. See [Approvals and permissions](/control/approvals-and-permissions) for Manual, Autopilot, and what each answer means.
+
+<Note>
+  A scheduled task's runs, a long-running task's steps, and the tasks Piper starts on its own use Piper's own browser with the sign-ins you've already saved. Piper keeps these tasks out of your own Chrome and away from the sign-in card, because nobody is there to answer. To let such a task reach a site that needs a sign-in, sign in to that site from a conversation of your own first.
+</Note>
+
+## Sign in to a site
+
+When Piper reaches a page that shows its contents only after you sign in, Piper puts a **Sign in needed** card in the conversation, naming the site.
 
 <Steps>
   <Step title="Open the window">
-    Select **Open sign-in window**. Piper opens a real browser window on that site, and its hidden browser keeps running behind it.
+    Select **Open sign-in window**. Piper opens a visible browser window on that site, and keeps its hidden browser running behind the window.
   </Step>
   <Step title="Sign in as you normally would">
     Type your credentials into the site itself. Piper does not read what you type, and it never asks you for a password.
   </Step>
   <Step title="Tell Piper you are done">
-    Select **I've signed in**. Piper closes the window, saves the login, and picks the task back up on its own.
+    Select **I've signed in**. Piper closes the window, saves the sign-in, and picks the task back up on its own.
   </Step>
 </Steps>
 
-Closing the window yourself works too. The card then reads **Signed in**, and you select **Continue** to set Piper going again. Either way Piper stays signed in to that site, for this task and every later one.
+If you close the window yourself, Piper saves the sign-in the same way. The card then reads **Signed in**. Select **Continue** to resume the task. Either way, Piper stays signed in to that site, for this task and every task after it.
 
-Piper closes the window five minutes after it opens if you have not finished by then, and the card reads **Window closed**. Select **Open sign-in window** to start again.
+If you don't finish signing in in time, Piper closes the window and the card reads **Window closed**. Select **Open sign-in window** to start again. Where Piper could not save the sign-in, the card reads **Sign-in not saved** with the reason, and you select **Try again** to reopen the window.
 
 <Note>
-  Select **Dismiss** to put the card away. That takes the **Open sign-in window** button with it, and Piper is still waiting, so either ask it in the message box to try the page again or tell it to carry on without that site.
+  Select **Dismiss** to put the card away. Piper removes the **Open sign-in window** button with the card and keeps waiting. Ask Piper in the message box to try the page again, or tell Piper to carry on without that site.
 </Note>
 
-<Warning>
-  Once you sign in to a site, Piper stays signed in to it. There is currently no way to sign out of a single site from Piper's own interface.
-</Warning>
+## Use the Chrome you already use
 
-## Using the Chrome you already use
-
-Piper can work in your own Chrome instead, on sites you are already logged into there, so you skip signing in again. This is off until you turn it on, and it needs one piece of setup. Piper attaches to the Chrome you are already running through an extension, published by the Playwright team at Microsoft, that you install from the Chrome Web Store.
+Piper can work in your own Chrome instead, on sites you're already signed into there. This access starts switched off. Once you switch it on, it applies to every conversation. It needs one piece of setup: you install the Playwright extension, published by Microsoft, from the Chrome Web Store. Piper attaches to your running Chrome through that extension.
 
 <Steps>
   <Step title="Find the setting">
-    In **Settings**, select **Core Tools**. Find **Use my Chrome for sites I’m signed in to**, which sits under **Browse websites** and shows only while browsing is on. Its tick box stays greyed out until the extension is in place, and the line beneath it reads **Needs a one-time setup. Piper still asks you each time.**
+    In **Settings**, select **Core Tools**. **Use my Chrome for sites I’m signed in to** sits under **Browse websites** and shows only while browsing is on. Its checkbox stays unavailable until the extension is in place, and the line beneath it reads **Needs a one-time setup. Piper still asks you each time.**
   </Step>
   <Step title="Start the setup">
     Select **Set up**. Piper explains that it works in your Chrome through an extension published by the Playwright team at Microsoft, and offers **Install extension**.
   </Step>
   <Step title="Install it in Chrome">
-    Select **Install extension**. Piper opens the Playwright Extension page in the Chrome Web Store, where you add it to Chrome the way you would any other extension.
+    Select **Install extension**. Piper opens the Playwright extension's page in the Chrome Web Store, where you add it to Chrome the way you would any other extension.
   </Step>
   <Step title="Come back to Piper">
-    Piper watches for the extension while you are away and ticks the setting itself once it lands, so there is nothing left to switch on by hand. The check reads Chrome's own profile folder, so Chrome does not have to be running for Piper to see it.
+    Piper checks for the extension while you're away and switches the setting on once the extension is installed. Piper does this when you started the install from this setting or from Piper's sign-in card. Piper looks for the extension in Chrome's own profile folder on disk, so Chrome can be closed.
   </Step>
 </Steps>
 
-You can also turn it on from a card above the message box, which Piper offers right after you sign into a site through the sign-in card. Select **Set this up** to begin, or **Use my Chrome** where the extension is already installed. **Not now** leaves it for a later sign-in, and **Don't ask again** stops the offer for good. The setting stays on the **Core Tools** page either way.
-
-The first time Piper attaches, Chrome itself asks you to pick a tab to share. Answer it once and later connections go through without the question.
+Piper also offers this from a card above the message box, right after you sign into a site through the sign-in card. Select **Set this up** to begin, or **Use my Chrome** where the extension is already installed. Select **Not now** to leave it for a later sign-in, or **Don’t ask again** to stop Piper offering it. The setting stays on the **Core Tools** page either way.
 
 <Note>
-  This works with Google Chrome only. Piper looks for the extension in Chrome's own profile folder, so installing it in another browser built on Chromium does not turn the setting on. If the extension is installed but switched off in Chrome, the setting stays unavailable until you turn it back on there.
+  This works with Google Chrome only. Piper looks for the extension in Chrome's own profile folder, so installing it in another browser built on Chromium does not turn the setting on. Where the extension is installed but switched off in Chrome, Piper says so and the setting stays unavailable until you turn the extension back on there.
 </Note>
 
 <Warning>
-  Piper asks you before it works in your Chrome, and that permission never becomes standing. There is no **Always allow** button for your own browser, and Autopilot mode still stops to ask. Your yes covers the request you are answering and nothing after it. A scheduled task's run and a long-running task's steps never use your own Chrome at all, because nobody is there to answer.
+  Piper asks you before every request it makes in your Chrome, even in Autopilot. Piper offers no **Always allow in this conversation** for your own browser. Your yes covers the rest of that one request on that site, and your next message starts the question over. A scheduled task's runs, a long-running task's steps, and the tasks Piper starts on its own stay out of your own Chrome, because nobody is there to answer.
 </Warning>
 
 ## Which browser Piper uses
@@ -88,9 +109,15 @@ The first time Piper attaches, Chrome itself asks you to pick a tab to share. An
 |---|---|---|
 | Where it runs | A separate Chromium in Piper's data folder | The Chrome you use yourself |
 | Visible | No, except the sign-in window | Yes, it is your browser |
-| Signed in to | Only sites you signed into through the sign-in card | Everything you are signed into |
-| Asks first | On a site you are signed in to | Every request, and never remembered |
+| Signed in to | Only sites you signed into through the sign-in card | Whatever that Chrome profile is signed into |
+| Asks first | On a site Piper holds a sign-in for | Every request |
+| Can you make it stop asking | Yes, with **Always allow in this conversation** or Autopilot | No |
 | On for a new install | Yes | No |
+| Used by a task running on its own | Yes | No |
+
+<Note>
+  Piper's plain web search and page fetch are a separate tool, **Web search & fetch**, under **Settings**, then **Core Tools**. That tool uses neither browser. Piper falls back to a browser when a fetch is blocked or misses content the page shows a person.
+</Note>
 
 ## Next steps
 
@@ -99,10 +126,10 @@ The first time Piper attaches, Chrome itself asks you to pick a tab to share. An
     What Piper asks before it acts, and the two approval modes.
   </Card>
   <Card title="Integrations" icon="link" href="/connections/integrations">
-    Set up Gmail, Slack, Notion, and more, and see what Piper may do in each.
+    Reaching an app through its own connection rather than its website.
   </Card>
   <Card title="Core Tools" icon="wrench" href="/working/tools">
-    Choose which capabilities Piper may use, browsing included.
+    Every capability Piper may use, browsing included.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
     Where your tasks, files, memory, and credentials are kept.

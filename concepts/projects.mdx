@@ -1,91 +1,108 @@
 ---
 title: "Projects"
-description: "How a project groups related tasks and gives them shared instructions, memory, reference files, and a deliverables folder, plus the progress summary each task writes."
+description: "A project groups related tasks and gives them shared instructions, memory, reference files, and a deliverables folder. Create a project, add work to it, and see what every task in it can reach."
 ---
 
-A project groups related tasks and gives them shared context. It holds a name, a description of the work, standing instructions every task follows, the facts Piper remembers for that work, reference files, and a shared folder for deliverables.
+A project groups related tasks and gives them shared context. It holds a name, a description of the work, standing instructions every task follows, the facts and rules Piper remembers for that work, reference files, and a shared folder for deliverables.
 
-## When to make one
+This page covers how to:
 
-Make a project when one piece of work runs across several tasks: a launch, a client, a report you keep coming back to. A one-off job needs nothing more than a single task. Piper reads the project's description, instructions, and memory at the start of every task in it.
+- [Decide when to make a project](#when-to-make-a-project)
+- [Create a project and start working](#create-a-project-and-start-working)
+- [See the context every task shares](#the-context-every-task-shares)
+- [Find the project folder](#the-project-folder) and what Piper puts in it
+- [Read the progress each task writes](#the-progress-each-task-writes)
+- [Find, pin, or delete a project](#find-pin-or-delete-a-project)
 
-You cannot change the name or the description after you select **Create**. You can change the instructions, the memory, and the sources whenever you like, so the description is the one answer worth writing carefully.
+## When to make a project
 
-## Create one and start working
+Make a project when one piece of work runs across several tasks, such as a launch, a client, or a report you keep coming back to. A one-off job needs only a single task. Piper reads the project's description, its instructions, and its memory at the start of every task in it.
+
+Piper takes the project's name and its description from the two questions it asks when you create the project, and you can't change the name or the description afterwards. You can change the instructions, the memory, and the sources whenever you like, so write the description carefully.
+
+## Create a project and start working
 
 <Steps>
   <Step title="Open Projects">
     Select **Projects** in the sidebar, then **+ New Project**.
   </Step>
   <Step title="Say what the work is">
-    Fill in **What are you working on?** and **What are you trying to get done?**. The second answer is the description Piper reads at the start of every task in the project, so write it as orientation for a capable colleague.
+    Your answer to **What are you working on?** becomes the project's name. Your answer to **What are you trying to get done?** becomes its description, which Piper reads at the start of every task in the project, so write it as a full brief on the work. Piper needs both answers. You can't change the name or the description afterwards.
   </Step>
   <Step title="Choose where it lives">
-    Under **Where should it live?**, pick **New folder** to let Piper manage the project folder, or **Existing folder** to point the project at a folder of your own. Then select **Create**.
+    Under **Where should it live?**, pick **New folder** to let Piper manage the project folder, or **Existing folder** to point the project at a folder of your own. Conversations in the project can then read and edit the files in your folder. Piper keeps everything it creates in one subfolder inside your folder. Piper refuses your home folder, its own `PiperData` folder, and any folder inside `PiperData`. Then select **Create**.
   </Step>
   <Step title="Start a task in it">
-    On the project page, type into the message box under **Start a task in this project** and select **Send**. The new task opens inside the project.
+    On the project page, type into the message box under **Start a task in this project** and select **Send**. Piper opens the new task inside the project.
   </Step>
 </Steps>
 
 <Note>
-  You can also move existing work in later. Open the task, select **Task actions**, then **Add to project**. For a task already in a project, that item reads **Move to project**, and **Remove from project** underneath it takes the task back out. Neither one works while the task is running.
+  You can also move an existing task in later. Open the task, select **Task actions**, then **Add to project**. For a task already in a project, the item reads **Move to project**, and you select **Remove from project** underneath it to take the task back out. Piper disables both items while the task is running.
 </Note>
 
 ## The context every task shares
 
-A project page has a rail on the right with four panels. Everything in them is available to every task in the project.
+Open the rail on the right of a project page to reach four panels. Every task in the project can read what you put in them.
 
-**Artifacts.** The project's shared deliverables folder. Any task in the project can write to it, and the files stay available to all the others. The rest of the project folder sits below it under **Other files**.
+**Artifacts.** This panel shows the project's shared deliverables folder. Any task in the project can write to the folder, and every other task can read the files in it. **Other files**, further down the same panel, lists the rest of the project folder.
 
-**Instructions.** Standing guidance that every task follows: tone, format, constraints, anything you would otherwise repeat at the top of each task. Piper saves the text as you type, and a line under the box says when it saved. Project instructions take priority over Piper's own defaults.
+**Instructions.** You write standing guidance here that every task in the project follows, such as tone, format, or constraints. Piper saves the text as you type. A project's instructions take priority over the standing instructions you wrote under **Settings**.
 
-**Memory.** Facts that hold true inside this project and nowhere else: a decision made, a constraint agreed, a choice that shapes the work. Piper adds them as it learns them, and you can write one yourself with **Add a fact**. A project aims for 30 facts, and as the list fills Piper suggests what to fold or drop. See [Memory](/context/memory) for what Piper keeps at each of the three levels and how a cleanup suggestion works.
+**Memory.** This panel holds the facts that hold true inside this project and nowhere else, such as a decision made, a constraint agreed, or a choice that shapes the work. Piper adds facts as it learns them, and you can write a fact yourself with **Add a fact**. When the project has rules, the panel lists them under **Rules**, above the facts, with a count of how many of the project's 10 rules are in use. Piper sends every rule with every message in the project. As the project's memory fills up, Piper suggests facts to combine or drop. See [Memory](/context/memory) for the three levels of memory, rules, and cleanup suggestions.
 
-**Sources.** Files you add as context for the whole project: a brief, a contract, a spreadsheet of last year's numbers. Piper gives every task in the project the list of its sources, each with a short summary, and reads the whole file when the task needs it. Piper does not copy the file into the project folder. It reads the file where you keep it, and marks it **Missing** if you move it.
+**Sources.** You add files here as context for the whole project, such as a brief, a contract, or a spreadsheet of last year's numbers. Piper gives every task in the project the list of its sources, each with a short summary, and reads the whole file when the task needs it. Piper reads each file where you keep it, and marks the file **Missing** if you move it.
 
 <Note>
-  A project takes up to 50 sources, in these formats: PDF, DOCX, XLSX, XLS, CSV, MD, TXT, JSON, and HTML. Add them with **Add sources** in the **Sources** panel.
+  A project accepts sources in these formats: PDF, DOCX, XLSX, XLS, CSV, MD, TXT, JSON, and HTML. Add files with **Add sources** in the **Sources** panel. When Piper can't summarize a source, select **Retry summary** in that source's menu.
 </Note>
 
 <Tip>
-  Knowledge Sources are separate. Those are folders of documents Piper indexes for the whole app, set up in **Settings**, and they are not attached to a project. See [Knowledge Sources](/context/knowledge-sources).
+  Knowledge sources are folders of documents Piper indexes for every task, in a project or not. You set them up in **Settings**. See [Knowledge Sources](/context/knowledge-sources).
 </Tip>
 
 ## The project folder
 
-Every project has one folder on disk, and the project header shows its path. Select the path to open the folder in Finder.
+The project header shows the folder the project lives in. Select that path to open the folder in Finder.
 
-Three things sit inside it to begin with. `artifacts/` holds the shared deliverables, `sessions/` holds one workspace folder per task, and `session-logs/` holds each task's work log. A fourth, `tasks/`, appears once a long-running task belongs to the project, and that task keeps its own folder inside it. For a project Piper manages, they all sit at the top of the project folder, which lives under `PiperData` in your home folder. For a project pointed at a folder of your own, Piper puts them all in one subfolder it creates inside yours, and its tasks can still read and edit the rest of your folder.
+Piper keeps its own files in three folders. `artifacts/` holds the shared deliverables, `sessions/` holds one workspace folder per task, and `session-logs/` holds each task's work log. When a long-running task belongs to the project, Piper adds a `tasks/` folder, with a folder inside it for each long-running task. Piper keeps scheduled tasks outside projects, so their folders never sit here.
 
-## The running progress summary
+Where those folders sit depends on the choice you made when you created the project. For a project Piper manages, they sit at the top of the project folder, under `PiperData/projects` in your home folder, and the header shows that folder. For a project pointed at a folder of your own, the header shows your folder. Piper puts its folders in a subfolder it creates inside yours, with a name that starts with `piper-project-`. Conversations in that project can still read and edit the rest of your folder. A long-running task in the project can write only inside Piper's subfolder.
 
-Every task writes its own progress as it goes, and inside a project that record is shared.
+## The progress each task writes
 
-Piper writes a short **snapshot** of where each conversation has got to, and gives every task in the project the others' snapshots. The project's **Tasks** list holds its long-running tasks alongside its conversations. Each one also keeps a dated work log. Piper reads a full log when it needs the detail behind a snapshot. That is how a project carries what it learned in one task into the next.
+Piper records each task's progress as the task goes. Inside a project, Piper shares that record with the other tasks.
 
-## Pinning and deleting a project
+Piper writes a short snapshot of where each conversation has got to, and gives every task in the project the other tasks' snapshots. Piper also keeps a dated work log for each task, as a file in the project's `session-logs/` folder, and reads a full log when it needs the detail behind a snapshot. Piper starts each new task in the project with what it recorded for the earlier tasks.
 
-Pin the projects you work in most, so they stay easy to find once the list runs long. Select **Pin project** on a project page, or the pin icon on a project card. To see only pinned projects, select **Pinned** above the list on the **Projects** page. Pinning does not reorder the list; projects are ordered by most recent activity.
+The project's **Tasks** list holds its long-running tasks alongside its conversations, most recently active first.
 
-Select **Delete project** to remove the project and its conversations. Files you added as sources stay where they are. To take the folder off disk as well, tick the option in the confirmation: **Also delete the project folder from disk** for a project Piper manages, or **Also remove Piper's subfolder from your folder** for one that lives in a folder of your own.
+## Find, pin, or delete a project
+
+Piper orders the **Projects** page by most recent activity. Each project card shows the project's description, how many tasks the project holds, and how long ago the project was last active. To find a project by name, type into **Search projects…**. On a project page, type into **Search tasks…** to find a task in that project.
+
+Pin the projects you keep returning to, then select **Pinned** above the list to see only those projects. Piper leaves a pinned project in its place in the list. To pin a project, select **Pin project** on the project page, or the pin icon on the project card.
+
+Select **Delete project** on the project page to remove the project and its conversations. Piper leaves the files you added as sources where they are. To remove the folder from disk as well, tick the option in the confirmation: **Also delete the project folder from disk** for a project Piper manages, or **Also remove Piper's subfolder from your folder** for a project that lives in a folder of your own.
+
+Piper refuses to delete a project while a conversation in it is still working. Stop the conversation first.
 
 <Warning>
-  Deleting a project permanently removes everything in it, its long-running tasks included.
+  When you delete a project, Piper permanently removes everything in it, including its long-running tasks. Piper stops any step still running and deletes those tasks' folders from disk whether or not you tick the option.
 </Warning>
 
 <Note>
-  When a project lives in a folder of your own rather than one Piper manages, its conversations start in **Manual** approval mode whatever you set as your default. Switch one to **Autopilot** from the controls under the message box.
+  When a project lives in a folder of your own, its conversations start in **Manual** approval mode, whatever you set as your default. Switch a conversation to **Autopilot** from the controls under the message box.
 </Note>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Tasks and the workspace" icon="folder" href="/concepts/sessions-and-workspace">
-    The unit of work and the private space each task gets.
+    The unit of work and the private folder each task gets.
   </Card>
   <Card title="Memory" icon="brain" href="/context/memory">
-    The three levels of facts Piper carries, including the project level.
+    The three levels of facts and rules Piper keeps, including the project level.
   </Card>
   <Card title="Instructions and profile" icon="pen-ruler" href="/context/instructions-and-profile">
     The standing instructions Piper reads at the start of every task.

@@ -38,7 +38,7 @@ renamed page before a reader does.
 
 ## What the site holds
 
-Thirty-two pages in eight sections, plus seven diagrams. `docs.json` is the
+Thirty-one pages in eight sections, plus six diagrams. `docs.json` is the
 navigation and the theme, and it matches the files on disk exactly: every page
 appears once and resolves to a real `.mdx`.
 
@@ -46,16 +46,16 @@ appears once and resolves to a real `.mdx`.
 |---|---|---|
 | Getting started | `getting-started/` | Overview, Set up Piper, Your first task |
 | Core concepts | `concepts/` | How Piper works, Tasks and the workspace, Projects, AI providers |
-| What Piper knows about you | `context/` | Memory, Instructions and profile, Response style, Knowledge Sources |
+| What Piper knows about you | `context/` | What Piper learns about you, Memory, Instructions and profile, Response style, Knowledge Sources |
 | Connecting your tools | `connections/` | Connecting your tools, Integrations, Secrets, Web and sign-ins |
-| Working with Piper | `working/` | The message box, What Piper hands back, Skills, Core Tools, Notifications, Appearance |
-| Piper on its own | `autonomous/` | Chief of Stuff, Scheduled tasks, Long-running tasks |
+| Working with Piper | `working/` | Work Piper starts before you ask, The message box, What Piper hands back, Skills, Core Tools, Notifications, iPhone app, Appearance |
+| Piper on its own | `autonomous/` | Scheduled tasks, Long-running tasks |
 | Staying in control | `control/` | Your data stays local, Approvals and permissions, The sandbox |
-| Reference | `reference/` | Integrations catalog, Keyboard shortcuts, Troubleshooting and FAQ |
+| Reference | `reference/` | Integrations catalog, Troubleshooting and FAQ |
 
-The seven diagrams live in `images/diagrams/` as SVG: `core-loop.svg`,
+The six diagrams live in `images/diagrams/` as SVG: `core-loop.svg`,
 `session-workspace.svg`, `memory-levels.svg`, `ai-provider-context.svg`,
-`chief-of-stuff-flow.svg`, `long-running-task.svg`, and `sandbox.svg`. Each one
+`long-running-task.svg`, and `sandbox.svg`. Each one
 is embedded on exactly one page. There are no screenshots anywhere, which is
 deliberate. A screenshot goes stale the moment the UI moves.
 
@@ -68,9 +68,7 @@ be grounded was cut or recorded as an open question, never guessed at. Several
 briefs turned out to be wrong and the code won each time.
 
 Each page was drafted from the code, then audited against it a second time by
-someone who had not written the draft, then given a separate language pass. The
-findings, the code evidence behind each rewrite, and every unresolved question
-are recorded in `docs-audit-log.md`, kept beside this folder.
+someone who had not written the draft, then given a separate language pass.
 
 **The brand doc and the style guide govern how the writing reads, never what a
 feature is.** Voice, tone, naming, and rhythm come from them. Facts do not.

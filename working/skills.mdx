@@ -1,88 +1,97 @@
 ---
 title: "Skills"
-description: "What a skill is, how Piper picks one up when your request matches it, the six packs holding the 47 skills you can switch on or off, and how to add a skill of your own."
+description: "A skill is a written procedure that teaches Piper how one kind of work is done. See what each pack covers, switch a pack or a single skill on, and add a skill of your own."
 ---
 
-A skill is a folder of written instructions, sometimes with scripts alongside them, teaching Piper how one kind of work is done: building a slide deck, writing a campaign plan, prepping for a sales call. Each skill declares what it is for, and Piper reads that list of declarations at the start of a task. When your request matches one, Piper loads the whole procedure and follows it. Piper chooses the skill, not you, so name the artifact you want and Piper finds the skill that builds it. Piper's interface has no way to load one by hand. What you choose is which skills Piper carries at all.
+A skill is a folder of written instructions, sometimes with scripts alongside them, teaching Piper how one kind of work is done: building a slide deck, writing a campaign plan, prepping for a sales call. Each skill includes a description of what it's for, and Piper reads those descriptions when a task starts. When your request matches a skill, Piper loads the whole procedure and follows it.
 
-## The six packs
+Piper picks the skill for each task. Name the deliverable you want, such as a deck, a dashboard, or a spreadsheet, and Piper finds the skill that builds it. You decide which skills Piper carries in the first place.
 
-Piper ships with 47 switchable skills, grouped into six packs. A pack is a themed set for one kind of work, and switching the pack on switches on every skill inside it.
+This page covers how to:
+
+- [See what each pack covers](#see-what-each-pack-covers), and which pack you start with
+- [Switch a skill or a pack on](#switch-a-skill-or-a-pack-on), and what a lock on a row means
+- [Add your own skill](#add-your-own-skill), built with Piper or uploaded
+- [See the skills Piper always carries](#see-the-skills-piper-always-carries)
+
+## See what each pack covers
+
+Piper groups its switchable skills into six packs. A pack is a themed set of skills for one kind of work.
 
 | Pack | What it covers | Skills inside |
 |---|---|---|
 | Essentials | Everyday work: meeting minutes, internal updates, decks, and page mockups | 4 |
-| Creative | Design and production: brand systems, social graphics, logos, and demo videos | 7 |
+| Creative | Design and production: page mockups, brand systems, social graphics, logos, and demo videos | 7 |
 | Data & Analysis | Querying, validating, charting, dashboards, and financial models | 11 |
 | Marketing | Content, campaigns, email sequences, SEO, and performance reporting | 10 |
 | Product Management | Specs, roadmaps, research synthesis, sprints, and stakeholder updates | 8 |
 | Sales | Account research, call prep, outreach, pipeline review, and forecasting | 9 |
 
-Four of the 47 show what a single skill covers. **Create Slides** builds a presentation deck as a web deck or an editable PowerPoint file. **Write a Query** turns a plain-English question into an optimized SQL query for your database. **Build a Dashboard** assembles an interactive dashboard with filters, KPI cards, and tables. **Prep for a Call** works out who is on the call, what they care about, and what to ask.
+Two skills sit in two packs each. **Design a Page or Prototype** belongs to Essentials and Creative. **Competitive Brief** belongs to Marketing and Product Management.
 
-Two skills belong to two packs at once, and their rows read `also in` the other pack's name. Switching one pack off leaves that skill on if the other pack is fully on. Otherwise it goes off with the rest.
+Each skill covers one narrow job. With **Create Slides**, Piper builds a presentation deck as a web deck or an editable PowerPoint file. With **Write a Query**, Piper turns a plain-English question into an optimized SQL query for your database. With **Build a Dashboard**, Piper assembles an interactive dashboard with filters, KPI cards, and tables. With **Prep for a Call**, Piper works out who is on the call, what they care about, and what to ask.
 
-<Note>
-Nine further skills never appear in the list. They are the ones Piper itself depends on: reading and writing Word files, PDFs, spreadsheets, and presentations, drawing charts and tables inside a reply, using a stored credential, building a new skill, setting up a repeating task, and answering your questions about Piper itself. They stay on in every task with no switch to change.
-</Note>
+### Which pack you start with
 
-## Turning skills on and off
+Piper starts with **Essentials** switched on and every other pack switched off. Switch on more packs or single skills in **Settings** > **Skills** whenever you need them.
+
+## Switch a skill or a pack on
 
 <Steps>
   <Step title="Open the list">
-    In **Settings**, select **Skills**. Every pack is a card with its name, a one-line description, and a count of how many of its skills are on, such as `4/11`.
+    In **Settings**, select **Skills**. Each pack is a card with a count of how many of its skills are on, such as `4/11`.
   </Step>
   <Step title="Switch a whole pack">
-    Use the switch on the pack card. It turns every skill in that pack on in one move. Switching it off does the reverse, apart from a skill that another fully-on pack also claims and a skill some switched-on skill needs.
+    Use the switch on the pack card to turn every skill in that pack on. Switch the pack off to turn them all back off, with two exceptions. A skill that a second pack also holds stays on if every skill in that second pack is on. A skill that some other switched-on skill needs stays on too.
   </Step>
   <Step title="Pick individual skills">
-    Select a pack card to open it, then use the checkbox on any row. Hover the information icon beside a name to read **Loads when:** and the description that decides it. A row with a lock beside its name has a ticked checkbox you cannot clear, because another switched-on skill needs it. Hover that row to see which skill to switch off first.
+    Select a pack card to open it, then use the checkbox on any row. Hover the information icon beside a name to read **Loads when:** and the description Piper matches your request against.
   </Step>
   <Step title="See what a pack pairs with">
-    An open pack ends with **Works best with**, naming the apps its skills draw on: **Slack** and **Gmail** for Essentials, **Linear** and **Notion** for Product Management. Hover any name for the reason. Most are integrations you can connect on the [Integrations](/connections/integrations) page. Three are not in Piper's catalog of 26: **Amplitude**, **SimilarWeb**, and **CRM (HubSpot / Salesforce)**.
+    An open pack ends with **Works best with**, naming the apps its skills draw on, such as **Slack**, **Gmail**, **Google Drive**, and **Google Calendar** for Essentials. Hover an app's name to see why the pack uses it. Set an app up on the [Integrations](/connections/integrations) page. **Amplitude**, **SimilarWeb**, and **CRM (HubSpot / Salesforce)** aren't in Piper's integrations catalog.
   </Step>
 </Steps>
+
+A row with a lock beside its name has a ticked checkbox you can't clear, because another switched-on skill needs that skill. Hover the row and Piper names the skill to switch off first, for example **Needed by Make a Demo Video. Switch that off first.**
+
+When you switch a skill on, Piper also switches on every skill that skill needs, without telling you. That's why a count can jump by more than one. **Make a Demo Video** is the shipped skill that needs other skills today. Switch it on and Piper also switches on **Design a Page or Prototype** and **Plan a Demo**, so the Creative count moves by three.
 
 <Tip>
-Switch on a skill that needs something arranged first and a dialog opens with the skill's name and the line **Before you use this skill**, saying what to arrange. Select **Got it** to close it. The skill is on either way. One shipped skill carries such a note today: the demo skill asks for an ElevenLabs API key saved in **Secrets**, and without one it still records the demo, just with no voiceover or music.
+A skill can also carry a note about something to arrange outside Piper. When you switch such a skill on, Piper opens a dialog with the skill's name and the line **Before you use this skill**, saying what to arrange. Piper switches the skill on whether or not you arrange it, and doesn't check. **Make a Demo Video** carries a note today, asking for an ElevenLabs API key saved in **Secrets**.
 </Tip>
 
-Some skills depend on others. Switching one on also switches on everything it declares it needs, with no prompt and no announcement, which is why a count can jump by more than one.
+## Add your own skill
 
-## Adding a skill of your own
-
-Piper builds a skill with you, or takes one somebody sends you. Both live in **Settings** > **Skills**.
+Piper can build a skill with you, or you can upload a skill somebody sends you. Both start in **Settings**, then **Skills**.
 
 <Steps>
-  <Step title="Build one with Piper">
-    Select **Create skill**. Answer **What should this skill do?** and **When should it load?**, then select **Start building**. Both answers are needed, and Piper says so rather than starting on one. Piper then opens a task and works through the skill with you, so you need an AI provider set up before this goes anywhere.
+  <Step title="Build a skill with Piper">
+    Select **Create skill**. Answer **What should this skill do?** and **When should it load?**, then select **Start building**. Piper starts only when you've answered both. Piper then opens a task and works through the skill with you, so set up an AI provider first.
   </Step>
   <Step title="Add the result to your library">
-    When the task finishes, a card reads **Skill ready. Add it to your library?**. Select **Add to library**, because nothing joins your skills until you do.
+    When the task finishes, a card reads **Skill ready. Add it to your library?**. Piper adds the skill only after you select **Add to library**.
   </Step>
   <Step title="Or upload a package">
-    Select **Upload skill**, read the warning, then **Choose file…** and pick the `.zip`. A skill package is a `.zip` of the skill's folder, with a `SKILL.md` file inside it. Picking the file is how you accept the warning.
+    Select **Upload skill**, read the warning, then **Choose file…** and pick the `.zip`. A skill package is a `.zip` of the skill's folder, holding a file called `SKILL.md`, which is the skill's instructions written in plain text. When you pick the file, you accept the warning.
   </Step>
-  <Step title="Find them again">
-    Skills you added sit together under **Custom Skills**, each marked `Created` or `Uploaded`. Hover a row for the delete button.
+  <Step title="Find your skills again">
+    Piper lists the skills you added under **Custom Skills**, each marked `Created` or `Uploaded`. Hover a row for the delete button.
   </Step>
 </Steps>
 
-A skill you add is on straight away.
+Piper switches on a skill you add straight away. Piper refuses a `.zip` that is too large or holds too many files, and tells you which limit it hit.
 
 <Warning>
 A skill's instructions and any scripts bundled with it run with the same access Piper has. Only add skills from people and sources you trust.
 </Warning>
 
 <Note>
-Deleting a custom skill removes it from Piper and cannot be undone. Piper refuses the deletion while another skill depends on it. Built-in skills have no delete button.
+When you delete a custom skill, Piper removes it, and you can't undo the deletion. Piper refuses the deletion while another skill depends on that skill. A built-in skill has only a checkbox, so you can switch it off but can't delete it.
 </Note>
 
-## What switching a skill on does
+## See the skills Piper always carries
 
-Switching a skill on makes it available. Piper then loads it when the work matches what the skill is for, so asking plainly for the artifact you want, a deck or a dashboard or a spreadsheet, is the surest way to reach the right one. The page on [the message box](/working/describing-what-you-need) covers steering a job while it runs.
-
-The checkboxes in **Settings** decide which skills Piper has.
+Piper also carries a set of its own skills that you won't find in the **Skills** list in **Settings**. They cover reading and writing Word files, PDFs, spreadsheets, and presentations; drawing charts and tables inside a reply; using a stored credential; building a new skill; setting up a scheduled task; and answering your questions about Piper itself. Piper carries them in every task, and you can't switch them off.
 
 ## Next steps
 
@@ -94,7 +103,7 @@ The checkboxes in **Settings** decide which skills Piper has.
     The capabilities Piper may use, which you control separately.
   </Card>
   <Card title="Integrations" icon="plug" href="/connections/integrations">
-    Connecting the apps a pack works best with.
+    Setting up the apps a pack works best with.
   </Card>
   <Card title="Instructions and profile" icon="user-pen" href="/context/instructions-and-profile">
     The standing rules Piper follows alongside every skill.

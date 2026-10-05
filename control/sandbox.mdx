@@ -1,85 +1,108 @@
 ---
 title: "The sandbox"
-description: "The boundary macOS holds around every task Piper runs: writes confined to the task's own area, reads open across your Mac apart from the folders where credentials live."
+description: "macOS confines every task Piper runs to one writable folder, and shuts the folders where credentials live. See what a task can write and read, and where the sandbox stops."
 ---
 
-The sandbox is a boundary macOS holds around every task Piper runs. It confines what a task can write to one folder, leaves reading open across the rest of your Mac apart from the places credentials live, and leaves the network open. macOS enforces the boundary for every program the task starts, not only for Piper's own tools.
+The sandbox is a write boundary macOS holds around every task Piper runs. A task writes inside one folder and nowhere else. It reads across the rest of your Mac, apart from the folders where credentials live. A task can also reach the network.
 
-## How macOS enforces it
+macOS enforces that boundary. Piper hands macOS the list of what a task may write, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Piper wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
 
-Piper hands macOS the list of what this task may write, and macOS holds every program the task starts to that list. A file tool, a command, a script Piper writes and runs, a helper program that script launches: all of them meet the same boundary.
+This page covers how to:
 
-macOS enforcing the rule is why you can trust it. A rule a program checks on itself only holds while that program behaves. This one holds for every program the task starts, whatever that program does.
+- [Find the folder a task can write to](#what-a-task-can-write), and the few places outside it
+- [Learn which filenames no task can write](#files-no-task-can-write), anywhere on your Mac
+- [See what a task can read](#what-a-task-can-read), and which folders stay shut
+- [Understand why writing is confined and reading is not](#why-piper-confines-writing-and-not-reading)
+- [Know where the sandbox stops](#where-the-sandbox-stops), and what covers the rest
 
 <Note>
-  Piper will not start a task it cannot wall off. If macOS cannot apply the sandbox, Piper refuses to start the task rather than running it unprotected.
+  Piper starts a task only when macOS can apply the sandbox to it. If macOS can't, Piper refuses to start the task.
 </Note>
 
 ## What a task can write
 
-A task writes inside one area and nowhere else. For a task on its own that area is that task's workspace folder. For a task in a project it is the project's whole folder, because tasks in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder. A long-running task is the exception: its work stays inside the folder Piper keeps in that project, and never reaches your own files around it.
+A task writes inside one folder. The folder depends on where the task sits.
 
-A few places outside that area stay writable, and each has a reason. The Mac's temporary folder and its per-user cache area are scratch space every program uses. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Piper's browser keeps the logins for sites you have signed in to, so you sign in once and stay signed in on later tasks.
+- A conversation outside a project writes inside its own workspace folder, and your other files stay as they are. A task Piper starts on its own writes inside its own workspace folder in the same way.
+- A conversation in a project writes anywhere inside that project's folder, because tasks in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder. Piper creates files in it, and writes over files you already had.
+- A long-running task and a scheduled task write inside the folder that task belongs to. A task outside a project gets a folder of its own, shared by every step or run. A long-running task inside a project writes inside the project's Piper folder. For a project Piper manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Piper created there, so your own files around it stay out of reach.
 
-Three things stay unwritable everywhere, including inside the task's own area: Piper's database, and the two files Claude Code reads when it starts, its settings file and its standing-instructions file. A task that could rewrite either of those two could hand itself permissions or standing instructions on its next run, so nothing may write them, wherever a copy of one sits.
+To find where each folder sits on disk, see [Tasks and the workspace](/concepts/sessions-and-workspace).
+
+A task can also write to a few places outside its folder. The Mac's temporary folders are scratch space every program uses. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Piper's browser keeps two folders, one holding the logins for sites you have signed in to and one holding its own working files. Piper leaves the browser program itself unwritable, so a task can't replace the program that browses for it.
+
+<Note>
+  Piper points Python's package installer at a `.python` folder inside the task's own boundary, so a task can install a package it needs and the install lands where its other files land.
+</Note>
+
+## Files no task can write
+
+Piper blocks writes to these filenames everywhere, including inside the folder a task can otherwise write freely:
+
+- `piper.db`, `piper.db-wal`, and `piper.db-shm`, the files of Piper's own database.
+- `settings.json`, `settings.local.json`, and `CLAUDE.md`, which Claude Code reads when it starts. A task that could rewrite any of those files could hand itself permissions or standing instructions on its next run, so Piper blocks every write to them.
+
+macOS matches those names on the filename alone, wherever the file sits. The rule covers every copy. A task can't create a file of its own called `settings.json`, even in its own folder. A task that tries gets an error.
 
 ## What a task can read
 
-A task can read files across your Mac. Reads run without asking, and you cannot switch reading to ask.
+A task reads files across your Mac. Piper reads without asking, and you can't set reading to ask.
 
-It cannot read the folders and files where credentials conventionally live, and neither can any program it starts. That blocked list covers folders in your home folder including `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.docker`, `.gradle`, `.m2`, and `.config/gcloud` and `.config/gh`, the settings folders for the `gcloud` and `gh` command-line tools. It covers single files too: `.netrc`, `.npmrc`, `.pypirc`, `.git-credentials`, and your shell startup files such as `.zshrc`, which routinely hold an API key. Piper's own database is on the list as well.
+macOS shuts these folders in your home folder to a task and to every process it starts: `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.docker`, `.gradle`, `.m2`, `.huggingface`, `.kaggle`, and `.config/gcloud` and `.config/gh`, the settings folders for the `gcloud` and `gh` command-line tools.
 
-A credential file outside those places works differently. An `.env` file or a `.pem` key in a folder of your own stays readable, and Piper stops and asks you every time a task reaches for one. [Approvals and permissions](/control/approvals-and-permissions) covers that question.
+macOS shuts these files in your home folder too. `.netrc`, `.npmrc`, `.pypirc`, and `.git-credentials` hold credentials outright. Your shell startup files, `.zshrc`, `.zshenv`, `.bashrc`, `.bash_profile`, and `.profile`, routinely hold an exported API key.
+
+macOS also shuts Piper's own database, under a separate rule.
 
 <Note>
-  The block binds every process the task starts, not only Piper's own tools. A task cannot get around it by asking a command-line tool to print a key.
+  macOS binds the block to every process the task starts, as well as to Piper's own tools. A task can't get around it by asking a command-line tool to print a key.
 </Note>
 
+Piper asks you before a task reads a credential file anywhere else on your Mac, such as an `.env` file, a `.pem` or `.key` file, an `id_rsa` key file, or a file named `credentials.json`, `auth.json`, or `secrets.yaml`. Piper reads a template such as `.env.example`, `.env.sample`, or `.env.template` without asking. Piper also asks before a task reads your keychain folder or the sign-ins Piper keeps in `PiperData`. Piper asks every time, in every approval mode, and waits for your answer. For every name, and for what happens when nobody is there to answer, see [Approvals and permissions](/control/approvals-and-permissions).
+
 <Warning>
-  The blocked list names the places credentials usually sit. It is a list, so it cannot be complete: a secret can live in a file with any name, in any folder. It stops the accident of a task reading a token while looking around. Treat it as that rather than as a guarantee.
+  The shut folders and files are the places credentials usually sit. A secret can live in a file with any name, in any folder, so the list can't cover every secret. The list stops a task from reading a token by accident while it looks around. Treat the list as a guard against accidents rather than as a guarantee.
 </Warning>
 
 <Frame>
   <img src="/images/diagrams/sandbox.svg" alt="A task sits inside a box. Writes stay inside the box. Reads reach out across the Mac, except to credential stores, which are blocked." />
 </Frame>
 
-## Why reads are open
+## Why Piper confines writing and not reading
 
-Piper draws the boundary here on purpose.
+A task has to read your own material to do your work. A document you attached to a message, a spreadsheet in your Downloads folder, and output another task produced last week all sit outside the task's own folder. If Piper confined reads to that folder, a task could write files and still couldn't read the files you asked it about.
 
-A task has to read your own material to do your work. A document you attach to a message, a spreadsheet in your Downloads folder, output another task produced last week: none of it sits inside the task's workspace. Confining reads to the workspace would leave Piper able to write files and unable to read the ones you asked it about.
+Piper puts each limit where a task could do damage. Writing is where a task can destroy something, so Piper confines writing to one folder. Reading is where a task can leak something, so macOS shuts the credential folders, and Piper asks you before a task reads a credential file anywhere else.
 
-So the boundary is drawn where the risk is. Writing is where a task can destroy something, so writing is confined to one folder. Reading is where a task can leak something, so the credential folders are shut and a credential file anywhere else holds the task until you answer.
+## Where the sandbox stops
 
-<Warning>
-  A task can read another task's files. Task folders live under `PiperData` in your home folder, and reads reach across your Mac, so treat anything a task produced as visible to a later one. Tasks in the same project can also write to each other's files, since they share the project folder by design. A task outside a project cannot.
-</Warning>
+The sandbox controls where a task may write, and which folders a task may never read. The cases below fall outside the sandbox.
 
-## What the sandbox leaves open
+**The network is open.** A command a task runs can reach the internet. Piper controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Piper answers that question itself.
 
-The sandbox answers one question: where a task may write, and which folders it may never read. Two things sit outside that answer.
+**A refused write fails quietly.** macOS refuses the write and hands the task an error. Piper doesn't ask you about the write, so you can't approve it by mistake. Piper either reports the failure in its reply or works around it.
 
-**The network is open.** A command a task runs can reach the internet, and the sandbox lets it. The approval question in front of every command is the control there, which is why **Run commands** always asks and cannot be set to run on its own. On **Autopilot**, Piper answers that question itself.
+**One task can read another task's files.** A task can read across your Mac, including every other task's folder, so treat anything a task produced as visible to a later task.
 
-**A refused write fails.** macOS refuses a write outside the boundary and hands the task an error. There is no prompt, so there is nothing you might approve by mistake, and the task has to report the failure or work around it.
+**Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them.
 
-A stored credential is a third thing the sandbox has no part in. Piper keeps the value out of the conversation by other means, which [Secrets](/connections/secrets) covers in full.
+**Piper protects a stored credential by other means.** Piper keeps the value out of the conversation. See [Secrets](/connections/secrets).
 
 <Note>
-  Skills, the packaged instructions Piper follows for particular kinds of work, are readable from anywhere and unwritable by any task. A task can follow a skill and can never rewrite one.
+  Skills are the packaged instructions Piper follows for particular kinds of work. A task can read and follow a skill from anywhere, and can never rewrite it.
 </Note>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Piper asks before it acts, and the two approval modes.
+    What Piper asks you before it acts, and what it never asks about.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
     Where Piper keeps your data, and what leaves your Mac.
   </Card>
   <Card title="Tasks and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
-    The private folder every task works in.
+    The folder every task writes into.
   </Card>
   <Card title="Projects" icon="folder" href="/concepts/projects">
     Grouping tasks that share files and context.

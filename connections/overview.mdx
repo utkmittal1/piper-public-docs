@@ -1,43 +1,63 @@
 ---
 title: "Connecting your tools"
-description: "The three ways Piper reaches anything outside itself: integrations for apps you have an account with, secrets for credentials nothing else covers, and its own browser for pages on the web."
+description: "Piper reaches apps, services, and web pages three ways: an integration for an app you have an account with, a secret for a credential nothing else covers, and its own browser for pages on the web. Work out which route your task needs."
 ---
 
-Piper reaches the apps and services you use in three ways, and each one works differently: an integration for an app you have an account with, a secret for a credential nothing else covers, and Piper's own browser for pages on the web. This section covers all three. Web search, page fetch, and the conversation each turn sends to your AI provider sit outside these three, and [Your data stays local](/control/your-data-stays-local) covers those.
+Piper reaches the apps and services you use three ways. An integration connects Piper to an app you already have an account with. A secret holds a credential that no integration covers. Piper opens pages on the web in its own browser.
 
-## Integrations, secrets, or the browser
+This section covers all three. Pick the route that matches what you want Piper to reach, then follow the link for how to set it up.
+
+## Which route to use
 
 | What you want Piper to reach | What to use | What you do once |
 |---|---|---|
-| Gmail, Slack, Notion, GitHub, or any of the 26 apps Piper ships an integration for | An integration | Set it up in **Settings** > **Integrations** |
-| Your own database, an internal service, a tool that asks for a token | A secret | Store the credential in **Settings** > **Secrets** |
-| A page on the web, whether or not it requires a sign-in | Piper's own browser | Nothing, until a page asks you to sign in |
+| Gmail, Slack, Notion, GitHub, or another app in the [Integrations catalog](/reference/integrations-catalog) | An integration | Set the integration up in **Settings**, then **Integrations** |
+| Your own database, an internal service, a tool that asks for a token | A secret | Store the credential in **Settings**, then **Secrets** |
+| A page on the web, whether or not it needs a sign-in | Piper's own browser | Nothing, until a page asks you to sign in |
 
-## Integrations
+### Integrations
 
-An integration is a connection between Piper and an app you already use. Piper ships 26 of them, each one an MCP server, which is how a service publishes its tools for an assistant like Piper to call. Setting one up signs Piper in and hands Piper its tools, split into the ones that look things up and the ones that change something.
+An integration is a connection between Piper and an app you already use. When you set an integration up, Piper signs in to the app and switches on the app's tools, split into the tools that look things up and the tools that change something.
 
-See [Integrations](/connections/integrations) for how to set up an integration, what each way of signing in asks for, what Piper may do once one is in place, and how to point Piper at an MCP server of your own.
+Piper sets every tool that changes something to **Ask**, and leaves some tools switched off. You choose what each tool does from that app's panel afterwards. In Manual, Piper asks you before it runs a tool set to **Ask**. In Autopilot, and in tasks Piper starts on its own, Piper runs those tools without asking. Gmail and Google Calendar are the exception in tasks Piper starts on its own. Piper withholds their write tools there, and sends a reply only when you select **Send** and creates an event only when you select **Create event**. See [Integrations](/connections/integrations#what-piper-may-do-once-an-integration-is-in-place).
 
-## Secrets
+Gmail and Google Calendar are also where Piper finds work to start before you ask. You can connect Gmail, Google Calendar, and Google Drive with one sign-in from **Connect Google** on the Home page. See [Work Piper starts before you ask](/working/before-you-ask).
 
-A secret is a named credential you save in Piper: a password, an API key, a database login. Piper puts the value in your Mac's keychain and supplies it to the one command that needs it, so the value never enters the conversation or a file Piper writes.
+You can also point Piper at a service Piper has no built-in integration for, with **+ Add Custom** on the **Integrations** page.
 
-Reach for a secret when the thing you need is not one of the 26 integrations. See [Secrets](/connections/secrets) for how to store a secret and how Piper chooses between them.
+[Integrations](/connections/integrations) covers how to set an integration up, what each way of signing in asks you for, what Piper may do once an integration is in place, and how to add a server of your own.
 
-## Web and sign-ins
+### Secrets
 
-Piper browses in a browser of its own, a copy of Chromium in its data folder, and it starts out signed in to nothing. When a page requires a sign-in, Piper stops and puts a **Sign in needed** card in the conversation. You sign in yourself in a real window, and Piper stays signed in to that site for every later task. Piper has no screen for reviewing or removing a saved website sign-in. On sites you are already logged into in your own Chrome, Piper can work there instead, once you turn that on.
+A secret is a named credential you save in Piper, such as a password, an API key, or a database login. Piper stores the value in your Mac's keychain and hands it to the command that needs it. Piper keeps a stored value hidden in its interface.
 
-The browser is not an integration and it does not appear on the **Integrations** page. Nobody connects it or signs into it as a service. See [Web and sign-ins](/connections/web-and-sign-ins).
+Store a secret when the app or service you need has no integration.
 
-## Where each credential ends up
+[Secrets](/connections/secrets) covers how to store a credential, how Piper picks the right secret for a task, and the limits of that protection.
 
-The three keep their credentials in two different places, and none of them shows a stored value back to you.
+### Piper's own browser
 
-- An integration's credentials, the access token or key it connects with, go into your Mac's keychain, one item per integration.
-- A secret's values go into your Mac's keychain too, one item per field.
-- What keeps Piper signed in to a website, the cookies the site handed its browser, goes into a file in Piper's own data folder rather than the keychain. That file is what carries a login into later tasks.
+Piper browses in its own browser, a copy of Chromium in its data folder. That browser starts with no sign-ins. When a page needs a sign-in, Piper stops and puts a **Sign in needed** card in the conversation. You sign in yourself in a browser window, and Piper stays signed in to that site for every later task.
+
+Piper's browser has no card on the **Integrations** page, because you never connect it as a service. Piper can also work in the Chrome you use yourself, on sites you're already signed into there. You switch on that access once, and Piper still asks you before every request it makes there.
+
+[Web and sign-ins](/connections/web-and-sign-ins) covers both browsers, the sign-in card, and when Piper asks before it acts on a page.
+
+## Where each credential is stored
+
+Piper keeps credentials in two places. Piper never shows a stored credential back to you.
+
+| Route | Where Piper puts the credential |
+|---|---|
+| An integration | Your Mac's keychain, one item per integration, holding the access token or key Piper signs in with. AWS Documentation is the exception: it needs no account, so Piper stores nothing for it |
+| A secret | Your Mac's keychain, one item per field, where a field is one named piece of a credential such as a password or a host name |
+| A website sign-in | A file in Piper's own data folder, holding the cookies and stored site data the site handed Piper's browser. Piper reads that file to carry a sign-in into later tasks |
+
+## Other ways Piper reaches outside your Mac
+
+**Searching and reading web pages without a browser.** Piper searches and reads pages with a separate tool, **Web search & fetch**, which you switch on and off under **Settings**, then **Core Tools**. That tool needs no integration and no sign-in card, and it uses neither browser. When you run a task on a model API with your own key, Piper's web search uses a key you store under **Secrets**. See [Core Tools](/working/tools).
+
+**The conversation itself.** On every turn, Piper sends your prompt, the conversation so far, and the text of any file the task read to your [AI provider](/concepts/ai-providers). You can't turn that off, because Piper does its thinking there. [Your data stays local](/control/your-data-stays-local) sets out what leaves your Mac and what stays.
 
 ## Next steps
 
@@ -46,12 +66,12 @@ The three keep their credentials in two different places, and none of them shows
     Set up Gmail, Slack, Notion, and more, and see what Piper may do in each.
   </Card>
   <Card title="Secrets" icon="key" href="/connections/secrets">
-    Store a password or an API key once and let every task use it.
+    Store a password or an API key for a task to use.
   </Card>
   <Card title="Web and sign-ins" icon="globe" href="/connections/web-and-sign-ins">
     Piper's own browser, the sign-in card, and using the Chrome you already use.
   </Card>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Piper asks before it acts, and the two approval modes.
+    What Piper asks before it acts, in Manual and in Autopilot.
   </Card>
 </CardGroup>

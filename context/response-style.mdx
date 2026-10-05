@@ -1,17 +1,17 @@
 ---
 title: "Response style"
-description: "The four controls that set the length, tone, formatting, and emoji of Piper's replies, where they live in Settings, and what each option changes."
+description: "Choose how long Piper's replies run, what tone they take, how much structure they carry, and whether they use emoji. Set the four controls in Settings and every task follows them."
 ---
 
-Response style is a set of four controls for how Piper writes back to you: how long a reply runs, what tone it takes, how much structure it uses, and whether it uses emoji. Set them once and every task follows them.
+Response style is four controls for how Piper writes back to you: **Response Length**, **Tone**, **Formatting**, and **Emoji**. Each control has two or three options. Piper reads the options you picked when a task opens, and again on your next message after you change a control.
 
-## Where the controls live
+The controls apply in full to the replies Piper writes to you in conversation. They apply only in part to a written deliverable, such as a document, an email, or a post you asked Piper to produce. See [What the controls don't change](#what-the-controls-dont-change).
 
-In **Settings**, select **Instructions**. The four controls sit at the top of that page, under **Communication Style**.
+## Change how Piper writes back
 
-Selecting an option saves it straight away. There is no save button, and the change reaches tasks already open on your next message in them.
+In **Settings**, select **Instructions**, then select an option under **Response Length**, **Tone**, **Formatting**, or **Emoji**.
 
-## The four controls
+Piper saves your choice the moment you select an option, and shows **Saving…** and then **Saved ✓** beside the control you changed.
 
 | Control | Options | Starts on |
 |---|---|---|
@@ -20,48 +20,69 @@ Selecting an option saves it straight away. There is no save button, and the cha
 | **Formatting** | Structured, Balanced, Prose | Balanced |
 | **Emoji** | None, Occasional | Occasional |
 
-### Response length
+Piper applies a change to a task that's already open on your next message in that task. Piper finishes a reply already under way in the style it started in.
 
-- **Concise.** Piper leads with the answer or the action taken and cuts the preamble. One sentence stays one sentence.
-- **Balanced.** The length matches the question. A simple question earns a few sentences, a complex one earns a few paragraphs.
-- **Detailed.** Piper gives context before the specifics, walks through the steps, and answers the obvious follow-up questions before you ask them.
+## What each option changes
+
+### Response Length
+
+- **Concise.** Piper leads with the answer or the action taken, and cuts preamble and filler. Where one sentence covers the answer, Piper writes one sentence.
+- **Balanced.** Piper matches the length to the question. Piper answers a simple question in a few sentences and a complex question in a few paragraphs. Piper includes reasoning where it helps you follow the answer, and skips it where the point is obvious.
+- **Detailed.** Piper gives context and background before the specifics, walks through a process step by step, and answers the obvious follow-up questions in the same reply. Where Piper is unsure whether a useful detail belongs, Piper includes it.
 
 ### Tone
 
-- **Formal.** Complete sentences, no contractions, no slang, the register of business correspondence.
-- **Neutral.** Direct and professional, with contractions where they sound natural. Neither stiff nor chatty.
-- **Casual.** Relaxed and conversational, the way a sharp colleague talks. Light humor is fine, forced enthusiasm is not.
+- **Formal.** Piper writes complete sentences with exact vocabulary, and uses no contractions or slang. The replies read like business correspondence.
+- **Neutral.** Piper writes in a direct, professional voice, with contractions where they sound natural. Piper avoids jargon unless you use it first or the subject demands it.
+- **Casual.** Piper writes in a relaxed, conversational voice. Piper uses light humor and informal phrasing, and avoids forced enthusiasm.
 
 ### Formatting
 
-- **Structured.** Piper formats for scanning: headings, bullets, numbered steps, tables, and bold key terms, so the gist comes through from the headings alone.
-- **Balanced.** The content picks the form. Three items live in a sentence, five options belong in a table, a concept belongs in a paragraph.
-- **Prose.** Connected paragraphs, with headings and bullets kept to a minimum, closer to a well-written memo.
+- **Structured.** Piper formats for scanning, with headings between topics, bullets for collections, numbered lists for ordered steps, tables for comparisons, and bold for key terms. You can get the gist from the headings and the bold text alone.
+- **Balanced.** Piper picks the form to fit the content. Piper puts three items in a sentence, five options in a table, and a concept in a paragraph.
+- **Prose.** Piper writes short, connected paragraphs. Piper keeps headings, bullets, and tables for ordered steps, explicit comparisons, code, and data that belongs in a table.
 
 ### Emoji
 
-- **None.** No emoji in Piper's own replies, status updates, or summaries.
-- **Occasional.** Emoji used rarely and with purpose: a status marker, a section cue, a touch of warmth.
+- **None.** Piper uses no emoji in its own replies, status updates, or summaries. Piper still uses emoji in something you asked it to write whose format usually carries them, such as a social post.
+- **Occasional.** Piper uses emoji rarely and with a purpose, such as a status marker, a section cue, or warmth in a conversational reply. Piper keeps emoji out of formal or professional content, and never puts several emoji in one sentence.
 
-## How this relates to instructions
+## What the controls don't change
 
-The style controls and your [standing instructions](/context/instructions-and-profile) share the same Settings page and reach the same tasks. Use the controls for length, tone, formatting, and emoji. Put everything else in **Custom Instructions**.
+The four controls cover length, tone, structure, and emoji. Write anything else you want Piper to do the same way every time in your standing instructions, in the box under **Custom Instructions** on the same **Instructions** screen. See [Instructions and profile](/context/instructions-and-profile). When you repeat a preference Piper stopped following, Piper keeps the preference in memory as a rule and sends the rule with every message. See [Keep a preference as a rule](/context/memory#keep-a-preference-as-a-rule).
 
-These four controls and your **Custom Instructions** set the style of every reply you get. Your memory and your profile reach every task too.
+A written deliverable is something you asked Piper to produce as a piece of work, such as a document, an email, a post, or a report. The controls shape a written deliverable only in part. For each control, the table shows what Piper follows instead.
+
+| Control | What Piper follows instead |
+|---|---|
+| **Response Length** | What you asked for, and what the task needs |
+| **Tone** | What you asked for |
+| **Formatting** | The conventions of that format |
+| **Emoji** | Under **None**, the format's own conventions. Under **Occasional**, Piper still keeps emoji out of formal or professional content |
+
+Under **Concise**, Piper still writes a full report when you ask for a report. Under **Casual**, Piper still writes an email in the voice you asked for.
+
+You set one style for every task. To change the style for one piece of work, write the style into that project's or that task's instructions.
+
+When you ask Piper to have its work reviewed, Piper starts a separate review session titled **Review:** followed by the file's name. Piper runs the review session without your response style, with each control on its starting option: **Balanced**, **Neutral**, **Balanced**, and **Occasional**.
+
+<Note>
+  Piper sends your response style to your [AI provider](/concepts/ai-providers) alongside your instructions and your memory. After you change a control, Piper sends the change with your next message. See [Your data stays local](/control/your-data-stays-local).
+</Note>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Instructions and profile" icon="pencil" href="/context/instructions-and-profile">
-    The standing rules and the "about me" note Piper reads every task.
+    The standing instructions Piper follows, on the same Settings screen.
   </Card>
   <Card title="Memory" icon="brain" href="/context/memory">
-    The facts Piper learns as you work and carries between tasks.
+    The facts Piper carries from one task to the next, and the rules it sends with every message.
   </Card>
-  <Card title="Core Tools" icon="wrench" href="/working/tools">
-    What Piper is allowed to do while it writes.
+  <Card title="The message box" icon="message" href="/working/describing-what-you-need">
+    Shape one reply instead of every reply.
   </Card>
   <Card title="What Piper hands back" icon="table" href="/working/files-and-deliverables">
-    The cards a reply can hold, and what you can take away from each.
+    The cards a reply can hold, and what you take away from each.
   </Card>
 </CardGroup>
