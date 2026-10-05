@@ -33,6 +33,7 @@
       {
         "group": "What Piper knows about you",
         "pages": [
+          "context/what-piper-learns",
           "context/memory",
           "context/instructions-and-profile",
           "context/response-style",
@@ -51,6 +52,7 @@
       {
         "group": "Working with Piper",
         "pages": [
+          "working/before-you-ask",
           "working/describing-what-you-need",
           "working/files-and-deliverables",
           "working/skills",
@@ -62,7 +64,6 @@
       {
         "group": "Piper on its own",
         "pages": [
-          "autonomous/chief-of-stuff",
           "autonomous/autonomous-tasks",
           "autonomous/long-running-tasks"
         ]
@@ -85,6 +86,10 @@
       }
     ]
   },
+  "redirects": [
+    { "source": "/autonomous/home", "destination": "/working/before-you-ask" },
+    { "source": "/autonomous/chief-of-stuff", "destination": "/working/before-you-ask" }
+  ],
   "footer": {
     "socials": {}
   }

@@ -1,61 +1,76 @@
 ---
 title: "Set up Piper"
-description: "The onboarding Piper runs the first time you open it, what it collects and why each piece matters, and the three AI providers to choose between."
+description: "Sign in to an AI provider and connect Google the first time you open Piper. After you connect Google, Piper learns who you work with and starts the work waiting in the apps you connect."
 ---
 
-The first time you open Piper, it walks you through a short onboarding. Piper introduces itself, asks who you are and what you work on, connects you to an AI provider, and switches on the skills for your work. It takes a couple of minutes, and Piper is ready to run its first task at the end of it.
+To set up Piper, sign in to an AI provider and then connect Google. You do both on the Home page. Piper runs every task on the AI provider. After you connect Google, Piper learns who you work with and how you write, and starts the work waiting for you in the apps you connect.
 
-Two things come out of that. Piper learns who it is working for, and Piper gets something to think with.
+This page covers how to:
 
-## Tell Piper who it is working for
+- [Open Piper for the first time](#open-piper-for-the-first-time)
+- [Sign in to an AI provider](#sign-in-to-an-ai-provider), with a Claude or ChatGPT plan or an API key
+- [Connect Google](#connect-google), and what Piper does once you connect
+- [Skip Google for now](#skip-google-for-now), and what you give up
+- [Change your setup later](#change-your-setup-later)
 
-Piper asks for your name, your email address, and a few sentences about your work.
+## Open Piper for the first time
 
-Your name and address are the small ones. Piper calls you by your name and uses your address to recognize what is yours, such as messages addressed to you.
+The first time you open Piper, Piper shows a welcome screen. Select **Get started** to open the Home page.
 
-The note about your work matters most. Piper reads it at the start of every task, so it shapes every reply you get. Write what you do, what you spend your week on, and how you want work handed back. Two or three real sentences beat a job title.
+If you quit before you finish setup, Piper shows the welcome screen again the next time you open Piper.
 
-<Tip>
-Write it the way you would brief a new colleague on their first day. "I run product for the payments team at a mid-size fintech. Most of my week goes to specs, competitor research, and keeping engineering and design pointed at the same thing. I report to a VP who wants the recommendation first." That tells Piper far more than "product manager" does.
-</Tip>
+## Sign in to an AI provider
 
-Piper keeps these three as facts about you that it cannot edit or drop on its own. Everything else it learns, it can tidy up over time. These change only when you change them, under **Profile** in **Settings**.
+You sign in with a Claude or ChatGPT plan, or with an API key.
 
-## Choose an AI provider
+1. Select **Sign in** under **Sign in to an AI provider**.
+2. Pick a provider:
+   - **Claude Code**: Piper runs your tasks on Anthropic's Claude Code agent with your Claude plan. Select **Open the sign-in page**, approve Piper in your browser, paste the code your browser shows into **Paste the code here**, and select **Submit code**.
+   - **Codex**: Piper runs your tasks on OpenAI's Codex agent with your ChatGPT plan. Piper opens a browser window. Sign in there, and Piper connects to Codex when you finish.
+   - To use an API key from Anthropic, OpenAI, or DeepSeek, select **I'll use my own key**, paste the key, and select **Save key**.
 
-An AI provider is the service that does Piper's thinking. Piper is the assistant you talk to, and the provider is what Piper sends each turn of the conversation to. Until one is set up and ready, Piper cannot run a task at all.
+You can add the other providers later and switch between them at any time. See [AI providers](/concepts/ai-providers).
 
-There are three:
+## Connect Google
 
-- **Claude Code** runs your tasks on Anthropic's Claude Code agent. Sign in with a Claude account.
-- **Codex** runs them on OpenAI's Codex agent. Sign in with a ChatGPT account.
-- **Bring your own model** calls a model provider's own API with a key you generate at Anthropic, OpenAI, or DeepSeek. There is no sign-in.
+One Google sign-in connects Gmail, Google Calendar, and Google Drive. You connect Google after you sign in to an AI provider.
 
-Pick whichever you already have. You can set the others up later and switch between them whenever you like. [AI providers](/concepts/ai-providers) covers each one in full, including what the sign-in asks for and where an API key goes.
+1. Select **Connect** under **Connect Google**.
+2. Sign in to Google in your browser.
+3. Approve every permission Google asks for. Piper needs access to all three apps. If you leave any permission unapproved, the connection fails, and Piper asks you to approve everything and try again.
 
-You can set any of the three up inside onboarding, so Piper can work the moment it ends. Skip past without one and onboarding still finishes, though Piper cannot run a task until you set one up in **Settings**.
+Piper saves your name and email address from your Google account to your profile.
 
-## Switch on the skills for your work
+After you connect Google, Piper reads your mailbox, learns about you, and starts its first tasks. The results wait on the Home page for you to review. See [What Piper learns about you](/context/what-piper-learns) and [Work Piper starts before you ask](/working/before-you-ask).
 
-Onboarding ends by asking which skill packs you want, and ticks the ones that suit the note you wrote about your work. What you leave on is what Piper carries, and **Settings** holds the same switches afterwards. [Skills](/working/skills) covers what each pack contains.
+## Skip Google for now
 
-<Warning>
-Piper saves nothing until you reach the end and select **All set**. Close Piper before that and it keeps none of what you typed, so onboarding starts over next time you open it. Your name, your email, and the note about your work cannot be skipped, because Piper cannot work without them.
-</Warning>
+Select **Skip for now** to finish setup without Google. Piper then asks for your name and saves it to your profile.
+
+Piper learns from your mail and starts work on its own only after you connect Google. Until then, you start every task yourself from the message box on the Home page.
+
+To connect Google later, select **Connect Google** on the Home page, or connect each Google app in **Settings** > **Integrations**. See [Integrations](/connections/integrations).
+
+## Change your setup later
+
+- **Your name, email, and about-me note:** open **Settings** > **Profile**. See [Instructions and profile](/context/instructions-and-profile).
+- **Your AI provider:** open **Settings** > **AI Providers** to add a provider or switch providers.
+- **Your Google apps:** open **Settings** > **Integrations** to connect or disconnect Gmail, Google Calendar, or Google Drive.
+- **Your skills:** Piper starts with the **Essentials** skills switched on. To switch on more, open **Settings** > **Skills**. See [Skills](/working/skills).
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Your first task" icon="play" href="/getting-started/first-task">
-    Describe a job, watch Piper work, and open the finished file.
+    Review the work Piper found, then start a task of your own.
   </Card>
-  <Card title="Instructions and profile" icon="user-pen" href="/context/instructions-and-profile">
-    The two standing inputs Piper reads at the start of every task.
+  <Card title="Work Piper starts before you ask" icon="inbox" href="/working/before-you-ask">
+    What Piper takes on from your mail and calendar, and how you review it.
   </Card>
   <Card title="AI providers" icon="microchip" href="/concepts/ai-providers">
-    Setting up a second provider, and what the default one controls.
+    Add a second provider, and choose which provider runs a task.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
-    Where your tasks, files, memory, and credentials actually live.
+    What stays on your Mac, and what goes to your AI provider.
   </Card>
 </CardGroup>

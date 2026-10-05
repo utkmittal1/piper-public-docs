@@ -1,95 +1,111 @@
 ---
 title: "How Piper works"
-description: "The loop every task follows, the words the rest of this site uses, what the AI provider does, and how much Piper takes on without asking."
+description: "Piper starts work from what it finds in the apps you connect, and runs the tasks you give it on the Home page. Learn how each kind of task runs, what Piper reads, and what you control."
 ---
 
-Every task follows the same loop. You describe an outcome, Piper plans the steps, Piper does the work, and you review the result. The loop runs inside a task, which is one piece of work and the conversation around it.
+Piper starts work from what it finds in the apps you connect. Piper also runs the tasks you type into the message box on the Home page. Both kinds of task use what Piper knows about you and the apps you connect.
 
-## The four stages of the loop
+This page covers how both kinds of task run, what Piper reads while it works, and what you control.
 
-**You describe.** Say what you want in plain words, and name the outcome rather than the first step. "Pull the Q3 numbers into a one-page summary for Thursday" gets further than "open the spreadsheet." See [The message box](/working/describing-what-you-need).
+- [Compare the two ways work starts](#compare-the-two-ways-work-starts)
+- [See how Piper starts work on its own](#how-piper-starts-work-on-its-own)
+- [See how a task you start runs](#how-a-task-you-start-runs), from your request to the finished file
+- [See what Piper reads while it works](#what-piper-reads-while-it-works): memory, instructions, documents, and apps
+- [See what the AI provider receives](#what-the-ai-provider-receives)
+- [Choose how much Piper does without asking](#choose-how-much-piper-does-without-asking)
+- [Hand Piper work that runs on its own](#hand-piper-work-that-runs-on-its-own): long-running and scheduled tasks
+- [Limitations](#limitations)
 
-**Piper plans.** Piper answers a quick request straight away. For work that runs longer, it asks up to four questions first about the goal, the inputs, the audience, the format, and the depth, then builds a list of three to seven steps and posts it in the conversation as a card headed **Execution plan**.
+## Compare the two ways work starts
 
-**Planning mode.** Switch **Planning mode** on in the task's header and Piper stops once it has written the list. The plan card then shows **Go ahead**. Select it and Piper starts the work, or type a change and Piper revises the list and waits again. Every task starts with the switch off, and Piper writes the plan and gets on with it.
+| | Work Piper starts | Work you start |
+|---|---|---|
+| Where it starts | A Gmail thread or a meeting on your Google Calendar | The message box on the Home page |
+| How Piper scopes it | Piper reads the thread and decides what the work is. | Piper answers a quick request straight away. For larger work, Piper asks you what it needs to know, then plans the steps. |
+| Where the result appears | On the Home page, as a task for you to review | In the conversation, with finished files under **Artifacts** |
+| What Piper sends | Piper sends a reply only when you select **Send**, and creates an event only when you select **Create event**. | A new task asks you first. Piper asks before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. You can let a task do these without asking. |
 
-**Piper works.** Piper works through the steps in order. It reads files, searches, uses the tools you have switched on, and writes the output. A strip above the message box names the step running now, reads **Step 2 of 5**, and counts the time the job has taken.
+## How Piper starts work on its own
 
-**You review.** The reply comes back as cards you can work with: charts, sortable tables, files that open beside the conversation, and questions you answer with a tap. Finished deliverables collect under **Artifacts**, in the rail on the right of the task. Reply in the same conversation to correct the work or ask for the next round, and Piper still has everything it learned the first time.
+Every 15 minutes, Piper reads what changed in Gmail, reads your upcoming meetings, and starts the work they ask of you. That work includes documents, analyses, research, meeting prep, replies, follow-ups, and decisions laid out as choices. Piper learns from what you do with each result. Each result waits on the Home page for you to review, refine, send, or dismiss.
+
+[Work Piper starts before you ask](/working/before-you-ask) covers what Piper takes on, what it hands back, and how to review or stop it.
+
+## How a task you start runs
+
+A task you start runs in four stages.
+
+**You describe.** Type what you want in the message box on the Home page, and name the outcome rather than the first step. "Pull the Q3 numbers into a one-page summary for Thursday" gets further than "open the spreadsheet." Piper opens a conversation for the task. See [The message box](/working/describing-what-you-need).
+
+**Piper plans.** Piper answers a quick request straight away. For larger work, Piper first asks the questions whose answers change the result, such as the goal, the audience, or the format. You answer them on one card. Piper then posts its steps as a card headed **Execution plan**.
+
+To review the plan before Piper acts on it, switch **Planning mode** on in the task's header. Piper writes the plan and waits. Select **Go ahead** to start. To change the plan, type the change, and Piper revises the plan and waits again.
+
+**Piper works.** Piper works through the steps in order. It reads files, searches the web and your documents, uses the tools and apps you have switched on, and writes the output. A strip above the message box names the step running now.
+
+**You review.** Piper replies with charts, sortable tables, diagrams, images, and files that open beside the conversation. Piper writes Word documents, PowerPoint decks, spreadsheets with live formulas, and PDFs, and lists finished files under **Artifacts**. To correct the work, reply in the same conversation. Piper keeps your files, the plan, and your answers from the earlier round.
 
 <Frame>
   <img src="/images/diagrams/core-loop.svg" alt="Four stages in a loop. You describe what you need. Piper plans the steps. Piper works step by step. You review the result and steer the next round." />
 </Frame>
 
-## The words the rest of this site uses
+## What Piper reads while it works
 
-Nine terms come up on nearly every page. Each one has a page that defines it in full.
+Every task you start reads the following:
 
-- A **task** is one piece of work and the conversation around it. See [Tasks and the workspace](/concepts/sessions-and-workspace).
-- A **workspace** is the folder a task writes its files to, covered on that same page.
-- A **project** groups related tasks and gives them shared instructions, memory, reference files, and a deliverables folder. See [Projects](/concepts/projects).
-- An **AI provider** is the service that does Piper's thinking. See [AI providers](/concepts/ai-providers).
-- A **tool** is a capability Piper uses while it works, such as reading a file, searching the web, or sending mail in Gmail. See [Core Tools](/working/tools).
-- A **skill** is a set of written instructions that teaches Piper how one kind of work is done, such as building a slide deck. See [Skills](/working/skills).
-- An **integration** is Piper's connection to an app you already use, such as Gmail, Slack, or Notion. See [Integrations](/connections/integrations).
-- An **approval mode** decides how much a task does without asking you. See [Approvals and permissions](/control/approvals-and-permissions).
-- **Memory** is the set of facts Piper keeps about you between tasks, at three levels: everywhere, inside one project, or inside one task. See [Memory](/context/memory).
+- **Memory**: the facts Piper keeps about you between tasks, and the rules Piper follows on every message. Piper builds part of your memory from your mail and from what you do with its work. See [Memory](/context/memory) and [What Piper learns about you](/context/what-piper-learns).
+- **Instructions and profile**: your name, your about-me note, and the standing instructions you write for every task, for a project, or for one conversation. See [Instructions and profile](/context/instructions-and-profile).
+- **Response style**: the length, tone, formatting, and emoji you set for Piper's replies. See [Response style](/context/response-style).
+- **Your documents**: the folders you add as knowledge sources. Piper searches them before it asks you questions. See [Knowledge sources](/context/knowledge-sources).
+- **Your apps and the web**: the apps you connect, and the pages Piper reads in its own browser. See [Integrations](/connections/integrations) and [Web and sign-ins](/connections/web-and-sign-ins).
+- **Skills**: written instructions for one kind of work, such as building a slide deck. Piper loads the skill that matches the task. See [Skills](/working/skills).
 
-## What the AI provider does
+## What the AI provider receives
 
-Piper cannot run a task until you set up an AI provider. Piper is what you talk to, and the provider is where each turn of the conversation goes: the Claude Code agent, the Codex agent, or a model provider's own API called with a key you paste in, from Anthropic, OpenAI, or DeepSeek.
+Piper runs each task on the AI provider you sign in to: Claude Code, Codex, or a model you reach with an API key from Anthropic, OpenAI, or DeepSeek. See [AI providers](/concepts/ai-providers).
 
-Your own material stays on this Mac. Your memory, your Knowledge Sources, your files and projects, and your instructions all sit in Piper's own store, and none of it moves into the provider. The turn itself does leave, though, carrying the conversation and whatever a task read along the way. See [Your data stays local](/control/your-data-stays-local).
+Piper stores your files, projects, knowledge sources, memory, People list, and writing guide on your Mac. Piper sends the AI provider only what a task uses:
+
+- The conversation, and each file or document the task reads
+- Your memory facts and standing instructions, when a conversation starts and again when they change
+- Your memory rules, with every message
+- For work Piper starts on its own, the mail threads Piper reads, with Piper's notes on the people in them
+
+See [Your data stays local](/control/your-data-stays-local).
 
 <Frame>
-  <img src="/images/diagrams/ai-provider-context.svg" alt="On the left, your context: memory, Knowledge Sources, files and projects, instructions and settings. It stays in Piper's store on your Mac. On the right, the AI provider, which you can change whenever you like and pick from Claude Code, Codex, and bring your own model. None of your context lives inside the provider." />
+  <img src="/images/diagrams/ai-provider-context.svg" alt="On the left, your context: memory, Knowledge Sources, files and projects, instructions and settings. It is stored in Piper's own store on your Mac. On the right, the AI provider, which you can change whenever you like and pick from Claude Code, Codex, and a model API you bring a key for. Piper sends the provider what a turn needs, and stores nothing there." />
 </Frame>
 
-## Piper hands back the artifact
+## Choose how much Piper does without asking
 
-Piper builds the real file. Ask for a deck and you get a `.pptx` you can open, rather than an outline of a deck you could build yourself. Finished deliverables land in the task's `final-output/` folder and appear in the **Artifacts** rail, and working material stays in `intermediate-files/`.
-
-## The two approval modes
-
-A task's approval mode sets how much Piper does without asking. Switch between the two from the row under the message box. In **Manual**, Piper shows you each action it cannot vouch for and waits. In **Autopilot**, Piper answers those requests itself for the rest of that conversation, which is why switching it on asks you to confirm once.
-
-A new task starts in **Manual**. To start every new task on **Autopilot** instead, open **Settings**, select **Core Tools**, and change **New tasks start in**. A task in a project you pointed at a folder of your own starts in **Manual** either way.
+A task you start has an approval mode: **Manual** or **Autopilot**. You switch the mode in the controls under the message box. In **Manual**, Piper asks you before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking for the rest of the conversation. A new task starts in **Manual** unless you change **New tasks start in** under **Settings** > **Core Tools**.
 
 <Warning>
-  On **Autopilot**, Piper can send an email, post a message, or change a record in a connected app without showing it to you first. Switch the task to **Manual** for any work where an outbound action would matter.
+  On **Autopilot**, Piper can send an email, post a message, or change a record in a connected app without showing it to you first. Use **Manual** for any task that might send email, post a message, or change a record.
 </Warning>
 
-An approval request appears in the conversation under **Approval needed**. Select **Allow** to run that one action, **Always allow in this conversation** to answer the same question for the rest of it, or **Deny**.
+Work Piper starts on its own runs without asking you. In that work, Gmail and Google Calendar are read-only, so you send every reply and create every event yourself. In your other connected apps, Piper uses every tool switched on for that app in **Settings** > **Integrations**. A tool set to **Ask** runs without asking you first.
 
-<Warning>
-  Two actions ask every time, on **Autopilot** exactly as on **Manual**: reading a file that holds credentials, and working in the Chrome you are signed in to yourself. A scheduled task's run and a Chief of Stuff run are the exception: nobody is there to answer, so Piper refuses both rather than asking.
-</Warning>
+In a task you start, Piper always asks before it reads a file that holds credentials or works in your own Chrome, in every approval mode. In work that runs without you, Piper refuses both. [Approvals and permissions](/control/approvals-and-permissions) covers each approval button.
 
-<Note>
-  Piper denies a request you leave unanswered for ten minutes, and the task carries on as though you had selected **Deny**. Ask again if you still want the action, and select the × on the denied card to clear it away.
-</Note>
+## Hand Piper work that runs on its own
 
-## Handing a job to a long-running task
+**Long-running tasks.** For a job too big for one conversation, select **Run until done** in the task's header. Piper then plans the job, splits it into steps, runs each step in its own conversation, and continues until the job is done. See [Long-running tasks](/autonomous/long-running-tasks).
 
-A task carries a multi-step job from start to finish while you do something else. For a job too big for one task, select **Run until done** in the task's header. That conversation becomes the one that plans the job, keeping everything you have said to it. Piper splits the job into steps, runs each in its own conversation, and keeps going until the job is done. See [Long-running tasks](/autonomous/long-running-tasks).
+**Scheduled tasks.** For work you want repeated, such as a weekly report, Piper runs the same task on a schedule you set. See [Scheduled tasks](/autonomous/autonomous-tasks).
 
-<Note>
-  Piper works while it is open and your Mac is on and awake. A machine that is off or asleep runs nothing. If a scheduled run comes due in that time, Piper runs it once when you open Piper again.
-</Note>
+Piper runs both without asking you, as it does with work it starts from your mail.
 
-## Next steps
+## Limitations
 
-<CardGroup cols={2}>
-  <Card title="Tasks and the workspace" icon="folder" href="/concepts/sessions-and-workspace">
-    The unit of work and the private folder each task gets.
-  </Card>
-  <Card title="The message box" icon="pen" href="/working/describing-what-you-need">
-    Dictating a request, and steering a job while it runs.
-  </Card>
-  <Card title="What Piper hands back" icon="table" href="/working/files-and-deliverables">
-    The cards a reply can hold, and what you can take away from each.
-  </Card>
-  <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Piper asks before it acts, and the two approval modes.
-  </Card>
-</CardGroup>
+- **Piper works only while it's open.** Piper runs tasks only while it's open and your Mac is awake. A scheduled run or a mail check that comes due while Piper is closed runs once when you open Piper again.
+- **Piper makes mistakes.** Read a result before you send it anywhere.
+- **Piper starts work from Gmail and Google Calendar only.** Your other connected apps give Piper context for its tasks.
+
+## Related
+
+- [Work Piper starts before you ask](/working/before-you-ask): what Piper takes on from your mail and calendar
+- [What Piper learns about you](/context/what-piper-learns): your People list, writing guide, and facts
+- [Tasks and the workspace](/concepts/sessions-and-workspace): the unit of work and the folder each task gets
+- [Approvals and permissions](/control/approvals-and-permissions): what Piper asks before it acts
