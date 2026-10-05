@@ -1,0 +1,84 @@
+---
+title: "Piper on your iPhone"
+sidebarTitle: "iPhone app"
+description: "Pair the Piper iPhone app with Piper on your Mac over your private Tailscale network. Review the work Piper started, chat with Piper, approve actions, and manage tasks and projects from your phone."
+---
+
+The Piper iPhone app connects to Piper on your Mac over your private Tailscale network. From your phone, you review the work Piper started, start and continue conversations, answer approvals, and manage tasks and projects. Piper still does all the work on your Mac, so your Mac has to be awake with Piper open.
+
+This page covers how to:
+
+- [Check the requirements](#requirements)
+- [Turn on iPhone access on your Mac](#turn-on-iphone-access-on-your-mac)
+- [Pair your iPhone](#pair-your-iphone)
+- [See what you can do from your phone](#what-you-can-do-from-your-phone)
+- [Revoke or unpair a phone](#revoke-or-unpair-a-phone)
+- [Fix a phone that can't connect](#fix-a-phone-that-cant-connect)
+- [Limitations](#limitations)
+
+## Requirements
+
+- Piper is open on your Mac, and your Mac is awake.
+- Tailscale is running on your Mac and on your iPhone, signed in to the same Tailscale network.
+- Your iPhone runs iOS 18 or later.
+- You have set up an AI provider on your Mac.
+
+## Turn on iPhone access on your Mac
+
+1. Open **Settings** > **iPhone**.
+2. Switch on **Allow iPhone access**.
+3. Check the status rows: **Tailscale** reads **Running**, and **Published to your devices** reads **Yes**.
+
+Piper listens for your phone only on your Mac's Tailscale address, and opens nothing to your local network or the internet. When you switch **Allow iPhone access** off, Piper disconnects every phone.
+
+## Pair your iPhone
+
+1. On your Mac, under **Pair your iPhone**, select **Show pairing code**.
+2. On your iPhone, open the Piper app. The app shows **Pair with your Mac**.
+3. Allow the camera, and scan the code on your Mac.
+
+The app opens as soon as pairing succeeds. Each pairing code works once and expires after two minutes. If the code expires before you scan it, select **Show pairing code** again.
+
+Piper locks the app whenever you leave it. To open the app again, unlock it with Face ID or your passcode.
+
+## What you can do from your phone
+
+| Screen | What you can do |
+|---|---|
+| **Home** | Review the tasks Piper started. Select **Do it** or **Decline** on a suggestion, edit and **Send** a drafted reply, pick a choice on a question and **Send** it, and select **Open transcript**. Hand Piper a new request from the box at the bottom. |
+| Conversations | Start a task with **New task**, send messages, attach files or photos, dictate, and select **Stop**. Pick the AI provider and model, switch between **Manual** and **Autopilot**, answer approvals and questions, and select **Go ahead** on a plan. |
+| **Tasks** | Search, filter, pin, and delete tasks. On a scheduled or long-running task, select **Run now**, **Pause**, or **Resume**, and read its runs or steps. |
+| **Projects** | Create, pin, and delete a project, start a task in a project, edit a project's instructions, read its artifacts, and remove a source. |
+| Files | Open the files a task made, in **Preview** or **Source**. |
+
+## Revoke or unpair a phone
+
+To cut a phone off, open **Settings** > **iPhone** on your Mac, find the phone under **Paired devices**, and select **Revoke**. Piper removes the phone and refuses its next request, which closes the phone's connection. You can pair the phone again with a new code.
+
+To unpair from the phone, open the app's menu, select the row at the bottom to open **Your Mac**, and select **Unpair this device**. The phone forgets the pairing, and the Mac keeps the phone in its **Paired devices** list. Revoke the phone on your Mac as well.
+
+## Fix a phone that can't connect
+
+| What the phone shows | What to do |
+|---|---|
+| The phone can't reach your Mac when you scan the code | Wake your Mac, open Piper, check that **Allow iPhone access** is on, and check that Tailscale is running on both devices. |
+| **Pairing failed. Show a fresh code and try again.** | On your Mac, select **New code**, or **Show pairing code** if the code has expired, and scan again. |
+| **That code is not a Piper pairing code.** | Scan the code under **Pair your iPhone** in **Settings** > **iPhone**. |
+| **Access was revoked from the Mac.** | Pair the phone again with a new code. |
+| **No AI provider is set up yet. Set one up on your Mac.** | Open **Settings** > **AI Providers** on your Mac and sign in to a provider. |
+
+If **Tailscale** reads **Not running**, **Published to your devices** reads **Not yet**, or Piper shows an error when you switch on **Allow iPhone access**, start Tailscale on your Mac and sign in. Then switch **Allow iPhone access** off and on again.
+
+## Limitations
+
+- **Settings stay on your Mac.** You change integrations, skills, memory, and secrets, and add project sources and project folders, only on your Mac.
+- **Home on the phone has fewer actions.** **Refine**, **Dismiss**, **Done**, **Create event**, answering a question in your own words, and setting up a routine work only on your Mac.
+- **Your phone gets no notifications.** Check the app, or let your Mac notify you.
+- **Files you attach from your phone are copied to your Mac.** Piper keeps the copies in its data folder on your Mac. From the phone, you attach only files that are on the phone.
+- **The pairing stays on one phone.** Piper keeps the pairing in your iPhone's keychain, and the pairing doesn't move to a new phone or an iCloud backup.
+
+## Related
+
+- [Work Piper starts before you ask](/working/before-you-ask): the tasks you review on the Home page
+- [Approvals and permissions](/control/approvals-and-permissions): what **Manual** and **Autopilot** allow
+- [Your data stays local](/control/your-data-stays-local): what stays on your Mac

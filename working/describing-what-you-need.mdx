@@ -1,51 +1,91 @@
 ---
 title: "The message box"
-description: "Dictating a request instead of typing, queueing a message while Piper is still working, and the approval mode that decides how much a task may do without asking."
+description: "The message box is where you say what you need. Attach a file, dictate instead of typing, add a message while Piper is still working, and set how much a conversation does without asking."
 ---
 
-The message box is where you type a request. It sits in the middle of the home screen and at the bottom of every task, and it does three jobs: starting a task, adding to one already running, and answering a question Piper asks.
+The message box is where you type what you want Piper to do. There is a message box on the Home page, at the bottom of every task, on a project's page, and in the **Ask Piper** drawer. Press Enter to send, and Shift+Enter to start a new line. If a message fails to send, Piper puts your text and attachments back in the box.
 
-Piper formats markdown as you type, so `**bold**` renders bold. Piper receives the markdown itself rather than a styled document.
+The box formats markdown as you type. Type `**bold**` and the words turn bold while the asterisks disappear from view, but the asterisks are still there in what Piper receives, because Piper receives the markdown itself. Underscores are the exception. Markdown normally reads a pair of them as emphasis, so Piper's box switches that off and a name like `Q3_final_v2` reaches Piper exactly as you typed it.
 
-## Dictating instead of typing
+This page covers how to:
 
-Select **Voice input**, the microphone button under the box, and speak. Your words land in the box as you go. Select **Stop recording** to finish.
+- [Attach a file to your message](#attach-a-file-to-your-message), by picker, drag, or paste
+- [Dictate instead of typing](#dictate-instead-of-typing)
+- [Add a message while Piper works](#add-a-message-while-piper-works), and steer the work in progress
+- [Choose how much the conversation does without asking](#choose-how-much-the-conversation-does-without-asking)
+- [Check how full the conversation is](#check-how-full-the-conversation-is)
+- [Ask Piper a quick question](#ask-piper-a-quick-question), without starting a task
 
-Dictation runs on your Mac. Piper transcribes your speech with a speech model it downloads once and keeps on the machine, so the audio never leaves it.
+## Attach a file to your message
+
+Select **Attach files**, the plus button under the box, and pick what you want. Dragging files onto the box does the same, and so does pasting an image or a screenshot straight from the clipboard.
+
+Piper shows each attached file as a chip carrying its name, in the same row as the plus button. Select the × on a chip to drop that file before you send. An image you dragged or pasted shows as a thumbnail instead of a name, because Piper already has the picture; an image you picked through **Attach files** shows as a name like any other file.
+
+## Dictate instead of typing
+
+Select **Voice input**, the microphone button under the box, and speak. While Piper connects to your microphone, the tooltip reads **Connecting to your microphone… start talking when the bars appear**. Your words land in the box as you go, and the microphone icon becomes bars that rise and fall with the sound reaching the microphone, so a muted microphone looks different from a working microphone.
+
+Select **Stop recording** to finish. You can also just select **Send**: Piper waits for the last words to land before it sends them, and the microphone button reads **Finishing…** while you wait.
+
+Type while dictation is running and Piper sets recognition aside rather than ending it. The microphone stays open, everything you already said stays in the box as ordinary text you can edit, and Piper starts listening again when you stop typing.
+
+Dictation runs on your Mac. Piper transcribes your speech with a speech model it downloads once when the app starts and keeps on the machine, so your audio never leaves it.
 
 <Note>
-  **Voice input** stays inactive while that download runs, and its tooltip reads **Voice input is still being set up**. If the download finishes with a task already open, move to another screen and back to use it.
+  **Voice input** stays inactive until that download finishes, and its tooltip reads **Voice input is still being set up**. Piper checks whether the model is ready once, at the moment you open a screen that has a message box on it. If the download finishes while a task is already in front of you, move to another screen and back.
 </Note>
 
 <Warning>
-  The first time you dictate, your Mac asks for microphone permission. Decline it and Piper cannot record. Allow microphone access for Piper on your Mac, then try **Voice input** again.
+  The first time you dictate, your Mac asks for microphone permission. Decline it and Piper records nothing, and shows **Piper needs permission to use the microphone** under the box. Allow microphone access for Piper on your Mac, then select **Voice input** again.
 </Warning>
 
-## Adding a message while Piper works
+## Add a message while Piper works
 
-You do not have to wait for a turn to end before saying something else. Type while Piper is working and press Enter. Piper holds your message above the box as a card headed **Waiting to send**, and the heading counts them once you queue a second, as **2 waiting to send**.
+Type while Piper is working and press Enter, and the message waits its turn rather than interrupting. Piper holds it above the box under the heading **Waiting to send**, and the heading counts your messages once you queue a second, as **2 waiting to send**. A waiting message survives closing the app.
 
-A waiting card carries two controls. Select **Send now** to hand that message over immediately, steering the work in progress. Select **Remove** to withdraw it. Leave the card alone and it goes on its own when the current turn finishes. Once Piper has taken the message and the current step is still running, the card reads **Delivering when the current step finishes** in place of the two buttons.
+Each waiting card carries two controls:
 
-The queue is how you correct course. Piper starts down the wrong path, you queue "use the Q3 numbers, not Q2" and select **Send now**, and the work turns without starting over.
+- **Send now** hands that message straight to the work already running. Piper passes it to the AI provider, which picks it up between one step and the next, so nothing is canceled and nothing restarts.
+- **Remove**, the × on the card, takes the message back.
+
+Leave the card alone and Piper sends the message on its own when the current turn finishes. If you select **Send now** while a step is still running, Piper holds the message until that step ends, and the card reads **Delivering when the current step finishes** in place of **Send now**. **Remove** stays, so you can still withdraw it.
+
+Use the queue to correct course. Queue the correction, such as "use the Q3 numbers, not Q2", and select **Send now**. Piper changes direction without starting the task over.
 
 <Tip>
-  Select **Stop** to halt the current turn outright, rather than queueing a correction behind it.
+  Select **Stop** to halt the current turn outright, rather than queueing a correction behind it. While a turn runs, Piper shows **Stop** in place of **Send**.
 </Tip>
 
-## How much room the task has
+## Choose how much the conversation does without asking
 
-A conversation's approval mode decides how much Piper may do in it without asking you. Set it from the dropdown in the row under the message box, whose tooltip reads **Approval mode**. **Manual** stops for your approval whenever the sandbox cannot vouch for an action on its own. **Autopilot** stops asking, so every command and file edit for the rest of that conversation runs without a prompt, sending included.
+Each conversation has an approval mode that sets how much Piper does without asking you. Set it from the dropdown under the message box, whose tooltip reads **Approval mode: Manual** or **Approval mode: Autopilot**. It covers the whole conversation, not one message.
 
-A new task starts in **Manual**. To start every new task on **Autopilot** instead, open **Settings**, select **Core Tools**, and change **New tasks start in**. A task inside a project you pointed at one of your own folders starts in **Manual** either way, because Piper writes that work outside its own store. [Approvals and permissions](/control/approvals-and-permissions) covers what each mode allows.
+In **Manual**, Piper asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking for the rest of the conversation. When you choose **Autopilot**, Piper asks you to confirm, under the heading **Turn on Autopilot for this conversation?**. Switching back to **Manual** takes effect straight away, with nothing to confirm.
+
+A new task starts in the mode set by **New tasks start in**, which is **Manual** until you change it. Open **Settings**, select **Core Tools**, and set it there. Piper confirms that choice too. A task in a project you pointed at a folder of your own starts in **Manual** either way, because that work writes into your folder rather than Piper's own. [Approvals and permissions](/control/approvals-and-permissions) covers what each mode allows.
 
 <Warning>
-  Autopilot does not switch the sandbox off. Anything the sandbox refuses stays refused in either mode, and two actions ask you every time however the task is set: reading a file that holds sign-in credentials, and working in your own signed-in Chrome. A scheduled or long-running task has nobody to ask, so Piper never uses your own Chrome there, and refuses a credential file at once.
+  Autopilot does not lift the limits macOS puts on what a task may touch, and it changes nothing about what Piper is refused outright. Two actions ask you every time, however the conversation is set: reading a file that holds sign-in credentials, and working in the Chrome you are signed in to yourself. A scheduled task's runs, a long-running task's steps, and [work Piper starts on its own](/working/before-you-ask) have nobody to ask. Piper never offers that work the Chrome you are signed in to, and refuses a credential file outright rather than asking.
 </Warning>
 
 <Note>
-  The approval dropdown appears in a task, not on the home screen. Send your first message, then set the mode.
+  The approval dropdown appears in a task. On the Home page, send your first message, then set the mode.
 </Note>
+
+## Check how full the conversation is
+
+Piper sends the whole conversation to the AI provider on every turn, and the provider can take only so much at once. A ring under the box shows how much of that room the conversation has used, and hovering the ring gives you the figures behind it. At 70% the ring changes color, which is the point to consider starting a fresh task rather than carrying this conversation on.
+
+The ring appears once a task has a conversation to measure.
+
+## Ask Piper a quick question
+
+The **Ask Piper** drawer holds one standing conversation for quick questions, kept apart from your tasks. To open the drawer, select **Ask Piper** at the bottom right of the window, or press `⌘⇧H`. The drawer works on every screen except Settings, once you have set up an AI provider.
+
+In the drawer, Piper answers directly and briefly, without the questions and plan it uses for a larger task. Piper creates a file only when you ask for a file. The drawer runs in **Autopilot** on the AI provider that was your default when you sent its first message, until you select **Clear**. The drawer keeps attachments, dictation, and **Stop** from the message box.
+
+When an answer arrives while the drawer is closed, Piper marks the **Ask Piper** button with a dot. The drawer's conversation stays out of your **Tasks** list. To start over, select **Clear**. Piper deletes the conversation and its files, and keeps any facts it saved to your global memory. To change the drawer's width, select **Widen the panel** or **Narrow the panel**.
 
 ## Next steps
 
@@ -56,10 +96,7 @@ A new task starts in **Manual**. To start every new task on **Autopilot** instea
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
     What Piper asks before it acts, and what each approval mode changes.
   </Card>
-  <Card title="Keyboard shortcuts" icon="keyboard" href="/reference/keyboard-shortcuts">
-    The shortcuts Piper really has.
-  </Card>
   <Card title="Skills" icon="wand-magic-sparkles" href="/working/skills">
-    What lets Piper build a deck or a spreadsheet rather than describe one.
+    What lets Piper build a deck or a spreadsheet rather than describe them.
   </Card>
 </CardGroup>

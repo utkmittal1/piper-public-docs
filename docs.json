@@ -58,6 +58,7 @@
           "working/skills",
           "working/tools",
           "working/notifications",
+          "working/iphone",
           "working/appearance"
         ]
       },
@@ -80,7 +81,6 @@
         "group": "Reference",
         "pages": [
           "reference/integrations-catalog",
-          "reference/keyboard-shortcuts",
           "reference/troubleshooting"
         ]
       }
@@ -88,7 +88,8 @@
   },
   "redirects": [
     { "source": "/autonomous/home", "destination": "/working/before-you-ask" },
-    { "source": "/autonomous/chief-of-stuff", "destination": "/working/before-you-ask" }
+    { "source": "/autonomous/chief-of-stuff", "destination": "/working/before-you-ask" },
+    { "source": "/reference/keyboard-shortcuts", "destination": "/working/describing-what-you-need" }
   ],
   "footer": {
     "socials": {}
