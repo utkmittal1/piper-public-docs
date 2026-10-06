@@ -46,7 +46,7 @@ Piper reads the mode fresh for each request, so Piper applies a switch from the 
 
 ## What Piper does without asking
 
-Piper does these without asking, in both modes. It reads a file, searches your files, searches the web, fetches a page, searches your Knowledge Sources, writes a file inside the folder the task can write to, and opens a page in a browser of its own. These actions change nothing outside the task. If Piper asked before each action, you would learn to approve questions without reading them.
+Piper does these without asking, in both modes. It reads a file, searches your files, searches the web, fetches a page, searches your Knowledge Sources, writes a file inside the folders the task can write to, and opens a page in a browser of its own. These actions change nothing outside the task. If Piper asked before each action, you would learn to approve questions without reading them.
 
 Piper also runs a fixed list of read-only programs on its own: `ls`, `pwd`, `cat`, `head`, `tail`, `wc`, `grep`, `rg`, `which`, `whoami`, `date`, `file`, `stat`, `basename`, `dirname`, `echo`, `du`, `df`, and `pdftotext`, plus git's own reading verbs, `git status`, `git log`, `git diff`, and `git show`. All but one of those programs only print what is already there. `pdftotext` writes the text it pulls out of a PDF, inside the folder the task can already write to. Piper runs two more programs without asking in one use each: `sed` when it prints a range of lines, and `pandoc` when it only converts a file. Piper can also create a folder inside the folder it writes to, change directory inside that folder, and run one of its own bundled scripts through the Python it ships.
 
@@ -56,11 +56,11 @@ Piper reads through an integration without asking as well. An integration is the
 
 ## Why file writes run without asking
 
-Piper writes a file inside the task's folder without asking, in both modes. The mode sets how Piper handles a request. Piper writes inside the folder without raising a request, so file writes run the same way in **Manual** and on **Autopilot**.
+Piper writes a file inside the task's folders without asking, in both modes. The mode sets how Piper handles a request. Piper writes inside those folders without raising a request, so file writes run the same way in **Manual** and on **Autopilot**.
 
-The folder sets which of your files a write can change. For a task outside a project, the folder is that task's workspace, so your other files stay as they are. For a task in a project you pointed at a folder of your own, the folder is that whole folder of yours. Piper creates files in it, and writes over files you already had, without asking.
+The folder sets which of your files a write can change. For a task outside a project, the folder is that task's workspace, so your other files stay as they are. For a task in a project you pointed at a folder of your own, the folder is that whole folder of yours. Piper creates files in it, and writes over files you already had, without asking. Piper does the same in a folder you added to the task or to its project.
 
-You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Core Tools** page and Piper raises a request before each write. In **Manual**, the task waits until you answer. On **Autopilot**, Piper answers the request itself. Piper also raises a request before a command that deletes files, such as `rm`, because Piper asks before every command outside the read-only list. The command waits for you in **Manual** and runs on **Autopilot**. Otherwise, point a project only at a folder you're happy for Piper to change.
+You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Core Tools** page and Piper raises a request before each write. In **Manual**, the task waits until you answer. On **Autopilot**, Piper answers the request itself. Piper also raises a request before a command that deletes files, such as `rm`, because Piper asks before every command outside the read-only list. The command waits for you in **Manual** and runs on **Autopilot**. Otherwise, add a folder, or point a project at a folder, only when you're happy for Piper to change the files in it.
 
 ## What Piper asks about
 
@@ -121,7 +121,7 @@ See [Core Tools](/working/tools) for each capability and its checkbox. See [Inte
 
 On **Autopilot**, Piper answers the ordinary questions for you. A task on **Autopilot** can do only what it could do in **Manual**, and these limits hold in both modes.
 
-**The sandbox holds on Autopilot.** macOS refuses a write outside the folder the task can write to, with no question to you, so **Autopilot** can't allow the write. [The sandbox](/control/sandbox) covers that boundary.
+**The sandbox holds on Autopilot.** macOS refuses a write outside the folders the task can write to, with no question to you, so **Autopilot** can't allow the write. [The sandbox](/control/sandbox) covers that boundary.
 
 **A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Piper builds your next task without it. **Autopilot** can't bring the tool back, because the task doesn't have it.
 
