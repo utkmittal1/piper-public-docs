@@ -21,7 +21,7 @@ Piper's browser runs hidden, with no window, while Piper works. Piper runs every
 
 That browser starts empty and stays separate from the browsers you use yourself. Once a task is over, Piper keeps only the sign-ins you gave through the sign-in card. Piper collects the cookies and stored site data from the window you signed in through and keeps them in a file in its own data folder. Piper seeds every later conversation's browser from that file.
 
-Piper turns browsing on for a new install. When you switch browsing off, Piper turns it off for every conversation. To turn it off, open **Settings**, then **Core Tools**, and clear the checkbox on **Browse websites**.
+Piper turns browsing on for a new install. When you switch browsing off, Piper turns it off for every conversation. To turn it off, open **Settings**, then **Built-in tools**, and clear the checkbox on **Browse websites**.
 
 <Note>
   Piper downloads the browser once, in the background, the first time Piper runs. Until the download finishes, Piper can't open a page or show you a sign-in window.
@@ -44,7 +44,7 @@ Each answer covers a different scope.
 
 On **Autopilot**, Piper approves the action itself and stops asking in that conversation.
 
-Piper decides page by page whether to ask, by checking whether it holds a sign-in for that site. For that reason, **Core Tools** in **Settings** shows **Always runs** beside browsing, where other capabilities offer **Auto** and **Ask**. See [Approvals and permissions](/control/approvals-and-permissions) for Manual, Autopilot, and what each answer means.
+Piper decides page by page whether to ask, by checking whether it holds a sign-in for that site. For that reason, **Built-in tools** in **Settings** shows **Always runs** beside browsing, where other capabilities offer **Auto** and **Ask**. See [Approvals and permissions](/control/approvals-and-permissions) for Manual, Autopilot, and what each answer means.
 
 <Note>
   A scheduled task's runs, a long-running task's steps, and the tasks Piper starts on its own use Piper's own browser with the sign-ins you've already saved. Piper keeps these tasks out of your own Chrome and away from the sign-in card, because nobody is there to answer. To let such a task reach a site that needs a sign-in, sign in to that site from a conversation of your own first.
@@ -80,7 +80,7 @@ Piper can work in your own Chrome instead, on sites you're already signed into t
 
 <Steps>
   <Step title="Find the setting">
-    In **Settings**, select **Core Tools**. **Use my Chrome for sites I’m signed in to** sits under **Browse websites** and shows only while browsing is on. Its checkbox stays unavailable until the extension is in place, and the line beneath it reads **Needs a one-time setup. Piper still asks you each time.**
+    In **Settings**, select **Built-in tools**. **Use my Chrome for sites I’m signed in to** sits under **Browse websites** and shows only while browsing is on. Its checkbox stays unavailable until the extension is in place, and the line beneath it reads **Needs a one-time setup. Piper still asks you each time.**
   </Step>
   <Step title="Start the setup">
     Select **Set up**. Piper explains that it works in your Chrome through an extension published by the Playwright team at Microsoft, and offers **Install extension**.
@@ -93,7 +93,7 @@ Piper can work in your own Chrome instead, on sites you're already signed into t
   </Step>
 </Steps>
 
-Piper also offers this from a card above the message box, right after you sign into a site through the sign-in card. Select **Set this up** to begin, or **Use my Chrome** where the extension is already installed. Select **Not now** to leave it for a later sign-in, or **Don’t ask again** to stop Piper offering it. The setting stays on the **Core Tools** page either way.
+Piper also offers this from a card above the message box, right after you sign into a site through the sign-in card. Select **Set this up** to begin, or **Use my Chrome** where the extension is already installed. Select **Not now** to leave it for a later sign-in, or **Don’t ask again** to stop Piper offering it. The setting stays on the **Built-in tools** page either way.
 
 <Note>
   This works with Google Chrome only. Piper looks for the extension in Chrome's own profile folder, so installing it in another browser built on Chromium does not turn the setting on. Where the extension is installed but switched off in Chrome, Piper says so and the setting stays unavailable until you turn the extension back on there.
@@ -116,7 +116,7 @@ Piper also offers this from a card above the message box, right after you sign i
 | Used by a task running on its own | Yes | No |
 
 <Note>
-  Piper's plain web search and page fetch are a separate tool, **Web search & fetch**, under **Settings**, then **Core Tools**. That tool uses neither browser. Piper falls back to a browser when a fetch is blocked or misses content the page shows a person.
+  Piper's plain web search and page fetch are a separate tool, **Web search & fetch**, under **Settings**, then **Built-in tools**. That tool uses neither browser. Piper falls back to a browser when a fetch is blocked or misses content the page shows a person.
 </Note>
 
 ## Next steps
@@ -128,7 +128,7 @@ Piper also offers this from a card above the message box, right after you sign i
   <Card title="Integrations" icon="link" href="/connections/integrations">
     Reaching an app through its own connection rather than its website.
   </Card>
-  <Card title="Core Tools" icon="wrench" href="/working/tools">
+  <Card title="Built-in tools" icon="wrench" href="/working/tools">
     Every capability Piper may use, browsing included.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
