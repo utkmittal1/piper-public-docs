@@ -46,9 +46,9 @@ appears once and resolves to a real `.mdx`.
 |---|---|---|
 | Getting started | `getting-started/` | Overview, Set up Piper, Your first task |
 | Core concepts | `concepts/` | How Piper works, Tasks and the workspace, Projects, AI providers |
-| What Piper knows about you | `context/` | What Piper learns about you, Memory, Instructions and profile, Response style, Knowledge Sources |
+| What Piper knows about you | `context/` | What Piper learns about you, Memory, Instructions and profile, Response style, Knowledge |
 | Connecting your tools | `connections/` | Connecting your tools, Integrations, Secrets, Web and sign-ins |
-| Working with Piper | `working/` | Work Piper starts before you ask, The message box, What Piper hands back, Skills, Core Tools, Notifications, iPhone app, Appearance |
+| Working with Piper | `working/` | Work Piper starts before you ask, The message box, What Piper hands back, Skills, Built-in tools, Notifications, iPhone app, Appearance |
 | Piper on its own | `autonomous/` | Scheduled tasks, Long-running tasks |
 | Staying in control | `control/` | Your data stays local, Approvals and permissions, The sandbox |
 | Reference | `reference/` | Integrations catalog, Troubleshooting and FAQ |

@@ -32,7 +32,7 @@ Piper keeps what it manages in one folder called `PiperData`, inside your home f
 
 For a project you pointed at a folder of your own, Piper keeps that project's files in a subfolder it creates inside your folder, and every task in the project writes inside that subfolder. See [Projects](/concepts/projects) for the layout, and [Tasks and the workspace](/concepts/sessions-and-workspace) for what a task's own folder holds.
 
-Piper builds the search index for your Knowledge Sources on this machine. It reads your documents, splits them into passages, and indexes them with a model it downloads once and runs here. Piper also searches that index on your Mac. See [Knowledge Sources](/context/knowledge-sources).
+Piper builds the search index for your Knowledge Sources on this machine. It reads your documents, splits them into passages, and indexes them with a model it downloads once and runs here. Piper also searches that index on your Mac. See [Knowledge](/context/knowledge-sources).
 
 ### What the log file records
 
@@ -82,7 +82,7 @@ Piper asks you before a task reads either file, every time, in every approval mo
 
 **To Google, for site icons.** When Piper shows you the sources behind a web search, it fetches each site's icon from Google. Piper sends Google the domain of every site listed, whichever AI provider you're on.
 
-**To your iPhone, if you paired an iPhone.** Turn on **Allow iPhone access** under **Settings** > **iPhone**, and Piper serves your tasks, their transcripts and files, your projects, and the tasks on your Home page to that phone over your own Tailscale network. Piper serves data to a phone only while **Allow iPhone access** is on. See [Piper on your iPhone](/working/iphone).
+**To your iPhone, if you paired an iPhone.** Turn on **Allow iPhone access** under **Settings** > **iPhone**, and Piper serves your name, your tasks, their transcripts and files, your projects, the tasks and meetings on your Home page, and your notifications to that phone over your own Tailscale network. Piper serves data to a phone only while **Allow iPhone access** is on. See [Piper on your iPhone](/working/iphone).
 
 A command can also send your data off your Mac. The sandbox confines only what a task writes, so a command that runs can upload a file of yours anywhere on the internet. Piper controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Piper answers that question for you. See [Approvals and permissions](/control/approvals-and-permissions).
 
@@ -109,7 +109,7 @@ Piper fetches these files the first time it starts, then runs them from `PiperDa
 
 <Steps>
   <Step title="Remove a single memory fact">
-    In **Settings**, select **Memory**, find the fact, and select **Remove fact**. Piper stops applying it to future tasks.
+    Open **About you** in the sidebar, select **Memory**, find the fact, and select **Remove fact**. Piper stops applying it to future tasks.
   </Step>
   <Step title="Delete a task">
     Delete the task from the sidebar. Tick **Also delete the folder from disk** to remove its files as well, or leave it unticked and the folder stays where it is.

@@ -1,9 +1,9 @@
 ---
-title: "Core Tools"
+title: "Built-in tools"
 description: "A tool is a capability Piper may use while it works. See the seven capabilities Piper has with no app connected, switch any of them off, and set the mode new tasks start in."
 ---
 
-A tool is a capability Piper can use while it works, such as reading a file, searching the web, running a command, or browsing a site. You control each capability with a checkbox in **Settings**, under **Core Tools**. When you clear a checkbox, Piper can no longer use that capability.
+A tool is a capability Piper can use while it works, such as reading a file, searching the web, running a command, or browsing a site. You control each capability with a checkbox in **Settings**, under **Built-in tools**. When you clear a checkbox, Piper can no longer use that capability.
 
 Piper has some tools from the first message and looks up the rest as it works. Five of the seven capabilities are available from the start. Piper adds **Search knowledge** once a knowledge source holds indexed passages. Piper looks up **Browse websites** and a connected app's tools when a task needs them, so Piper loads Gmail's tools only in a task that uses Gmail.
 
@@ -29,7 +29,7 @@ The three build on each other. Piper can't act in Gmail until you set Gmail up a
 
 ## See what Piper can do with no app connected
 
-In **Settings**, select **Core Tools**. The page lists seven capabilities, each with its own checkbox.
+In **Settings**, select **Built-in tools**. The page lists seven capabilities, each with its own checkbox.
 
 | Capability | Nature | What it does | Approval |
 |---|---|---|---|
@@ -38,7 +38,7 @@ In **Settings**, select **Core Tools**. The page lists seven capabilities, each 
 | Web search & fetch | read | Searches the web and reads the pages it finds. | Always auto |
 | Edit & write files | write | Creates and edits files in the folders this work can write to. | Auto or Ask, your choice |
 | Run commands | write | Runs shell commands on this machine. | Always asks |
-| Search knowledge | read | Searches the folders you indexed under Context → Knowledge Sources. | Always runs |
+| Search knowledge | read | Searches the folders you added under Settings → Knowledge. | Always runs |
 | Browse websites | write | Opens pages in Piper's own browser, and can click and fill them in. When a site needs you signed in, it opens a window so you can. | Always runs |
 
 The approval column shows whether Piper stops to ask you. **Always auto** and **Always runs** both mean Piper goes ahead without asking. **Always asks** means Piper stops every time. The nature column shows whether the capability only looks at things or can change them.
@@ -53,7 +53,7 @@ A connected app's tools sit on that app's own panel under **Integrations**, wher
 
 <Steps>
   <Step title="Open the page">
-    In **Settings**, select **Core Tools**.
+    In **Settings**, select **Built-in tools**.
   </Step>
   <Step title="Switch a capability">
     Clear the checkbox next to a row to take that capability away. Tick it to give it back.
@@ -84,7 +84,7 @@ The carve-out also follows your switches. Switch **Read files** off, and Piper a
 
 ## Choose the mode new tasks start in
 
-The **Core Tools** page has one more setting, **New tasks start in**. Every task you start from the message box begins in this mode. The **Ask Piper** drawer always runs in **Autopilot**. A new task starts in **Manual** until you change this setting.
+The **Built-in tools** page has one more setting, **New tasks start in**. Every task you start from the message box begins in this mode. The **Ask Piper** drawer always runs in **Autopilot**. A new task starts in **Manual** until you change this setting.
 
 In **Manual**, Piper asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking. Piper asks you to confirm when you choose **Autopilot**, and switches back to **Manual** with no confirmation.
 
