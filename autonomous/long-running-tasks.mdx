@@ -23,7 +23,7 @@ This page covers how to:
     Start a normal task and work out what you want. Gather the sources, settle the rules, and make any files the job will need. Piper carries everything you agree here into the long-running task.
   </Step>
   <Step title="Select Run until done">
-    Select **Run until done** in the task's header. You can select it once Piper finishes its reply. Piper switches the conversation to **Autopilot** at the same time, because a long-running task works with nobody watching it.
+    Select **Run until done** in the task's header. You can select it once Piper finishes its reply. Piper switches the conversation to **Autopilot** at the same time, because a long-running task works with nobody watching it. If the conversation has folders you added, Piper first asks you to confirm that the task can change files in them without asking.
   </Step>
   <Step title="Agree what done looks like">
     This conversation becomes the **Orchestrator**, and it keeps every message and every file already in it. Piper reads back through the conversation, asks about anything still unclear, and tells you what it's about to do. Answer Piper's questions, then tell Piper to go ahead.
@@ -138,7 +138,7 @@ Start a long-running task from a conversation in a project and the task belongs 
 
 A task inside a project follows the project's instructions and can use its shared files, its memory, and its sources, on top of its own. Piper keeps the task's folder inside the project and delivers the task's results there by default.
 
-The task can write only to the project's Piper folder. For a project Piper manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Piper created there, so your own files around it stay out of reach.
+The task can write only to the project's Piper folder. For a project Piper manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Piper created there, so your own files around it stay out of reach. The task can also write in the folders it took from the conversation when you selected **Run until done**.
 
 Only a long-running task can sit inside a project. Piper always keeps a scheduled task outside any project.
 

@@ -1,15 +1,15 @@
 ---
 title: "The sandbox"
-description: "macOS confines every task Piper runs to one writable folder, and shuts the folders where credentials live. See what a task can write and read, and where the sandbox stops."
+description: "macOS lets every task Piper runs write only in its own folder and the folders you add, and shuts the folders where credentials live. See what a task can write and read, and where the sandbox stops."
 ---
 
-The sandbox is a write boundary macOS holds around every task Piper runs. A task writes inside one folder and nowhere else. It reads across the rest of your Mac, apart from the folders where credentials live. A task can also reach the network.
+The sandbox is a write boundary macOS holds around every task Piper runs. A task writes only inside its own folder and the folders you added to it. It reads across the rest of your Mac, apart from the folders where credentials live. A task can also reach the network.
 
 macOS enforces that boundary. Piper hands macOS the list of what a task may write, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Piper wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
 
 This page covers how to:
 
-- [Find the folder a task can write to](#what-a-task-can-write), and the few places outside it
+- [Find the folders a task can write to](#what-a-task-can-write), and the few places outside them
 - [Learn which filenames no task can write](#files-no-task-can-write), anywhere on your Mac
 - [See what a task can read](#what-a-task-can-read), and which folders stay shut
 - [Understand why writing is confined and reading is not](#why-piper-confines-writing-and-not-reading)
@@ -21,11 +21,12 @@ This page covers how to:
 
 ## What a task can write
 
-A task writes inside one folder. The folder depends on where the task sits.
+A task writes inside its own folder, which depends on where the task sits. A conversation can also write in the folders you add.
 
 - A conversation outside a project writes inside its own workspace folder, and your other files stay as they are. A task Piper starts on its own writes inside its own workspace folder in the same way.
 - A conversation in a project writes anywhere inside that project's folder, because tasks in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder. Piper creates files in it, and writes over files you already had.
-- A long-running task and a scheduled task write inside the folder that task belongs to. A task outside a project gets a folder of its own, shared by every step or run. A long-running task inside a project writes inside the project's Piper folder. For a project Piper manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Piper created there, so your own files around it stay out of reach.
+- A conversation also writes inside each folder you added to it or to its project. See [Add a folder Piper can change](/concepts/sessions-and-workspace#add-a-folder-piper-can-change).
+- A long-running task and a scheduled task write inside the folder that task belongs to. A task outside a project gets a folder of its own, shared by every step or run. A long-running task inside a project writes inside the project's Piper folder. For a project Piper manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Piper created there, so your own files around it stay out of reach. A long-running task also writes in the folders it took from its conversation when you selected **Run until done**. A scheduled task never gets a folder you added.
 
 To find where each folder sits on disk, see [Tasks and the workspace](/concepts/sessions-and-workspace).
 
@@ -72,7 +73,7 @@ Piper asks you before a task reads a credential file anywhere else on your Mac, 
 
 A task has to read your own material to do your work. A document you attached to a message, a spreadsheet in your Downloads folder, and output another task produced last week all sit outside the task's own folder. If Piper confined reads to that folder, a task could write files and still couldn't read the files you asked it about.
 
-Piper puts each limit where a task could do damage. Writing is where a task can destroy something, so Piper confines writing to one folder. Reading is where a task can leak something, so macOS shuts the credential folders, and Piper asks you before a task reads a credential file anywhere else.
+Piper puts each limit where a task could do damage. Writing is where a task can destroy something, so Piper confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the credential folders, and Piper asks you before a task reads a credential file anywhere else.
 
 ## Where the sandbox stops
 
@@ -84,7 +85,7 @@ The sandbox controls where a task may write, and which folders a task may never 
 
 **One task can read another task's files.** A task can read across your Mac, including every other task's folder, so treat anything a task produced as visible to a later task.
 
-**Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them.
+**Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
 
 **Piper protects a stored credential by other means.** Piper keeps the value out of the conversation. See [Secrets](/connections/secrets).
 

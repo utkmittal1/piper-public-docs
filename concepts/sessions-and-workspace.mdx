@@ -13,6 +13,7 @@ This page covers how to:
 - [Choose which kind of task to start](#choose-which-kind-of-task-to-start)
 - [Find a review task](#review-tasks) Piper started to check its work
 - [Find where a task's files land](#the-workspace-a-task-writes-to)
+- [Add a folder Piper can change](#add-a-folder-piper-can-change), such as a code repository
 - [Open the files a task made](#open-the-files-a-task-made)
 - [Set instructions, an approval mode, and Planning mode](#what-belongs-to-one-task-alone) for one task alone
 - [Rename, pin, move, or delete a task](#rename-pin-move-or-delete-a-task)
@@ -45,7 +46,7 @@ Piper gives each conversation a workspace, a folder only that conversation write
 - **`final-output/`** holds the finished deliverables, such as the document, the deck, the spreadsheet, or the analysis.
 - **`intermediate-files/`** holds scratch and working material, such as notes, downloads, and half-built drafts.
 
-A task can write files only inside one folder, and macOS enforces that limit. For a conversation outside a project, that folder is its workspace. For a conversation in a project, that folder is the whole project folder, so conversations in a project can edit each other's files.
+A task can write files only inside its own folder, and macOS enforces that limit. For a conversation outside a project, that folder is its workspace. For a conversation in a project, that folder is the whole project folder, so conversations in a project can edit each other's files. A conversation can also write in [folders you add to it](#add-a-folder-piper-can-change).
 
 A task can read files across your Mac. In every approval mode, Piper asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
 
@@ -54,6 +55,34 @@ Piper puts the workspace of a conversation outside a project in `PiperData/sessi
 <Frame>
   <img src="/images/diagrams/session-workspace.svg" alt="A task with its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and working files sit in a separate intermediate-files area." />
 </Frame>
+
+## Add a folder Piper can change
+
+To have Piper work on files where they already live, such as a code repository or a folder of drafts, add that folder to the conversation. From your next message, Piper can create, edit, and delete files in it. Piper still keeps its scratch work and finished deliverables in the workspace unless you ask for them in the added folder.
+
+To add a folder:
+
+1. Select the plus button under the message box, then **Add folder**. The **Task actions** menu in the header has the same **Add folder** item.
+2. Choose the folder.
+3. Select **Allow** when Piper asks you to confirm.
+
+Select the folder icon in the message box to see the folders you added. Select a folder's name to open it in Finder. The list has two actions:
+
+- **Remove**: Piper takes the folder off the list, and from your next message it can't write there. Piper leaves the changes it already made in place.
+- **Add folder**: Piper adds another folder after you confirm.
+
+You can't add or remove a folder while Piper is replying. To give every conversation in a project the same folder, add it to the project instead. See [The project folder](/concepts/projects#the-project-folder).
+
+When you select **Run until done** in a conversation that has folders, Piper asks you to confirm before the long-running task takes them. The task works on its own and doesn't ask before it runs a command, so it can create, edit, and delete files in those folders without asking you. To take a folder away from the task, select the folder name on the task's page, then **Remove**.
+
+### Limitations
+
+- **A conversation holds up to 10 added folders.** Remove a folder to add another.
+- **Piper adds only folders inside your home folder or on an external drive.** In your home folder, it refuses the home folder itself, your `Library` folder, `PiperData`, and hidden folders, whose names start with a dot. It refuses anything inside those folders too.
+- **Some files stay blocked inside an added folder.** The files no task can write anywhere stay blocked in your added folders too. [The sandbox](/control/sandbox#files-no-task-can-write) lists them.
+- **Scheduled tasks never get added folders.** A long-running task that Piper starts for you, when you ask for one in a conversation, doesn't get them either.
+- **You can't add a folder to a long-running task after it starts.** The task keeps only the folders its conversation had when you selected **Run until done**.
+- **Piper never moves, renames, or deletes an added folder.** Deleting the conversation leaves the folder where it is.
 
 ## Open the files a task made
 
