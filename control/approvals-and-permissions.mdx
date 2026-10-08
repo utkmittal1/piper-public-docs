@@ -18,7 +18,7 @@ This page covers how to:
 
 ## Choose how much Piper does without asking
 
-In **Manual**, Piper asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking.
+In **Manual**, Piper asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking. Sending email, changing your calendar, and sharing or commenting on Drive files are the exception. In both modes, Piper shows you a card for those first, and nothing goes out until you select the button on it.
 
 A new task starts in **Manual**. Switch it to **Autopilot** and only that conversation changes. The next task starts in **Manual** again. To start every new task on **Autopilot** instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. Piper asks you to confirm in a dialog headed **Start every new task on Autopilot?**.
 
@@ -36,8 +36,7 @@ Piper sets the mode itself for two kinds of conversation. A task in a project yo
 Piper reads the mode fresh for each request, so Piper applies a switch from the next action of a running task.
 
 <Warning>
-  On **Autopilot**, Piper can send an email through Gmail, post to a Slack channel, or change a record in any other app you have connected, without showing you the message first. Use **Manual** wherever a message going out would matter.
-  When you ask for an email or a meeting, Piper usually drafts it as a card in the conversation instead, and nothing goes until you send it from the card.
+  On **Autopilot**, Piper can post to a Slack channel or change a record in any other app you have connected, without showing you the message first. Use **Manual** wherever a message going out would matter.
 </Warning>
 
 <Tip>
@@ -126,6 +125,8 @@ On **Autopilot**, Piper answers the ordinary questions for you. A task on **Auto
 **A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Piper builds your next task without it. **Autopilot** can't bring the tool back, because the task doesn't have it.
 
 **Piper asks about credential files and your own Chrome in both modes.** Piper leaves both to you, in **Manual** and on **Autopilot**.
+
+**Email, calendar changes and Drive sharing always wait for you.** Piper shows you a card in the conversation for an email, an event you create, change or cancel, an answer to an invite, a Drive share or removal, and a comment on a Drive file. You review the card, and the action happens when you select its button. A scheduled task can email and invite only the people you approved for it. See [Scheduled tasks](/autonomous/autonomous-tasks).
 
 <Note>
   Tasks Piper starts on its own follow a rule of their own. Piper runs these tasks on **Autopilot**, and gives them only the reading tools for Gmail and Google Calendar. Piper sends a reply only after you select **Send** on the task, and creates an event only after you select **Create event**. In your other connected apps, Piper uses every tool switched on for that app, and uses a tool set to **Ask** without asking you first. See [Work Piper starts before you ask](/working/before-you-ask).
