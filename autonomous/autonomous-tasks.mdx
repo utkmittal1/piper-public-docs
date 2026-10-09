@@ -39,6 +39,9 @@ You set a task up by asking for it in an ordinary conversation. Piper builds the
   <Step title="Check the task once it is saved">
     Piper writes the instructions and saves the task. Check what the task will do, when the first run happens, and where the result goes. The task runs on the AI provider and model of the conversation you set it up in, not on the provider marked **Default**. See [AI providers](/concepts/ai-providers).
   </Step>
+  <Step title="Approve who the task may reach">
+    If the task emails or invites anyone, Piper shows a card headed **Who “task name” may reach**, listing their addresses. Remove anyone who shouldn't be there, then select **Approve**. A run emails nobody who isn't on that list, you included, so check that your own address is there when the task emails you.
+  </Step>
 </Steps>
 
 Every run works from the instructions alone, so Piper writes them as a complete assignment.
@@ -63,7 +66,7 @@ Piper gives each run four things.
 Piper keeps the conversation you set the task up in out of every run, because that conversation can hold questions that have nothing to do with the task. Piper also keeps out the task's own conversation, the standing thread behind **Ask Piper** on the task page.
 
 <Note>
-  Piper runs every scheduled run on **Autopilot**, because nobody is watching it. Piper acts without stopping for an ordinary approval. Piper decides from the instructions and what recent runs did, and records what it decided in the run's summary. When you write the instructions, say what Piper should do when something is ambiguous. Piper also withholds the Chrome you're signed in to from every run, and refuses a credential file outright, because nobody is there to approve either. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
+  Piper runs every scheduled run on **Autopilot**, because nobody is watching it. Piper acts without stopping for an ordinary approval. Piper decides from the instructions and what recent runs did, and records what it decided in the run's summary. When you write the instructions, say what Piper should do when something is ambiguous. A run can email and invite only the people you approved for the task. A run can't give anyone access to your Drive files or comment on them. If the instructions call for anyone else, Piper sends nothing, and the run stops to name who it needed. Piper also withholds the Chrome you're signed in to from every run, and refuses a credential file outright, because nobody is there to approve either. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
 </Note>
 
 ## Where your tasks live
@@ -110,7 +113,7 @@ The second kind is what earlier runs delivered. Piper puts each run's result in 
 
 You can open and edit anything in that folder yourself, and Piper uses your changes on the next run. The folder sits under `PiperData/projects` in your home folder. Piper always keeps a scheduled task's folder there, even when you set it up from a conversation inside a project.
 
-The rail holds two more panels. Open **Instructions** to read what every run is given, and **Memory** to see the facts Piper keeps for this task alone. See [Memory](/context/memory).
+The rail holds two more panels. Open **Instructions** to read what every run is given, and **Memory** to see the facts Piper keeps for this task alone. See [Memory](/context/memory). When the task has approved people, the rail also holds **People**, where you can see who the task may email and invite, and add or remove an address.
 
 <Note>
   Piper keeps only a task's most recent runs. Past that limit, Piper deletes the oldest run's conversation and workspace, including that run's scratch files. Piper keeps everything a run delivered into the task's folder, so results outlive the runs that wrote them.
