@@ -5,7 +5,7 @@ description: "A scheduled task is work Piper repeats on a schedule you agreed. A
 
 A scheduled task is work Piper repeats on a schedule. It holds three things: instructions saying what each run should produce, a schedule saying when, and a folder the task keeps from one run to the next. Piper opens a fresh conversation for each run and gives it the instructions as its message.
 
-Your **Tasks** list holds two other kinds of task that run without you. A [long-running task](/autonomous/long-running-tasks) is one big job Piper drives to the end. The tasks Piper starts on its own come from your mail and calendar, and their results wait on the Home page. See [Work Piper starts before you ask](/working/before-you-ask).
+Your **Tasks** list holds two other kinds of task that run without you. A [multi-step task](/autonomous/multi-step-tasks) is one big job Piper drives to the end. The tasks Piper starts on its own come from your mail and calendar, and their results wait on the Home page. See [Work Piper starts before you ask](/working/before-you-ask).
 
 This page covers how to:
 
@@ -71,15 +71,15 @@ Piper keeps the conversation you set the task up in out of every run, because th
 
 ## Where your tasks live
 
-Your tasks are all in one list. Select **View all** under **Tasks** in the sidebar. The list holds the tasks you start, the tasks Piper starts on its own, and your long-running and scheduled tasks, newest activity first. The columns are **Task**, **From**, **Status**, and **Last active**.
+Your tasks are all in one list. Select **View all** under **Tasks** in the sidebar. The list holds the tasks you start, the tasks Piper starts on its own, and your multi-step and scheduled tasks, newest activity first. The columns are **Task**, **From**, **Status**, and **Last active**.
 
-**From** reads `You` for a task you asked for, including every scheduled and long-running task, and `Piper` for a task Piper started on its own.
+**From** reads `You` for a task you asked for, including every scheduled and multi-step task, and `Piper` for a task Piper started on its own.
 
-**Status** on a scheduled task reads `Active`, `Running`, `Paused`, `Failed`, or `Done`. A long-running task reads `Working` while the job is live, and `Paused`, `Failed`, or `Done` otherwise. A task Piper started on its own shows its own state, such as `Ready`, `Needs you`, or `Sent` with the time Piper sent the reply. Piper adds a `Needs you` badge beside the status when a run stopped to ask you for something. On a scheduled task, Piper removes the badge once a later run delivers. On a long-running task, Piper shows the badge only for a step in the newest round.
+**Status** on a scheduled task reads `Active`, `Running`, `Paused`, `Failed`, or `Done`. A multi-step task reads `Working` while the job is live, and `Paused`, `Failed`, or `Done` otherwise. A task Piper started on its own shows its own state, such as `Ready`, `Needs you`, or `Sent` with the time Piper sent the reply. Piper adds a `Needs you` badge beside the status when a run stopped to ask you for something. On a scheduled task, Piper removes the badge once a later run delivers. On a multi-step task, Piper shows the badge only for a step in the newest round.
 
 **Last active** shows the time of the task's latest activity. The task's own page shows when the next run is due.
 
-Search the list with **Search tasks…**. Piper matches your search against each task's name and its summary or description. The search covers every task, including tasks further down than you have scrolled. Select **Scheduled** or **Long-running** from the menu beside the search box to see one kind, or **All tasks** to see everything. Select **Pinned** to see only pinned tasks, and **All** to see every task again.
+Search the list with **Search tasks…**. Piper matches your search against each task's name and its summary or description. The search covers every task, including tasks further down than you have scrolled. Select **Scheduled** or **Multi-step** from the menu beside the search box to see one kind, or **All tasks** to see everything. Select **Pinned** to see only pinned tasks, and **All** to see every task again.
 
 ## The schedule, in plain English
 
@@ -147,7 +147,7 @@ Select **Task actions** in the header, then **Rename** or **Delete**. **Delete**
   <Card title="Work Piper starts before you ask" icon="briefcase" href="/working/before-you-ask">
     The tasks Piper takes on from your mail and calendar.
   </Card>
-  <Card title="Long-running tasks" icon="list-check" href="/autonomous/long-running-tasks">
+  <Card title="Multi-step tasks" icon="list-check" href="/autonomous/multi-step-tasks">
     Big jobs Piper drives to the end across many steps.
   </Card>
   <Card title="The message box" icon="pencil" href="/working/describing-what-you-need">

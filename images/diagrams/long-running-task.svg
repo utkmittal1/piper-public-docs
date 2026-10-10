@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" role="img" aria-labelledby="ttl desc">
-  <title id="ttl">A long-running task works in rounds</title>
+  <title id="ttl">A multi-step task works in rounds</title>
   <desc id="desc">One big job you hand over splits into steps that run at the same time. The steps rejoin at the end of a round, Piper plans the next round from what they found, and the rounds repeat until the job is done. A round opens up to five steps at once.</desc>
   <style>
     svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }

@@ -13,7 +13,7 @@ This page covers how both kinds of task run, what Piper reads while it works, an
 - [See what Piper reads while it works](#what-piper-reads-while-it-works): memory, instructions, documents, and apps
 - [See what the AI provider receives](#what-the-ai-provider-receives)
 - [Choose how much Piper does without asking](#choose-how-much-piper-does-without-asking)
-- [Hand Piper work that runs on its own](#hand-piper-work-that-runs-on-its-own): long-running and scheduled tasks
+- [Hand Piper work that runs on its own](#hand-piper-work-that-runs-on-its-own): multi-step and scheduled tasks
 - [Limitations](#limitations)
 
 ## Compare the two ways work starts
@@ -91,7 +91,7 @@ In a task you start, Piper always asks before it reads a file that holds credent
 
 ## Hand Piper work that runs on its own
 
-**Long-running tasks.** For a job too big for one conversation, select **Run until done** in the task's top bar. Piper then plans the job, splits it into steps, runs each step in its own conversation, and continues until the job is done. See [Long-running tasks](/autonomous/long-running-tasks).
+**Multi-step tasks.** For a job too big for one conversation, select **Switch to multi-step** in the task's top bar, or ask Piper to keep at the job until it is done and select **Switch to multi-step** on the card Piper offers. Piper then plans the job, splits it into steps, runs each step in its own conversation, and continues until the job is done. See [Multi-step tasks](/autonomous/multi-step-tasks).
 
 **Scheduled tasks.** For work you want repeated, such as a weekly report, Piper runs the same task on a schedule you set. See [Scheduled tasks](/autonomous/autonomous-tasks).
 

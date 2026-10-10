@@ -3,9 +3,9 @@ title: "Tasks and the workspace"
 description: "A task is one piece of work and the conversation around it. Find where a task's files land and what belongs to that task alone."
 ---
 
-A task is a piece of work you asked Piper for. Piper runs three kinds of task and lists them together: a conversation, a long-running task, and a scheduled task. A conversation is the ordinary kind, where you say what you need, Piper does it, and you go back and forth in the same thread. Piper works on the other two kinds without you there.
+A task is a piece of work you asked Piper for. Piper runs three kinds of task and lists them together: a conversation, a multi-step task, and a scheduled task. A conversation is the ordinary kind, where you say what you need, Piper does it, and you go back and forth in the same thread. Piper works on the other two kinds without you there.
 
-Piper gives every conversation a folder of its own to write files into, called a workspace. Piper gives each long-running task and each scheduled task a folder that holds one workspace per step or per run.
+Piper gives every conversation a folder of its own to write files into, called a workspace. Piper gives each multi-step task and each scheduled task a folder that holds one workspace per step or per run.
 
 This page covers how to:
 
@@ -29,9 +29,9 @@ Piper names the task for you. Piper uses your first message as the title straigh
 
 Most tasks are conversations. You ask, Piper works, and you read the result and ask for the next thing. The rest of this page describes conversations.
 
-Piper works on the other two kinds without you there. A **long-running task** is for a job too big for one sitting, such as working through a folder of contracts. Piper writes a plan, splits the work into steps, and keeps working until the job is done. A **scheduled task** is for a result you want again and again, such as a brief every weekday morning. Piper runs the task at the time you agreed and leaves the result for you.
+Piper works on the other two kinds without you there. A **multi-step task** is for a job too big for one sitting, such as working through a folder of contracts. Piper writes a plan, splits the work into steps, and keeps working until the job is done. A **scheduled task** is for a result you want again and again, such as a brief every weekday morning. Piper runs the task at the time you agreed and leaves the result for you.
 
-[Long-running tasks](/autonomous/long-running-tasks) and [Scheduled tasks](/autonomous/autonomous-tasks) cover those two kinds in full.
+[Multi-step tasks](/autonomous/multi-step-tasks) and [Scheduled tasks](/autonomous/autonomous-tasks) cover those two kinds in full.
 
 ## Review tasks
 
@@ -50,7 +50,7 @@ A task can write files only inside its own folder, and macOS enforces that limit
 
 A task can read files across your Mac. In every approval mode, Piper asks you each time a task tries to read a file that looks like a credential. [The sandbox](/control/sandbox) covers the boundary in full.
 
-Piper puts the workspace of a conversation outside a project in `PiperData/sessions`, inside your home folder. For a conversation in a project, Piper puts the workspace in that project's `sessions/` folder. For a scheduled task, or a long-running task outside a project, Piper creates a folder under `PiperData/projects`. For a long-running task in a project, Piper creates that folder in the project's `tasks/` folder. Piper puts the workspaces of the task's steps and runs in that folder's own `sessions/`.
+Piper puts the workspace of a conversation outside a project in `PiperData/sessions`, inside your home folder. For a conversation in a project, Piper puts the workspace in that project's `sessions/` folder. For a scheduled task, or a multi-step task outside a project, Piper creates a folder under `PiperData/projects`. For a multi-step task in a project, Piper creates that folder in the project's `tasks/` folder. Piper puts the workspaces of the task's steps and runs in that folder's own `sessions/`.
 
 <Frame>
   <img src="/images/diagrams/session-workspace.svg" alt="A task with its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and working files sit in a separate intermediate-files area." />
@@ -73,15 +73,15 @@ Select the folder icon in the message box to see the folders you added. Select a
 
 You can't add or remove a folder while Piper is replying. To give every conversation in a project the same folder, add it to the project instead. See [The project folder](/concepts/projects#the-project-folder).
 
-When you select **Run until done** in a conversation that has folders, Piper asks you to confirm before the long-running task takes them. The task works on its own and doesn't ask before it runs a command, so it can create, edit, and delete files in those folders without asking you. To take a folder away from the task, select the folder name on the task's page, then **Remove**.
+When you switch a conversation that has folders to a multi-step task, Piper first asks you to confirm that the task can take them. Piper switches the conversation only after you select **Switch to multi-step** in that question. The task works on its own and doesn't ask before it runs a command, so it can create, edit, and delete files in those folders without asking you. To take a folder away from the task, select the folder name on the task's page, then **Remove**.
 
 ### Limitations
 
 - **A conversation holds up to 10 added folders.** Remove a folder to add another.
 - **Piper adds only folders inside your home folder or on an external drive.** In your home folder, it refuses the home folder itself, your `Library` folder, `PiperData`, and hidden folders, whose names start with a dot. It refuses anything inside those folders too.
 - **Some files stay blocked inside an added folder.** The files no task can write anywhere stay blocked in your added folders too. [The sandbox](/control/sandbox#files-no-task-can-write) lists them.
-- **Scheduled tasks never get added folders.** A long-running task that Piper starts for you, when you ask for one in a conversation, doesn't get them either.
-- **You can't add a folder to a long-running task after it starts.** The task keeps only the folders its conversation had when you selected **Run until done**.
+- **Scheduled tasks never get added folders.**
+- **You can't add a folder to a multi-step task after it starts.** The task keeps only the folders its conversation had when it switched to multi-step.
 - **Piper never moves, renames, or deletes an added folder.** Deleting the conversation leaves the folder where it is.
 
 ## Open the files a task made
@@ -105,14 +105,14 @@ Three settings apply to one task alone.
 **Planning mode.** Turn on the **Planning mode** switch in the task's top bar to see Piper's plan before Piper starts. Piper writes its task list and waits. Select **Go ahead** to start, or tell Piper what to change, and Piper revises the list and waits again. With the switch off, Piper carries out its plan straight away. A new task starts with **Planning mode** off.
 
 <Note>
-  A long-running task's steps and a scheduled task's runs start on **Autopilot**, because nobody is there to answer. When a step or a run tries to read a file that looks like a credential, Piper refuses for the same reason.
+  A multi-step task's steps and a scheduled task's runs start on **Autopilot**, because nobody is there to answer. When a step or a run tries to read a file that looks like a credential, Piper refuses for the same reason.
 </Note>
 
 ## Rename, pin, move, or delete a task
 
 The sidebar lists your recent tasks under **Tasks**, as many as fit its height. Select **View all** beneath them for the full list.
 
-The full list has three controls. Type into **Search tasks…** to narrow the list. Use the menu reading **All tasks**, **Scheduled**, or **Long-running** to show one kind of task. Select **Pinned**, beside that menu, to see only the tasks you pinned, and **All** to see every task again.
+The full list has three controls. Type into **Search tasks…** to narrow the list. Use the menu reading **All tasks**, **Scheduled**, or **Multi-step** to show one kind of task. Select **Pinned**, beside that menu, to see only the tasks you pinned, and **All** to see every task again.
 
 <Steps>
   <Step title="Rename a task">
@@ -134,11 +134,11 @@ The full list has three controls. Type into **Search tasks…** to narrow the li
 To delete several tasks at once, tick their rows in the full list and select **Delete** in the bar above them. The checkbox in that bar ticks every row on screen. When more tasks match than the list has loaded, select **Select all** with the number of matching tasks beside it to include every one of them.
 
 <Warning>
-  When you delete a long-running or scheduled task, Piper removes the task, its steps and runs, and its folder, and you can't keep the folder. When you tick a mix of conversations and long-running or scheduled tasks, the folder option in the delete dialog applies only to the conversations. Piper deletes the folders of the long-running and scheduled tasks whatever you tick.
+  When you delete a multi-step or scheduled task, Piper removes the task, its steps and runs, and its folder, and you can't keep the folder. When you tick a mix of conversations and multi-step or scheduled tasks, the folder option in the delete dialog applies only to the conversations. Piper deletes the folders of the multi-step and scheduled tasks whatever you tick.
 </Warning>
 
 <Note>
-  Piper refuses to delete a conversation that is still working, or to move it into a project. Stop the conversation first, or wait for it to finish. You can't rename, pin, move, or delete a long-running or scheduled task's own conversation.
+  Piper refuses to delete a conversation that is still working, or to move it into a project. Stop the conversation first, or wait for it to finish. You can't rename, pin, move, or delete a multi-step or scheduled task's own conversation.
 </Note>
 
 ## Tasks inside a project
