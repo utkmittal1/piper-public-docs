@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" role="img" aria-labelledby="ttl desc">
   <title id="ttl">Your context sits outside the AI provider</title>
-  <desc id="desc">On the left, your context: memory, Knowledge Sources, files and projects, instructions and settings. It stays in Piper's store on your Mac. On the right, the AI provider, which you can change whenever you like and pick from Claude Code, Codex, and bring your own model. None of your context lives inside the provider.</desc>
+  <desc id="desc">On the left, your context: memory, Knowledge Sources, files and projects, instructions and settings. It stays in Copus's store on your Mac. On the right, the AI provider, which you can change whenever you like and pick from Claude Code, Codex, and bring your own model. None of your context lives inside the provider.</desc>
   <style>
     svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
     @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
@@ -16,7 +16,7 @@
 
   <rect class="shell" x="30" y="30" width="420" height="290" rx="12"/>
   <text class="t" x="54" y="62">Your context</text>
-  <text class="s" x="54" y="84">stays in Piper's store on your Mac</text>
+  <text class="s" x="54" y="84">stays in Copus's store on your Mac</text>
 
   <rect class="box" x="54" y="110" width="178" height="68" rx="10"/>
   <text class="c" x="143" y="149" text-anchor="middle">Memory</text>

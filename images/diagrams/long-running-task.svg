@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" role="img" aria-labelledby="ttl desc">
   <title id="ttl">A multi-step task works in rounds</title>
-  <desc id="desc">One big job you hand over splits into steps that run at the same time. The steps rejoin at the end of a round, Piper plans the next round from what they found, and the rounds repeat until the job is done. A round opens up to five steps at once.</desc>
+  <desc id="desc">One big job you hand over splits into steps that run at the same time. The steps rejoin at the end of a round, Copus plans the next round from what they found, and the rounds repeat until the job is done. A round opens up to five steps at once.</desc>
   <style>
     svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
     @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
@@ -64,5 +64,5 @@
   <text class="t" x="805" y="166" text-anchor="middle">Done</text>
   <text class="s" x="805" y="186" text-anchor="middle">ready to review</text>
 
-  <text class="s" x="20" y="306">A round opens up to five steps at once. They run, they rejoin, and Piper plans the next round from what they found.</text>
+  <text class="s" x="20" y="306">A round opens up to five steps at once. They run, they rejoin, and Copus plans the next round from what they found.</text>
 </svg>

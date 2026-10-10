@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 336" role="img" aria-labelledby="ttl desc">
   <title id="ttl">A session and its workspace</title>
-  <desc id="desc">One session opens its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and scratch material sits in a separate intermediate-files area. Piper writes only inside the workspace, and can read files elsewhere on your Mac.</desc>
+  <desc id="desc">One session opens its own workspace folder. Inside the workspace, finished deliverables sit in a final-output area and scratch material sits in a separate intermediate-files area. Copus writes only inside the workspace, and can read files elsewhere on your Mac.</desc>
   <style>
     svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
     @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
@@ -39,5 +39,5 @@
   <text class="s" x="588" y="182">scratch and working files</text>
   <text class="s" x="588" y="204">notes, downloads, drafts</text>
 
-  <text class="s" x="30" y="318">Piper writes only inside the workspace. It can still read files elsewhere on your Mac.</text>
+  <text class="s" x="30" y="318">Copus writes only inside the workspace. It can still read files elsewhere on your Mac.</text>
 </svg>

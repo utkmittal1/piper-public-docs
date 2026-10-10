@@ -1,10 +1,10 @@
-# Piper documentation
+# Copus documentation
 
-This is the end-user documentation for Piper, built as a Mintlify MDX site. It
+This is the end-user documentation for Copus, built as a Mintlify MDX site. It
 is written for a non-technical knowledge worker: a product manager, a
 salesperson, a marketer, an analyst, a founder. They know their job and they do
 not know code, so no page sends them to a terminal, a config file, or a
-low-level setting. Every page points at Piper's own interface instead. Piper also
+low-level setting. Every page points at Copus's own interface instead. Copus also
 reads these pages to explain itself, so each one is written tightly enough that
 quoting a line cannot produce a false claim.
 
@@ -14,7 +14,7 @@ The Mintlify CLI ships as the `mint` package.
 
 ```bash
 npm i -g mint          # install the CLI
-cd piper-docs          # the folder holding docs.json
+cd copus-docs          # the folder holding docs.json
 mint dev               # serves the site at http://localhost:3000
 ```
 
@@ -44,12 +44,12 @@ appears once and resolves to a real `.mdx`.
 
 | Section | Folder | Pages |
 |---|---|---|
-| Getting started | `getting-started/` | Overview, Set up Piper, Your first task |
-| Core concepts | `concepts/` | How Piper works, Tasks and the workspace, Projects, AI providers |
-| What Piper knows about you | `context/` | What Piper learns about you, Memory, Instructions and profile, Response style, Knowledge |
+| Getting started | `getting-started/` | Overview, Set up Copus, Your first task |
+| Core concepts | `concepts/` | How Copus works, Tasks and the workspace, Projects, AI providers |
+| What Copus knows about you | `context/` | What Copus learns about you, Memory, Instructions and profile, Response style, Knowledge |
 | Connecting your tools | `connections/` | Connecting your tools, Integrations, Secrets, Web and sign-ins |
-| Working with Piper | `working/` | Work Piper starts before you ask, The message box, What Piper hands back, Skills, Built-in tools, Notifications, iPhone app, Appearance |
-| Piper on its own | `autonomous/` | Scheduled tasks, Multi-step tasks |
+| Working with Copus | `working/` | Work Copus starts before you ask, The message box, What Copus hands back, Skills, Built-in tools, Notifications, iPhone app, Appearance |
+| Copus on its own | `autonomous/` | Scheduled tasks, Multi-step tasks |
 | Staying in control | `control/` | Your data stays local, Approvals and permissions, The sandbox |
 | Reference | `reference/` | Integrations catalog, Troubleshooting and FAQ |
 
@@ -61,7 +61,7 @@ deliberate. A screenshot goes stale the moment the UI moves.
 
 ## How these pages were built, and the bar to hold
 
-**The Piper code is the only source of truth.** Not the brand doc, not the style
+**The Copus code is the only source of truth.** Not the brand doc, not the style
 guide, not anyone's memory of the product. Every feature, on-screen label, path,
 number, and claim on these pages traces to a line of code. A claim that could not
 be grounded was cut or recorded as an open question, never guessed at. Several
@@ -78,7 +78,7 @@ cut anything you cannot point at.
 
 ## Two conventions worth knowing before you edit
 
-**"AI provider" is the name for the service that does Piper's thinking.** The
+**"AI provider" is the name for the service that does Copus's thinking.** The
 pages never call it an engine, a runtime, an LLM provider, or bare AI. The app's
 own Settings item reads **AI Providers**, and the pages quote it that way.
 

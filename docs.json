@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Piper",
-  "description": "Piper is a personal AI assistant for work that runs as an app on your Mac. Describe what you need, and Piper plans the steps, does the work, and hands back the finished file.",
+  "name": "Copus",
+  "description": "Copus is a personal AI assistant for work that runs as an app on your Mac. Describe what you need, and Copus plans the steps, does the work, and hands back the finished file.",
   "colors": {
     "primary": "#a03a22",
     "light": "#b4552e",
@@ -24,16 +24,16 @@
       {
         "group": "Core concepts",
         "pages": [
-          "concepts/how-piper-works",
+          "concepts/how-copus-works",
           "concepts/sessions-and-workspace",
           "concepts/projects",
           "concepts/ai-providers"
         ]
       },
       {
-        "group": "What Piper knows about you",
+        "group": "What Copus knows about you",
         "pages": [
-          "context/what-piper-learns",
+          "context/what-copus-learns",
           "context/memory",
           "context/instructions-and-profile",
           "context/response-style",
@@ -50,7 +50,7 @@
         ]
       },
       {
-        "group": "Working with Piper",
+        "group": "Working with Copus",
         "pages": [
           "working/before-you-ask",
           "working/describing-what-you-need",
@@ -63,7 +63,7 @@
         ]
       },
       {
-        "group": "Piper on its own",
+        "group": "Copus on its own",
         "pages": [
           "autonomous/autonomous-tasks",
           "autonomous/multi-step-tasks"
@@ -90,7 +90,9 @@
     { "source": "/autonomous/home", "destination": "/working/before-you-ask" },
     { "source": "/autonomous/chief-of-stuff", "destination": "/working/before-you-ask" },
     { "source": "/reference/keyboard-shortcuts", "destination": "/working/describing-what-you-need" },
-    { "source": "/autonomous/long-running-tasks", "destination": "/autonomous/multi-step-tasks" }
+    { "source": "/autonomous/long-running-tasks", "destination": "/autonomous/multi-step-tasks" },
+    { "source": "/concepts/how-piper-works", "destination": "/concepts/how-copus-works" },
+    { "source": "/context/what-piper-learns", "destination": "/context/what-copus-learns" }
   ],
   "footer": {
     "socials": {}

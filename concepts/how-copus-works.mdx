@@ -1,0 +1,111 @@
+---
+title: "How Copus works"
+description: "Copus starts work from what it finds in the apps you connect, and runs the tasks you give it on the Home page. Learn how each kind of task runs, what Copus reads, and what you control."
+---
+
+Copus starts work from what it finds in the apps you connect. Copus also runs the tasks you type into the message box on the Home page. Both kinds of task use what Copus knows about you and the apps you connect.
+
+This page covers how both kinds of task run, what Copus reads while it works, and what you control.
+
+- [Compare the two ways work starts](#compare-the-two-ways-work-starts)
+- [See how Copus starts work on its own](#how-copus-starts-work-on-its-own)
+- [See how a task you start runs](#how-a-task-you-start-runs), from your request to the finished file
+- [See what Copus reads while it works](#what-copus-reads-while-it-works): memory, instructions, documents, and apps
+- [See what the AI provider receives](#what-the-ai-provider-receives)
+- [Choose how much Copus does without asking](#choose-how-much-copus-does-without-asking)
+- [Hand Copus work that runs on its own](#hand-copus-work-that-runs-on-its-own): multi-step and scheduled tasks
+- [Limitations](#limitations)
+
+## Compare the two ways work starts
+
+| | Work Copus starts | Work you start |
+|---|---|---|
+| Where it starts | A Gmail thread or a meeting on your Google Calendar | The message box on the Home page |
+| How Copus scopes it | Copus reads the thread and decides what the work is. | Copus answers a quick request straight away. For larger work, Copus asks you what it needs to know, then plans the steps. |
+| Where the result appears | On the Home page, as a task for you to review | In the conversation, with finished files under **Artifacts** |
+| What Copus sends | Copus sends a reply only when you select **Send**, and creates an event only when you select **Create event**. | A new task asks you first. By default, Copus asks before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. You can let a task do these without asking. |
+
+## How Copus starts work on its own
+
+Every 15 minutes, Copus reads what changed in Gmail, reads your upcoming meetings, and starts the work they ask of you. That work includes documents, analyses, research, meeting prep, replies, follow-ups, and decisions laid out as choices. Copus learns from what you do with each result. Each result waits on the Home page for you to review, refine, send, or dismiss.
+
+[Work Copus starts before you ask](/working/before-you-ask) covers what Copus takes on, what it hands back, and how to review or stop it.
+
+## How a task you start runs
+
+A task you start runs in four stages.
+
+**You describe.** Type what you want in the message box on the Home page, and name the outcome rather than the first step. "Pull the Q3 numbers into a one-page summary for Thursday" gets further than "open the spreadsheet." Copus opens a conversation for the task. See [The message box](/working/describing-what-you-need).
+
+**Copus plans.** Copus answers a quick request straight away. For larger work, Copus first asks the questions whose answers change the result, such as the goal, the audience, or the format. You answer them on one card. Copus then posts its steps as a card headed **Execution plan**.
+
+To review the plan before Copus acts on it, switch **Planning mode** on in the task's top bar. Copus writes the plan and waits. Select **Go ahead** to start. To change the plan, type the change, and Copus revises the plan and waits again.
+
+**Copus works.** Copus works through the steps in order. It reads files, searches the web and your documents, uses the tools and apps you have switched on, and writes the output. A strip above the message box names the step running now.
+
+**You review.** Copus replies with charts, sortable tables, diagrams, images, and files that open beside the conversation. Copus writes Word documents, PowerPoint decks, spreadsheets with live formulas, and PDFs, and lists finished files under **Artifacts**. To correct the work, reply in the same conversation. Copus keeps your files, the plan, and your answers from the earlier round.
+
+<Frame>
+  <img src="/images/diagrams/core-loop.svg" alt="Four stages in a loop. You describe what you need. Copus plans the steps. Copus works step by step. You review the result and steer the next round." />
+</Frame>
+
+## What Copus reads while it works
+
+Every task you start reads the following:
+
+- **Memory**: the facts Copus keeps about you between tasks, and the rules Copus follows on every message. Copus builds part of your memory from your mail and from what you do with its work. See [Memory](/context/memory) and [What Copus learns about you](/context/what-copus-learns).
+- **Instructions and profile**: your name, your about-me note, and the standing instructions you write for every task, for a project, or for one conversation. See [Instructions and profile](/context/instructions-and-profile).
+- **Response style**: the length, tone, formatting, and emoji you set for Copus's replies. See [Response style](/context/response-style).
+- **Your documents**: the folders you add as knowledge sources. Copus searches them before it asks you questions. See [Knowledge sources](/context/knowledge-sources).
+- **Your apps and the web**: the apps you connect, and the pages Copus reads in its own browser. See [Integrations](/connections/integrations) and [Web and sign-ins](/connections/web-and-sign-ins).
+- **Skills**: written instructions for one kind of work, such as building a slide deck. Copus loads the skill that matches the task. See [Skills](/working/skills).
+
+## What the AI provider receives
+
+Copus runs each task on the AI provider you sign in to: Claude Code, Codex, or a model you reach with an API key from Anthropic, OpenAI, or DeepSeek. See [AI providers](/concepts/ai-providers).
+
+Copus stores your files, projects, knowledge sources, memory, People list, and writing guide on your Mac. Copus sends the AI provider only what a task uses:
+
+- The conversation, and each file or document the task reads
+- Your memory facts and standing instructions, when a conversation starts and again when they change
+- Your memory rules, with every message
+- For work Copus starts on its own, the mail threads Copus reads, with Copus's notes on the people in them
+
+See [Your data stays local](/control/your-data-stays-local).
+
+<Frame>
+  <img src="/images/diagrams/ai-provider-context.svg" alt="On the left, your context: memory, Knowledge Sources, files and projects, instructions and settings. It is stored in Copus's own store on your Mac. On the right, the AI provider, which you can change whenever you like and pick from Claude Code, Codex, and a model API you bring a key for. Copus sends the provider what a turn needs, and stores nothing there." />
+</Frame>
+
+## Choose how much Copus does without asking
+
+A task you start has an approval mode: **Manual** or **Autopilot**. You switch the mode in the controls under the message box. In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Copus does these without asking for the rest of the conversation. A new task starts in **Manual** unless you change **New tasks start in** under **Settings** > **Built-in tools**.
+
+<Warning>
+  On **Autopilot**, Copus can post a message or change a record in a connected app without showing it to you first. Use **Manual** for any task that might post a message or change a record. Email, calendar changes, and Drive sharing and comments are the exception. In both modes, Copus shows you a card for those first, and nothing goes out until you select the button on it.
+</Warning>
+
+Work Copus starts on its own runs without asking you. In that work, Gmail and Google Calendar are read-only, so you send every reply and create every event yourself. In your other connected apps, Copus uses every tool switched on for that app in **Settings** > **Integrations**. A tool set to **Ask** runs without asking you first.
+
+In a task you start, Copus always asks before it reads a file that holds credentials or works in your own Chrome, in every approval mode. In work that runs without you, Copus refuses both. [Approvals and permissions](/control/approvals-and-permissions) covers each approval button.
+
+## Hand Copus work that runs on its own
+
+**Multi-step tasks.** For a job too big for one conversation, select **Switch to multi-step** in the task's top bar, or ask Copus to keep at the job until it is done and select **Switch to multi-step** on the card Copus offers. Copus then plans the job, splits it into steps, runs each step in its own conversation, and continues until the job is done. See [Multi-step tasks](/autonomous/multi-step-tasks).
+
+**Scheduled tasks.** For work you want repeated, such as a weekly report, Copus runs the same task on a schedule you set. See [Scheduled tasks](/autonomous/autonomous-tasks).
+
+Copus runs both without asking you, as it does with work it starts from your mail.
+
+## Limitations
+
+- **Copus works only while it's open.** Copus runs tasks only while it's open and your Mac is awake. A scheduled run or a mail check that comes due while Copus is closed runs once when you open Copus again.
+- **Copus makes mistakes.** Read a result before you send it anywhere.
+- **Copus starts work from Gmail and Google Calendar only.** Your other connected apps give Copus context for its tasks.
+
+## Related
+
+- [Work Copus starts before you ask](/working/before-you-ask): what Copus takes on from your mail and calendar
+- [What Copus learns about you](/context/what-copus-learns): your People list, writing guide, and facts
+- [Tasks and the workspace](/concepts/sessions-and-workspace): the unit of work and the folder each task gets
+- [Approvals and permissions](/control/approvals-and-permissions): what Copus asks before it acts

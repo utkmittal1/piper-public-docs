@@ -1,135 +1,135 @@
 ---
 title: "Approvals and permissions"
-description: "Piper runs some actions on its own and holds others until you answer. Choose how much a task does without asking, and learn what Piper always checks with you first."
+description: "Copus runs some actions on its own and holds others until you answer. Choose how much a task does without asking, and learn what Copus always checks with you first."
 ---
 
-An approval is a request Piper puts in front of you before it acts. You decide which actions need an approval with two settings. You run each conversation in **Manual** or **Autopilot**, which you pick from the controls under the message box. Separately, Piper holds a list of tools, the individual things it can do, such as reading a file, running a command, or sending through Gmail. In **Settings**, you choose whether Piper asks before it uses each tool.
+An approval is a request Copus puts in front of you before it acts. You decide which actions need an approval with two settings. You run each conversation in **Manual** or **Autopilot**, which you pick from the controls under the message box. Separately, Copus holds a list of tools, the individual things it can do, such as reading a file, running a command, or sending through Gmail. In **Settings**, you choose whether Copus asks before it uses each tool.
 
 This page covers how to:
 
-- [Choose how much Piper does without asking](#choose-how-much-piper-does-without-asking), in one conversation or in every new task
-- [See what Piper does without asking](#what-piper-does-without-asking), in both modes
+- [Choose how much Copus does without asking](#choose-how-much-copus-does-without-asking), in one conversation or in every new task
+- [See what Copus does without asking](#what-copus-does-without-asking), in both modes
 - [Understand why file writes run without asking](#why-file-writes-run-without-asking), even in Manual
-- [Learn what Piper asks about](#what-piper-asks-about)
-- [Learn what Piper asks every time](#what-piper-asks-every-time), whatever you set
+- [Learn what Copus asks about](#what-copus-asks-about)
+- [Learn what Copus asks every time](#what-copus-asks-every-time), whatever you set
 - [Answer a request](#answer-a-request), and take an approval back
 - [Set each tool on its own](#set-each-tool-on-its-own)
-- [Learn the limits that hold in both modes](#limits-that-hold-in-both-modes), and the rule for tasks Piper starts on its own
+- [Learn the limits that hold in both modes](#limits-that-hold-in-both-modes), and the rule for tasks Copus starts on its own
 
-## Choose how much Piper does without asking
+## Choose how much Copus does without asking
 
-In **Manual**, Piper asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Piper does these without asking. Sending email, changing your calendar, and sharing or commenting on Drive files are the exception. In both modes, Piper shows you a card for those first, and nothing goes out until you select the button on it.
+In **Manual**, Copus asks you by default before it sends, posts, or changes anything in a connected app, and before it runs a command that changes something on your Mac. In **Autopilot**, Copus does these without asking. Sending email, changing your calendar, and sharing or commenting on Drive files are the exception. In both modes, Copus shows you a card for those first, and nothing goes out until you select the button on it.
 
-A new task starts in **Manual**. Switch it to **Autopilot** and only that conversation changes. The next task starts in **Manual** again. To start every new task on **Autopilot** instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. Piper asks you to confirm in a dialog headed **Start every new task on Autopilot?**.
+A new task starts in **Manual**. Switch it to **Autopilot** and only that conversation changes. The next task starts in **Manual** again. To start every new task on **Autopilot** instead, open **Settings**, select **Built-in tools**, and change **New tasks start in**. Copus asks you to confirm in a dialog headed **Start every new task on Autopilot?**.
 
-Piper sets the mode itself for two kinds of conversation. A task in a project you pointed at a folder of your own starts in **Manual** whatever you set, because Piper writes that work into your own files. The [**Ask Piper**](/working/describing-what-you-need#ask-piper-a-quick-question) drawer runs on **Autopilot**, because Piper answers there on the spot.
+Copus sets the mode itself for two kinds of conversation. A task in a project you pointed at a folder of your own starts in **Manual** whatever you set, because Copus writes that work into your own files. The [**Ask Copus**](/working/describing-what-you-need#ask-copus-a-quick-question) drawer runs on **Autopilot**, because Copus answers there on the spot.
 
 <Steps>
   <Step title="Switch to Autopilot">
     Select **Autopilot** in the controls under the message box, then confirm with **Turn on Autopilot** in the dialog headed **Turn on Autopilot for this conversation?**. Select **Cancel** to back out.
   </Step>
   <Step title="Switch back to Manual">
-    Select **Manual**. Piper applies the change straight away, without asking you to confirm, including to a task already running.
+    Select **Manual**. Copus applies the change straight away, without asking you to confirm, including to a task already running.
   </Step>
 </Steps>
 
-Piper reads the mode fresh for each request, so Piper applies a switch from the next action of a running task.
+Copus reads the mode fresh for each request, so Copus applies a switch from the next action of a running task.
 
 <Warning>
-  On **Autopilot**, Piper can post to a Slack channel or change a record in any other app you have connected, without showing you the message first. Use **Manual** wherever a message going out would matter.
+  On **Autopilot**, Copus can post to a Slack channel or change a record in any other app you have connected, without showing you the message first. Use **Manual** wherever a message going out would matter.
 </Warning>
 
 <Tip>
-  Start a sensitive task on **Manual**, watch the first few actions, then switch to **Autopilot** once you can see what Piper is doing.
+  Start a sensitive task on **Manual**, watch the first few actions, then switch to **Autopilot** once you can see what Copus is doing.
 </Tip>
 
-## What Piper does without asking
+## What Copus does without asking
 
-Piper does these without asking, in both modes. It reads a file, searches your files, searches the web, fetches a page, searches your Knowledge Sources, writes a file inside the folders the task can write to, and opens a page in a browser of its own. These actions change nothing outside the task. If Piper asked before each action, you would learn to approve questions without reading them.
+Copus does these without asking, in both modes. It reads a file, searches your files, searches the web, fetches a page, searches your Knowledge Sources, writes a file inside the folders the task can write to, and opens a page in a browser of its own. These actions change nothing outside the task. If Copus asked before each action, you would learn to approve questions without reading them.
 
-Piper also runs a fixed list of read-only programs on its own: `ls`, `pwd`, `cat`, `head`, `tail`, `wc`, `grep`, `rg`, `which`, `whoami`, `date`, `file`, `stat`, `basename`, `dirname`, `echo`, `du`, `df`, and `pdftotext`, plus git's own reading verbs, `git status`, `git log`, `git diff`, and `git show`. All but one of those programs only print what is already there. `pdftotext` writes the text it pulls out of a PDF, inside the folder the task can already write to. Piper runs two more programs without asking in one use each: `sed` when it prints a range of lines, and `pandoc` when it only converts a file. Piper can also create a folder inside the folder it writes to, change directory inside that folder, and run one of its own bundled scripts through the Python it ships.
+Copus also runs a fixed list of read-only programs on its own: `ls`, `pwd`, `cat`, `head`, `tail`, `wc`, `grep`, `rg`, `which`, `whoami`, `date`, `file`, `stat`, `basename`, `dirname`, `echo`, `du`, `df`, and `pdftotext`, plus git's own reading verbs, `git status`, `git log`, `git diff`, and `git show`. All but one of those programs only print what is already there. `pdftotext` writes the text it pulls out of a PDF, inside the folder the task can already write to. Copus runs two more programs without asking in one use each: `sed` when it prints a range of lines, and `pandoc` when it only converts a file. Copus can also create a folder inside the folder it writes to, change directory inside that folder, and run one of its own bundled scripts through the Python it ships.
 
-Piper keeps that list narrow on purpose. It asks about any command that redirects output, refers to a shell variable, or builds part of itself from the output of another command, because each of those hides what the command will really touch. Piper allows one variable without asking, the variable naming the Python it ships, because that variable stands for a fixed path Piper wrote. Piper runs a chain of commands without asking only where every part of the chain qualifies on its own. If any single program is off the list, Piper asks you about the whole command.
+Copus keeps that list narrow on purpose. It asks about any command that redirects output, refers to a shell variable, or builds part of itself from the output of another command, because each of those hides what the command will really touch. Copus allows one variable without asking, the variable naming the Python it ships, because that variable stands for a fixed path Copus wrote. Copus runs a chain of commands without asking only where every part of the chain qualifies on its own. If any single program is off the list, Copus asks you about the whole command.
 
-Piper reads through an integration without asking as well. An integration is the connection Piper holds to an app such as Gmail, Slack, or Linear. Each integration has its own set of tools. Piper sets an integration's reading tools to run on their own, and its writing tools to ask, when you first connect the app.
+Copus reads through an integration without asking as well. An integration is the connection Copus holds to an app such as Gmail, Slack, or Linear. Each integration has its own set of tools. Copus sets an integration's reading tools to run on their own, and its writing tools to ask, when you first connect the app.
 
 ## Why file writes run without asking
 
-Piper writes a file inside the task's folders without asking, in both modes. The mode sets how Piper handles a request. Piper writes inside those folders without raising a request, so file writes run the same way in **Manual** and on **Autopilot**.
+Copus writes a file inside the task's folders without asking, in both modes. The mode sets how Copus handles a request. Copus writes inside those folders without raising a request, so file writes run the same way in **Manual** and on **Autopilot**.
 
-The folder sets which of your files a write can change. For a task outside a project, the folder is that task's workspace, so your other files stay as they are. For a task in a project you pointed at a folder of your own, the folder is that whole folder of yours. Piper creates files in it, and writes over files you already had, without asking. Piper does the same in a folder you added to the task or to its project.
+The folder sets which of your files a write can change. For a task outside a project, the folder is that task's workspace, so your other files stay as they are. For a task in a project you pointed at a folder of your own, the folder is that whole folder of yours. Copus creates files in it, and writes over files you already had, without asking. Copus does the same in a folder you added to the task or to its project.
 
-You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Built-in tools** page and Piper raises a request before each write. In **Manual**, the task waits until you answer. On **Autopilot**, Piper answers the request itself. Piper also raises a request before a command that deletes files, such as `rm`, because Piper asks before every command outside the read-only list. The command waits for you in **Manual** and runs on **Autopilot**. Otherwise, add a folder, or point a project at a folder, only when you're happy for Piper to change the files in it.
+You can limit these writes in two ways. Set **Edit & write files** to **Ask** on the **Built-in tools** page and Copus raises a request before each write. In **Manual**, the task waits until you answer. On **Autopilot**, Copus answers the request itself. Copus also raises a request before a command that deletes files, such as `rm`, because Copus asks before every command outside the read-only list. The command waits for you in **Manual** and runs on **Autopilot**. Otherwise, add a folder, or point a project at a folder, only when you're happy for Copus to change the files in it.
 
-## What Piper asks about
+## What Copus asks about
 
-Piper asks before every command outside the read-only list, and shows you the exact command in the request. It also asks before anything an integration writes, such as a Gmail message, a Slack post, or a new or changed Linear issue.
+Copus asks before every command outside the read-only list, and shows you the exact command in the request. It also asks before anything an integration writes, such as a Gmail message, a Slack post, or a new or changed Linear issue.
 
-Piper browses ordinary pages in a browser of its own without asking. It asks the moment that browser lands on a site you have signed in to through Piper, because that page is your account. That request is an ordinary approval request, so on **Autopilot** Piper answers it for you.
+Copus browses ordinary pages in a browser of its own without asking. It asks the moment that browser lands on a site you have signed in to through Copus, because that page is your account. That request is an ordinary approval request, so on **Autopilot** Copus answers it for you.
 
-## What Piper asks every time
+## What Copus asks every time
 
-Piper asks two questions every time they come up. On both questions, Piper waits for your answer, including on **Autopilot**, and leaves out **Always allow in this conversation**.
+Copus asks two questions every time they come up. On both questions, Copus waits for your answer, including on **Autopilot**, and leaves out **Always allow in this conversation**.
 
-**Reading a file that holds credentials.** Piper asks before a task reads any of these:
+**Reading a file that holds credentials.** Copus asks before a task reads any of these:
 
-- A `.env` file, or a file whose name starts with `.env.`, such as `.env.local`. Piper reads a template whose name ends in `.example`, `.sample`, or `.template`, such as `.env.example`, without asking.
+- A `.env` file, or a file whose name starts with `.env.`, such as `.env.local`. Copus reads a template whose name ends in `.example`, `.sample`, or `.template`, such as `.env.example`, without asking.
 - A `.pem`, `.key`, `.p12`, or `.pfx` file.
 - A key file named `id_rsa`, `id_dsa`, `id_ecdsa`, or `id_ed25519`.
 - A file named `credentials`, `credentials.json`, or `auth.json`, or a file named `secret` or `secrets` that ends in `.json`, `.yaml`, `.yml`, or `.toml`.
 - Anything in your keychain folder, `~/Library/Keychains`.
-- The sign-ins Piper keeps in `PiperData`: the `.claude` and `.codex` folders, and the folders where Piper's browser keeps the logins for sites you signed in to. Piper reads one kind of file in the `.claude` folder without asking: the files where Claude Code saves a command's output when the output is too long to show.
+- The sign-ins Copus keeps in `CopusData`: the `.claude` and `.codex` folders, and the folders where Copus's browser keeps the logins for sites you signed in to. Copus reads one kind of file in the `.claude` folder without asking: the files where Claude Code saves a command's output when the output is too long to show.
 
-Piper adds whatever a task reads to the conversation and sends the conversation to your AI provider, so Piper leaves this read to you. Piper checks both routes to a file: the file a tool names, and the file a command names in its arguments.
+Copus adds whatever a task reads to the conversation and sends the conversation to your AI provider, so Copus leaves this read to you. Copus checks both routes to a file: the file a tool names, and the file a command names in its arguments.
 
-Piper asks this question about a credential file in a folder of your own. Piper refuses a file inside one of the folders it keeps shut, such as `~/.ssh` or `~/.aws`, without asking you. For every folder and file Piper keeps shut, see [The sandbox](/control/sandbox).
+Copus asks this question about a credential file in a folder of your own. Copus refuses a file inside one of the folders it keeps shut, such as `~/.ssh` or `~/.aws`, without asking you. For every folder and file Copus keeps shut, see [The sandbox](/control/sandbox).
 
-**Working in the Chrome you are signed in to.** Piper works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Built-in tools**, which needs a one-time browser extension. Even then Piper asks before it acts on each site, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Piper does before it comes back to you. Send the next message and Piper asks again.
+**Working in the Chrome you are signed in to.** Copus works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Built-in tools**, which needs a one-time browser extension. Even then Copus asks before it acts on each site, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Copus does before it comes back to you. Send the next message and Copus asks again.
 
-Piper applies the opposite rule to work it runs with nobody watching. In that work, Piper refuses your own Chrome, and refuses a credential file the moment the question comes up, because nobody is there to answer. Piper applies this rule to a run of a scheduled task, a multi-step task, the conversation that **Edit with Piper** opens on a scheduled task's page, and every task Piper starts on its own.
+Copus applies the opposite rule to work it runs with nobody watching. In that work, Copus refuses your own Chrome, and refuses a credential file the moment the question comes up, because nobody is there to answer. Copus applies this rule to a run of a scheduled task, a multi-step task, the conversation that **Edit with Copus** opens on a scheduled task's page, and every task Copus starts on its own.
 
 ## Answer a request
 
-Piper shows the request in the conversation under **Approval needed**, with one line naming the action. Where the exact command or file path adds something the line doesn't already say, select **Details** to see it.
+Copus shows the request in the conversation under **Approval needed**, with one line naming the action. Where the exact command or file path adds something the line doesn't already say, select **Details** to see it.
 
 Under that, choose one of three buttons:
 
-- **Deny**: Piper blocks the action.
-- **Always allow in this conversation**: Piper takes the action, and answers the same question itself for the rest of that conversation. Piper shows this button only where it can remember the answer.
-- **Allow**: Piper takes that one action.
+- **Deny**: Copus blocks the action.
+- **Always allow in this conversation**: Copus takes the action, and answers the same question itself for the rest of that conversation. Copus shows this button only where it can remember the answer.
+- **Allow**: Copus takes that one action.
 
-When the action has a scope, Piper names it on the middle button. Approve a `pip install` and the button reads `Always allow “pip install” in this conversation`. The scope is the program rather than the exact command line, so the same approval covers installing a different package. For programs that bundle many verbs, the scope is the program plus the verb. These programs are `git`, `npm`, `pnpm`, `yarn`, `pip`, `pip3`, `uv`, `brew`, `docker`, `cargo`, and `go`. Approving `pip install` therefore does nothing for `git push`.
+When the action has a scope, Copus names it on the middle button. Approve a `pip install` and the button reads `Always allow “pip install” in this conversation`. The scope is the program rather than the exact command line, so the same approval covers installing a different package. For programs that bundle many verbs, the scope is the program plus the verb. These programs are `git`, `npm`, `pnpm`, `yarn`, `pip`, `pip3`, `uv`, `brew`, `docker`, `cargo`, and `go`. Approving `pip install` therefore does nothing for `git push`.
 
-Once you've used that button, Piper lists everything you allowed in the conversation's **Allowed tools** panel, each as a chip. Remove a chip and Piper asks about that action again. What you allow holds for that one conversation, including after you close Piper and come back to it. Piper never applies it to another conversation.
+Once you've used that button, Copus lists everything you allowed in the conversation's **Allowed tools** panel, each as a chip. Remove a chip and Copus asks about that action again. What you allow holds for that one conversation, including after you close Copus and come back to it. Copus never applies it to another conversation.
 
 <Warning>
-  If you leave a request unanswered, Piper denies it after a set time. The card then reads **Auto-denied**, and the task carries on as though you had selected **Deny**. If you leave a task mid-approval, you come back to find that action refused. Select the × on the card to clear it from the conversation.
+  If you leave a request unanswered, Copus denies it after a set time. The card then reads **Auto-denied**, and the task carries on as though you had selected **Deny**. If you leave a task mid-approval, you come back to find that action refused. Select the × on the card to clear it from the conversation.
 </Warning>
 
 ## Set each tool on its own
 
-The mode covers every question at once. You can also set permissions one tool at a time, and Piper keeps those settings across tasks.
+The mode covers every question at once. You can also set permissions one tool at a time, and Copus keeps those settings across tasks.
 
-In **Settings**, select **Built-in tools**. The page lists what Piper can do on this machine, alongside the mode new tasks start in. Each row shows whether Piper asks before it uses that capability. Clear a row's checkbox and Piper builds your tasks without that capability.
+In **Settings**, select **Built-in tools**. The page lists what Copus can do on this machine, alongside the mode new tasks start in. Each row shows whether Copus asks before it uses that capability. Clear a row's checkbox and Copus builds your tasks without that capability.
 
-You can't set **Run commands** to run on its own. A task can read files and reach the network, so Piper's question before a command is the check that stops a task from sending your data somewhere. **Edit & write files** is the one row whose **Auto** or **Ask** setting you can change.
+You can't set **Run commands** to run on its own. A task can read files and reach the network, so Copus's question before a command is the check that stops a task from sending your data somewhere. **Edit & write files** is the one row whose **Auto** or **Ask** setting you can change.
 
 See [Built-in tools](/working/tools) for each capability and its checkbox. See [Integrations](/connections/integrations) for a connected app's own tools, which you set on that app's panel in its **Read** and **Write** groups, each with a checkbox and an **Auto** or **Ask** setting.
 
 ## Limits that hold in both modes
 
-On **Autopilot**, Piper answers the ordinary questions for you. A task on **Autopilot** can do only what it could do in **Manual**, and these limits hold in both modes.
+On **Autopilot**, Copus answers the ordinary questions for you. A task on **Autopilot** can do only what it could do in **Manual**, and these limits hold in both modes.
 
 **The sandbox holds on Autopilot.** macOS refuses a write outside the folders the task can write to, with no question to you, so **Autopilot** can't allow the write. [The sandbox](/control/sandbox) covers that boundary.
 
-**A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Piper builds your next task without it. **Autopilot** can't bring the tool back, because the task doesn't have it.
+**A tool you switched off stays off.** Clear the checkbox beside **Run commands** and Copus builds your next task without it. **Autopilot** can't bring the tool back, because the task doesn't have it.
 
-**Piper asks about credential files and your own Chrome in both modes.** Piper leaves both to you, in **Manual** and on **Autopilot**.
+**Copus asks about credential files and your own Chrome in both modes.** Copus leaves both to you, in **Manual** and on **Autopilot**.
 
-**Email, calendar changes and Drive sharing always wait for you.** Piper shows you a card in the conversation for an email, an event you create, change or cancel, an answer to an invite, a Drive share or removal, and a comment on a Drive file. You review the card, and the action happens when you select its button. A scheduled task can email and invite only the people you approved for it. See [Scheduled tasks](/autonomous/autonomous-tasks).
+**Email, calendar changes and Drive sharing always wait for you.** Copus shows you a card in the conversation for an email, an event you create, change or cancel, an answer to an invite, a Drive share or removal, and a comment on a Drive file. You review the card, and the action happens when you select its button. A scheduled task can email and invite only the people you approved for it. See [Scheduled tasks](/autonomous/autonomous-tasks).
 
 <Note>
-  Tasks Piper starts on its own follow a rule of their own. Piper runs these tasks on **Autopilot**, and gives them only the reading tools for Gmail and Google Calendar. Piper sends a reply only after you select **Send** on the task, and creates an event only after you select **Create event**. In your other connected apps, Piper uses every tool switched on for that app, and uses a tool set to **Ask** without asking you first. See [Work Piper starts before you ask](/working/before-you-ask).
+  Tasks Copus starts on its own follow a rule of their own. Copus runs these tasks on **Autopilot**, and gives them only the reading tools for Gmail and Google Calendar. Copus sends a reply only after you select **Send** on the task, and creates an event only after you select **Create event**. In your other connected apps, Copus uses every tool switched on for that app, and uses a tool set to **Ask** without asking you first. See [Work Copus starts before you ask](/working/before-you-ask).
 </Note>
 
 ## Next steps
@@ -139,12 +139,12 @@ On **Autopilot**, Piper answers the ordinary questions for you. A task on **Auto
     The boundary no approval mode can widen.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
-    Where Piper keeps your data, and what leaves your Mac.
+    Where Copus keeps your data, and what leaves your Mac.
   </Card>
   <Card title="Integrations" icon="link" href="/connections/integrations">
-    Choosing which of a connected app's actions Piper takes on its own.
+    Choosing which of a connected app's actions Copus takes on its own.
   </Card>
-  <Card title="What Piper hands back" icon="eye" href="/working/files-and-deliverables">
-    Checking what Piper produced before you use it.
+  <Card title="What Copus hands back" icon="eye" href="/working/files-and-deliverables">
+    Checking what Copus produced before you use it.
   </Card>
 </CardGroup>

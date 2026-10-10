@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 236" role="img" aria-labelledby="ttl desc">
   <title id="ttl">The core loop</title>
-  <desc id="desc">Four stages in a cycle. You describe what you need. Piper plans the steps. Piper works step by step. You review and approve, and that steers the next round.</desc>
+  <desc id="desc">Four stages in a cycle. You describe what you need. Copus plans the steps. Copus works step by step. You review and approve, and that steers the next round.</desc>
   <style>
     svg { --ink:#1a1712; --fill:#f4f0e6; --accent:#a03a22; }
     @media (prefers-color-scheme: dark) { svg { --ink:#e9eae4; --fill:#242b27; --accent:#b4552e; } }
@@ -27,11 +27,11 @@
   <text class="s" x="115" y="98" text-anchor="middle">what you need</text>
 
   <rect class="box" x="247" y="40" width="170" height="92" rx="10"/>
-  <text class="t" x="332" y="76" text-anchor="middle">Piper plans</text>
+  <text class="t" x="332" y="76" text-anchor="middle">Copus plans</text>
   <text class="s" x="332" y="98" text-anchor="middle">the steps</text>
 
   <rect class="box" x="464" y="40" width="170" height="92" rx="10"/>
-  <text class="t" x="549" y="76" text-anchor="middle">Piper works</text>
+  <text class="t" x="549" y="76" text-anchor="middle">Copus works</text>
   <text class="s" x="549" y="98" text-anchor="middle">step by step</text>
 
   <rect class="acc-box" x="681" y="40" width="170" height="92" rx="10"/>
