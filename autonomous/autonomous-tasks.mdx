@@ -51,7 +51,7 @@ Every run works from the instructions alone, so Piper writes them as a complete 
 </Note>
 
 <Tip>
-  You can edit a live task's instructions on its page. In the **Instructions** box, select **Edit**, then **Edit manually**, and type the change. Piper saves the text shortly after you stop typing, and again when you leave the field. The next run reads the new text. A run that's already going keeps the text it started with. To have Piper make the change, select **Edit with Piper** and say what should be different. For the schedule or the task's files, select **Edit** on the **Schedule** box, which opens the same conversation. The task changes only when Piper changes its instructions, schedule, or files from that conversation.
+  You can edit a live task's instructions on its page. In the **Instructions** box, select **Edit** and type the change. Piper saves the text shortly after you stop typing, and again when you leave the field. The next run reads the new text. A run that's already going keeps the text it started with. To have Piper make the change, select **Update task** and say what should be different. Piper changes the schedule and the task's files from the same conversation. The task changes only when Piper changes its instructions, schedule, or files there.
 </Tip>
 
 ## What a run is given
@@ -63,7 +63,7 @@ Piper gives each run four things.
 - What recent runs did. Piper gives each run the summaries of the task's most recent runs, each with the path to that run's full work log.
 - The facts in your memory: your global facts, the facts Piper keeps for this task, and the facts Piper keeps for that run alone. See [Memory](/context/memory).
 
-Piper keeps the conversation you set the task up in out of every run, because that conversation can hold questions that have nothing to do with the task. Piper also keeps out the task's own conversation, the one **Edit with Piper** opens on the task page.
+Piper keeps the conversation you set the task up in out of every run, because that conversation can hold questions that have nothing to do with the task. Piper also keeps out the task's own conversation, the one you open with **Update task** on the task page.
 
 <Note>
   Piper runs every scheduled run on **Autopilot**, because nobody is watching it. Piper acts without stopping for an ordinary approval. Piper decides from the instructions and what recent runs did, and records what it decided in the run's summary. When you write the instructions, say what Piper should do when something is ambiguous. A run can email and invite only the people you approved for the task. A run can't give anyone access to your Drive files or comment on them. If the instructions call for anyone else, Piper sends nothing, and the run stops to name who it needed. Piper also withholds the Chrome you're signed in to from every run, and refuses a credential file outright, because nobody is there to approve either. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
@@ -121,9 +121,9 @@ The task's page shows what every run is given in its **Instructions** box. Selec
 
 ## Run, pause, and watch a task
 
-The task's page lists its runs under **Runs**, with the count beside it. Select a run to open its conversation, where you can read what Piper did and open the files the run produced.
+The task's page lists its runs under **Runs**, with the count beside it. Select a run to see what it reported, what it's waiting on, and the files it delivered. To read everything the run did, select **Open run** on its card.
 
-Select **Run now** to start a run without waiting for the next slot. Select **Pause** to stop the schedule, and **Resume** to start it again. To change what the task does, select **Edit** on the **Schedule** box, or **Edit** then **Edit with Piper** on the **Instructions** box. Both open the task's own conversation.
+Select **Run now** to start a run without waiting for the next slot. Select **Pause** to stop the schedule, and **Resume** to start it again. To change what the task does, select **Update task** to open the task's own conversation, and tell Piper what should be different.
 
 A run card shows `Needs you` when the run stopped to ask you for something, `Failed` when the run couldn't finish, and `Trying again` with the wait remaining when Piper is about to retry the run, or `Retry held` while the task is paused. A run that is queued, working, or done carries a mark instead of a word. Piper leaves a run marked `Needs you` for you to answer and doesn't retry it.
 

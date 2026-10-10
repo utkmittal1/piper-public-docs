@@ -49,7 +49,7 @@ Piper calls that planning conversation the **Orchestrator**. In the Orchestrator
 
 A step is a real piece of work one conversation can finish on its own, start to finish, whatever the other steps in its round do. Piper writes every step's result into the task's own folder, which outlives every conversation in the task.
 
-Piper keeps the plan in a file called `plan.md`, in the Orchestrator's workspace folder. Piper writes the plan before handing anything out and updates it every time work comes back, so the plan survives a conversation that gets cleared or restarted. Open the Orchestrator to read it: on the task's page, select **Edit** on the **Instructions** box, then **Edit with Piper**.
+Piper keeps the plan in a file called `plan.md`, in the Orchestrator's workspace folder. Piper writes the plan before handing anything out and updates it every time work comes back, so the plan survives a conversation that gets cleared or restarted. To read it, select **Update task** on the task's page to open the Orchestrator.
 
 <Frame>
   <img src="/images/diagrams/long-running-task.svg" alt="One large job at the top. Piper's planning conversation splits it into a round of steps that run side by side, each in its own conversation. The steps report back, and the results rejoin the plan, which hands out the next round." />
@@ -69,9 +69,9 @@ Piper can carry on a step that failed, reported `Needs you`, was cut off, or end
 
 ### Steps that end without reporting
 
-A step that ends without saying how it went settles as `unreported`. Its card shows an **Unreported** badge. The step's reply and its folder are still there, so Piper settles the step later, in the Orchestrator.
+A step that ends without saying how it went settles as `unreported`. Its card shows an **Unreported** badge and the line "This step ended without saying how it went." The step's reply and its folder are still there, so Piper settles the step later, in the Orchestrator.
 
-In the Orchestrator, Piper reads what the step produced and marks the step as delivered or failed, with one line on what the step produced. Until Piper marks the step, the card keeps the **Unreported** badge. Piper can also carry the step on instead.
+In the Orchestrator, Piper reads what the step produced and marks the step as delivered or failed, with one line on what the step produced. That line replaces the report on the step's card. Until Piper marks the step, the card keeps the **Unreported** badge. Piper can also carry the step on instead.
 
 ## What a step is given
 
@@ -93,7 +93,7 @@ Steps in the same round start together, so each step works without seeing what t
 
 ## Follow the work and pause it
 
-The task's page shows the whole job. To read Piper's reasoning, open the Orchestrator: select **Edit** on the **Instructions** box, then **Edit with Piper**.
+The task's page shows the whole job. To read Piper's reasoning, select **Update task** to open the Orchestrator.
 
 The **Steps** tab shows its count, like `Steps · 12`, and lists every step on its own card. A card shows one of these labels when the step needs your attention:
 
@@ -102,7 +102,7 @@ The **Steps** tab shows its count, like `Steps · 12`, and lists every step on i
 - `Trying again due now` when Piper is about to restart the step, or `Retry held` while the task is paused
 - `Unreported` when the step ended without saying how it went, until Piper settles it in the Orchestrator
 
-On a step's second or third start, the card shows the attempt, like `Attempt 2 of 3`, while the step runs. Select a card to open the step's conversation, where you can read what the step reported and open the files it produced.
+On a step's second or third start, the card shows the attempt, like `Attempt 2 of 3`, while the step runs. Select a card to see what the step reported and the files it produced. To read everything the step did, select **Open step** on its card.
 
 Select **Pause** in the header to stop the task. Piper stops each step running at that moment and marks it "Stopped when the task was paused." Select **Resume** to start the task again. Piper picks those steps back up before it plans anything new in the Orchestrator.
 
