@@ -1,65 +1,65 @@
 ---
 title: "The sandbox"
-description: "macOS lets every task Piper runs write only in its own folder and the folders you add, and shuts the folders where credentials live. See what a task can write and read, and where the sandbox stops."
+description: "macOS lets every task Copus runs write only in its own folder and the folders you add, and shuts the folders where credentials live. See what a task can write and read, and where the sandbox stops."
 ---
 
-The sandbox is a write boundary macOS holds around every task Piper runs. A task writes only inside its own folder and the folders you added to it. It reads across the rest of your Mac, apart from the folders where credentials live. A task can also reach the network.
+The sandbox is a write boundary macOS holds around every task Copus runs. A task writes only inside its own folder and the folders you added to it. It reads across the rest of your Mac, apart from the folders where credentials live. A task can also reach the network.
 
-macOS enforces that boundary. Piper hands macOS the list of what a task may write, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Piper wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
+macOS enforces that boundary. Copus hands macOS the list of what a task may write, and macOS applies that list to the program it starts and to everything that program starts after it: a file tool, a command, a script Copus wrote and ran, a helper that script launched. macOS holds this boundary whatever program runs inside it.
 
 This page covers how to:
 
 - [Find the folders a task can write to](#what-a-task-can-write), and the few places outside them
 - [Learn which filenames no task can write](#files-no-task-can-write), anywhere on your Mac
 - [See what a task can read](#what-a-task-can-read), and which folders stay shut
-- [Understand why writing is confined and reading is not](#why-piper-confines-writing-and-not-reading)
+- [Understand why writing is confined and reading is not](#why-copus-confines-writing-and-not-reading)
 - [Know where the sandbox stops](#where-the-sandbox-stops), and what covers the rest
 
 <Note>
-  Piper starts a task only when macOS can apply the sandbox to it. If macOS can't, Piper refuses to start the task.
+  Copus starts a task only when macOS can apply the sandbox to it. If macOS can't, Copus refuses to start the task.
 </Note>
 
 ## What a task can write
 
 A task writes inside its own folder, which depends on where the task sits. A conversation can also write in the folders you add.
 
-- A conversation outside a project writes inside its own workspace folder, and your other files stay as they are. A task Piper starts on its own writes inside its own workspace folder in the same way.
-- A conversation in a project writes anywhere inside that project's folder, because tasks in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder. Piper creates files in it, and writes over files you already had.
-- A conversation also writes inside each folder you added to it or to its project. See [Add a folder Piper can change](/concepts/sessions-and-workspace#add-a-folder-piper-can-change).
-- A multi-step task and a scheduled task write inside the folder that task belongs to. A task outside a project gets a folder of its own, shared by every step or run. A multi-step task inside a project writes inside the project's Piper folder. For a project Piper manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Piper created there, so your own files around it stay out of reach. A multi-step task also writes in the folders it took from its conversation when the conversation switched to multi-step. A scheduled task never gets a folder you added.
+- A conversation outside a project writes inside its own workspace folder, and your other files stay as they are. A task Copus starts on its own writes inside its own workspace folder in the same way.
+- A conversation in a project writes anywhere inside that project's folder, because tasks in a project are meant to build on each other's files. For a project you pointed at a folder of your own, that means your folder. Copus creates files in it, and writes over files you already had.
+- A conversation also writes inside each folder you added to it or to its project. See [Add a folder Copus can change](/concepts/sessions-and-workspace#add-a-folder-copus-can-change).
+- A multi-step task and a scheduled task write inside the folder that task belongs to. A task outside a project gets a folder of its own, shared by every step or run. A multi-step task inside a project writes inside the project's Copus folder. For a project Copus manages, that's the whole project folder. For a project you pointed at a folder of your own, it's the subfolder Copus created there, so your own files around it stay out of reach. A multi-step task also writes in the folders it took from its conversation when the conversation switched to multi-step. A scheduled task never gets a folder you added.
 
 To find where each folder sits on disk, see [Tasks and the workspace](/concepts/sessions-and-workspace).
 
-A task can also write to a few places outside its folder. The Mac's temporary folders are scratch space every program uses. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Piper's browser keeps two folders, one holding the logins for sites you have signed in to and one holding its own working files. Piper leaves the browser program itself unwritable, so a task can't replace the program that browses for it.
+A task can also write to a few places outside its folder. The Mac's temporary folders are scratch space every program uses. Claude Code and Codex each keep a configuration folder, where they write state as they run and renew their own sign-in. Copus's browser keeps two folders, one holding the logins for sites you have signed in to and one holding its own working files. Copus leaves the browser program itself unwritable, so a task can't replace the program that browses for it.
 
 <Note>
-  Piper points Python's package installer at a `.python` folder inside the task's own boundary, so a task can install a package it needs and the install lands where its other files land.
+  Copus points Python's package installer at a `.python` folder inside the task's own boundary, so a task can install a package it needs and the install lands where its other files land.
 </Note>
 
 ## Files no task can write
 
-Piper blocks writes to these filenames everywhere, including inside the folder a task can otherwise write freely:
+Copus blocks writes to these filenames everywhere, including inside the folder a task can otherwise write freely:
 
-- `piper.db`, `piper.db-wal`, and `piper.db-shm`, the files of Piper's own database.
-- `settings.json`, `settings.local.json`, and `CLAUDE.md`, which Claude Code reads when it starts. A task that could rewrite any of those files could hand itself permissions or standing instructions on its next run, so Piper blocks every write to them.
+- `copus.db`, `copus.db-wal`, and `copus.db-shm`, the files of Copus's own database.
+- `settings.json`, `settings.local.json`, and `CLAUDE.md`, which Claude Code reads when it starts. A task that could rewrite any of those files could hand itself permissions or standing instructions on its next run, so Copus blocks every write to them.
 
 macOS matches those names on the filename alone, wherever the file sits. The rule covers every copy. A task can't create a file of its own called `settings.json`, even in its own folder. A task that tries gets an error.
 
 ## What a task can read
 
-A task reads files across your Mac. Piper reads without asking, and you can't set reading to ask.
+A task reads files across your Mac. Copus reads without asking, and you can't set reading to ask.
 
 macOS shuts these folders in your home folder to a task and to every process it starts: `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.docker`, `.gradle`, `.m2`, `.huggingface`, `.kaggle`, and `.config/gcloud` and `.config/gh`, the settings folders for the `gcloud` and `gh` command-line tools.
 
 macOS shuts these files in your home folder too. `.netrc`, `.npmrc`, `.pypirc`, and `.git-credentials` hold credentials outright. Your shell startup files, `.zshrc`, `.zshenv`, `.bashrc`, `.bash_profile`, and `.profile`, routinely hold an exported API key.
 
-macOS also shuts Piper's own database, under a separate rule.
+macOS also shuts Copus's own database, under a separate rule.
 
 <Note>
-  macOS binds the block to every process the task starts, as well as to Piper's own tools. A task can't get around it by asking a command-line tool to print a key.
+  macOS binds the block to every process the task starts, as well as to Copus's own tools. A task can't get around it by asking a command-line tool to print a key.
 </Note>
 
-Piper asks you before a task reads a credential file anywhere else on your Mac, such as an `.env` file, a `.pem` or `.key` file, an `id_rsa` key file, or a file named `credentials.json`, `auth.json`, or `secrets.yaml`. Piper reads a template such as `.env.example`, `.env.sample`, or `.env.template` without asking. Piper also asks before a task reads your keychain folder or the sign-ins Piper keeps in `PiperData`. Piper asks every time, in every approval mode, and waits for your answer. For every name, and for what happens when nobody is there to answer, see [Approvals and permissions](/control/approvals-and-permissions).
+Copus asks you before a task reads a credential file anywhere else on your Mac, such as an `.env` file, a `.pem` or `.key` file, an `id_rsa` key file, or a file named `credentials.json`, `auth.json`, or `secrets.yaml`. Copus reads a template such as `.env.example`, `.env.sample`, or `.env.template` without asking. Copus also asks before a task reads your keychain folder or the sign-ins Copus keeps in `CopusData`. Copus asks every time, in every approval mode, and waits for your answer. For every name, and for what happens when nobody is there to answer, see [Approvals and permissions](/control/approvals-and-permissions).
 
 <Warning>
   The shut folders and files are the places credentials usually sit. A secret can live in a file with any name, in any folder, so the list can't cover every secret. The list stops a task from reading a token by accident while it looks around. Treat the list as a guard against accidents rather than as a guarantee.
@@ -69,38 +69,38 @@ Piper asks you before a task reads a credential file anywhere else on your Mac, 
   <img src="/images/diagrams/sandbox.svg" alt="A task sits inside a box. Writes stay inside the box. Reads reach out across the Mac, except to credential stores, which are blocked." />
 </Frame>
 
-## Why Piper confines writing and not reading
+## Why Copus confines writing and not reading
 
-A task has to read your own material to do your work. A document you attached to a message, a spreadsheet in your Downloads folder, and output another task produced last week all sit outside the task's own folder. If Piper confined reads to that folder, a task could write files and still couldn't read the files you asked it about.
+A task has to read your own material to do your work. A document you attached to a message, a spreadsheet in your Downloads folder, and output another task produced last week all sit outside the task's own folder. If Copus confined reads to that folder, a task could write files and still couldn't read the files you asked it about.
 
-Piper puts each limit where a task could do damage. Writing is where a task can destroy something, so Piper confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the credential folders, and Piper asks you before a task reads a credential file anywhere else.
+Copus puts each limit where a task could do damage. Writing is where a task can destroy something, so Copus confines writing to the task's own folder and the folders you add. Reading is where a task can leak something, so macOS shuts the credential folders, and Copus asks you before a task reads a credential file anywhere else.
 
 ## Where the sandbox stops
 
 The sandbox controls where a task may write, and which folders a task may never read. The cases below fall outside the sandbox.
 
-**The network is open.** A command a task runs can reach the internet. Piper controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Piper answers that question itself.
+**The network is open.** A command a task runs can reach the internet. Copus controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Copus answers that question itself.
 
-**A refused write fails quietly.** macOS refuses the write and hands the task an error. Piper doesn't ask you about the write, so you can't approve it by mistake. Piper either reports the failure in its reply or works around it.
+**A refused write fails quietly.** macOS refuses the write and hands the task an error. Copus doesn't ask you about the write, so you can't approve it by mistake. Copus either reports the failure in its reply or works around it.
 
 **One task can read another task's files.** A task can read across your Mac, including every other task's folder, so treat anything a task produced as visible to a later task.
 
 **Tasks in the same project can write each other's files.** They share the project folder by design. A task outside a project can still read another task's files, and can't write them. Two conversations you added the same folder to can both write in it.
 
-**Piper protects a stored credential by other means.** Piper keeps the value out of the conversation. See [Secrets](/connections/secrets).
+**Copus protects a stored credential by other means.** Copus keeps the value out of the conversation. See [Secrets](/connections/secrets).
 
 <Note>
-  Skills are the packaged instructions Piper follows for particular kinds of work. A task can read and follow a skill from anywhere, and can never rewrite it.
+  Skills are the packaged instructions Copus follows for particular kinds of work. A task can read and follow a skill from anywhere, and can never rewrite it.
 </Note>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Piper asks you before it acts, and what it never asks about.
+    What Copus asks you before it acts, and what it never asks about.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
-    Where Piper keeps your data, and what leaves your Mac.
+    Where Copus keeps your data, and what leaves your Mac.
   </Card>
   <Card title="Tasks and the workspace" icon="folder-open" href="/concepts/sessions-and-workspace">
     The folder every task writes into.

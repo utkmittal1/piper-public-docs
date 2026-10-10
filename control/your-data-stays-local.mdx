@@ -1,104 +1,104 @@
 ---
 title: "Your data stays local"
-description: "Piper keeps your tasks, files, memory, and credentials in a folder on your Mac. Find out what sits where, what travels over the network, and how to remove what Piper holds."
+description: "Copus keeps your tasks, files, memory, and credentials in a folder on your Mac. Find out what sits where, what travels over the network, and how to remove what Copus holds."
 ---
 
-Piper keeps your tasks, files, memory, and credentials on your Mac, in a folder you can open, back up, and delete. Piper still sends requests to your AI provider over the network, with your conversation and the content of any file a task read. This page explains what stays on your Mac and what Piper sends out.
+Copus keeps your tasks, files, memory, and credentials on your Mac, in a folder you can open, back up, and delete. Copus still sends requests to your AI provider over the network, with your conversation and the content of any file a task read. This page explains what stays on your Mac and what Copus sends out.
 
 This page covers how to:
 
-- [Find where Piper keeps your data](#where-piper-keeps-your-data), folder by folder
+- [Find where Copus keeps your data](#where-copus-keeps-your-data), folder by folder
 - [Read what the log file records](#what-the-log-file-records), including the part that holds your own words
 - [See what the database holds](#what-the-database-holds), and a credential that can land in it
 - [Find where your credentials live](#where-your-credentials-live), and the sign-ins kept in a file
 - [Learn what leaves your Mac](#what-leaves-your-mac), and why each route exists
-- [Know what Piper downloads on first launch](#what-piper-downloads-on-first-launch)
-- [Remove what Piper keeps](#remove-what-piper-keeps)
+- [Know what Copus downloads on first launch](#what-copus-downloads-on-first-launch)
+- [Remove what Copus keeps](#remove-what-copus-keeps)
 
-## Where Piper keeps your data
+## Where Copus keeps your data
 
-Piper keeps what it manages in one folder called `PiperData`, inside your home folder. You can open it in Finder. The database file `piper.db` sits at the top of it.
+Copus keeps what it manages in one folder called `CopusData`, inside your home folder. You can open it in Finder. The database file `copus.db` sits at the top of it.
 
 | Folder | What it holds |
 |---|---|
-| `sessions/` | The workspace of every conversation that doesn't belong to a project, including every task Piper starts on its own |
+| `sessions/` | The workspace of every conversation that doesn't belong to a project, including every task Copus starts on its own |
 | `projects/` | Project folders, and the folder of every scheduled and multi-step task |
-| `logs/` | One log file, `piper.jsonl` |
-| `knowledge/models/` | The model Piper indexes your documents with |
-| `speech/models/` | The model Piper transcribes dictation with |
-| `runtime/` | The Python Piper runs scripts with, its own browser, and the logins for sites you signed in to |
+| `logs/` | One log file, `copus.jsonl` |
+| `knowledge/models/` | The model Copus indexes your documents with |
+| `speech/models/` | The model Copus transcribes dictation with |
+| `runtime/` | The Python Copus runs scripts with, its own browser, and the logins for sites you signed in to |
 | `skills/` | Skills you added yourself |
 | `.claude/` and `.codex/` | What Claude Code and Codex write as they run, including their sign-ins |
 
-For a project you pointed at a folder of your own, Piper keeps that project's files in a subfolder it creates inside your folder, and every task in the project writes inside that subfolder. See [Projects](/concepts/projects) for the layout, and [Tasks and the workspace](/concepts/sessions-and-workspace) for what a task's own folder holds.
+For a project you pointed at a folder of your own, Copus keeps that project's files in a subfolder it creates inside your folder, and every task in the project writes inside that subfolder. See [Projects](/concepts/projects) for the layout, and [Tasks and the workspace](/concepts/sessions-and-workspace) for what a task's own folder holds.
 
-Piper builds the search index for your Knowledge Sources on this machine. It reads your documents, splits them into passages, and indexes them with a model it downloads once and runs here. Piper also searches that index on your Mac. See [Knowledge](/context/knowledge-sources).
+Copus builds the search index for your Knowledge Sources on this machine. It reads your documents, splits them into passages, and indexes them with a model it downloads once and runs here. Copus also searches that index on your Mac. See [Knowledge](/context/knowledge-sources).
 
 ### What the log file records
 
-Piper keeps recent log lines in `PiperData/logs/piper.jsonl` and deletes older lines on its own. To open the log, go to **Settings** and select **Logs**.
+Copus keeps recent log lines in `CopusData/logs/copus.jsonl` and deletes older lines on its own. To open the log, go to **Settings** and select **Logs**.
 
-Piper writes one line for each action it takes, with a timestamp and details such as the task and project the action belongs to, the AI provider that ran it, a count, a duration, or the message of an error.
+Copus writes one line for each action it takes, with a timestamp and details such as the task and project the action belongs to, the AI provider that ran it, a count, a duration, or the message of an error.
 
-Two kinds of line carry your own words. When a turn starts, Piper logs the start of the message that started it. When Piper removes or rewords a memory fact during cleanup, it logs that fact's full text. Piper keeps its own replies and the contents of the files a task read out of the log, and records a reply only as a length.
+Two kinds of line carry your own words. When a turn starts, Copus logs the start of the message that started it. When Copus removes or rewords a memory fact during cleanup, it logs that fact's full text. Copus keeps its own replies and the contents of the files a task read out of the log, and records a reply only as a length.
 
 ## What the database holds
 
-`piper.db` holds your tasks and their transcripts, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It also holds what Piper learns from your mail: your People list, with each person's name, addresses, and notes, and your guide to how you write, with earlier versions of both. See [What Piper learns about you](/context/what-piper-learns).
+`copus.db` holds your tasks and their transcripts, your memory facts, your settings, which integrations you have connected, and the indexed text of your Knowledge Sources. It also holds what Copus learns from your mail: your People list, with each person's name, addresses, and notes, and your guide to how you write, with earlier versions of both. See [What Copus learns about you](/context/what-copus-learns).
 
-For a password, API key, or access token you saved under **Secrets**, and for an integration you connected, Piper stores only the name of each field. Piper saves the value itself in your keychain.
+For a password, API key, or access token you saved under **Secrets**, and for an integration you connected, Copus stores only the name of each field. Copus saves the value itself in your keychain.
 
 <Warning>
-  Piper can store one kind of credential in the database. If you add an MCP server of your own that runs on this machine, Piper stores the environment variables you gave it exactly as you typed them, so a token typed into that box is kept in `piper.db` in plain text. Save the token under **Secrets** instead and point the server at the secret.
+  Copus can store one kind of credential in the database. If you add an MCP server of your own that runs on this machine, Copus stores the environment variables you gave it exactly as you typed them, so a token typed into that box is kept in `copus.db` in plain text. Save the token under **Secrets** instead and point the server at the secret.
 </Warning>
 
 ## Where your credentials live
 
-Piper saves every password, API key, and access token you save under **Secrets** into your Mac's own keychain, and passes the value only to the one command that needs it. If the keychain refuses a value, Piper fails the save and keeps no plain-text copy. Piper stores the credential behind every integration you connect the same way. See [Secrets](/connections/secrets).
+Copus saves every password, API key, and access token you save under **Secrets** into your Mac's own keychain, and passes the value only to the one command that needs it. If the keychain refuses a value, Copus fails the save and keeps no plain-text copy. Copus stores the credential behind every integration you connect the same way. See [Secrets](/connections/secrets).
 
-Claude Code and Codex keep their sign-ins in files instead, both inside `PiperData`.
+Claude Code and Codex keep their sign-ins in files instead, both inside `CopusData`.
 
 **Claude Code** writes its token to `.claude/.credentials.json`.
 
 **Codex** writes its token to `.codex/auth.json`, because the Codex program reads its tokens from that file rather than from the keychain.
 
-Piper asks you before a task reads either file, every time, in every approval mode, and waits for your answer. In work Piper runs with nobody watching, including every task Piper starts on its own, Piper refuses the read instead of asking. See [Approvals and permissions](/control/approvals-and-permissions) for both rules.
+Copus asks you before a task reads either file, every time, in every approval mode, and waits for your answer. In work Copus runs with nobody watching, including every task Copus starts on its own, Copus refuses the read instead of asking. See [Approvals and permissions](/control/approvals-and-permissions) for both rules.
 
 ## What leaves your Mac
 
-**To the AI provider.** The provider you pick in **Settings** under **AI Providers** runs on its own machines. On every turn, Piper sends the provider your prompt, the conversation so far, your memory, your instructions, and the text of any file a task read. Piper adds whatever a task reads to the conversation, so the text of that file leaves your Mac. When you save an API key, Piper sends that provider one more request, to list the models your account can reach.
+**To the AI provider.** The provider you pick in **Settings** under **AI Providers** runs on its own machines. On every turn, Copus sends the provider your prompt, the conversation so far, your memory, your instructions, and the text of any file a task read. Copus adds whatever a task reads to the conversation, so the text of that file leaves your Mac. When you save an API key, Copus sends that provider one more request, to list the models your account can reach.
 
-**To the AI provider, for work Piper starts on its own.** Once you connect Gmail, Piper sends your AI provider the mail threads it reads to find and do work, with its notes on the people in each thread. When Piper first reads your mailbox, it also sends your recent sent mail. To see what each check sends, see [Work Piper starts before you ask](/working/before-you-ask#limitations).
+**To the AI provider, for work Copus starts on its own.** Once you connect Gmail, Copus sends your AI provider the mail threads it reads to find and do work, with its notes on the people in each thread. When Copus first reads your mailbox, it also sends your recent sent mail. To see what each check sends, see [Work Copus starts before you ask](/working/before-you-ask#limitations).
 
-**To an integration's own service.** Piper sends the service only what the action needs. To read a Slack channel, Piper sends Slack the channel to read. To send an email through Gmail, Piper sends Gmail the recipients, the subject, and the body. Piper uses each integration to reach only that integration's own service. Piper reaches an MCP server you add yourself at the address you gave it.
+**To an integration's own service.** Copus sends the service only what the action needs. To read a Slack channel, Copus sends Slack the channel to read. To send an email through Gmail, Copus sends Gmail the recipients, the subject, and the body. Copus uses each integration to reach only that integration's own service. Copus reaches an MCP server you add yourself at the address you gave it.
 
-**To Google, when you connect Google.** When you select **Connect Google** during setup or on the Home page, Piper asks Google for your name and email address, and saves them to your profile.
+**To Google, when you connect Google.** When you select **Connect Google** during setup or on the Home page, Copus asks Google for your name and email address, and saves them to your profile.
 
-**To Piper's sign-in relay, if you use Piper's built-in sign-in.** When you connect Gmail, Google Calendar, Google Drive, or Slack through Piper's built-in sign-in, Piper sends the sign-in, and every later renewal of its access token, through Piper's relay at get-piper.com, which passes the request on to Google or Slack. When you connect with an app of your own, Piper talks to Google or Slack directly. See [Integrations](/connections/integrations).
+**To Copus's sign-in relay, if you use Copus's built-in sign-in.** When you connect Gmail, Google Calendar, Google Drive, or Slack through Copus's built-in sign-in, Copus sends the sign-in, and every later renewal of its access token, through Copus's relay at getcopus.ai, which passes the request on to Google or Slack. When you connect with an app of your own, Copus talks to Google or Slack directly. See [Integrations](/connections/integrations).
 
-**To Piper, for your Piper account.** When you sign in to Piper, Piper stores the name and email address on your Google account. Piper also records the days you use it and the version you run. See [Sign in to Piper](/getting-started/install#sign-in-to-piper).
+**To Copus, for your Copus account.** When you sign in to Copus, Copus stores the name and email address on your Google account. Copus also records the days you use it and the version you run. See [Sign in to Copus](/getting-started/install#sign-in-to-copus).
 
-**To the sites Piper opens.** When Piper opens a page, Piper sends that site the page address and your network address, the same as your own browser does. Piper can also click and fill in a page in its browser, so anything Piper types into a form goes to that site.
+**To the sites Copus opens.** When Copus opens a page, Copus sends that site the page address and your network address, the same as your own browser does. Copus can also click and fill in a page in its browser, so anything Copus types into a form goes to that site.
 
-**To a web search service.** On Claude Code or Codex, the provider runs the search on its own machines, as part of the same request. On a model API, Piper searches through Brave, and sends your search terms there with the key you added under **Secrets**.
+**To a web search service.** On Claude Code or Codex, the provider runs the search on its own machines, as part of the same request. On a model API, Copus searches through Brave, and sends your search terms there with the key you added under **Secrets**.
 
-**To Google, for site icons.** When Piper shows you the sources behind a web search, it fetches each site's icon from Google. Piper sends Google the domain of every site listed, whichever AI provider you're on.
+**To Google, for site icons.** When Copus shows you the sources behind a web search, it fetches each site's icon from Google. Copus sends Google the domain of every site listed, whichever AI provider you're on.
 
-**To your iPhone, if you paired an iPhone.** Turn on **Allow iPhone access** under **Settings** > **iPhone**, and Piper serves your name, your tasks, their transcripts and files, your projects, the tasks and meetings on your Home page, and your notifications to that phone over your own Tailscale network. Piper serves data to a phone only while **Allow iPhone access** is on. See [Piper on your iPhone](/working/iphone).
+**To your iPhone, if you paired an iPhone.** Turn on **Allow iPhone access** under **Settings** > **iPhone**, and Copus serves your name, your tasks, their transcripts and files, your projects, the tasks and meetings on your Home page, and your notifications to that phone over your own Tailscale network. Copus serves data to a phone only while **Allow iPhone access** is on. See [Copus on your iPhone](/working/iphone).
 
-A command can also send your data off your Mac. The sandbox confines only what a task writes, so a command that runs can upload a file of yours anywhere on the internet. Piper controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Piper answers that question for you. See [Approvals and permissions](/control/approvals-and-permissions).
+A command can also send your data off your Mac. The sandbox confines only what a task writes, so a command that runs can upload a file of yours anywhere on the internet. Copus controls that by asking before every command outside its read-only list, which is why you can't set **Run commands** to run on its own. On **Autopilot**, Copus answers that question for you. See [Approvals and permissions](/control/approvals-and-permissions).
 
 <Warning>
-  "Local" describes where Piper keeps your data at rest. Every request to an AI provider leaves your Mac, whichever provider you choose, because each provider runs on its own machines. If a document is sensitive enough that its text must never reach an AI provider, keep it out of the task.
+  "Local" describes where Copus keeps your data at rest. Every request to an AI provider leaves your Mac, whichever provider you choose, because each provider runs on its own machines. If a document is sensitive enough that its text must never reach an AI provider, keep it out of the task.
 </Warning>
 
 <Note>
-  Piper records the days you use it and the version you run. Piper collects no other usage data, analytics, or crash reports, and it doesn't check for its own updates.
+  Copus records the days you use it and the version you run. Copus collects no other usage data, analytics, or crash reports, and it doesn't check for its own updates.
 </Note>
 
-## What Piper downloads on first launch
+## What Copus downloads on first launch
 
-Piper fetches these files the first time it starts, then runs them from `PiperData`. For each download, Piper requests a file and sends nothing of yours.
+Copus fetches these files the first time it starts, then runs them from `CopusData`. For each download, Copus requests a file and sends nothing of yours.
 
 - A copy of Python, from GitHub.
 - The Python packages the built-in skills need, from PyPI.
@@ -111,45 +111,45 @@ Piper fetches these files the first time it starts, then runs them from `PiperDa
 
 Together these downloads come to about 1 GB.
 
-## Remove what Piper keeps
+## Remove what Copus keeps
 
 <Steps>
   <Step title="Remove a single memory fact">
-    Open **About you** in the sidebar, select **Memory**, find the fact, and select **Remove fact**. Piper stops applying it to future tasks.
+    Open **About you** in the sidebar, select **Memory**, find the fact, and select **Remove fact**. Copus stops applying it to future tasks.
   </Step>
   <Step title="Delete a task">
     Delete the task from the sidebar. Tick **Also delete the folder from disk** to remove its files as well, or leave it unticked and the folder stays where it is.
   </Step>
   <Step title="Remove a credential">
-    In **Settings**, select **Secrets**, then **Delete secret** on the entry and confirm with **Delete**. Piper removes the value from your keychain first, then the entry.
+    In **Settings**, select **Secrets**, then **Delete secret** on the entry and confirm with **Delete**. Copus removes the value from your keychain first, then the entry.
   </Step>
-  <Step title="Delete your Piper account">
-    Write to utkarsh@workwithpiper.com. Piper deletes your account and its record of the days you used Piper.
+  <Step title="Delete your Copus account">
+    Write to utkarsh@getcopus.ai. Copus deletes your account and its record of the days you used Copus.
   </Step>
   <Step title="Open the folder yourself">
     In a task's **Artifacts** panel, select **Reveal in Finder** on a file row, or **Open folder in Finder** on the **Other files** heading. From there you can browse, copy, or move whatever you like.
   </Step>
 </Steps>
 
-When you delete a task, Piper removes it from its database. Anything Piper already did through an integration stays done: a message Piper sent through Gmail or Slack stays sent, and a file it wrote outside its own folder stays where it landed.
+When you delete a task, Copus removes it from its database. Anything Copus already did through an integration stays done: a message Copus sent through Gmail or Slack stays sent, and a file it wrote outside its own folder stays where it landed.
 
 <Tip>
-  `PiperData` is an ordinary folder in your home directory, so any backup of your home folder includes it.
+  `CopusData` is an ordinary folder in your home directory, so any backup of your home folder includes it.
 </Tip>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Piper asks you before it acts, and what it never asks about.
+    What Copus asks you before it acts, and what it never asks about.
   </Card>
   <Card title="The sandbox" icon="box" href="/control/sandbox">
     What a task can write, what it can read, and where the line sits.
   </Card>
   <Card title="Secrets" icon="key" href="/connections/secrets">
-    Storing a password or key so Piper can use it without seeing it.
+    Storing a password or key so Copus can use it without seeing it.
   </Card>
   <Card title="AI providers" icon="cpu" href="/concepts/ai-providers">
-    Setting up the AI provider behind Piper, including a provider you bring your own key for.
+    Setting up the AI provider behind Copus, including a provider you bring your own key for.
   </Card>
 </CardGroup>

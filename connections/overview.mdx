@@ -1,77 +1,77 @@
 ---
 title: "Connecting your tools"
-description: "Piper reaches apps, services, and web pages three ways: an integration for an app you have an account with, a secret for a credential nothing else covers, and its own browser for pages on the web. Work out which route your task needs."
+description: "Copus reaches apps, services, and web pages three ways: an integration for an app you have an account with, a secret for a credential nothing else covers, and its own browser for pages on the web. Work out which route your task needs."
 ---
 
-Piper reaches the apps and services you use three ways. An integration connects Piper to an app you already have an account with. A secret holds a credential that no integration covers. Piper opens pages on the web in its own browser.
+Copus reaches the apps and services you use three ways. An integration connects Copus to an app you already have an account with. A secret holds a credential that no integration covers. Copus opens pages on the web in its own browser.
 
-This section covers all three. Pick the route that matches what you want Piper to reach, then follow the link for how to set it up.
+This section covers all three. Pick the route that matches what you want Copus to reach, then follow the link for how to set it up.
 
 ## Which route to use
 
-| What you want Piper to reach | What to use | What you do once |
+| What you want Copus to reach | What to use | What you do once |
 |---|---|---|
 | Gmail, Slack, Notion, GitHub, or another app in the [Integrations catalog](/reference/integrations-catalog) | An integration | Set the integration up in **Settings**, then **Integrations** |
 | Your own database, an internal service, a tool that asks for a token | A secret | Store the credential in **Settings**, then **Secrets** |
-| A page on the web, whether or not it needs a sign-in | Piper's own browser | Nothing, until a page asks you to sign in |
+| A page on the web, whether or not it needs a sign-in | Copus's own browser | Nothing, until a page asks you to sign in |
 
 ### Integrations
 
-An integration is a connection between Piper and an app you already use. When you set an integration up, Piper signs in to the app and switches on the app's tools, split into the tools that look things up and the tools that change something.
+An integration is a connection between Copus and an app you already use. When you set an integration up, Copus signs in to the app and switches on the app's tools, split into the tools that look things up and the tools that change something.
 
-Piper sets every tool that changes something to **Ask**, and leaves some tools switched off. You choose what each tool does from that app's panel afterwards. In Manual, Piper asks you before it runs a tool set to **Ask**. In Autopilot, and in tasks Piper starts on its own, Piper runs those tools without asking. Gmail and Google Calendar are the exception in tasks Piper starts on its own. Piper withholds their write tools there, and sends a reply only when you select **Send** and creates an event only when you select **Create event**. See [Integrations](/connections/integrations#what-piper-may-do-once-an-integration-is-in-place).
+Copus sets every tool that changes something to **Ask**, and leaves some tools switched off. You choose what each tool does from that app's panel afterwards. In Manual, Copus asks you before it runs a tool set to **Ask**. In Autopilot, and in tasks Copus starts on its own, Copus runs those tools without asking. Gmail and Google Calendar are the exception in tasks Copus starts on its own. Copus withholds their write tools there, and sends a reply only when you select **Send** and creates an event only when you select **Create event**. See [Integrations](/connections/integrations#what-copus-may-do-once-an-integration-is-in-place).
 
-Gmail and Google Calendar are also where Piper finds work to start before you ask. You can connect Gmail, Google Calendar, and Google Drive with one sign-in from **Connect Google** on the Home page. See [Work Piper starts before you ask](/working/before-you-ask).
+Gmail and Google Calendar are also where Copus finds work to start before you ask. You can connect Gmail, Google Calendar, and Google Drive with one sign-in from **Connect Google** on the Home page. See [Work Copus starts before you ask](/working/before-you-ask).
 
-You can also point Piper at a service Piper has no built-in integration for, with **+ Add Custom** on the **Integrations** page.
+You can also point Copus at a service Copus has no built-in integration for, with **+ Add Custom** on the **Integrations** page.
 
-[Integrations](/connections/integrations) covers how to set an integration up, what each way of signing in asks you for, what Piper may do once an integration is in place, and how to add a server of your own.
+[Integrations](/connections/integrations) covers how to set an integration up, what each way of signing in asks you for, what Copus may do once an integration is in place, and how to add a server of your own.
 
 ### Secrets
 
-A secret is a named credential you save in Piper, such as a password, an API key, or a database login. Piper stores the value in your Mac's keychain and hands it to the command that needs it. Piper keeps a stored value hidden in its interface.
+A secret is a named credential you save in Copus, such as a password, an API key, or a database login. Copus stores the value in your Mac's keychain and hands it to the command that needs it. Copus keeps a stored value hidden in its interface.
 
 Store a secret when the app or service you need has no integration.
 
-[Secrets](/connections/secrets) covers how to store a credential, how Piper picks the right secret for a task, and the limits of that protection.
+[Secrets](/connections/secrets) covers how to store a credential, how Copus picks the right secret for a task, and the limits of that protection.
 
-### Piper's own browser
+### Copus's own browser
 
-Piper browses in its own browser, a copy of Chromium in its data folder. That browser starts with no sign-ins. When a page needs a sign-in, Piper stops and puts a **Sign in needed** card in the conversation. You sign in yourself in a browser window, and Piper stays signed in to that site for every later task.
+Copus browses in its own browser, a copy of Chromium in its data folder. That browser starts with no sign-ins. When a page needs a sign-in, Copus stops and puts a **Sign in needed** card in the conversation. You sign in yourself in a browser window, and Copus stays signed in to that site for every later task.
 
-Piper's browser has no card on the **Integrations** page, because you never connect it as a service. Piper can also work in the Chrome you use yourself, on sites you're already signed into there. You switch on that access once, and Piper still asks you before every request it makes there.
+Copus's browser has no card on the **Integrations** page, because you never connect it as a service. Copus can also work in the Chrome you use yourself, on sites you're already signed into there. You switch on that access once, and Copus still asks you before every request it makes there.
 
-[Web and sign-ins](/connections/web-and-sign-ins) covers both browsers, the sign-in card, and when Piper asks before it acts on a page.
+[Web and sign-ins](/connections/web-and-sign-ins) covers both browsers, the sign-in card, and when Copus asks before it acts on a page.
 
 ## Where each credential is stored
 
-Piper keeps credentials in two places. Piper never shows a stored credential back to you.
+Copus keeps credentials in two places. Copus never shows a stored credential back to you.
 
-| Route | Where Piper puts the credential |
+| Route | Where Copus puts the credential |
 |---|---|
-| An integration | Your Mac's keychain, one item per integration, holding the access token or key Piper signs in with. AWS Documentation is the exception: it needs no account, so Piper stores nothing for it |
+| An integration | Your Mac's keychain, one item per integration, holding the access token or key Copus signs in with. AWS Documentation is the exception: it needs no account, so Copus stores nothing for it |
 | A secret | Your Mac's keychain, one item per field, where a field is one named piece of a credential such as a password or a host name |
-| A website sign-in | A file in Piper's own data folder, holding the cookies and stored site data the site handed Piper's browser. Piper reads that file to carry a sign-in into later tasks |
+| A website sign-in | A file in Copus's own data folder, holding the cookies and stored site data the site handed Copus's browser. Copus reads that file to carry a sign-in into later tasks |
 
-## Other ways Piper reaches outside your Mac
+## Other ways Copus reaches outside your Mac
 
-**Searching and reading web pages without a browser.** Piper searches and reads pages with a separate tool, **Web search & fetch**, which you switch on and off under **Settings**, then **Built-in tools**. That tool needs no integration and no sign-in card, and it uses neither browser. When you run a task on a model API with your own key, Piper's web search uses a key you store under **Secrets**. See [Built-in tools](/working/tools).
+**Searching and reading web pages without a browser.** Copus searches and reads pages with a separate tool, **Web search & fetch**, which you switch on and off under **Settings**, then **Built-in tools**. That tool needs no integration and no sign-in card, and it uses neither browser. When you run a task on a model API with your own key, Copus's web search uses a key you store under **Secrets**. See [Built-in tools](/working/tools).
 
-**The conversation itself.** On every turn, Piper sends your prompt, the conversation so far, and the text of any file the task read to your [AI provider](/concepts/ai-providers). You can't turn that off, because Piper does its thinking there. [Your data stays local](/control/your-data-stays-local) sets out what leaves your Mac and what stays.
+**The conversation itself.** On every turn, Copus sends your prompt, the conversation so far, and the text of any file the task read to your [AI provider](/concepts/ai-providers). You can't turn that off, because Copus does its thinking there. [Your data stays local](/control/your-data-stays-local) sets out what leaves your Mac and what stays.
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Integrations" icon="link" href="/connections/integrations">
-    Set up Gmail, Slack, Notion, and more, and see what Piper may do in each.
+    Set up Gmail, Slack, Notion, and more, and see what Copus may do in each.
   </Card>
   <Card title="Secrets" icon="key" href="/connections/secrets">
     Store a password or an API key for a task to use.
   </Card>
   <Card title="Web and sign-ins" icon="globe" href="/connections/web-and-sign-ins">
-    Piper's own browser, the sign-in card, and using the Chrome you already use.
+    Copus's own browser, the sign-in card, and using the Chrome you already use.
   </Card>
   <Card title="Approvals and permissions" icon="shield-check" href="/control/approvals-and-permissions">
-    What Piper asks before it acts, in Manual and in Autopilot.
+    What Copus asks before it acts, in Manual and in Autopilot.
   </Card>
 </CardGroup>

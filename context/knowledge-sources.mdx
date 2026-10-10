@@ -1,21 +1,21 @@
 ---
 title: "Knowledge"
-description: "A knowledge source is a folder of your own documents that Piper indexes and searches on your Mac. Add a folder, read the status on its card, and see which files Piper indexes and which files it skips."
+description: "A knowledge source is a folder of your own documents that Copus indexes and searches on your Mac. Add a folder, read the status on its card, and see which files Copus indexes and which files it skips."
 ---
 
-A knowledge source is a folder of documents you add for Piper to search. Piper reads the supported files in that folder, splits their text into short passages, and builds a search index on your Mac. Your documents stay where they are, and Piper never writes to them.
+A knowledge source is a folder of documents you add for Copus to search. Copus reads the supported files in that folder, splits their text into short passages, and builds a search index on your Mac. Your documents stay where they are, and Copus never writes to them.
 
-Add a folder when its documents hold background Piper may need across different tasks, such as past decks, research, notes, or contracts.
+Add a folder when its documents hold background Copus may need across different tasks, such as past decks, research, notes, or contracts.
 
 This page covers how to:
 
 - [Tell knowledge sources apart from memory, project sources, and integrations](#memory-a-project-source-an-integration-or-a-knowledge-source)
 - [Add a folder](#add-a-folder) and get it searchable
-- [See which files Piper indexes](#which-files-piper-indexes) and which files it skips
+- [See which files Copus indexes](#which-files-copus-indexes) and which files it skips
 - [Read a source card](#what-a-source-card-tells-you), its status and its two counts
 - [Keep a folder current](#keep-a-folders-index-current), or start a fresh pass yourself
 - [Remove a folder](#remove-a-folder) from the index
-- [Understand how Piper searches](#how-piper-searches-your-documents)
+- [Understand how Copus searches](#how-copus-searches-your-documents)
 - [Limitations](#limitations)
 
 ## Memory, a project source, an integration, or a knowledge source
@@ -25,7 +25,7 @@ Four features hold material of yours. Use the table to pick the right feature.
 | | What it holds | Where you set it up |
 |---|---|---|
 | **Knowledge source** | A whole folder of documents, indexed for search | **Settings**, then **Knowledge** |
-| **[Memory](/context/memory)** | Short facts about you and your work, and rules Piper follows on every message | The **Memory** tab of the **About you** page in the sidebar |
+| **[Memory](/context/memory)** | Short facts about you and your work, and rules Copus follows on every message | The **Memory** tab of the **About you** page in the sidebar |
 | **[Project source](/concepts/projects)** | One file attached to one project | The **Sources** panel on that project's page |
 | **[Integrations](/connections/integrations)** | A live connection to an app such as Gmail or Notion | **Settings**, then **Integrations** |
 
@@ -33,29 +33,29 @@ Add a knowledge source for documents several different tasks may need. Attach a 
 
 ## Add a folder
 
-Piper can search your documents once the **Search knowledge** tool is on and at least one folder holds an indexed passage. Piper switches the tool on when you install Piper, so you usually only need to add your first folder.
+Copus can search your documents once the **Search knowledge** tool is on and at least one folder holds an indexed passage. Copus switches the tool on when you install Copus, so you usually only need to add your first folder.
 
 <Steps>
   <Step title="Check the tool is on">
-    In **Settings**, select **Built-in tools**, and find **Search knowledge**. Piper marks the tool as **read** and shows **Always runs** beside it, so Piper searches without asking you first. When you clear the tool's checkbox, Piper stops searching your folders.
+    In **Settings**, select **Built-in tools**, and find **Search knowledge**. Copus marks the tool as **read** and shows **Always runs** beside it, so Copus searches without asking you first. When you clear the tool's checkbox, Copus stops searching your folders.
   </Step>
   <Step title="Add the folder">
-    In **Settings**, select **Knowledge**, then **Add a folder**, and pick the folder you want. Piper names the source after the folder.
+    In **Settings**, select **Knowledge**, then **Add a folder**, and pick the folder you want. Copus names the source after the folder.
   </Step>
   <Step title="Wait for indexing to finish">
-    Piper starts indexing on its own, and the card reads **Up to date** once the folder is searchable. Piper starts searching your knowledge in tasks once at least one folder holds an indexed passage.
+    Copus starts indexing on its own, and the card reads **Up to date** once the folder is searchable. Copus starts searching your knowledge in tasks once at least one folder holds an indexed passage.
   </Step>
 </Steps>
 
-Piper indexes the whole folder, subfolders included.
+Copus indexes the whole folder, subfolders included.
 
 <Warning>
-  Piper checks only whether you already added the same folder. When you add a subfolder of a source, or a folder that holds a source, Piper indexes both. Piper then indexes the overlapping files twice, and one search can return the same passage twice. You can't exclude a subfolder from a source, so add the narrowest folder that holds what you want searched.
+  Copus checks only whether you already added the same folder. When you add a subfolder of a source, or a folder that holds a source, Copus indexes both. Copus then indexes the overlapping files twice, and one search can return the same passage twice. You can't exclude a subfolder from a source, so add the narrowest folder that holds what you want searched.
 </Warning>
 
-## Which files Piper indexes
+## Which files Copus indexes
 
-Piper indexes these file types:
+Copus indexes these file types:
 
 | Extension | What it is |
 |---|---|
@@ -68,67 +68,67 @@ Piper indexes these file types:
 | `.txt` | A plain text file |
 | `.xml` | An XML file |
 
-Piper skips every other file type, including `.json` and `.html`. Piper also skips hidden files and folders, Office lock files, and symbolic links. When Piper can't read a file, Piper skips that file and indexes the rest of the folder. When Piper can't open a folder or subfolder, Piper treats it as empty.
+Copus skips every other file type, including `.json` and `.html`. Copus also skips hidden files and folders, Office lock files, and symbolic links. When Copus can't read a file, Copus skips that file and indexes the rest of the folder. When Copus can't open a folder or subfolder, Copus treats it as empty.
 
-You can add as many folders as you want, with as many files as you want, of any size. Piper takes longer to index large folders and large files.
+You can add as many folders as you want, with as many files as you want, of any size. Copus takes longer to index large folders and large files.
 
 ## What a source card tells you
 
-Piper shows a card for each folder. The card shows the folder's name, where the folder sits on your Mac, a status, and two counts.
+Copus shows a card for each folder. The card shows the folder's name, where the folder sits on your Mac, a status, and two counts.
 
 | Status | What it means |
 |---|---|
-| **Queued** | Piper hasn't started indexing the folder yet |
-| **Indexing…** | Piper is reading the folder, and shows how many files it has finished out of the total |
-| **Up to date** | Piper has indexed the folder, and you can search it |
-| **Needs attention** | Piper can't find the folder where you added it, or the on-device search model isn't ready yet. The info icon shows the reason |
-| **Couldn’t index** | An unexpected error stopped Piper's pass over the folder. The info icon shows the error |
+| **Queued** | Copus hasn't started indexing the folder yet |
+| **Indexing…** | Copus is reading the folder, and shows how many files it has finished out of the total |
+| **Up to date** | Copus has indexed the folder, and you can search it |
+| **Needs attention** | Copus can't find the folder where you added it, or the on-device search model isn't ready yet. The info icon shows the reason |
+| **Couldn’t index** | An unexpected error stopped Copus's pass over the folder. The info icon shows the error |
 
-The two counts are files and passages. A passage is a short stretch of text. Consecutive passages overlap, so text near a boundary appears in both passages. Piper splits one long PDF into many passages, so the passage count runs far ahead of the file count.
+The two counts are files and passages. A passage is a short stretch of text. Consecutive passages overlap, so text near a boundary appears in both passages. Copus splits one long PDF into many passages, so the passage count runs far ahead of the file count.
 
-An up-to-date card also shows **Updated** and how long ago, such as `2h ago` or `5d ago`. When Piper checks a folder on its own and finds nothing changed, Piper leaves the time as it was, so the time shows when the folder's contents last changed. When you start a fresh pass yourself, Piper updates the time whether or not anything changed.
+An up-to-date card also shows **Updated** and how long ago, such as `2h ago` or `5d ago`. When Copus checks a folder on its own and finds nothing changed, Copus leaves the time as it was, so the time shows when the folder's contents last changed. When you start a fresh pass yourself, Copus updates the time whether or not anything changed.
 
 <Note>
-  The on-device search model turns your text into the numbers Piper compares. Piper downloads the model once, in the background, and keeps it on your Mac. Piper indexes one folder at a time. Until the download finishes, the folder Piper is about to index shows **Needs attention**, and folders waiting their turn keep their current status.
+  The on-device search model turns your text into the numbers Copus compares. Copus downloads the model once, in the background, and keeps it on your Mac. Copus indexes one folder at a time. Until the download finishes, the folder Copus is about to index shows **Needs attention**, and folders waiting their turn keep their current status.
 </Note>
 
 ## Keep a folder's index current
 
-Piper watches each folder for changes, and updates the index once the folder stops changing for a moment. Piper also checks every folder regularly, and once each time Piper starts.
+Copus watches each folder for changes, and updates the index once the folder stops changing for a moment. Copus also checks every folder regularly, and once each time Copus starts.
 
-You can also start a fresh pass yourself. Select the refresh icon on a card, and Piper checks the folder straight away. Piper re-reads only the files that changed, so a fresh pass over an unchanged folder finishes quickly.
+You can also start a fresh pass yourself. Select the refresh icon on a card, and Copus checks the folder straight away. Copus re-reads only the files that changed, so a fresh pass over an unchanged folder finishes quickly.
 
 ## Remove a folder
 
-Select the trash icon on a card, then **Remove** to confirm. Piper drops the folder from the search index and leaves your documents where they are.
+Select the trash icon on a card, then **Remove** to confirm. Copus drops the folder from the search index and leaves your documents where they are.
 
-## How Piper searches your documents
+## How Copus searches your documents
 
-Piper compares the meaning of your question with the meaning of every indexed passage, which is called semantic search. Piper brings back the closest passages, each with the file it came from. Because Piper matches on meaning, a search for "pricing objections" can find a passage about customers pushing back on cost, even when neither of those words appears.
+Copus compares the meaning of your question with the meaning of every indexed passage, which is called semantic search. Copus brings back the closest passages, each with the file it came from. Because Copus matches on meaning, a search for "pricing objections" can find a passage about customers pushing back on cost, even when neither of those words appears.
 
-Piper searches your knowledge at the start of a task, before it asks you scoping questions or starts drafting, so Piper can use a source even when you don't mention it. When the search finds nothing relevant, Piper says so in its reply.
+Copus searches your knowledge at the start of a task, before it asks you scoping questions or starts drafting, so Copus can use a source even when you don't mention it. When the search finds nothing relevant, Copus says so in its reply.
 
 <Note>
-  Piper builds and searches the index on your Mac. When Piper uses a passage in a task, Piper sends that passage to your [AI provider](/concepts/ai-providers) with the rest of the conversation. See [Your data stays local](/control/your-data-stays-local).
+  Copus builds and searches the index on your Mac. When Copus uses a passage in a task, Copus sends that passage to your [AI provider](/concepts/ai-providers) with the rest of the conversation. See [Your data stays local](/control/your-data-stays-local).
 </Note>
 
 ## Limitations
 
-- **Piper searches a larger index more slowly.** Piper compares every indexed passage on every search. Accuracy stays the same.
-- **Piper always returns the closest passages it holds.** Piper searches every folder together and returns the closest passages even when none of them matches your question well.
-- **Piper indexes the files in overlapping folders twice.** When one source sits inside another, one search can return the same passage twice.
+- **Copus searches a larger index more slowly.** Copus compares every indexed passage on every search. Accuracy stays the same.
+- **Copus always returns the closest passages it holds.** Copus searches every folder together and returns the closest passages even when none of them matches your question well.
+- **Copus indexes the files in overlapping folders twice.** When one source sits inside another, one search can return the same passage twice.
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Memory" icon="brain" href="/context/memory">
-    The short facts Piper carries from one task to the next.
+    The short facts Copus carries from one task to the next.
   </Card>
   <Card title="Projects" icon="folder-tree" href="/concepts/projects">
     Attach a single file to one body of work instead.
   </Card>
   <Card title="Built-in tools" icon="wrench" href="/working/tools">
-    Every capability Piper may use, knowledge search included.
+    Every capability Copus may use, knowledge search included.
   </Card>
   <Card title="Your data stays local" icon="lock" href="/control/your-data-stays-local">
     Where your files, memory, and credentials live.
