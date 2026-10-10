@@ -51,7 +51,7 @@ Every run works from the instructions alone, so Piper writes them as a complete 
 </Note>
 
 <Tip>
-  You can edit a live task's **Instructions** on its page. Piper saves the text shortly after you stop typing, and again when you leave the field. The next run reads the new text. A run that's already going keeps the text it started with. For anything else, including the schedule and the task's files, select **Ask Piper** and say what should be different. The task changes only when Piper changes its instructions, schedule, or files from that conversation.
+  You can edit a live task's instructions on its page. In the **Instructions** box, select **Edit**, then **Edit manually**, and type the change. Piper saves the text shortly after you stop typing, and again when you leave the field. The next run reads the new text. A run that's already going keeps the text it started with. To have Piper make the change, select **Edit with Piper** and say what should be different. For the schedule or the task's files, select **Edit** on the **Schedule** box, which opens the same conversation. The task changes only when Piper changes its instructions, schedule, or files from that conversation.
 </Tip>
 
 ## What a run is given
@@ -63,7 +63,7 @@ Piper gives each run four things.
 - What recent runs did. Piper gives each run the summaries of the task's most recent runs, each with the path to that run's full work log.
 - The facts in your memory: your global facts, the facts Piper keeps for this task, and the facts Piper keeps for that run alone. See [Memory](/context/memory).
 
-Piper keeps the conversation you set the task up in out of every run, because that conversation can hold questions that have nothing to do with the task. Piper also keeps out the task's own conversation, the standing thread behind **Ask Piper** on the task page.
+Piper keeps the conversation you set the task up in out of every run, because that conversation can hold questions that have nothing to do with the task. Piper also keeps out the task's own conversation, the one **Edit with Piper** opens on the task page.
 
 <Note>
   Piper runs every scheduled run on **Autopilot**, because nobody is watching it. Piper acts without stopping for an ordinary approval. Piper decides from the instructions and what recent runs did, and records what it decided in the run's summary. When you write the instructions, say what Piper should do when something is ambiguous. A run can email and invite only the people you approved for the task. A run can't give anyone access to your Drive files or comment on them. If the instructions call for anyone else, Piper sends nothing, and the run stops to name who it needed. Piper also withholds the Chrome you're signed in to from every run, and refuses a credential file outright, because nobody is there to approve either. [Approvals and permissions](/control/approvals-and-permissions) covers both modes.
@@ -97,7 +97,7 @@ Piper shows the schedule as a sentence in plain English. Piper writes the senten
 
 Where the sentence names a clock time, Piper adds the timezone the way people say it, so `America/Los_Angeles` reads as `Pacific`, `America/New_York` as `Eastern`, and `Asia/Tokyo` as `Japan`. Piper leaves out the standard-or-daylight half of the name, so the line stays the same all year. Piper keeps the schedule in that zone across daylight saving, so a 7:00 AM task stays at 7:00 AM.
 
-Piper shows the sentence on the task's row in the list, in the header of the task's page, and under **Schedule** in the rail beside it.
+Piper shows the sentence on the task's row in the list, and in the **Schedule** box on the task's page.
 
 <Note>
   For an unusual schedule with no natural wording, Piper shows the schedule as it's stored and adds the zone, like `On the schedule "0 7 L * *" (Pacific)`.
@@ -105,7 +105,7 @@ Piper shows the sentence on the task's row in the list, in the header of the tas
 
 ## The task's folder
 
-Piper keeps a folder for each task that outlives any single run. Open the task and select **Artifacts** in the rail to see it. The folder holds two kinds of file.
+Piper keeps a folder for each task that outlives any single run. Open the task and select **Artifacts** in the top bar to see it. The folder holds two kinds of file.
 
 The first kind is what the task reuses. If each run needs the same data pull or the same chart, Piper writes a script once and stores it there, so later runs reuse the script. Piper makes judgment calls fresh in each run, such as which items matter, what the numbers mean, and what to say about them.
 
@@ -113,7 +113,7 @@ The second kind is what earlier runs delivered. Piper puts each run's result in 
 
 You can open and edit anything in that folder yourself, and Piper uses your changes on the next run. The folder sits under `PiperData/projects` in your home folder. Piper always keeps a scheduled task's folder there, even when you set it up from a conversation inside a project.
 
-The rail holds two more panels. Open **Instructions** to read what every run is given, and **Memory** to see the facts Piper keeps for this task alone. See [Memory](/context/memory). When the task has approved people, the rail also holds **People**, where you can see who the task may email and invite, and add or remove an address.
+The task's page shows what every run is given in its **Instructions** box. Select **Memory** in the top bar to see the facts Piper keeps for this task alone. See [Memory](/context/memory). When the task has approved people, a **People** box lists who the task may email and invite. Select **Manage** to add or remove an address.
 
 <Note>
   Piper keeps only a task's most recent runs. Past that limit, Piper deletes the oldest run's conversation and workspace, including that run's scratch files. Piper keeps everything a run delivered into the task's folder, so results outlive the runs that wrote them.
@@ -121,9 +121,9 @@ The rail holds two more panels. Open **Instructions** to read what every run is 
 
 ## Run, pause, and watch a task
 
-The task's page lists its runs under **Runs**, with the count beside it. Expand a run to read its summary and open the files it produced, or select **Open run** to see each step Piper took in that run.
+The task's page lists its runs under **Runs**, with the count beside it. Select a run to open its conversation, where you can read what Piper did and open the files the run produced.
 
-Select **Run now** to start a run without waiting for the next slot. Select **Pause** to stop the schedule, and **Resume** to start it again. Select **Ask Piper** to open the task's standing conversation, where you change what the task does. Open the **Activity** tab to read the task's scheduled events as plain sentences, like `Started a run`, `Caught up after the app was closed`, and `Skipped a slot: the previous run was still going`.
+Select **Run now** to start a run without waiting for the next slot. Select **Pause** to stop the schedule, and **Resume** to start it again. To change what the task does, select **Edit** on the **Schedule** box, or **Edit** then **Edit with Piper** on the **Instructions** box. Both open the task's own conversation.
 
 A run card shows `Needs you` when the run stopped to ask you for something, `Failed` when the run couldn't finish, and `Trying again` with the wait remaining when Piper is about to retry the run, or `Retry held` while the task is paused. A run that is queued, working, or done carries a mark instead of a word. Piper leaves a run marked `Needs you` for you to answer and doesn't retry it.
 

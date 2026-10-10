@@ -86,7 +86,7 @@ Piper asks this question about a credential file in a folder of your own. Piper 
 
 **Working in the Chrome you are signed in to.** Piper works in your own Chrome only after you switch on **Use my Chrome for sites I’m signed in to** under **Built-in tools**, which needs a one-time browser extension. Even then Piper asks before it acts on each site, and your answer covers that one site for the rest of the turn. A turn is one round of work: your message, and everything Piper does before it comes back to you. Send the next message and Piper asks again.
 
-Piper applies the opposite rule to work it runs with nobody watching. In that work, Piper refuses your own Chrome, and refuses a credential file the moment the question comes up, because nobody is there to answer. Piper applies this rule to a run of a scheduled task, a long-running task, the conversation behind **Ask Piper** on a scheduled task's page, and every task Piper starts on its own.
+Piper applies the opposite rule to work it runs with nobody watching. In that work, Piper refuses your own Chrome, and refuses a credential file the moment the question comes up, because nobody is there to answer. Piper applies this rule to a run of a scheduled task, a long-running task, the conversation that **Edit with Piper** opens on a scheduled task's page, and every task Piper starts on its own.
 
 ## Answer a request
 
@@ -100,7 +100,7 @@ Under that, choose one of three buttons:
 
 When the action has a scope, Piper names it on the middle button. Approve a `pip install` and the button reads `Always allow “pip install” in this conversation`. The scope is the program rather than the exact command line, so the same approval covers installing a different package. For programs that bundle many verbs, the scope is the program plus the verb. These programs are `git`, `npm`, `pnpm`, `yarn`, `pip`, `pip3`, `uv`, `brew`, `docker`, `cargo`, and `go`. Approving `pip install` therefore does nothing for `git push`.
 
-Once you've used that button, Piper lists everything you allowed under **Allowed tools** in the conversation's right-hand rail, each as a chip. Remove a chip and Piper asks about that action again. What you allow holds for that one conversation, including after you close Piper and come back to it. Piper never applies it to another conversation.
+Once you've used that button, Piper lists everything you allowed in the conversation's **Allowed tools** panel, each as a chip. Remove a chip and Piper asks about that action again. What you allow holds for that one conversation, including after you close Piper and come back to it. Piper never applies it to another conversation.
 
 <Warning>
   If you leave a request unanswered, Piper denies it after a set time. The card then reads **Auto-denied**, and the task carries on as though you had selected **Deny**. If you leave a task mid-approval, you come back to find that action refused. Select the × on the card to clear it from the conversation.
