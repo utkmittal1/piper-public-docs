@@ -66,7 +66,7 @@
         "group": "Piper on its own",
         "pages": [
           "autonomous/autonomous-tasks",
-          "autonomous/long-running-tasks"
+          "autonomous/multi-step-tasks"
         ]
       },
       {
@@ -89,7 +89,8 @@
   "redirects": [
     { "source": "/autonomous/home", "destination": "/working/before-you-ask" },
     { "source": "/autonomous/chief-of-stuff", "destination": "/working/before-you-ask" },
-    { "source": "/reference/keyboard-shortcuts", "destination": "/working/describing-what-you-need" }
+    { "source": "/reference/keyboard-shortcuts", "destination": "/working/describing-what-you-need" },
+    { "source": "/autonomous/long-running-tasks", "destination": "/autonomous/multi-step-tasks" }
   ],
   "footer": {
     "socials": {}
